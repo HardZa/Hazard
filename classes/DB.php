@@ -1,6 +1,5 @@
 <?php
 
-require_once(resolveHeader('classes/Config.php'));
 
 class DB
 {
@@ -19,6 +18,7 @@ class DB
 	{
 		$this->_link = mysql_connect( Config::get('mysql/host') , Config::get('mysql/username') , Config::get('mysql/password') );
 		mysql_select_db( Config::get('mysql/db') , $this->_link );
+		mysql_query("SET NAMES TIS620");
 	}
 	
 	private static function bindArray2SQLFormat($array,$delimiter = '`')
