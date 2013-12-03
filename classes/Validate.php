@@ -11,11 +11,10 @@ class Validate
 			foreach($rules as $rule=> $rule_value)
 			{
 				$value = trim($source[$item]);
-				//echo $item." ".strlen($);
-				if($rule === 'required' && empty($value))
+				$error = Rule::check( $item , $rule , $value , $rule_value );
+				if( $error != null )
 				{
-					$this->addError($item." is required");
-				}else {
+					$this->addError( $error );
 				}
 			}
 		}
