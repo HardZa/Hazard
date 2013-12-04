@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2013 at 04:32 PM
+-- Generation Time: Dec 04, 2013 at 06:22 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -25,24 +25,68 @@ USE `hazarddb`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `groups`
+-- Table structure for table `usergroup_agriproduction`
 --
 
-CREATE TABLE IF NOT EXISTS `groups` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(30) NOT NULL,
-  `permission` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+CREATE TABLE IF NOT EXISTS `usergroup_agriproduction` (
+  `userid` int(11) NOT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `groups`
+-- Table structure for table `usergroup_cashier`
 --
 
-INSERT INTO `groups` (`id`, `name`, `permission`) VALUES
-(1, 'Standard User', ''),
-(2, 'Officer', '{"approve":1}'),
-(3, 'admin', '{"approve":1 , "admin":1}');
+CREATE TABLE IF NOT EXISTS `usergroup_cashier` (
+  `userid` int(11) NOT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usergroup_client`
+--
+
+CREATE TABLE IF NOT EXISTS `usergroup_client` (
+  `userid` int(11) NOT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usergroup_hazcontrol`
+--
+
+CREATE TABLE IF NOT EXISTS `usergroup_hazcontrol` (
+  `userid` int(11) NOT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usergroup_plantprotection`
+--
+
+CREATE TABLE IF NOT EXISTS `usergroup_plantprotection` (
+  `userid` int(11) NOT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usergroup_registrar`
+--
+
+CREATE TABLE IF NOT EXISTS `usergroup_registrar` (
+  `userid` int(11) NOT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -51,14 +95,13 @@ INSERT INTO `groups` (`id`, `name`, `permission`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `groupid` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `userid` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(64) NOT NULL,
+  `userpasssha1` varchar(40) NOT NULL,
+  `userallowed` tinyint(1) NOT NULL,
+  `userrealname` varchar(256) NOT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
