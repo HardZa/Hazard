@@ -7,7 +7,7 @@
  
  $error_msg = '';
  
- if( $user == null && Input::exist() )
+ if( $user == null && Input::exists() )
  {
  
 	$validate = new Validate();
@@ -29,9 +29,9 @@
 		try
 		{
 			$user = User::auth( Input::get('username') , Input::get('password') );
-		}catch( $e )
+		}catch(Exception $e )
 		{
-			$error_msg .= $e."<br>";
+			$error_msg .= $e->getMessage()."<br>";
 		}
 		
 	}else{
@@ -45,24 +45,33 @@
  
  ?>
  
- <?
+ <?php include(resolveHeader('menu_test.php')); ?>
+ 
+ <?php
 if( $user == null )
 {
+?>
+
+<?php
+	if( $error_msg != '' )
+	{
+		echo $error_msg;
+	}
 ?>
  
  <form method="post" action="">
 	 Username : <input type="text" name="username" autocomplete="off"><br>
 	 Password : <input type="password" name="password"><br>
-	<input type="submit" value="Register">
+	<input type="submit" value="Login">
  </form>
  
- <? } 
+ <?php } 
  else {
  ?>
  
  Already Login :)
  
- <? } ?>
+ <?php } ?>
  
  
  <?php

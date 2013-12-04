@@ -5,6 +5,8 @@
  User::clear_user();
  ?>
  
+ <?php include(resolveHeader('menu_test.php')); ?>
+ 
  Already Logout :)
  
   <?php

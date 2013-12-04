@@ -32,19 +32,19 @@ class User{
 	
 	public function save()
 	{
-		DB::get_db()->update('users',$this->user_db,"where username='" . $this->user_db['username'] . ".");
+		DB::get_db()->update('users',$this->user_db,"username='" . $this->user_db['username'] . "'");
 	}
 	
 	public static function auth($username,$password)
 	{
 		$passwordSha1 = sha1($password);
-		$rows = DB::get_db()->select('users',null,"where username='$username'",1);
+		$rows = DB::get_db()->select('users',null,"username='$username'",1);
 		if( count($rows) != 1 )
 		{
 			throw new Exception("Username not found");
 		}
 		$user_db = $rows[0];
-		if( $user['userpasssha1'] != $passwordSha1 )
+		if( $user_db['userpasssha1'] != $passwordSha1 )
 		{
 			throw new Exception("Password are incorrect");
 		}
@@ -80,7 +80,7 @@ class User{
 	{
 		for( $i = 0 ; $i < count( User::$user_fields ) ; $i++ )
 		{
-			$key = User::$user_field[$i];
+			$key = User::$user_fields[$i];
 			Session::delete( $key );
 		}
 	}

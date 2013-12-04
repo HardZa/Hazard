@@ -17,7 +17,7 @@
 	));
 	if( $validate->passed() )
 	{
-		$user->set( 'name' , Input::get('name')  );
+		$user->set( 'userrealname' , Input::get('name')  );
 		$user->save();
 	}
 	else
@@ -27,12 +27,14 @@
  }
  
  ?>
+ 
+<?php include(resolveHeader('menu_test.php')); ?>
 
-<? if( $user == null ){ ?> 
+<?php if( $user == null ){ ?> 
 		You not login !
-<? } else { ?>
+<?php } else { ?>
 
-<? 
+<?php 
 		if( $error != null )
 		{
 			foreach( $error as $err_msg )
@@ -43,13 +45,12 @@
 ?>
 		
 		 <form method="post" action="">
-			 Username : <input type="text" name="username" autocomplete="off" value="<? echo $user->get('username'); ?>" disabled><br>
-			 Name : <input type="text" name="name"><br>
+			 Username : <input type="text" name="username" autocomplete="off" value="<?php echo $user->get('username'); ?>" disabled><br>
+			 Name : <input type="text" name="name" value="<?php echo $user->get('userrealname'); ?>"><br>
 			<input type="submit" value="edit">
 		 </form>
 		
-<? } ?>
- 
+<?php } ?>
   <?php
  include(resolveHeader('includes/footer.php'));
  ?>
