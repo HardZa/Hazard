@@ -10,4 +10,5 @@ require_once(resolveHeader('classes/Redirect.php'));
 require_once(resolveHeader('classes/Input.php'));
 require_once(resolveHeader('classes/Validate.php'));
 require_once(resolveHeader('classes/Rule.php'));
+require_once(resolveHeader('classes/User.php'));
 ?>

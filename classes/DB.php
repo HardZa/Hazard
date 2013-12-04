@@ -74,12 +74,12 @@ class DB
 		$fill_value = DB::bindArray2SQLFormat($value,"'");
 		
 		$sql = "INSERT INTO `".Config::get('mysql/db')."`.`$table` ($fill_field) VALUES ($fill_value);";
-		$this->query($sql);
+		return $this->query($sql);
 	}
 	
 	public function delete( $table , $conditions = '' , $limit = 1)
 	{
-		$this->query( "DELETE FROM `$table` " . DB::getWhenNotStringEmpty($conditions,'where ')
+		return $this->query( "DELETE FROM `$table` " . DB::getWhenNotStringEmpty($conditions,'where ')
 		. $conditions.' '.DB::getWhenNotStringEmpty($limit,'limit ').$limit );
 	}
 	
@@ -94,7 +94,7 @@ class DB
 			$first = false;
 			$fill_set .= "`$k`='$v'";
 		}
-		$this->query( "UPDATE `".Config::get('mysql/db')."`.`$table` SET $fill_set " . DB::getWhenNotStringEmpty($conditions,'where ')
+		return $this->query( "UPDATE `".Config::get('mysql/db')."`.`$table` SET $fill_set " . DB::getWhenNotStringEmpty($conditions,'where ')
 		. $conditions.' '.DB::getWhenNotStringEmpty($limit,'limit ').$limit );
 	}
 	
