@@ -1,0 +1,26 @@
+RewriteEngine On
+
+RewriteRule ^login/$ login.php
+RewriteRule ^login$ login/
+
+RewriteRule ^logout/$ logout.php
+RewriteRule ^logout$ logout/
+
+RewriteRule ^user/$ user.php
+RewriteRule ^user$ user/
+
+RewriteRule ^user/edit$ user.php?edit=1
+RewriteRule ^user/edit/$ user/edit
+
+RewriteRule ^requests/$ requests.php
+RewriteRule ^requests$ requests/
+
+RewriteRule ^requests/new/$ requests.php?new=1
+RewriteRule ^requests/new$ requests/new/
+
+RewriteRule ^requests/([0-9]+)/$ requests.php?requestid=$1
+RewriteRule ^requests/([0-9]+)$ requests/$1/
+
+RewriteRule ^requests/([0-9]+)/edit/$ requests.php?requestid=$1&edit=1
+RewriteRule ^requests/([0-9]+)/edit$ requests/$1/edit/
+
