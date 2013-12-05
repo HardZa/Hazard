@@ -25,16 +25,17 @@
 		$error = $validate->errors();
 	}
  }
- 
+
  ?>
- 
-<?php include(resolveHeader('menu_test.php')); ?>
+ <h1>User Page</h1>
 
 <?php if( $user == null ){ ?> 
 		You not login !
-<?php } else { ?>
-
-<?php 
+<?php } else {
+		
+		
+		if(Input::get('edit')==1)
+		{
 		if( $error != null )
 		{
 			foreach( $error as $err_msg )
@@ -44,13 +45,22 @@
 		}
 ?>
 		
-		 <form method="post" action="">
-			 Username : <input type="text" name="username" autocomplete="off" value="<?php echo $user->get('username'); ?>" disabled><br>
-			 Name : <input type="text" name="name" value="<?php echo $user->get('userrealname'); ?>"><br>
-			<input type="submit" value="edit">
+		 <form class="form-horizontal" method="post" action="">
+			<div class="form-group">
+				<label for="username">Username</label>
+				<input type="text" name="username" class="form-control" autocomplete="off" value="<?php echo $user->get('username'); ?>" id="username" disabled>
+			</div>
+			<div class="form-group">
+				<label for="name">Name</label> 
+				<input type="text" name="name" class="form-control" value="<?php echo $user->get('userrealname'); ?>" id="name">
+			</div>
+			<input type="submit" value="Edit" class="btn btn-success">
 		 </form>
 		
-<?php } ?>
-  <?php
- include(resolveHeader('includes/footer.php'));
+<?php 
+		
+		}
+	}		
+
+include(resolveHeader('includes/footer.php'));
  ?>

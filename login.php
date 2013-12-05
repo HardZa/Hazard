@@ -3,13 +3,10 @@
  require_once('core/init.php');
  include(resolveHeader('includes/header.php'));
 
- $user = User::get_user();
- 
+ $user = User::get_user(); 
  $error_msg = '';
- 
  if( $user == null && Input::exists() )
  {
- 
 	$validate = new Validate();
 	$validate->check($_POST,array(
 		"username" => array(
@@ -45,7 +42,7 @@
  
  ?>
  
- <?php include(resolveHeader('menu_test.php')); ?>
+<h1>Login Page</h1>
  
  <?php
 if( $user == null )
@@ -58,15 +55,16 @@ if( $user == null )
 		echo $error_msg;
 	}
 ?>
- 
- <form method="post" action="">
-	 Username : <input type="text" name="username" autocomplete="off"><br>
-	 Password : <input type="password" name="password"><br>
-	<input type="submit" value="Login">
+
+ <form method="post" action="" class="form-signin">
+	 <input class="form-control" placeholder="Username" type="text" name="username" autocomplete="off" autofocus required >
+	 <input type="password" name="password" required  class="form-control" placeholder="Password" >
+	<input class="btn btn-lg btn-primary btn-block" type="submit" value="Login">
  </form>
- 
+
  <?php } 
  else {
+	Redirect::to('user');
  ?>
  
  Already Login :)

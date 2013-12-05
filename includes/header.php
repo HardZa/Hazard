@@ -3,8 +3,10 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Hazardous object tracking system</title>
-	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" href="lib/bootstrap/starter-template.css">
+	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/dist/css/bootstrap.css");?>">
+	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/dist/css/bootstrap-theme.css");?>">
+	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/starter-template.css");?>">
+	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/signin.css");?>" >
 </head>
 <body>
 
@@ -17,11 +19,26 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Hazard</a>
+          <a class="navbar-brand" href="<?php echo resolveURIHeader("");?>">Hazard</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
        <!--     <li class="active"><a href="login">login</a></li> -->
+			<?php
+				$user = User::get_user();
+				if( !isset($user) || $user == null ) {
+			?>
+			<li><a href="<?php echo resolveURIHeader("login");?>">login</a></li>
+			<li><a href="<?php echo resolveURIHeader("register.php");?>">register</a></li>
+			<?php
+				}else{
+			?>
+			<li><a href="<?php echo resolveURIHeader("user");?>">user</a></li>
+			<li><a href="<?php echo resolveURIHeader("user/edit");?>">edit</a></li>
+			<li><a href="<?php echo resolveURIHeader("logout");?>">logout</a></li>
+			<?php
+				}
+			?>
           </ul>
         </div><!--/.nav-collapse -->
     </div>

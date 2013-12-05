@@ -8,8 +8,10 @@ class Config
 			'username'=>'root',
 			'password'=>'',
 			'db'=>'hazarddb'
+		),
+		'path' =>array(
+			'main'=>'hazard/'
 		)
-	
 	); 
 
 	public static function get($path=null)

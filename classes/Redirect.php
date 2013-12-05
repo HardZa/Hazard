@@ -12,7 +12,7 @@
 				include resolveHeader('includes/footer.php');
 				exit();
 			}
-			header('Location: '.$location);
+			header('Location: '.resolveURIHeader($location));
 			exit();
 		}
 	}

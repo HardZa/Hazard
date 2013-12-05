@@ -40,11 +40,20 @@
  
  ?>
  
- <form method="post" action="">
-	 Username : <input type="text" name="username" autocomplete="off"><br>
-	 Password : <input type="password" name="password"><br>
-	 Name : <input type="text" name="name"><br>
-	<input type="submit" value="Register">
+ <form class="form-horizontal" method="post" action=""  >
+	<div class="form-group">
+		<label for="username">Username</label>
+		<input class="form-control" type="text" name="username" autocomplete="off" id="username">
+	</div>
+	<div class="form-group">
+		<label for="password">Password</label>
+		<input class="form-control" type="password" name="password" id="password">
+	</div>
+	<div class="form-group">
+		<label for="name">Name</label>
+		<input class="form-control" type="text" name="name" id="name">
+	</div>
+	<input type="submit" value="Register" class="btn btn-success">
  </form>
  
  <?php
