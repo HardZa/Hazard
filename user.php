@@ -45,14 +45,18 @@
 		}
 ?>
 		
-		 <form class="form-horizontal" method="post" action="">
+		 <form class="form-horizontal" method="post" action="" role="form">
 			<div class="form-group">
-				<label for="username">Username</label>
-				<input type="text" name="username" class="form-control" autocomplete="off" value="<?php echo $user->get('username'); ?>" id="username" disabled>
+				<label for="username" class="col-sm-offset-1 col-sm-2 control-label">Username</label>
+				<div class="col-sm-6">
+					<input type="text" name="username" class="form-control" autocomplete="off" value="<?php echo $user->get('username'); ?>" id="username" disabled>
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="name">Name</label> 
-				<input type="text" name="name" class="form-control" value="<?php echo $user->get('userrealname'); ?>" id="name">
+				<label for="name" class="col-sm-offset-1 col-sm-2 control-label">Name</label> 
+				<div class="col-sm-6">
+					<input type="text" name="name" class="form-control" value="<?php echo $user->get('userrealname'); ?>" id="name">
+				</div>
 			</div>
 			<input type="submit" value="Edit" class="btn btn-success">
 		 </form>

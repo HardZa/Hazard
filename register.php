@@ -40,18 +40,24 @@
  
  ?>
  
- <form class="form-horizontal" method="post" action=""  >
+ <form class="form-horizontal" method="post" action="" role="form" >
 	<div class="form-group">
-		<label for="username">Username</label>
-		<input class="form-control" type="text" name="username" autocomplete="off" id="username">
+		<label for="username"  class="col-sm-offset-1 col-sm-2 control-label">Username</label>
+		<div class="col-sm-6">
+			<input class="form-control " type="text" name="username" autocomplete="off" id="username">
+		</div>
 	</div>
 	<div class="form-group">
-		<label for="password">Password</label>
-		<input class="form-control" type="password" name="password" id="password">
+		<label for="password"  class="col-sm-offset-1 col-sm-2 control-label">Password</label>
+		<div class="col-sm-6">
+			<input class="form-control" type="password" name="password" id="password">
+		</div>
 	</div>
 	<div class="form-group">
-		<label for="name">Name</label>
-		<input class="form-control" type="text" name="name" id="name">
+		<label for="name"  class="col-sm-offset-1 col-sm-2 control-label">Name</label>
+		<div class="col-sm-6">
+			<input class="form-control" type="text" name="name" id="name">
+		</div>
 	</div>
 	<input type="submit" value="Register" class="btn btn-success">
  </form>
