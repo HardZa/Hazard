@@ -2,7 +2,7 @@
 
 class User{
 
-	private static $user_fields = array('username','userrealname','userallowed');
+	private static $user_fields = array('userid','username','userrealname','userallowed');
 	private $user_db;
 	public static $user_field_allow_edit = array('userrealname');
 
@@ -84,6 +84,19 @@ class User{
 			Session::delete( $key );
 		}
 	}
+	
+	public function is_group($group)
+	{
+		$userid = $this->user_db['userid'];
+		$table = 'usergroup_'.$group;
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		if( count($rows) != 1 )
+		{
+			return false;
+		}
+		return true;
+	}
+	
 }
 
 ?>
