@@ -97,6 +97,11 @@ class DB
 		return $this->query( "UPDATE `".Config::get('mysql/db')."`.`$table` SET $fill_set " . DB::getWhenNotStringEmpty($conditions,'where ')
 		. $conditions.' '.DB::getWhenNotStringEmpty($limit,'limit ').$limit );
 	}
+
+	public function getLastInsertID()
+	{
+		return mysql_insert_id();
+	}
 	
 }
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2013 at 06:22 AM
+-- Generation Time: Dec 07, 2013 at 11:11 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -21,6 +21,18 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `hazarddb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `hazarddb`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `documents`
+--
+
+CREATE TABLE IF NOT EXISTS `documents` (
+  `docid` int(11) NOT NULL AUTO_INCREMENT,
+  `docjson` text NOT NULL,
+  PRIMARY KEY (`docid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
