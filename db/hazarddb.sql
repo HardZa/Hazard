@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2013 at 11:11 AM
+-- Generation Time: Dec 07, 2013 at 03:11 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -30,9 +30,31 @@ USE `hazarddb`;
 
 CREATE TABLE IF NOT EXISTS `documents` (
   `docid` int(11) NOT NULL AUTO_INCREMENT,
+  `doctype` int(11) NOT NULL,
   `docjson` text NOT NULL,
   PRIMARY KEY (`docid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `document_type`
+--
+
+CREATE TABLE IF NOT EXISTS `document_type` (
+  `doctype` int(11) NOT NULL,
+  `docabbr` varchar(20) NOT NULL,
+  `docname` varchar(50) NOT NULL,
+  `formpage` varchar(20) NOT NULL,
+  PRIMARY KEY (`doctype`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `document_type`
+--
+
+INSERT INTO `document_type` (`doctype`, `docabbr`, `docname`, `formpage`) VALUES
+(0, 'ตย.นว.', 'ตัวอย่างหน้าเว็ป', 'example.html');
 
 -- --------------------------------------------------------
 

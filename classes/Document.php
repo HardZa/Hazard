@@ -3,6 +3,7 @@ class Document
 {
 	private $_data;
 	private $_docId;
+	private $_docType;
 
 	public function getData()
 	{
@@ -19,17 +20,25 @@ class Document
 		return $this->_docId;
 	}
 
-	public function __construct($docId)
+	public function getDocType()
 	{
-		$this->_docId = $docId;
-		$this->_data = $this->load($docId);
+		return $this->_docType;
 	}
 
-	private function load($docId)
+	public function __construct($docId,$docType)
 	{
-		$query = DB::get_db()->select("documents",array("docjson"),"docid=".$docId,1);
+		$this->_docId = $docId;
+		$this->_docType = $docType;
+		$this->_data = $this->load($docId,$docType);
+	}
+
+	private function load($docId,$docType)
+	{
+		$query = DB::get_db()->select("documents",array("docjson"),"docid=".$docId." and doctype=".$docType,1);
 		if(count($query)==0)
-			return "";
+		{
+			throw new Exception("can't load Document");
+		}
 		return (array)json_decode($query[0][0]);
 	}
 
@@ -39,15 +48,15 @@ class Document
 		DB::get_db()->update("documents",array('docjson'=>$jsonData),'docid='.$this->_docId,1);
 	}
 
-	public static function create()
+	public static function create($docType)
 	{
-		DB::get_db()->insert("documents",array('docjson'),array(''));
-		return new Document(DB::get_db()->getLastInsertID());
+		DB::get_db()->insert("documents",array('docType','docjson'),array($docType,''));
+		return new Document(DB::get_db()->getLastInsertID(),$docType);
 	}
 
-	private static function isHaveInDB($docId)
+	private static function isHaveInDB($docId,$docType)
 	{
-		if(count(DB::get_db()->select("documents",null,'docid='.$docId)))
+		if(count(DB::get_db()->select("documents",null,'docid='.$docId." and doctype=".$docType)))
 		{
 			return true;
 		}

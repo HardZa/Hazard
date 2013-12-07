@@ -17,6 +17,13 @@ class Rule
 	{
 		return !$need || !empty( $value );
 	}
+
+	public static function numericValue( $value , $need )
+	{
+		return !$need || is_numeric( $value );
+	}
+
+	
 	
 	public static function errorMessage( $item , $method , $value , $params )
 	{
@@ -28,6 +35,8 @@ class Rule
 				return "$item so long !!";
 			case 'required':
 				return "we need $item !!";
+			case 'numeric':
+				return "$item should be number!!";
 		}
 		return "";
 	}
@@ -49,6 +58,9 @@ class Rule
 				break;
 			case 'required':
 				$valid = Rule::requireValue( $value , $params[0] );
+				break;
+			case 'numeric':
+				$valid = Rule::numericValue( $value , $params[0]);
 				break;
 		}
 		if( !$valid )
