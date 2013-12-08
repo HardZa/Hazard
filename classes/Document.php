@@ -58,6 +58,26 @@ class Document
 		return $query[0][0];
 	}
 
+	public function getAbbr()
+	{
+		$query = DB::get_db()->select("document_type",array("docabbr"),"doctype=".$this->_docType,1);
+		if(count($query)==0)
+		{
+			return '';
+		}
+		return $query[0][0];
+	}
+
+	public function getName()
+	{
+		$query = DB::get_db()->select("document_type",array("docname"),"doctype=".$this->_docType,1);
+		if(count($query)==0)
+		{
+			return '';
+		}
+		return $query[0][0];
+	}
+
 	public static function create($docType)
 	{
 		DB::get_db()->insert("documents",array('docType','docjson'),array($docType,''));

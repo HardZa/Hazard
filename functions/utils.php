@@ -9,5 +9,6 @@
  {
 	return 'http://'.$_SERVER['HTTP_HOST'].'/'.Config::get('path/main').$uri;
  }
+
  
  ?>

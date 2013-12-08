@@ -37,7 +37,7 @@ $newValidate->check($_GET,array(
 
 if($newValidate->passed())
 {
-	echo "NEW PASS";
+	echo "NEW PASS<br>";
 	//TODO : Check request correct
 	
 	//TODO : Create New Document and bind with request
@@ -45,17 +45,34 @@ if($newValidate->passed())
 	//TODO : redirect to edit pass
 	Redirect::to('doc/'.Input::get('requestid').'/'.Input::get('doctype').'/'.$doc->getDocID());
 }else if($editValidate->passed()){
-	echo "EDIT PASS";
+	echo "EDIT PASS<br>";
+	$doc = new Document(Input::get('docid'),Input::get('doctype'));
+
+	//TODO : Check Input form GET or POST
+	var_dump($_POST);
+	if(Input::exists('post'))
+	{
+		$doc->setData($_POST);
+		$doc->save();
+	}
 	//TODO : Check request correct
 
-	//TODO : include form
-	$doc = new Document(Input::get('docid'),Input::get('doctype'));
-	var_dump($doc->getFormURL());
-	include(resolveHeader('includes/forms/'.$doc->getFormURL()));
-	//TODO : fill form
+	//TODO : include & fill form
+	function getValue($field)
+	{
+		global $doc;
+		if(isset($doc->getData()[$field]))
+		{
+			return $doc->getData()[$field];	
+		} 
+		return '';
+	}
 
+	include(resolveHeader('includes/header_form.php'));
+	include(resolveHeader('includes/forms/'.$doc->getFormURL()));
+	include(resolveHeader('includes/footer_form.php'));
 }else{
-	echo "FAIL ALL";
+	echo "FAIL ALL<br>";
 }
 
 

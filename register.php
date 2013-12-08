@@ -27,7 +27,7 @@
 	if($validate->passed())
 	{
 		echo "ลงทะเบียนสำเร็จ";
-		User::create( Input::get('username') , Input::get('password') , Input::get('name') );
+		User::create( Input::post('username') , Input::post('password') , Input::post('name') );
 		//Redirect::to("register_result.php");
 	}else{
 		foreach($validate->errors() as $error_msg)

@@ -17,7 +17,7 @@
 	));
 	if( $validate->passed() )
 	{
-		$user->set( 'userrealname' , Input::get('name')  );
+		$user->set( 'userrealname' , Input::post('name')  );
 		$user->save();
 	}
 	else
