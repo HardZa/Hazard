@@ -25,7 +25,7 @@
 	{
 		try
 		{
-			$user = User::auth( Input::get('username') , Input::get('password') );
+			$user = User::auth( Input::post('username') , Input::post('password') );
 		}catch(Exception $e )
 		{
 			$error_msg .= $e->getMessage()."<br>";
