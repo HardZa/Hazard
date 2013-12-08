@@ -10,7 +10,7 @@ class Config
 			'db'=>'hazarddb'
 		),
 		'path' =>array(
-			'main'=>'hazard/'
+			'main'=>'Hazard/'
 		)
 	); 
 
