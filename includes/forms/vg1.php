@@ -11,11 +11,11 @@
 </select> 
 
 <select name="DateOfBirth_Month" style="float:right;">
-    <?php  include(resolveHeader('includes/forms/element/day.php')); ?>
+    <?php  include(resolveHeader('includes/forms/element/month.php')); ?>
 </select> 
 
 <select name="DateOfBirth_Day" style="float:right;">
-    <?php  include(resolveHeader('includes/forms/element/month.php')); ?>
+    <?php  include(resolveHeader('includes/forms/element/day.php')); ?>
 </select> 
 
 
@@ -34,7 +34,7 @@
 
 <p align="left">
 เลขประจำตัวผู้เสียภาษีอากร  <input = "text" class="box" name="tax" style="width:300px"><br>
-สถานที่ติดต่อของข้าพเจ้าตั้งอยู่ที่ <input = "text" class="box" name="addr" style="width:90px"> หมู่ที่ <input = "text" class="box" name="mhoo" style="width:30px"> ตรอก/ซอย <input = "text;" name="soi" style="width:100px"><br>
+สถานที่ติดต่อของข้าพเจ้าตั้งอยู่ที่ <input = "text" class="box" name="addr" style="width:90px"> หมู่ที่ <input = "text" class="box" name="mhoo" style="width:30px"> ตรอก/ซอย <input = "text" class="box" name="soi" style="width:100px"><br>
 ถนน  <input = "text" class="box" name="road" style="width:150px"> ตำบล/แขวง  <input = "text" class="box" name="district" style="width:200px"> อำเภอ/เขต <input = "text" class="box" name="area" style="width:200px"><br>
 จังหวัด <input = "text" class="box" name="province" style="width:150px"> รหัสไปรษณีย์ <input = "text" class="box" name="zip code" style="width:150px"> โทรศัพท์ <input = "text" class="box" name="tel" style="width:150px"> โทรสาร <input = "text" class="box" name="fax" style="width:150px"><br>
 
@@ -49,7 +49,7 @@
 <br>
 
 สถานที่เก็บรักษาวัตุอันตราย ชื่อ <input = "text" class="box" name="store" style="width:400px"><br>
-ตั้งอยู่ที่ <input = "text" class="box" name="saddr" style="width:90px"> หมู่ที่ <input = "text" class="box" name="smhoo" style="width:30px"> ตรอก/ซอย <input = "text;" name="ssoi" style="width:100px"><br>
+ตั้งอยู่ที่ <input = "text" class="box" name="saddr" style="width:90px"> หมู่ที่ <input = "text" class="box" name="smhoo" style="width:30px"> ตรอก/ซอย <input = "text" class="box" name="ssoi" style="width:100px"><br>
 ถนน  <input = "text" class="box" name="sroad" style="width:150px"> ตำบล/แขวง  <input = "text" class="box" name="sdistrict" style="width:200px"> อำเภอ/เขต <input = "text" class="box" name="sarea" style="width:200px"><br>
 จังหวัด <input = "text" class="box" name="sprovince" style="width:150px"> รหัสไปรษณีย์ <input = "text" class="box" name="szip code" style="width:150px"> โทรศัพท์ <input = "text" class="box" name="stel" style="width:150px"> โทรสาร <input = "text" class="box" name="sfax" style="width:150px"><br>
 

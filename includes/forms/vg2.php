@@ -1,9 +1,9 @@
-<div id="container" style="width:1000px;height:2000px;background-color:#C0C0C0;">
+<div class="vg-container">
 
 
 <div id="header" style="margin-bottom:0;font-size:25px;">ใบอนุญาตผลิตวัตถุอันตราย</div>
 <br><br>
-<div id="z1" style="float:right;width:1000px;">
+<div id="z1">
 
 <p align="left">ใบอนุญาตเลขที่  <input = "text" class="box" name="regisNO" style="width:150px"> กรม/สำนักงาน  <input = "text" class="box" name="office" style="width:300px"><p>
 <p align="right">กระทรวง  <input = "text" class="box" name="Kasoung" style="width:300px"><p>
