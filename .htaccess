@@ -1,5 +1,7 @@
 RewriteEngine On
 
+RewriteRule ^$ home.php
+
 RewriteRule ^login/$ login.php
 RewriteRule ^login$ login/
 
