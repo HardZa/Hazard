@@ -26,8 +26,15 @@
 	
 	if($validate->passed())
 	{
-		echo "ลงทะเบียนสำเร็จ";
-		User::create( Input::post('username') , Input::post('password') , Input::post('name') );
+		try
+		{
+			User::create( Input::post('username') , Input::post('password') , Input::post('name') );
+			echo "ลงทะเบียนสำเร็จ";
+		}
+		catch(Exception $regiserror)
+		{
+			echo $regiserror->getMessage();
+		}
 		//Redirect::to("register_result.php");
 	}else{
 		foreach($validate->errors() as $error_msg)
