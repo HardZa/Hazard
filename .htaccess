@@ -1,5 +1,18 @@
 RewriteEngine On
 
+## Note: If you are installing Hazard system via Apache's "Alias"
+##       configuration rather than plain subdirectory, then you need to
+##       uncomment the "RewriteBase" line and *change it to your URI alias path*
+##       or you'll get a nonsensical HTTP 400 Bad Request error.
+##       See: http://httpd.apache.org/docs/current/mod/mod_rewrite.html#rewritebase
+##
+##       For example, from Apache configuration:
+##         Alias /hazard "C:/prog/hazardproject"
+##       the RewriteBase line will be
+##         RewriteBase /hazard/
+##
+# RewriteBase /hazard/
+
 RewriteRule ^$ home.php
 
 RewriteRule ^login/$ login.php
