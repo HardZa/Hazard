@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/dist/css/bootstrap-theme.css");?>">
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/starter-template.css");?>">
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/signin.css");?>" >
+	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/style/vg_style.css");?>" >
 </head>
 <body>
 
