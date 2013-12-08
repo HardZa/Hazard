@@ -24,3 +24,8 @@ RewriteRule ^requests/([0-9]+)$ requests/$1/
 RewriteRule ^requests/([0-9]+)/edit/$ requests.php?requestid=$1&edit=1
 RewriteRule ^requests/([0-9]+)/edit$ requests/$1/edit/
 
+RewriteRule ^doc/([0-9]+)/([0-9]+)/([0-9]+)/$ doc.php?requestid=$1&doctype=$2&docid=$3
+RewriteRule ^doc/([0-9]+)/([0-9]+)/([0-9]+)$ doc/$1/$2/$3/
+
+RewriteRule ^doc/([0-9]+)/([0-9]+)/new/$ doc.php?requestid=$1&doctype=$2&new=1
+RewriteRule ^doc/([0-9]+)/([0-9]+)/new$ doc/$1/$2/new/

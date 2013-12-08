@@ -15,7 +15,7 @@ class Rule
 	
 	public static function requireValue( $value , $need )
 	{
-		return !$need || !empty( $value );
+		return !$need || $value !='';
 	}
 
 	public static function numericValue( $value , $need )

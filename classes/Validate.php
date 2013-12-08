@@ -10,7 +10,13 @@ class Validate
 		{
 			foreach($rules as $rule=> $rule_value)
 			{
-				$value = trim($source[$item]);
+				if(isset($source[$item]))
+				{
+					$value = trim($source[$item]);
+				}else{
+					$value = '';
+				}
+				
 				$error = Rule::check( $item , $rule , $value , $rule_value );
 				if( $error != null )
 				{

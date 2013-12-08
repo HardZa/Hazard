@@ -48,6 +48,16 @@ class Document
 		DB::get_db()->update("documents",array('docjson'=>$jsonData),'docid='.$this->_docId,1);
 	}
 
+	public function getFormURL()
+	{
+		$query = DB::get_db()->select("document_type",array("formpage"),"doctype=".$this->_docType,1);
+		if(count($query)==0)
+		{
+			return '';
+		}
+		return $query[0][0];
+	}
+
 	public static function create($docType)
 	{
 		DB::get_db()->insert("documents",array('docType','docjson'),array($docType,''));
