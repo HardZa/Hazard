@@ -12,7 +12,7 @@ class Config
 		'path' =>array(
 			'main'=>'Hazard/'
 		)
-	); 
+	);
 
 	public static function get($path=null)
 	{
@@ -33,7 +33,5 @@ class Config
 		
 		return $ans;
 	}
-}
-
-     
+}     
 ?>
