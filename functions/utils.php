@@ -10,5 +10,10 @@
 	return 'http://'.$_SERVER['HTTP_HOST'].'/'.Config::get('path/main').$uri;
  }
 
+ function getBit($a,$b)
+ {
+ 	return ( $a >> ($b) ) & 1;
+ }
+
  
  ?>

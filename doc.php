@@ -49,7 +49,6 @@ if($newValidate->passed())
 	$doc = new Document(Input::get('docid'),Input::get('doctype'));
 
 	//TODO : Check Input form GET or POST
-	var_dump($_POST);
 	if(Input::exists('post'))
 	{
 		$doc->setData($_POST);
