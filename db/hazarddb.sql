@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2013 at 03:11 PM
+-- Generation Time: Dec 09, 2013 at 12:14 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -33,7 +33,17 @@ CREATE TABLE IF NOT EXISTS `documents` (
   `doctype` int(11) NOT NULL,
   `docjson` text NOT NULL,
   PRIMARY KEY (`docid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `documents`
+--
+
+INSERT INTO `documents` (`docid`, `doctype`, `docjson`) VALUES
+(1, 0, '{"telno":"1234567"}'),
+(2, 0, '{"telno":"1001010111"}'),
+(3, 0, '{"telno":"123456789"}'),
+(4, 0, '{"telno":"12345dd"}');
 
 -- --------------------------------------------------------
 
@@ -54,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `document_type` (
 --
 
 INSERT INTO `document_type` (`doctype`, `docabbr`, `docname`, `formpage`) VALUES
-(0, 'ตย.นว.', 'ตัวอย่างหน้าเว็ป', 'example.html');
+(0, 'ตย.นว.', 'ตัวอย่างหน้าเว็ป', 'example.php');
 
 -- --------------------------------------------------------
 
@@ -86,6 +96,20 @@ CREATE TABLE IF NOT EXISTS `usergroup_cashier` (
 
 CREATE TABLE IF NOT EXISTS `usergroup_client` (
   `userid` int(11) NOT NULL,
+  `userbirthdate` date NOT NULL,
+  `usernationality` char(2) NOT NULL,
+  `usertaxid` char(20) NOT NULL,
+  `useraddrhouse` char(15) NOT NULL,
+  `useraddrvillage` char(15) NOT NULL,
+  `useraddrdrive` varchar(48) NOT NULL,
+  `useraddrroad` varchar(48) NOT NULL,
+  `useraddrsubdistrict` varchar(48) NOT NULL,
+  `useraddrdistrict` varchar(48) NOT NULL,
+  `useraddrprovince` varchar(48) NOT NULL,
+  `userpostalcode` char(15) NOT NULL,
+  `userphone` varchar(32) NOT NULL,
+  `userfax` varchar(32) NOT NULL,
+  `useremail` varchar(254) NOT NULL,
   PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -135,7 +159,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `userallowed` tinyint(1) NOT NULL,
   `userrealname` varchar(256) NOT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`userid`, `username`, `userpasssha1`, `userallowed`, `userrealname`) VALUES
+(1, 'nutsumiya', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'Nut Za');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
