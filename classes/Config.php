@@ -7,7 +7,8 @@ class Config
 			'host'=>'127.0.0.1',
 			'username'=>'root',
 			'password'=>'',
-			'db'=>'hazarddb'
+			'db'=>'hazarddb',
+			'encode' => 'UTF8'
 		),
 		'path' =>array(
 			'main'=>'Hazard/'
@@ -33,5 +34,5 @@ class Config
 		
 		return $ans;
 	}
-}     
+}    
 ?>

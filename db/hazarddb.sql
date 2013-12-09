@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2013 at 12:14 PM
+-- Generation Time: Dec 09, 2013 at 04:03 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -69,6 +69,30 @@ INSERT INTO `document_type` (`doctype`, `docabbr`, `docname`, `formpage`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `request`
+--
+
+CREATE TABLE IF NOT EXISTS `request` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `information` text NOT NULL,
+  `state` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `request`
+--
+
+INSERT INTO `request` (`id`, `type`, `userid`, `information`, `state`) VALUES
+(3, 1, 1, '', 1),
+(4, 1, 1, '', 0),
+(5, 1, 1, '', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `usergroup_agriproduction`
 --
 
@@ -112,6 +136,13 @@ CREATE TABLE IF NOT EXISTS `usergroup_client` (
   `useremail` varchar(254) NOT NULL,
   PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `usergroup_client`
+--
+
+INSERT INTO `usergroup_client` (`userid`, `userbirthdate`, `usernationality`, `usertaxid`, `useraddrhouse`, `useraddrvillage`, `useraddrdrive`, `useraddrroad`, `useraddrsubdistrict`, `useraddrdistrict`, `useraddrprovince`, `userpostalcode`, `userphone`, `userfax`, `useremail`) VALUES
+(1, '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 

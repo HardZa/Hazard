@@ -30,10 +30,13 @@ RewriteRule ^user/edit/$ user/edit
 RewriteRule ^requests/$ requests.php
 RewriteRule ^requests$ requests/
 
-RewriteRule ^requests/new/$ requests.php?new=1
+RewriteRule ^requests/new/$ new_request.php
 RewriteRule ^requests/new$ requests/new/
 
-RewriteRule ^requests/([0-9]+)/$ requests.php?requestid=$1
+RewriteRule ^requests/new/([0-9]+)/$ new_request.php?type=$1
+RewriteRule ^requests/new/([0-9]+)$ requests/new/$1/
+
+RewriteRule ^requests/([0-9]+)/$ show_request.php?id=$1
 RewriteRule ^requests/([0-9]+)$ requests/$1/
 
 RewriteRule ^requests/([0-9]+)/edit/$ requests.php?requestid=$1&edit=1
