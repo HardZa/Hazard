@@ -2,166 +2,205 @@
   
  require_once('core/init.php');
  include(resolveHeader('includes/header.php'));
- 
+ ?>
+ <script type="text/javascript">
+ 	function clearClientForm()
+ 	{
+ 		$("#userbirthdate").val('');
+ 		$("#usertaxid").val('');
+ 		$("#useraddrhouse").val('');
+ 		$("#useraddrvillage").val('');
+ 		$("#userdrive").val('');
+ 		$("#useraddrroad").val('');
+ 		$("#usersubdistrict").val('');
+ 		$("#userprovince").val('');
+ 		$("#userpostalcode").val('');
+ 		$("#userphone").val('');
+ 		$("#userfax").val('');
+ 		$("#usernationality").val('--');
+ 	}
+
+ 	$(document).ready(function(){
+
+ 		<?php
+ 			echo '$("#regis_type").val("'.Input::post('regis_type').'");';
+ 			echo '$("#usernationality").val("'.Input::post('usernationality').'");';
+ 		?>
+
+ 		if( $("#regis_type option:selected").val() =='client') 
+ 		{
+ 			$('#client_form').show();	
+ 		}else{
+ 			$('#client_form').hide();	
+ 		}
+
+ 		$("#regis_type").change(function()
+ 		{
+ 			if( $("#regis_type option:selected").val() =='client') 
+ 			{
+ 				clearClientForm();
+ 				$('#client_form').fadeIn();
+ 			}else{
+				$('#client_form').fadeOut();	
+ 			}
+ 		});
+
+ 		$("#btn").click(function(){
+ 			clearClientForm();
+ 		});
+
+ 		
+ 	});
+ </script>
+
+ <?php 
+ $errors=[];
+ $client_errors=[];
  if(Input::Exists())
 {
+
 	$validate = new Validate();
 	$validate->check($_POST,array(
+		"regis_type" => array(
+			"required"=>true
+		),
 		"username" => array(
 			"required"=>true,
-			"min"=>6,
-			"max"=>30
-		),
-		"password" => array(
-			"required"=>true,
-			"min"=>6,
-			"max"=>20
+			"max"=>60
 		),
 		"name" => array(
+			"required"=>true
+		)
+	));
+
+	$client_validate = new Validate();
+	$client_validate->check($_POST,array(
+		"userbirthdate" => array(
 			"required"=>true,
-			"min"=>1,
-			"max"=>30
+			"date"=>true
+		),
+		"usertaxid" => array(
+			"required"=>true,
+			"numeric"=>true
+		),
+		"useraddrhouse" => array(
+			"required"=>true
+		),
+		"useraddrroad" => array(
+			"required"=>true
+		),
+		"usersubdistrict" => array(
+			"required"=>true
+		),
+		"userprovince" => array(
+			"required"=>true
+		),
+		"userpostalcode" => array(
+			"required"=>true
+		),
+		"userphone" => array(
+			"required"=>true
 		)
 	));
 	
 	if($validate->passed())
 	{
-		try
+		if(Input::post('regis_type')=='client')
 		{
-			User::create( Input::post('username') , Input::post('password') , Input::post('name') );
-			echo "ลงทะเบียนสำเร็จ";
+			if($client_validate->passed())
+			{
+				echo "CLIENT PASS";
+				$password = User::get_rand_password();
+				User::create_client(Input::post('username'),$password,Input::post('name'),Input::post('userbirthdate')
+					,Input::post('usernationality'),Input::post('usertaxid'),Input::post('useraddrhouse')
+					,Input::post('useraddrvillage'),Input::post('userdrive'),Input::post('useraddrroad')
+					,Input::post('usersubdistrict'),Input::post('userprovince'),Input::post('userpostalcode')
+					,Input::post('userphone'),Input::post('userfax'));
+			}else{
+				echo "CLIENT FAIL";
+			}
+		}else{
+			echo "PASS";
+			$password = User::get_rand_password();
+			User::create_user(Input::post('regis_type'),Input::post('username'),$password,Input::post('name'));
+
 		}
-		catch(Exception $regiserror)
-		{
-			echo $regiserror->getMessage();
-		}
-		//Redirect::to("register_result.php");
 	}else{
-		foreach($validate->errors() as $error_msg)
-		{
-			echo $error_msg."<br>";
-		}
+		 echo "FAIL";
 	}
-	
+	echo ("<br>");
+	$errors = $validate->errors();
+	$client_errors = $client_validate->errors();
+	var_dump($client_errors);
 }
+
+function echoValue($field)
+{
+	echo ' value="'.Input::post($field).'" ';
+}
+
  
  ?>
  
+
+
  <form class="form-horizontal" method="post" action="" role="form" >
-	<div class="form-group">
-		<label for="username"  class="col-sm-offset-1 col-sm-2 control-label">Username</label>
-		<div class="col-sm-6">
-			<input class="form-control " type="text" name="username" autocomplete="off" id="username">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="password"  class="col-sm-offset-1 col-sm-2 control-label">Password</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="password" name="password" id="password">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="name"  class="col-sm-offset-1 col-sm-2 control-label">Name</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="text" name="name" id="name">
-		</div>
-	</div>
+	ประเภทผู้ใช้ 
+	<select name="regis_type" id="regis_type">
+		<option value="" >--เลือกประเภทผู้ใช้--</option>
+	    <option value="client"  >เอกชน</option>
+	    <option value="hazcontrol"  >เจ้าหน้าที่ควบคุมวัตถุอันตราย</option>
+	    <option value="plantprotection">เจ้าหน้าที่สำนักอารักขาพืช</option>
+	    <option value="agriproduction" >เจ้าหน้าที่สำนักปัจจัยการผลิต</option>
+	    <option value="cashier" >เจ้าหน้าที่การเงิน</option>
+	</select> 
+	<?php
+	if(getifset($errors,'regis_type'))
+	echo "กรุณาเลือก"; 
+?>
+<br><br><br>
 
-	<div class="form-group">
-		<label for="userid"  class="col-sm-offset-1 col-sm-2 control-label">User's id</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="text" name="userid" id="userid">
-		</div>
-	</div>
+<p align="left">
+ชื่อล็อกอิน:  <input type="text" name="username" <?php echoValue('username'); ?> > (เป็นตัวอักษรภาษาอังกฤษตัวเล็ก, เลข 0-9, หรือสัญลักษณ์ '-','_','.' ยาวไม่เกิน 60 ตัวอักษร)<br>
+ชื่อ-สกุล:   <input type="text" name="name" <?php echoValue('name'); ?> ><br>
+</p>
+<br><br><br><br>
+<!--<button id="but">CLICK</button>-->
 
-	<div class="form-group">
-		<label for="userbirthdate"  class="col-sm-offset-1 col-sm-2 control-label">User's BirthDate</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="text" name="userbirthdate" id="userbirthdate">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="usernationality"  class="col-sm-offset-1 col-sm-2 control-label">User's Nationality</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="text" name="usernationality" id="usernationality">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="usertaxid"  class="col-sm-offset-1 col-sm-2 control-label">User's Tax id</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="text" name="usertaxid" id="usertaxid">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="useraddrhouse"  class="col-sm-offset-1 col-sm-2 control-label">User's house address</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="text" name="useraddrhouse" id="useraddrhouse">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="useraddrvillage"  class="col-sm-offset-1 col-sm-2 control-label">User's village address</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="text" name="useraddrvillage" id="useraddrvillage">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="useraddrdrive"  class="col-sm-offset-1 col-sm-2 control-label">User's drive number</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="text" name="useraddrdrive" id="useraddrdrive">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="useraddrroad"  class="col-sm-offset-1 col-sm-2 control-label">User's Addr road</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="text" name="useraddrroad" id="useraddrroad">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="useraddrsubdistrict"  class="col-sm-offset-1 col-sm-2 control-label">User's Addr Subdistrict</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="text" name="useraddrsubdistrict" id="useraddrsubdistrict">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="useraddrdistrict"  class="col-sm-offset-1 col-sm-2 control-label">User's Addr District</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="text" name="useraddrdistrict" id="useraddrdistrict">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="useraddrprovince"  class="col-sm-offset-1 col-sm-2 control-label">User's Addr Province</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="text" name="useraddrprovince" id="useraddrprovince">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="useraddrpostalcode"  class="col-sm-offset-1 col-sm-2 control-label">User's Addr Postalcode</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="text" name="useraddrpostalcode" id="useraddrpostalcode">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="userphone"  class="col-sm-offset-1 col-sm-2 control-label">User Phone</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="text" name="userphone" id="userphone">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="userfax"  class="col-sm-offset-1 col-sm-2 control-label">User Fax</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="text" name="userfax" id="userfax">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="useremail"  class="col-sm-offset-1 col-sm-2 control-label">User Email</label>
-		<div class="col-sm-6">
-			<input class="form-control" type="text" name="useremail" id="useremail">
-		</div>
-	</div>
+<input type ="button" id="btn">
 
-	<input type="submit" value="Register" class="btn btn-success">
- </form>
+<div id ="client_form" align="left">
+
+|  วัน-เดือน-ปี เกิด:   <input type="text" name="userbirthdate" id="userbirthdate" <?php echoValue('userbirthdate'); ?>> [กรอกเป็น วัน-เลขเดือน-ปีพ.ศ.สี่หลัก] เช่น  31-01-2532 (ไม่ต้องระบุ กรณีที่เป็นนิติบุคคล)<br>
+|  สัญชาติ: 
+
+<select name="usernationality" id="usernationality">
+<?php 
+	include(resolveHeader("includes/forms/element/nationality.php"));
+?>
+</select>  (ไม่ต้องระบุ กรณีที่เป็นนิติบุคคล)<br>
+
+| !เลขประจำตัวผู้เสียภาษี  <input type="text" name="usertaxid" id="usertaxid" <?php echoValue('usertaxid'); ?>>[กรอก: ตัวเลขล้วน]<br>
+| <br>
+| ที่อยู่:<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;!บ้านเลขที่  <input type="text" name="useraddrhouse" id="useraddrhouse"  <?php echoValue('useraddrhouse'); ?>><br>
+|&nbsp;&nbsp;&nbsp;&nbsp;หมู่ที่      <input type="text" name="useraddrvillage" id="useraddrvillage" <?php echoValue('useraddrvillage'); ?>><br>
+|&nbsp;&nbsp;&nbsp;&nbsp;ตรอก/ซอย <input type="text" name="userdrive" id="userdrive" <?php echoValue('userdrive'); ?>><br>
+|&nbsp;&nbsp;&nbsp;&nbsp;!ถนน <input type="text" name="useraddrroad" id="useraddrroad" <?php echoValue('useraddrroad'); ?>><br>
+|&nbsp;&nbsp;&nbsp;&nbsp;!ตำบล/แขวง <input type="text" name="usersubdistrict" id="usersubdistrict" <?php echoValue('usersubdistrict'); ?>><br>
+|&nbsp;&nbsp;&nbsp;&nbsp;!จังหวัด <input type="text" name="userprovince" id="userprovince" <?php echoValue('userprovince'); ?>><br>
+|&nbsp;&nbsp;&nbsp;&nbsp;!รหัสไปรษณีย์ <input type="text" name="userpostalcode" id="userpostalcode"   <?php echoValue('userpostalcode'); ?>><br>
+|&nbsp;&nbsp;&nbsp;&nbsp;!หมายเลขโทรศัพท์ <input type="text" name="userphone" id="userphone"  <?php echoValue('userphone'); ?>><br>
+|&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขโทรสาร <input type="text" name="userfax" id="userfax" <?php echoValue('userfax'); ?>><br>
+
+</div>
+
+<input type="submit" value="เพิ่มผู้ใช้">
+</form>
  
+
+
+
  <?php
  include(resolveHeader('includes/footer.php'));
  ?>
