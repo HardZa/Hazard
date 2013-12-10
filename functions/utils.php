@@ -26,5 +26,12 @@
  	return resolveURIHeader($printerURI);
  }
 
+ function getifset($array,$data)
+ {
+ 	if(isset($array[$data]))
+ 		return $array[$data];
+ 	return '';
+ }
+
  
  ?>
