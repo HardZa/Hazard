@@ -7,6 +7,6 @@ if(Input::exists('get'))
 	User::auth(Input::get('user'),'123456');
 }
 
-Redirect::to(' ');
+Redirect::to('user');
 
 ?>

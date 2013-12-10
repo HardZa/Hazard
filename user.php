@@ -66,5 +66,39 @@
 		}
 	}		
 
+
+$user = User::get_user();
+if($user->is_group("registrar"))
+{
+    ?>
+    
+    <input type="button" value="AddUser" class="btn btn-success" onclick="parent.location='register.php'">
+
+    <?php
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 include(resolveHeader('includes/footer.php'));
  ?>

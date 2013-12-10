@@ -15,6 +15,7 @@
 	 <input class="btn btn-lg btn-success btn-block" type="button" value="Login as Client" onclick="parent.location='fakelogin.php?user=test_client'"> 
 	 <input class="btn btn-lg btn-primary btn-block" type="button" value="Login as Hazard Control Officer" onclick="parent.location='fakelogin.php?user=test_hazcontrol'"> 
 	 <input class="btn btn-lg btn-warning btn-block" type="button" value="Login as Plant Protection Officer" onclick="parent.location='fakelogin.php?user=test_plantprotection'"> 
+	  <input class="btn btn-lg btn-warning btn-block" type="button" value="Login as หน่วยผลิต" onclick="parent.location='fakelogin.php?user=test_agriproduction'"> 
 	 <input class="btn btn-lg btn-danger btn-block" type="button" value="Login as Cashier" onclick="parent.location='fakelogin.php?user=test_cashier'"> 
 	 <input class="btn btn-lg btn-info btn-block" type="button" value="Login as Registrar" onclick="parent.location='fakelogin.php?user=test_registrar'"> 
  <?php
