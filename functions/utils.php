@@ -20,7 +20,7 @@
  	$printerURI = Config::get('path/document_template').$doc_name.'.php?';
  	foreach($information as $field=>$data)
  	{
- 		$printerURI= $printerURI.$field.'='.$data.'&';
+ 		$printerURI= $printerURI.$field.'='.urlencode($data).'&';
  	}
  	$printerURI = substr($printerURI,0,-1);
  	return resolveURIHeader($printerURI);
