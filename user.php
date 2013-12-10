@@ -27,7 +27,7 @@
  }
 
  ?>
- <h1>User Page</h1>
+ <span align="center"><h1>User Page</h1></span>
 
 <?php if( $user == null ){ ?> 
 		You're not logged in.
@@ -74,16 +74,25 @@ if($user->is_group("registrar"))
     <table border = 0 align="center">
     	<tr>
    		<td>
+
     		<a href="register.php" style="width:256px">
+            <div>
         		<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="เพิ่มผู้ใช้ใหม่">
+            </div>
+            <div align="center">
         		<br>เพิ่มผู้ใช้ใหม่
+            </div>
     		</a>
     		
     	</td>
 		<td>
     		<a href="register.php" style="width:256px">
-        		<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="จัดการผู้ใช้ในระบบ">
-        		<br>จัดการผู้ใช้ในระบบ
+                <div>
+        		  <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="จัดการผู้ใช้ในระบบ">
+                </div>
+                <div align="center">
+        		  <br>จัดการผู้ใช้ในระบบ
+                </div>
     		</a>
     	</td>
     	</tr>    
@@ -104,40 +113,64 @@ else if($user->is_group("client"))
     <tr>
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขออนุญาตผลิตวัตถุอันตราย">	
-                	<br>ขออนุญาตผลิตวัตถุอันตราย
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขออนุญาตผลิตวัตถุอันตราย">	
+                    </div>
+                    <div align="center">
+                	   <br>ขออนุญาตผลิตวัตถุอันตราย
+                    </div>
                 </a>
     </td>        	
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขออนุญาตนำเข้าวัตถุอันตราย">
-                	<br>ขออนุญาตนำเข้าวัตถุอันตราย
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขออนุญาตนำเข้าวัตถุอันตราย">
+                    </div>
+                    <div align="center">
+                	   <br>ขออนุญาตนำเข้าวัตถุอันตราย
+                    </div>
                 </a>
     </td>
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขออนุญาตส่งออกวัตถุอันตราย">
-                	<br>ขออนุญาตส่งออกวัตถุอันตราย
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขออนุญาตส่งออกวัตถุอันตราย">
+                    </div>
+                    <div align="center">
+                	   <br>ขออนุญาตส่งออกวัตถุอันตราย
+                    </div>
                 </a>            
     </td>
 	</tr>
 	<tr>
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขออนุญาตครอบครองวัตถุอันตราย">	
-                	<br>ขออนุญาตครอบครองวัตถุอันตราย
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขออนุญาตครอบครองวัตถุอันตราย">	
+                    </div>
+                    <div align="center">
+                	   <br>ขออนุญาตครอบครองวัตถุอันตราย
+                    </div>
                 </a>
     </td>
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขอขึ้นทะเบียนวัตถุอันตราย">
-                	<br>ขอขึ้นทะเบียนวัตถุอันตราย
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขอขึ้นทะเบียนวัตถุอันตราย">
+                    </div>
+                    <div align="center">
+                	   <br>ขอขึ้นทะเบียนวัตถุอันตราย
+                    </div>
                 </a>
     </td>
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขอต่ออายุทะเบียนวัตถุอันตราย">
-                	<br>ขอต่ออายุทะเบียนวัตถุอันตราย
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขอต่ออายุทะเบียนวัตถุอันตราย">
+                    </div>
+                    <div align="center">
+                	   <br>ขอต่ออายุทะเบียนวัตถุอันตราย
+                    </div>
                 </a>            
     </td>
             <!--
@@ -172,20 +205,32 @@ else if($user->is_group("hazcontrol"))
     <tr>
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่เข้ามาใหม่">	
-                	<br>แสดงคำร้องที่เข้ามาใหม่
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่เข้ามาใหม่">	
+                    </div>
+                    <div align="center">
+                	   <br>แสดงคำร้องที่เข้ามาใหม่
+                    </div>
                 </a>
     </td>        	
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่ฝ่ายรับดำเนินการอยู่">
-                	<br>แสดงคำร้องที่ฝ่ายรับดำเนินการอยู่
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่ฝ่ายรับดำเนินการอยู่">
+                    </div>
+                    <div align="center">
+                	   <br>แสดงคำร้องที่ฝ่ายรับดำเนินการอยู่
+                    </div>
                 </a>
     </td>
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่ฉันรับดำเนินการอยู่">
-                	<br>แสดงคำร้องที่ฉันรับดำเนินการอยู่
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่ฉันรับดำเนินการอยู่">
+                    </div>
+                    <div align="center">
+                	   <br>แสดงคำร้องที่ฉันรับดำเนินการอยู่
+                    </div>
                 </a>            
     </td>
 	</tr>
@@ -207,20 +252,32 @@ else if($user->is_group("plantprotection"))
     <tr>
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่เข้ามาใหม่">	
-                	<br>แสดงคำร้องที่เข้ามาใหม่
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่เข้ามาใหม่">	
+                    </div>
+                    <div align="center">
+                	   <br>แสดงคำร้องที่เข้ามาใหม่
+                    </div>
                 </a>
     </td>        	
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่ฝ่ายรับดำเนินการอยู่">
-                	<br>แสดงคำร้องที่ฝ่ายรับดำเนินการอยู่
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่ฝ่ายรับดำเนินการอยู่">
+                    </div>
+                    <div align="center">
+                	   <br>แสดงคำร้องที่ฝ่ายรับดำเนินการอยู่
+                    </div>
                 </a>
     </td>
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่ฉันรับดำเนินการอยู่">
-                	<br>แสดงคำร้องที่ฉันรับดำเนินการอยู่
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่ฉันรับดำเนินการอยู่">
+                    </div>
+                    <div align="center">
+                	   <br>แสดงคำร้องที่ฉันรับดำเนินการอยู่
+                    </div>
                 </a>            
     </td>
 	</tr>
@@ -241,20 +298,32 @@ else if($user->is_group("agriproduction"))
     <tr>
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่เข้ามาใหม่">	
-                	<br>แสดงคำร้องที่เข้ามาใหม่
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่เข้ามาใหม่">	
+                    </div>
+                    <div align="center">
+                	   <br>แสดงคำร้องที่เข้ามาใหม่
+                    </div>
                 </a>
     </td>        	
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่ฝ่ายรับดำเนินการอยู่">
-                	<br>แสดงคำร้องที่ฝ่ายรับดำเนินการอยู่
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่ฝ่ายรับดำเนินการอยู่">
+                    </div>
+                    <div align="center">
+                	   <br>แสดงคำร้องที่ฝ่ายรับดำเนินการอยู่
+                    </div>
                 </a>
     </td>
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่ฉันรับดำเนินการอยู่">
-                	<br>แสดงคำร้องที่ฉันรับดำเนินการอยู่
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องที่ฉันรับดำเนินการอยู่">
+                    </div>
+                    <div align="center">
+                	   <br>แสดงคำร้องที่ฉันรับดำเนินการอยู่
+                    </div>
                 </a>            
     </td>
 	</tr>
@@ -275,20 +344,32 @@ else if($user->is_group("cashier"))
     <tr>
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องใหม่ที่รอการชำระเงิน">	
-                	<br>แสดงคำร้องใหม่ที่รอการชำระเงิน
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องใหม่ที่รอการชำระเงิน">	
+                    </div>
+                    <div align="center">
+                	   <br>แสดงคำร้องใหม่ที่รอการชำระเงิน
+                    </div>
                 </a>
     </td>        	
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องใหม่ที่รอการตรวจสอบหลักฐานชำระเงิน">
-                	<br>แสดงคำร้องใหม่ที่รอการตรวจสอบหลักฐานชำระเงิน
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องใหม่ที่รอการตรวจสอบหลักฐานชำระเงิน">
+                    </div>
+                    <div align="center">
+                	   <br>แสดงคำร้องใหม่ที่รอการตรวจสอบหลักฐานชำระเงิน
+                    </div>
                 </a>
     </td>
     <td>
                 <a href="register.php" style="width:256px">
-                	<img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องใหม่ที่เกินกำหนดชำระเงิน">
-                	<br>แสดงคำร้องใหม่ที่เกินกำหนดชำระเงิน
+                    <div>
+                	   <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="แสดงคำร้องใหม่ที่เกินกำหนดชำระเงิน">
+                    </div>
+                    <div align="center">
+                    	<br>แสดงคำร้องใหม่ที่เกินกำหนดชำระเงิน
+                    </div>
                 </a>            
     </td>
 	</tr>
