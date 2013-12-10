@@ -27,6 +27,12 @@ RewriteRule ^user$ user/
 RewriteRule ^user/edit$ user.php?edit=1
 RewriteRule ^user/edit/$ user/edit
 
+RewriteRule ^user/add/$ register.php
+RewriteRule ^user/add$ user/add/
+
+RewriteRule ^user/add/summary/$ register_summary.php
+RewriteRule ^user/add/summary$ user/add/summary/
+
 RewriteRule ^requests/$ requests.php
 RewriteRule ^requests$ requests/
 

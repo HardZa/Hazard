@@ -10,16 +10,7 @@ class User{
 	{
 		$this->user_db = $user_db;
 	}
-	
-	public function create($username,$password,$realname)
-	{
-		$passwordSha1 = sha1($password);
-		if(!DB::get_db()->insert('users',array('username','userpasssha1','userallowed','userrealname'),array($username,$passwordSha1,1,$realname)))
-		{
-			throw new Exception("There was a problem creating new user");
-		}
-	}
-	
+
 	public function get($key)
 	{
 		return $this->user_db[$key];
@@ -102,7 +93,58 @@ class User{
 		return true;
 	}
 
+	public static function create_user($type,$username,$password,$name)
+	{
+		$groupname = 'usergroup_'.$type;
+		$passwordSha1 = sha1($password);
+		if(!DB::get_db()->insert('users',array('username','userpasssha1','userallowed','userrealname'),array($username,$passwordSha1,1,$name)))
+		{
+			throw new Exception("There was a problem creating new user");
+		}
+		if(!DB::get_db()->insert( $groupname , array('userid') , array(DB::get_db()->getLastInsertID() ) ) )
+		{
+			throw new Exception("There was a problem add new user to group ".$groupname);
+		}
+	}
+
+	public static function create_client(
+		$username,$password,$name,$userbirthdate,$usernationality,$usertaxid
+		,$useraddrhouse,$useraddrvillage,$userdrive,$useraddrroad,$usersubdistrict
+		,$userprovince,$userpostalcode,$userphone,$userfax
+	)
+	{
+		$passwordSha1 = sha1($password);
+		if(!DB::get_db()->insert('users'
+			,array('username','userpasssha1','userallowed','userrealname')
+			,array($username,$passwordSha1,1,$name)))
+		{
+			throw new Exception("There was a problem creating new user");
+		}
+
+		$newbirthdate = substr($userbirthdate,6,4).'-'.substr($userbirthdate,3,2).'-'.substr($userbirthdate,0,2);
+
+		if(!DB::get_db()->insert('usergroup_client',
+			array('userid','userbirthdate','usernationality','usertaxid','useraddrhouse'
+				,'useraddrvillage','useraddrdrive','useraddrroad','useraddrsubdistrict'
+				,'useraddrprovince','userpostalcode','userphone','userfax'),
+			array(DB::get_db()->getLastInsertID(),$newbirthdate,$usernationality,$usertaxid,$useraddrhouse
+				,$useraddrvillage,$userdrive,$useraddrroad,$usersubdistrict,$userprovince
+				,$userpostalcode,$userphone,$userfax)))
+		{
+			throw new Exception("There was a problem add new user to group usergroup_client");
+		}
 	
+	}
+
+	public static function get_rand_password($length = 10) 
+	{
+	    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	    $randomString = '';
+	    for ($i = 0; $i < $length; $i++) {
+	        $randomString .= $characters[rand(0, strlen($characters) - 1)];
+	    }
+	    return $randomString;
+	}
 }
 
 ?>
