@@ -2,10 +2,45 @@
  
  require_once('core/init.php');
  include(resolveHeader('includes/header.php'));
- $information = array("name"=>"name",
+ $information = array(
+ 	"certificate_no"=>"certificate_no",
+ 	"department"=>"department",
+ 	"ministry"=>"ministry",
+ 	"day"=>"day",
+ 	"month"=>"month",
+ 	"year"=>"year",
+
+ 	"cerNum"=>"cerNum",
+ 	"name"=>"name",
  	"lastname"=>"lastname",
+ 	"nation"=>"nation",
+ 	"idenNum"=>"idenNum",
+
+ 	"houseNum"=>"houseNum",
+ 	"group"=>"group",
+ 	"soi"=>"soi",
+ 	"road"=>"road",
+ 	"district"=>"district",
+ 	"area"=>"area",
+ 	"city"=>"city",
+ 	"postcode"=>"postcode",
+ 	"phoneNum"=>"phoneNum",
+ 	"fax"=>"fax",
+
+ 	"namePlace"=>"namePlace",
+ 	"houseNumPlace"=>"houseNumPlace",
+ 	"groupPlace"=>"groupPlace",
+ 	"soiPlace"=>"soiPlace",
+ 	"roadPlace"=>"roadPlace",
+ 	"districtPlace"=>"districtPlace",
+ 	"areaPlace"=>"areaPlace",
+ 	"cityPlace"=>"cityPlace",
+ 	"postcodePlace"=>"postcodePlace",
+ 	"phoneNumPlace"=>"phoneNumPlace",
+ 	"faxPlace"=>"faxPlace",
+
  	"objectName"=>"objectName",
- 	"type"=>"A",
+ 	"type"=>"type",
  	"marketName"=>"matketName",
  	"volume"=>"volume",
  	"note"=>"note",
