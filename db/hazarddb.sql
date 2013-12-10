@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2013 at 04:03 PM
+-- Generation Time: Dec 10, 2013 at 05:16 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -101,6 +101,13 @@ CREATE TABLE IF NOT EXISTS `usergroup_agriproduction` (
   PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `usergroup_agriproduction`
+--
+
+INSERT INTO `usergroup_agriproduction` (`userid`) VALUES
+(2);
+
 -- --------------------------------------------------------
 
 --
@@ -111,6 +118,13 @@ CREATE TABLE IF NOT EXISTS `usergroup_cashier` (
   `userid` int(11) NOT NULL,
   PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `usergroup_cashier`
+--
+
+INSERT INTO `usergroup_cashier` (`userid`) VALUES
+(3);
 
 -- --------------------------------------------------------
 
@@ -142,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `usergroup_client` (
 --
 
 INSERT INTO `usergroup_client` (`userid`, `userbirthdate`, `usernationality`, `usertaxid`, `useraddrhouse`, `useraddrvillage`, `useraddrdrive`, `useraddrroad`, `useraddrsubdistrict`, `useraddrdistrict`, `useraddrprovince`, `userpostalcode`, `userphone`, `userfax`, `useremail`) VALUES
-(1, '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '');
+(4, '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -155,6 +169,13 @@ CREATE TABLE IF NOT EXISTS `usergroup_hazcontrol` (
   PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `usergroup_hazcontrol`
+--
+
+INSERT INTO `usergroup_hazcontrol` (`userid`) VALUES
+(5);
+
 -- --------------------------------------------------------
 
 --
@@ -166,6 +187,13 @@ CREATE TABLE IF NOT EXISTS `usergroup_plantprotection` (
   PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `usergroup_plantprotection`
+--
+
+INSERT INTO `usergroup_plantprotection` (`userid`) VALUES
+(6);
+
 -- --------------------------------------------------------
 
 --
@@ -176,6 +204,13 @@ CREATE TABLE IF NOT EXISTS `usergroup_registrar` (
   `userid` int(11) NOT NULL,
   PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `usergroup_registrar`
+--
+
+INSERT INTO `usergroup_registrar` (`userid`) VALUES
+(7);
 
 -- --------------------------------------------------------
 
@@ -190,14 +225,20 @@ CREATE TABLE IF NOT EXISTS `users` (
   `userallowed` tinyint(1) NOT NULL,
   `userrealname` varchar(256) NOT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`userid`, `username`, `userpasssha1`, `userallowed`, `userrealname`) VALUES
-(1, 'nutsumiya', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'Nut Za');
+(1, 'nutsumiya', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'Nut Za'),
+(2, 'test_agriproduction', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'agriproduction'),
+(3, 'test_cashier', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'cashier'),
+(4, 'test_client', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'client'),
+(5, 'test_hazcontrol', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'hazcontrol'),
+(6, 'test_plantprotection', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'plantprotection'),
+(7, 'test_registrar', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'registrar');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
