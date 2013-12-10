@@ -140,8 +140,9 @@ function echoValue($field)
  
 
 
- <form class="form-horizontal" method="post" action="" role="form" >
-	ประเภทผู้ใช้ 
+ <form class="form-inline" method="post" action="" role="form" >
+ 	<div align="left" class='frame1'>
+	ประเภทผู้ใช้  :&nbsp;&nbsp;
 	<select name="regis_type" id="regis_type">
 		<option value="" >--เลือกประเภทผู้ใช้--</option>
 	    <option value="client"  >เอกชน</option>
@@ -150,43 +151,73 @@ function echoValue($field)
 	    <option value="agriproduction" >เจ้าหน้าที่สำนักปัจจัยการผลิต</option>
 	    <option value="cashier" >เจ้าหน้าที่การเงิน</option>
 	</select> 
+	</div>
 	<?php
 	if(getifset($errors,'regis_type'))
 	echo "กรุณาเลือก"; 
 ?>
-<br><br><br>
 
-<p align="left">
-ชื่อล็อกอิน:  <input type="text" name="username" <?php echoValue('username'); ?> > (เป็นตัวอักษรภาษาอังกฤษตัวเล็ก, เลข 0-9, หรือสัญลักษณ์ '-','_','.' ยาวไม่เกิน 60 ตัวอักษร)<br>
-ชื่อ-สกุล:   <input type="text" name="name" <?php echoValue('name'); ?> ><br>
-</p>
-<br><br><br><br>
+
+<div align="left" class='frame2'>
+
+<span style="color:#FF0000">*</span>ชื่อล็อกอิน :&nbsp;&nbsp;
+<input type="text" name="username" id="username" class="form-control" style="width:100px;height:20px;" <?php echoValue('username'); ?> > 
+<span style="color:#848484">(เป็นตัวอักษรภาษาอังกฤษตัวเล็ก, เลข 0-9, หรือสัญลักษณ์ '-','_','.' ยาวไม่เกิน 60 ตัวอักษร)</span><br>
+
+<span style="color:#FF0000">*</span>ชื่อ-สกุล :&nbsp;&nbsp;
+<input type="text" name="name" id="name" class="form-control" style="width:300px;height:20px;"  <?php echoValue('name'); ?> ><br>
+
+</div>
+
 <!--<button id="but">CLICK</button>-->
 
 
-<div id ="client_form" align="left">
+<div id ="client_form" align="left" class='frame3'>
 
-|  วัน-เดือน-ปี เกิด:   <input type="text" name="userbirthdate" id="userbirthdate" <?php echoValue('userbirthdate'); ?>> [กรอกเป็น วัน-เลขเดือน-ปีพ.ศ.สี่หลัก] เช่น  31-01-2532 (ไม่ต้องระบุ กรณีที่เป็นนิติบุคคล)<br>
-|  สัญชาติ: 
+วัน-เดือน-ปี เกิด :&nbsp;&nbsp;
+<input type="text" name="userbirthdate" id="userbirthdate" class="form-control" style="width:300px;height:20px;" <?php echoValue('userbirthdate'); ?>> 
+<span style="color:#848484">[กรอกเป็น วัน-เลขเดือน-ปีพ.ศ.สี่หลัก] เช่น  31-01-2532 (ไม่ต้องระบุ กรณีที่เป็นนิติบุคคล)</span><br>
 
+สัญชาติ :&nbsp;&nbsp;
 <select name="usernationality" id="usernationality">
 <?php 
 	include(resolveHeader("includes/forms/element/nationality.php"));
 ?>
-</select>  (ไม่ต้องระบุ กรณีที่เป็นนิติบุคคล)<br>
+</select>  
+<span style="color:#848484">(ไม่ต้องระบุ กรณีที่เป็นนิติบุคคล)</span	><br>
 
-| !เลขประจำตัวผู้เสียภาษี  <input type="text" name="usertaxid" id="usertaxid" <?php echoValue('usertaxid'); ?>>[กรอก: ตัวเลขล้วน]<br>
-| <br>
-| ที่อยู่:<br>
-|&nbsp;&nbsp;&nbsp;&nbsp;!บ้านเลขที่  <input type="text" name="useraddrhouse" id="useraddrhouse"  <?php echoValue('useraddrhouse'); ?>><br>
-|&nbsp;&nbsp;&nbsp;&nbsp;หมู่ที่      <input type="text" name="useraddrvillage" id="useraddrvillage" <?php echoValue('useraddrvillage'); ?>><br>
-|&nbsp;&nbsp;&nbsp;&nbsp;ตรอก/ซอย <input type="text" name="userdrive" id="userdrive" <?php echoValue('userdrive'); ?>><br>
-|&nbsp;&nbsp;&nbsp;&nbsp;!ถนน <input type="text" name="useraddrroad" id="useraddrroad" <?php echoValue('useraddrroad'); ?>><br>
-|&nbsp;&nbsp;&nbsp;&nbsp;!ตำบล/แขวง <input type="text" name="usersubdistrict" id="usersubdistrict" <?php echoValue('usersubdistrict'); ?>><br>
-|&nbsp;&nbsp;&nbsp;&nbsp;!จังหวัด <input type="text" name="userprovince" id="userprovince" <?php echoValue('userprovince'); ?>><br>
-|&nbsp;&nbsp;&nbsp;&nbsp;!รหัสไปรษณีย์ <input type="text" name="userpostalcode" id="userpostalcode"   <?php echoValue('userpostalcode'); ?>><br>
-|&nbsp;&nbsp;&nbsp;&nbsp;!หมายเลขโทรศัพท์ <input type="text" name="userphone" id="userphone"  <?php echoValue('userphone'); ?>><br>
-|&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขโทรสาร <input type="text" name="userfax" id="userfax" <?php echoValue('userfax'); ?>><br>
+<span style="color:#FF0000">*</span>เลขประจำตัวผู้เสียภาษี :&nbsp;&nbsp; 
+<input type="text" name="usertaxid" id="usertaxid"  class="form-control" style="width:300px;height:20px;" <?php echoValue('usertaxid'); ?>>
+<span style="color:#848484">[กรอก: ตัวเลขล้วน]</span><br>
+
+<br>
+ที่อยู่:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#FF0000">*</span>บ้านเลขที่ :&nbsp;&nbsp;
+<input type="text" name="useraddrhouse" id="useraddrhouse" class="form-control" style="width:300px;height:20px;" <?php echoValue('useraddrhouse'); ?>><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;หมู่ที่ :&nbsp;&nbsp;    
+<input type="text" name="useraddrvillage" id="useraddrvillage" class="form-control" style="width:300px;height:20px;" <?php echoValue('useraddrvillage'); ?>><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;ตรอก/ซอย :&nbsp;&nbsp;
+<input type="text" name="userdrive" id="userdrive" class="form-control" style="width:300px;height:20px;" <?php echoValue('userdrive'); ?>><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#FF0000">*</span>ถนน :&nbsp;&nbsp;
+<input type="text" name="useraddrroad" id="useraddrroad" class="form-control" style="width:300px;height:20px;" <?php echoValue('useraddrroad'); ?>><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#FF0000">*</span>ตำบล/แขวง :&nbsp;&nbsp;
+<input type="text" name="usersubdistrict" id="usersubdistrict" class="form-control" style="width:300px;height:20px;" <?php echoValue('usersubdistrict'); ?>><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#FF0000">*</span>จังหวัด :&nbsp;&nbsp;
+<input type="text" name="userprovince" id="userprovince" class="form-control" style="width:300px;height:20px;" <?php echoValue('userprovince'); ?>><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#FF0000">*</span>รหัสไปรษณีย์ :&nbsp;&nbsp;
+<input type="text" name="userpostalcode" id="userpostalcode" class="form-control" style="width:300px;height:20px;" <?php echoValue('userpostalcode'); ?>><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#FF0000">*</span>หมายเลขโทรศัพท์ :&nbsp;&nbsp;
+<input type="text" name="userphone" id="userphone" class="form-control" style="width:300px;height:20px;" <?php echoValue('userphone'); ?>><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขโทรสาร :&nbsp;&nbsp;
+<input type="text" name="userfax" id="userfax"  class="form-control" style="width:300px;height:20px;" <?php echoValue('userfax'); ?>><br>
 
 </div>
 

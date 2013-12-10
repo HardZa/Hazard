@@ -29,15 +29,15 @@
 
  	"namePlace"=>"namePlace",
  	"houseNumPlace"=>"10/100",
- 	"groupPlace"=>"groupPlace",
- 	"soiPlace"=>"soiPlace",
- 	"roadPlace"=>"roadPlace",
- 	"districtPlace"=>"districtPlace",
- 	"areaPlace"=>"areaPlace",
- 	"cityPlace"=>"cityPlace",
- 	"postcodePlace"=>"postcodePlace",
- 	"phoneNumPlace"=>"phoneNumPlace",
- 	"faxPlace"=>"faxPlace",
+ 	"groupPlace"=>"group",
+ 	"soiPlace"=>"soi",
+ 	"roadPlace"=>"road",
+ 	"districtPlace"=>"district",
+ 	"areaPlace"=>"area",
+ 	"cityPlace"=>"city",
+ 	"postcodePlace"=>"postcode",
+ 	"phoneNumPlace"=>"phoneNum",
+ 	"faxPlace"=>"fax",
 
  	"objectName"=>"objectName",
  	"type"=>"type",
@@ -53,6 +53,17 @@
 
  	"numPermit"=>"numPermit",
  	"placeObject"=>"placeObject",
+
+ 	"houseNumKeep"=>"10/100",
+ 	"groupKeep"=>"group",
+ 	"soiKeep"=>"soi",
+ 	"roadKeep"=>"road",
+ 	"districtKeep"=>"district",
+ 	"areaKeep"=>"area",
+ 	"cityKeep"=>"city",
+ 	"postcodeKeep"=>"postcode",
+ 	"phoneNumKeep"=>"phoneNum",
+ 	"faxKeep"=>"fax",
 
  	"nameresp"=>"nameresp",
  	"signature2"=>"signature2"
