@@ -5,22 +5,40 @@ class RequestInfo
 	private static $config = array(
 		'1' => array(
 				'name' => 'regis' ,
+				'status' => array(
+						'0' => 'checking document' ,
+						'1' => 'approving document' ,
+						'3' => 'making bill',
+						'7' => 'pay' ,
+						'15' => 'accept_pay'
+					) ,
 				'graph' => array(1,1,1),
+				'when_complete' => 31 ,
 				'node' => array(
 					array(
-							'user' => 'client' ,
+							'user' => 'hazcontrol' ,
 							'require' => 0 ,
-							'file' => 'regis_start.php'
+							'file' => 'hazctl/doccument_check.php'
 						) ,
 					array(
 							'user' => 'hazcontrol' ,
 							'require' => 1 ,
-							'file' => 'regis_approval.php'
+							'file' => 'hazctl/regis_approval.php'
 						) ,
 					array(
 							'user' => 'cashier' ,
 							'require' => 3 ,
-							'file' => 'payment.php'
+							'file' => 'cashier/payment.php'
+						) ,
+					array(
+							'user' => 'client' ,
+							'require' => 7 ,
+							'file' => 'user/pay.php'
+						),
+					array(
+							'user' => 'cashier',
+							'require' => 15 ,
+							'file' => 'cashier/accept_pay.php'
 						)
 				)
 			)

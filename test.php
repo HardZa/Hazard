@@ -8,7 +8,6 @@
 <a class="btnPrint" href='<?php echo resolvePrinterURI("vk1", $information );?>'>print</a>
 
 <br>
-
  	<?php echo resolvePrinterURI("vk1", $information); ?>
 
 

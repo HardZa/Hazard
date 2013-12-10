@@ -82,8 +82,11 @@ if($user->is_group("registrar"))
 else if($user->is_group("client"))
 {
     ?>
-    
-    <input type="button" value="ขออนุญาตผลิตวัตถุอันตราย" class="btn btn-success" onclick="parent.location='register.php'">
+    <input type="button" value="ดูใบแจ้งหนี้" class="btn btn-success" onclick="parent.location='<?php echo resolveURIHeader('request/normal_list.php'); ?>'">
+    <br><br>   
+    <input type="button" value="ดูใบคำร้องที่กำลังดำเนิน" class="btn btn-success" onclick="parent.location='<?php echo resolveURIHeader('request/list_by_userid.php'); ?>'">
+    <br><br>   
+    <input type="button" value="ขออนุญาตผลิตวัตถุอันตราย" class="btn btn-success" onclick="parent.location='<?php echo resolveURIHeader('requests/new/'); ?>'">
     <br><br>
     <input type="button" value="ขออนุญาตนำเข้าวัตถุอันตราย" class="btn btn-success" onclick="parent.location='register.php'">
     <br><br>
@@ -102,12 +105,8 @@ else if($user->is_group("hazcontrol"))
 {
 	?>
 
-	<input type="button" value="แสดงคำร้องที่เข้ามาใหม่" class="btn btn-success" onclick="parent.location='register.php'">
+	<input type="button" value="ดูคำร้องทั้งหมด" class="btn btn-success" onclick="parent.location='<?php echo resolveURIHeader('request/normal_list.php'); ?>'">
 	<br><br>
-	<input type="button" value="แสดงคำร้องที่ฝ่ายรับดำเนินการอยู่" class="btn btn-success" onclick="parent.location='register.php'">
-	<br><br>
-	<input type="button" value="แสดงคำร้องที่ฉันรับดำเนินการอยู่" class="btn btn-success" onclick="parent.location='register.php'">
-
 	<?php
 
 }
@@ -115,11 +114,8 @@ else if($user->is_group("plantprotection"))
 {
 	?>
 
-	<input type="button" value="แสดงคำร้องที่เข้ามาใหม่" class="btn btn-success" onclick="parent.location='register.php'">
+	<input type="button" value="ดูคำร้องทั้งหมด" class="btn btn-success" onclick="parent.location='<?php echo resolveURIHeader('request/normal_list.php'); ?>'">
 	<br><br>
-	<input type="button" value="แสดงคำร้องที่ฝ่ายรับดำเนินการอยู่" class="btn btn-success" onclick="parent.location='register.php'">	
-	<br><br>
-	<input type="button" value="แสดงคำร้องที่ฉันรับดำเนินการอยู่" class="btn btn-success" onclick="parent.location='register.php'">
 
 	<?php
 
@@ -128,12 +124,8 @@ else if($user->is_group("agriproduction"))
 {
 	?>
 
-	<input type="button" value="แสดงคำร้องที่เข้ามาใหม่" class="btn btn-success" onclick="parent.location='register.php'">
+	<input type="button" value="ดูคำร้องทั้งหมด" class="btn btn-success" onclick="parent.location='<?php echo resolveURIHeader('request/normal_list.php'); ?>'">
 	<br><br>
-	<input type="button" value="แสดงคำร้องที่ฝ่ายรับดำเนินการอยู่" class="btn btn-success" onclick="parent.location='register.php'">	
-	<br><br>
-	<input type="button" value="แสดงคำร้องที่ฉันรับดำเนินการอยู่" class="btn btn-success" onclick="parent.location='register.php'">
-	
 	<?php
 
 }
@@ -141,9 +133,9 @@ else if($user->is_group("cashier"))
 {
 	?>
 
-	<input type="button" value="แสดงคำร้องใหม่ที่รอการชำระเงิน" class="btn btn-success" onclick="parent.location='register.php'">
+	<input type="button" value="แสดงคำร้องใหม่ที่รอการชำระเงิน" class="btn btn-success" onclick="parent.location='<?php echo resolveURIHeader('request/new_payment.php'); ?>'">
 	<br><br>
-	<input type="button" value="แสดงคำร้องใหม่ที่รอการตรวจสอบหลักฐานชำระเงิน" class="btn btn-success" onclick="parent.location='register.php'">	
+	<input type="button" value="แสดงคำร้องใหม่ที่รอการตรวจสอบหลักฐานชำระเงิน" class="btn btn-success" onclick="parent.location='<?php echo resolveURIHeader('request/pay_list.php'); ?>'">	
 	<br><br>
 	<input type="button" value="แสดงคำร้องใหม่ที่เกินกำหนดชำระเงิน" class="btn btn-success" onclick="parent.location='register.php'">
 

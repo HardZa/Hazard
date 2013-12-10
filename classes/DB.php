@@ -57,10 +57,15 @@ class DB
 	public function select( $table , $field = null , $conditions = '' , $limit = '' )
 	{
 		$fill_field = DB::bindArray2Field($field);
-		
 		$result = $this->query( "SELECT $fill_field FROM `$table` " . DB::getWhenNotStringEmpty($conditions,'where ')
 		. $conditions.' '.DB::getWhenNotStringEmpty($limit,'limit ').$limit );
 		$ret = array();
+		$err = mysql_error();
+		if( $err )
+		{
+			echo "SELECT $fill_field FROM `$table` " . DB::getWhenNotStringEmpty($conditions,'where ')
+		. $conditions.' '.DB::getWhenNotStringEmpty($limit,'limit ').$limit;
+		}
 		while( $row = mysql_fetch_array($result) )
 		{
 			$ret[] = $row;

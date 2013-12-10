@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 10, 2013 at 05:16 AM
--- Server version: 5.5.32
--- PHP Version: 5.4.19
+-- Host: localhost
+-- Generation Time: Dec 10, 2013 at 02:35 PM
+-- Server version: 5.5.16
+-- PHP Version: 5.3.8
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `hazarddb`
 --
-CREATE DATABASE IF NOT EXISTS `hazarddb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `hazarddb`;
 
 -- --------------------------------------------------------
 
@@ -78,17 +76,19 @@ CREATE TABLE IF NOT EXISTS `request` (
   `userid` int(11) NOT NULL,
   `information` text NOT NULL,
   `state` int(11) NOT NULL,
+  `status` char(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `request`
 --
 
-INSERT INTO `request` (`id`, `type`, `userid`, `information`, `state`) VALUES
-(3, 1, 1, '', 1),
-(4, 1, 1, '', 0),
-(5, 1, 1, '', 0);
+INSERT INTO `request` (`id`, `type`, `userid`, `information`, `state`, `status`) VALUES
+(3, 1, 4, '[]', 3, 'reject'),
+(5, 1, 1, '{"amount":"1234","code":"sss"}', 31, 'complete'),
+(6, 1, 4, '{"amount":"123123123","code":"cg2"}', 31, 'complete'),
+(7, 1, 4, '{"code":"#EDA","amount":"123"}', 15, 'reject');
 
 -- --------------------------------------------------------
 
