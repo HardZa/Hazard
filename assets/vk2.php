@@ -16,8 +16,26 @@ position: relative;
 text-align: center;
 width: 100%;
 }
-span.width {
-	width: 300px;
+span.box_1 {
+display:inline-block;
+background-color:#999;
+width:50px;
+}
+span.box_2 {
+display:inline-block;
+background-color:#999;
+width:130px;
+}
+span.box_3 {
+display:inline-block;
+background-color:#999;
+width:80px;
+}
+div.text {
+position: absolute;
+left: 40;
+right: 40;
+font-size: 100%;
 }
 </style>
 <body>
@@ -27,6 +45,9 @@ span.width {
 </div>
 <!--ชื่อ <?php echo Input::get("name"); ?> 
 นามสกุล <?php echo Input::get("lastname"); ?>-->
+
+<div class="text">
+
 <div align="center">ใบอนุญาตผลิตวัตถุอันตราย</div>
 
 <span >ใบอนุญาติเลขที่ <?php echo Input::get("certificate_no"); ?></span>
@@ -49,21 +70,22 @@ span.width {
 <!-- ---------------------------------------------------------------------- -->
 
 ใบสำคัญการขึ้นทะเบียนเลขที่ <?php echo Input::get("cerNum"); ?><br>
-<span class="width">อนุญาตให้ <?php echo Input::get("name"); ?></span> <?php echo Input::get("lastname"); ?><br>
+อนุญาตให้ <?php echo Input::get("name"); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo Input::get("lastname"); ?><br>
 เลชประจำตัวผู้เสียภาษีอากร <?php echo Input::get("idenNum"); ?><br>
+
 
 <!-- ---------------------------------------------------------------------- -->
 
-สถานที่ติดต่อของผู้ได้รับอนุญาตตั้งอยู่เลขที่ <?php echo Input::get("houseNum"); ?> หมู่ที่ <?php echo Input::get("group"); ?> ตรอก/ซอย <?php echo Input::get("soi"); ?><br>
-ถนน <?php echo Input::get("road"); ?> ตำบล/แขวง <?php echo Input::get("district"); ?> อำเภอ/เขต <?php echo Input::get("area"); ?><br>
-จังหวัด <?php echo Input::get("city"); ?> รหัสไปรษณีย์ <?php echo Input::get("postcode"); ?> โทรศัพท์ <?php echo Input::get("phoneNum"); ?> โทรสาร <?php echo Input::get("fax"); ?><br>
+สถานที่ติดต่อของผู้ได้รับอนุญาตตั้งอยู่เลขที่ <span class="box_1"><?php echo Input::get("houseNum"); ?></span> หมู่ที่ <span class="box_1"><?php echo Input::get("group"); ?></span> ตรอก/ซอย <span class="box_2"><?php echo Input::get("soi"); ?></span><br>
+ถนน <span class="box_2"><?php echo Input::get("road"); ?></span> ตำบล/แขวง <span class="box_2"><?php echo Input::get("district"); ?></span> อำเภอ/เขต <span class="box_2"><?php echo Input::get("area"); ?></span><br>
+จังหวัด <span class="box_3"><?php echo Input::get("city"); ?></span> รหัสไปรษณีย์ <span class="box_3"><?php echo Input::get("postcode"); ?></span> โทรศัพท์ <span class="box_3"><?php echo Input::get("phoneNum"); ?></span> โทรสาร <span class="box_3"><?php echo Input::get("fax"); ?></span><br>
 
 <!-- ---------------------------------------------------------------------- -->
 
 สถานที่ผลิตวัตถุอันตรายชื่อ <?php echo Input::get("namePlace"); ?><br>
-ตั้งอยู่เลขที่ <?php echo Input::get("houseNumPlace"); ?> หมู่ที่ <?php echo Input::get("groupPlace"); ?> ตรอก/ซอย <?php echo Input::get("soiPlace"); ?> ถนน <?php echo Input::get("roadPlace"); ?><br>
-ตำบล/แขวง <?php echo Input::get("districtPlace"); ?> อำเภอ/เขต <?php echo Input::get("areaPlace"); ?> จังหวัด <?php echo Input::get("cityPlace"); ?><br>
-รหัสไปรษณีย์ <?php echo Input::get("postcodePlace"); ?> โทรศัพท์ <?php echo Input::get("phoneNumPlace"); ?> โทรสาร <?php echo Input::get("faxPlace"); ?><br>
+ตั้งอยู่เลขที่ <span class="box_1"><?php echo Input::get("houseNumPlace"); ?></span> หมู่ที่ <span class="box_1"><?php echo Input::get("groupPlace"); ?></span> ตรอก/ซอย <span class="box_2"><?php echo Input::get("soiPlace"); ?></span> ถนน <span class="box_2"><?php echo Input::get("roadPlace"); ?></span><br>
+ตำบล/แขวง <span class="box_2"><?php echo Input::get("districtPlace"); ?></span> อำเภอ/เขต <span class="box_2"><?php echo Input::get("areaPlace"); ?></span> จังหวัด <span class="box_3"><?php echo Input::get("cityPlace"); ?></span><br>
+รหัสไปรษณีย์ <span class="box_3"><?php echo Input::get("postcodePlace"); ?></span> โทรศัพท์ <span class="box_3"><?php echo Input::get("phoneNumPlace"); ?></span> โทรสาร <span class="box_3"><?php echo Input::get("faxPlace"); ?></span><br>
 
 <!-- ---------------------------------------------------------------------- -->
 
@@ -97,7 +119,7 @@ span.width {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 (๒) วัตถุอันตรายในความรับผิดชอบของกรมโรงงานอุตสาหกรรมไม่ต้องระบุสูตร (Formulation)
 
-
+</div>
 </body>
 </html>
 
