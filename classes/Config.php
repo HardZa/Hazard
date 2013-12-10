@@ -11,7 +11,8 @@ class Config
 			'encode' => 'UTF8'
 		),
 		'path' =>array(
-			'main'=>'Hazard/'
+			'main'=>'Hazard/',
+			'document_template'=>'assets/'
 		)
 	);
 
