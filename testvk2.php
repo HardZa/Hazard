@@ -19,7 +19,7 @@
  	"numPermit"=>"numPermit",
  	"placeObject"=>"placeObject",
 
- 	"nameresp"=>"nameresp"
+ 	"nameresp"=>"nameresp",
  	"signature2"=>"signature2"
  	);
 ?>
