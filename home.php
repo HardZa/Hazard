@@ -10,13 +10,13 @@
 			</div>
 			<div class="welcome-msg">
 				<h1 style="font-size:20px; margin-bottom:30px;">ยินดีต้อนรับเข้าสู่ระบบจัดการวัตถุอันตราย</h1>
-				<p>- สำหรับผู้ใช้ใหม่กรุณาติดต่อข้อรับบริการจากเจ้าหน้าที่ทะเบียน</p>
-				<p>- สำหรับผู้ใช้เดิมกรุณาลงชื่อเข้าใช้ระบบ</p>
+				<p style="margin-left:30px;">- สำหรับผู้ใช้ใหม่กรุณาติดต่อข้อรับบริการจากเจ้าหน้าที่ทะเบียน</p>
+				<p style="margin-left:30px;">- สำหรับผู้ใช้เดิมกรุณาลงชื่อเข้าใช้ระบบ</p>
 			</div>
 		</div>
 		<div class="front-signin">
 			<div class="username">
-				<input class="form-control" placeholder="Username / ชื่อผู่ใช้" type="text" name="username" autocomplete="off" autofocus="" required="">
+				<input class="form-control" placeholder="Username / ชื่อผู้ใช้" type="text" name="username" autocomplete="off" autofocus="" required="">
 			</div>
 			<table>
 				<tbody>
