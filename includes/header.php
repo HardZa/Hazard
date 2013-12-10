@@ -30,7 +30,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo resolveURIHeader("");?>">Hazard</a>
+          <a class="navbar-brand" href="<?php echo resolveURIHeader("");?>">Hazard :: <?php if(User::is_session_exist()) echo User::get_user()->get("username"); ?></a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -40,7 +40,6 @@
 				if( !isset($user) || $user == null ) {
 			?>
 			<li><a href="<?php echo resolveURIHeader("login");?>">login</a></li>
-			<li><a href="<?php echo resolveURIHeader("register.php");?>">register</a></li>
 			<?php
 				}else{
 			?>
@@ -51,7 +50,7 @@
 				}
 			?>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div><!--/.nav-collapse --> 
     </div>
 </div>
 

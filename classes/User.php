@@ -1,7 +1,7 @@
 <?php
 
 class User{
-
+	private static $all_group_name = array('agriproduction','cashier','client','hazcontrol','plantprotection','registrar');
 	private static $user_fields = array('userid','username','userrealname','userallowed');
 	private $user_db;
 	public static $user_field_allow_edit = array('userrealname');
@@ -75,6 +75,11 @@ class User{
 		}
 		return new User( $user_db );
 	}
+
+	public static function is_session_exist()
+	{
+		return (User::get_user()!=null);
+	}
 	
 	public static function clear_user()
 	{
@@ -96,6 +101,7 @@ class User{
 		}
 		return true;
 	}
+
 	
 }
 
