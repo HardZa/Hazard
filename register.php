@@ -44,11 +44,6 @@
 				$('#client_form').fadeOut();	
  			}
  		});
-
- 		$("#btn").click(function(){
- 			clearClientForm();
- 		});
-
  		
  	});
  </script>
@@ -56,6 +51,7 @@
  <?php 
  $errors=[];
  $client_errors=[];
+
  if(Input::Exists())
 {
 
@@ -116,6 +112,7 @@
 					,Input::post('useraddrvillage'),Input::post('userdrive'),Input::post('useraddrroad')
 					,Input::post('usersubdistrict'),Input::post('userprovince'),Input::post('userpostalcode')
 					,Input::post('userphone'),Input::post('userfax'));
+				Redirect::postto('user/add/summary',array_merge($_POST,array('password'=>$password)));
 			}else{
 				echo "CLIENT FAIL";
 			}
@@ -123,7 +120,7 @@
 			echo "PASS";
 			$password = User::get_rand_password();
 			User::create_user(Input::post('regis_type'),Input::post('username'),$password,Input::post('name'));
-
+			Redirect::postto('user/add/summary',array_merge($_POST,array('password'=>$password)));
 		}
 	}else{
 		 echo "FAIL";
@@ -131,7 +128,6 @@
 	echo ("<br>");
 	$errors = $validate->errors();
 	$client_errors = $client_validate->errors();
-	var_dump($client_errors);
 }
 
 function echoValue($field)
@@ -167,7 +163,6 @@ function echoValue($field)
 <br><br><br><br>
 <!--<button id="but">CLICK</button>-->
 
-<input type ="button" id="btn">
 
 <div id ="client_form" align="left">
 

@@ -1,4 +1,4 @@
-<option value='--'>not stated</option>
+<option value='--'>ไม่ระบุ</option>
 <option value='AF'>Afghan</option>
 <option value='AL'>Albanian</option>
 <option value='DZ'>Algerian</option>
