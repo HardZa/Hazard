@@ -67,3 +67,27 @@
 	width: 180px;
 	margin: 0px 10px;
 }
+.user-container{
+	margin: 60px auto;
+}
+
+.block-option{
+	width: 213px;
+	height: 280px;
+	font: #eff0f2;
+	margin: 10px 30px 0px;
+	padding: 10px;
+	background-color: #eff0f2;
+	border: 1px;
+	border-radius: 5px;
+}
+.block-option:hover{
+	width: 213px;
+	height: 280px;
+	font: #FAFAFA;
+	margin: 10px 30px 0px;
+	padding: 10px;
+	background-color: #FAAC58;
+	border: 1px;
+	border-radius: 5px;
+}
