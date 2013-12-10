@@ -74,6 +74,7 @@ class DB
 		$fill_value = DB::bindArray2SQLFormat($value,"'");
 		
 		$sql = "INSERT INTO `".Config::get('mysql/db')."`.`$table` ($fill_field) VALUES ($fill_value);";
+		echo $sql;
 		return $this->query($sql);
 	}
 	

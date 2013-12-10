@@ -20,7 +20,7 @@ class Validate
 				$error = Rule::check( $item , $rule , $value , $rule_value );
 				if( $error != null )
 				{
-					$this->addError( $error );
+					$this->addError( $item,$error );
 				}
 			}
 		}
@@ -32,9 +32,9 @@ class Validate
 
 	}
 	
-	private function addError($error)
+	private function addError($item,$error)
 	{
-		$this->_errors[] = $error;
+		$this->_errors[$item][] = $error;
 	}
 	
 	public function errors()

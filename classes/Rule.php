@@ -23,6 +23,21 @@ class Rule
 		return !$need || is_numeric( $value );
 	}
 
+	public static function dateStringValue($value , $need )
+	{
+		if(!$need)
+			return true;
+		if(strlen($value)!=10)
+			return false;
+		if($value[2]!='-' || $value[5]!='-' )
+			return false;
+		$day = substr($value,0,2);
+		$month = substr($value,3,2);	
+		$year = substr($value,6,4);
+		if(!is_numeric($day) || !is_numeric($month) || !is_numeric($year))	
+			return false;
+		return checkdate($day,$month,$year-543);
+	}
 	
 	
 	public static function errorMessage( $item , $method , $value , $params )
@@ -37,6 +52,8 @@ class Rule
 				return "we need $item !!";
 			case 'numeric':
 				return "$item should be number!!";
+			case 'date':
+				return "$item should format DD-MM-YYYY";
 		}
 		return "";
 	}
@@ -61,6 +78,9 @@ class Rule
 				break;
 			case 'numeric':
 				$valid = Rule::numericValue( $value , $params[0]);
+				break;
+			case 'date':
+				$valid = Rule::dateStringValue($value , $params[0]);
 				break;
 		}
 		if( !$valid )

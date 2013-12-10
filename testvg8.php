@@ -3,8 +3,8 @@
  require_once('core/init.php');
  include(resolveHeader('includes/header.php'));
  $information = array("certificate_no"=>"1542","department"=>"กรมตำรวจแห่งชาติ","ministry"=>"กระทรวงคมนาคม",
- 	"day"=>"31","month"=>"พฤษจิกายน","year"=>"2555","name"=>"นาย ชานน จิตพรหม","nationality"=>"ไทย",
- 	"tax_no"=>"1886576468","house_no"=>"54/78","mhoo"=>"1","soi"=>"-","road"=>"-","district"=>"หนองอ้อ",
+ 	"day"=>"31","month"=>"พฤษจิกายน","year"=>"2555","name"=>"นาย ชานน จิตพรหม","nationality"=>"สหรัฐอเมริกา",
+ 	"tax_no"=>"1886576468","house_no"=>"54/56466","mhoo"=>"114565","soi"=>"-","road"=>"-","district"=>"หนองอ้อ",
  	"district1"=>"บ้านโป่ง","province"=>"ราชบุรี","zip_code"=>"70110","tel"=>"0895487125","fax"=>"5573145",
  	"hazard_store"=>"โรงงานนรก","hazard_store_no"=>"58/78","hazard_mhoo"=>"5","hazard_soi"=>"9","hazard_road"=>"งามวงศ์วาน",
  	"hazard_district"=>"เมือง","hazard_district1"=>"เมือง","hazard_province"=>"กรุงเทพ","hazard_zip_code"=>"11000",
