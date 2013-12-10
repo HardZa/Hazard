@@ -30,7 +30,7 @@
  <h1>User Page</h1>
 
 <?php if( $user == null ){ ?> 
-		You not login !
+		You're not logged in.
 <?php } else {
 		
 		
