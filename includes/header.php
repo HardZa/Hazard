@@ -19,20 +19,17 @@
   	});
   	</script>
 </head>
-<body>
 
+<body class="home-cotainer">
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="<?php echo resolveURIHeader("");?>">Hazard :: <?php if(User::is_session_exist()) echo User::get_user()->get("username"); ?></a>
+          <a class="navbar-brand" href="<?php echo resolveURIHeader("/");?>">
+          	<img src="<?php echo resolveURIHeader("image/cl-logo-32p.png");?>"></img>
+          	<?php if(User::is_session_exist()) echo User::get_user()->get("username"); ?>
+          </a>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse pull-right">
           <ul class="nav navbar-nav">
        <!--     <li class="active"><a href="login">login</a></li> -->
 			<?php
@@ -53,6 +50,3 @@
         </div><!--/.nav-collapse --> 
     </div>
 </div>
-
-<div class="container">
-	<div class="starter-template">

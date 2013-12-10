@@ -1,5 +1,13 @@
-.vg-container 
-{
+.navbar{ 
+    height: 50px;  
+}
+.navbar-brand {
+	padding: 10px;
+}
+.navbar-header{
+	padding-left: 160px;
+}
+.vg-container {
 	padding: 30px 40px;
 	width: 1000px;
 	height: 1700px;
@@ -7,20 +15,55 @@
 	background-color: #C0C0C0;
 	border-radius: 5px;
 }
-.box
-{
+.box{
 	border: 1px solid #cccccc;
 	border-radius: 3px;
 }
-.frame1
-{
-	padding: 20px 20px;
-	background-color: #FFFFFF;
-	border-radius: 10px;
-	margin: 20px auto;
+.home-container{
+	background: -webkit-radial-gradient(circle,#EBC697,#DB8E19);
+	height: 600px;
 }
-.frame2
-{
-	width: 100px;
-	height: 20px;
+.front-card{
+	position: absolute;
+	width: 838px;
+	margin: -154px 0 0 -418px;
+	left: 50%;
+	top: 50%;
+}
+.front-welcome{
+	background: white;
+	padding: 20px 20px;
+	height: 329px;
+	width: 525px;
+}
+.front-welcome, .front-signin, .front-signup {
+	border: 1px solid #BE770B;
+	border-radius: 4px;
+}
+.hazard-img{
+	width: 422px;
+	height: 154px;
+	position: absolute;
+	top: 160px;
+	left: 53px;
+}
+.welcome-msg{
+	display: block;
+	width: 390px;
+}
+.front-signin{
+	background: white;
+	height: 108px;
+	left: 536px;
+	position: absolute;
+	top: 0;
+	width: 300px;
+}
+.username {
+	width: 280px;
+	margin: 10px;
+}
+.password{
+	width: 180px;
+	margin: 0px 10px;
 }

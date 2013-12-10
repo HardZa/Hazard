@@ -16,7 +16,7 @@
  	"nation"=>"nation",
  	"idenNum"=>"idenNum",
 
- 	"houseNum"=>"houseNum",
+ 	"houseNum"=>"100/10",
  	"group"=>"group",
  	"soi"=>"soi",
  	"road"=>"road",
@@ -28,7 +28,7 @@
  	"fax"=>"fax",
 
  	"namePlace"=>"namePlace",
- 	"houseNumPlace"=>"houseNumPlace",
+ 	"houseNumPlace"=>"10/100",
  	"groupPlace"=>"groupPlace",
  	"soiPlace"=>"soiPlace",
  	"roadPlace"=>"roadPlace",
