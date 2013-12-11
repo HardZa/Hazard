@@ -77,8 +77,8 @@
             <tr>
                <td>
                     <div class="block-option">
-                        <a href="register.php" style="width:213px; height:280px; text-decoration: none;">
-                            <div style="margin-left:26px;margin-top: 20px;">
+                        <a href="register.php" class="block-link" style="text-decoration:none;">
+                            <div class="block-option-image">
                                 <img src="<?php echo resolveURIHeader("image/add_user.png");?>" class="img-circle">
                             </div>
                             <div align="center">
@@ -90,8 +90,8 @@
                 </td>
                 <td>
                     <div class="block-option">
-                        <a href="register.php" style="width:213px; height:280px; text-decoration: none;">
-                            <div style="margin-left:26px;margin-top: 20px;">
+                        <a href="register.php" class="block-link" style="text-decoration:none;">
+                            <div class="block-option-image">
                               <img src="<?php echo resolveURIHeader("image/edit_user.png");?>" class="img-circle">
                             </div>
                             <div align="center">
@@ -113,66 +113,84 @@
         <table border = 0 align="center">
         <tr>
         <td>
-                    <a href="register.php" style="width:256px">
-                        <div>
-                           <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขออนุญาตผลิตวัตถุอันตราย">  
-                        </div>
-                        <div align="center">
-                           <br>ขออนุญาตผลิตวัตถุอันตราย
-                        </div>
-                    </a>
+            <div class="block-option">
+                <a href="register.php" class="block-link" style="text-decoration:none;">
+                    <div class="block-option-image">
+                       <img src="<?php echo resolveURIHeader("image/edit_user.png");  ?>" class="img-circle">  
+                    </div>
+                    <div align="center">
+                       <br>
+                       <h4>ขออนุญาตผลิตวัตถุอันตราย</h4>
+                    </div>
+                </a>
+            </div>
         </td>           
         <td>
-                    <a href="register.php" style="width:256px">
-                        <div>
-                           <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขออนุญาตนำเข้าวัตถุอันตราย">
-                        </div>
-                        <div align="center">
-                           <br>ขออนุญาตนำเข้าวัตถุอันตราย
-                        </div>
-                    </a>
+            <div class="block-option">
+                <a href="register.php" class="block-link" style="text-decoration:none;">
+                    <div class ="block-option-image">
+                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+                    </div>
+                    <div align="center">
+                       <br>
+                       <h4>ขออนุญาตนำเข้าวัตถุอันตราย</h4>
+                    </div>
+                </a>
+            </div>
         </td>
         <td>
-                    <a href="register.php" style="width:256px">
-                        <div>
-                           <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขออนุญาตส่งออกวัตถุอันตราย">
-                        </div>
-                        <div align="center">
-                           <br>ขออนุญาตส่งออกวัตถุอันตราย
-                        </div>
-                    </a>            
+            <div class="block-option">
+                <a href="register.php" class="block-link" style="text-decoration:none;">
+                    <div class ="block-option-image">
+                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+                    </div>
+                    <div align="center">
+                       <br>
+                       <h4>ขออนุญาตส่งออกวัตถุอันตราย</h4>
+                    </div>
+                </a>
+            </div>
         </td>
         </tr>
         <tr>
         <td>
-                    <a href="register.php" style="width:256px">
-                        <div>
-                           <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขออนุญาตครอบครองวัตถุอันตราย">  
-                        </div>
-                        <div align="center">
-                           <br>ขออนุญาตครอบครองวัตถุอันตราย
-                        </div>
-                    </a>
+            <div class="block-option">
+                <a href="register.php" class="block-link" style="text-decoration:none;">
+                    <div class ="block-option-image">
+                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+                    </div>
+                    <div align="center">
+                       <br>
+                       <h4>ขออนุญาตครอบครองวัตถุอันตราย</h4>
+                    </div>
+                </a>
+            </div>
         </td>
         <td>
-                    <a href="register.php" style="width:256px">
-                        <div>
-                           <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขอขึ้นทะเบียนวัตถุอันตราย">
-                        </div>
-                        <div align="center">
-                           <br>ขอขึ้นทะเบียนวัตถุอันตราย
-                        </div>
-                    </a>
+            <div class="block-option">
+                <a href="register.php" class="block-link" style="text-decoration:none;">
+                    <div class ="block-option-image">
+                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+                    </div>
+                    <div align="center">
+                       <br>
+                       <h4>ขอขึ้นทะเบียนวัตถุอันตราย</h4>
+                    </div>
+                </a>
+            </div>
         </td>
         <td>
-                    <a href="register.php" style="width:256px">
-                        <div>
-                           <img src="<?php echo resolveURIHeader("image/cl-logo.256p.png");  ?>" value="ขอต่ออายุทะเบียนวัตถุอันตราย">
-                        </div>
-                        <div align="center">
-                           <br>ขอต่ออายุทะเบียนวัตถุอันตราย
-                        </div>
-                    </a>            
+            <div class="block-option">
+                <a href="register.php" class="block-link" style="text-decoration:none;">
+                    <div class ="block-option-image">
+                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+                    </div>
+                    <div align="center">
+                       <br>
+                       <h4>ขอต่ออายุทะเบียนวัตถุอันตราย</h4>
+                    </div>
+                </a>
+            </div>
         </td>
                 <!--
                 <div style="display: inline">
