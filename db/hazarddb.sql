@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2013 at 02:35 PM
+-- Generation Time: Dec 11, 2013 at 08:03 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -102,7 +102,8 @@ CREATE TABLE IF NOT EXISTS `usergroup_cashier` (
 --
 
 INSERT INTO `usergroup_cashier` (`userid`) VALUES
-(3);
+(3),
+(9);
 
 -- --------------------------------------------------------
 
@@ -113,7 +114,7 @@ INSERT INTO `usergroup_cashier` (`userid`) VALUES
 CREATE TABLE IF NOT EXISTS `usergroup_client` (
   `userid` int(11) NOT NULL,
   `userbirthdate` date NOT NULL,
-  `usernationality` char(2) NOT NULL,
+  `usernationality` char(20) NOT NULL,
   `usertaxid` char(20) NOT NULL,
   `useraddrhouse` char(15) NOT NULL,
   `useraddrvillage` char(15) NOT NULL,
@@ -153,7 +154,8 @@ CREATE TABLE IF NOT EXISTS `usergroup_hazcontrol` (
 
 INSERT INTO `usergroup_hazcontrol` (`userid`) VALUES
 (5),
-(8);
+(8),
+(11);
 
 -- --------------------------------------------------------
 
@@ -171,7 +173,8 @@ CREATE TABLE IF NOT EXISTS `usergroup_plantprotection` (
 --
 
 INSERT INTO `usergroup_plantprotection` (`userid`) VALUES
-(6);
+(6),
+(10);
 
 -- --------------------------------------------------------
 
@@ -204,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `userallowed` tinyint(1) NOT NULL,
   `userrealname` varchar(256) NOT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `users`
@@ -218,7 +221,10 @@ INSERT INTO `users` (`userid`, `username`, `userpasssha1`, `userallowed`, `userr
 (5, 'test_hazcontrol', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'hazcontrol'),
 (6, 'test_plantprotection', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'plantprotection'),
 (7, 'test_registrar', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'registrar'),
-(8, 'dxfdfh', 'b8281f2ed7f49dd67053afdefdd0cd9b866f7aac', 1, 'hdhd');
+(8, 'dxfdfh', 'b8281f2ed7f49dd67053afdefdd0cd9b866f7aac', 1, 'hdhd'),
+(9, 'nutjung', 'fcd6569ab61735c8f46687b3e7333dccb948d759', 1, '122'),
+(10, 'sasasasa', '214e789b0a1c986e93b5ec4fefd93baea56eb5ef', 1, '122'),
+(11, 'argong', '5a4cd2f7a935f79a08d63ccf3c59332e049e1ace', 1, 'asdfg');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

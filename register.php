@@ -5,7 +5,7 @@
 
 if(!Permission::userAddAllowed())
 {
-	Redirect::to(403);
+	//Redirect::to(403);
 }
 
  ?>
@@ -23,14 +23,13 @@ if(!Permission::userAddAllowed())
  		$("#userpostalcode").val('');
  		$("#userphone").val('');
  		$("#userfax").val('');
- 		$("#usernationality").val('--');
+ 		$("#usernationality").val('');
  	}
 
  	$(document).ready(function(){
 
  		<?php
  			echo '$("#regis_type").val("'.Input::post('regis_type').'");';
- 			echo '$("#usernationality").val("'.Input::post('usernationality').'");';
  		?>
 
  		if( $("#regis_type option:selected").val() =='client') 
@@ -53,7 +52,6 @@ if(!Permission::userAddAllowed())
  		
  	});
  </script>
-<br><br><br>
 
  <?php 
  $errors=[];
@@ -144,93 +142,132 @@ function echoValue($field)
 	echo ' value="'.Input::post($field).'" ';
 }
 
- 
  ?>
  
 
+<div class="page-header">
+    <h1>ลงทะเบียนผู้ใช้</h1>
+</div>
 
- <form class="form-inline" method="post" action="" role="form" >
- 	<div align="left" class='frame1'>
-	ประเภทผู้ใช้  :&nbsp;&nbsp;
-	<select name="regis_type" id="regis_type">
-		<option value="" >--เลือกประเภทผู้ใช้--</option>
-	    <option value="client"  >เอกชน</option>
-	    <option value="hazcontrol"  >เจ้าหน้าที่ควบคุมวัตถุอันตราย</option>
-	    <option value="plantprotection">เจ้าหน้าที่สำนักอารักขาพืช</option>
-	    <option value="agriproduction" >เจ้าหน้าที่สำนักปัจจัยการผลิต</option>
-	    <option value="cashier" >เจ้าหน้าที่การเงิน</option>
-	</select> 
-	</div>
-	<?php
-	if(getifset($errors,'regis_type'))
-	echo "กรุณาเลือก"; 
-?>
+ <form class="form-horizontal" method="post" action="" role="form" >
+ 	<div class="form-group">
+    	<label class="col-sm-3 control-label">ประเภทผู้ใช้</label>
+	    <div class="col-sm-4">
+			<select class="form-control" name="regis_type" id="regis_type">
+				<option value="" >--เลือกประเภทผู้ใช้--</option>
+			    <option value="client"  >เอกชน</option>
+			    <option value="hazcontrol"  >เจ้าหน้าที่ควบคุมวัตถุอันตราย</option>
+			    <option value="plantprotection">เจ้าหน้าที่สำนักอารักขาพืช</option>
+			    <option value="agriproduction" >เจ้าหน้าที่สำนักปัจจัยการผลิต</option>
+			    <option value="cashier" >เจ้าหน้าที่การเงิน</option>
+			</select> 
+	    </div>
+  	</div>
 
+  	<div class="form-group" >
+    	<label for="username" class="col-sm-3 control-label">ชื่อล็อกอิน</label>
+	    <div class="col-sm-6">
+	      	<input type="text" class="form-control" id="username" name="username" placeholder="ชื่อล็อกอิน" >
+	    </div>
+ 	</div>
 
-<div align="left" class='frame2'>
+ 	<div class="form-group" >
+    	<label for="name" class="col-sm-3 control-label">ชื่อ-สกุล</label>
+	    <div class="col-sm-6">
+	      	<input type="text" class="form-control" id="name" name="name" placeholder="ชื่อ-สกุล" <?php echoValue('name'); ?> >
+	    </div>
+ 	</div>
 
-<span style="color:#FF0000">*</span>ชื่อล็อกอิน :&nbsp;&nbsp;
-<input type="text" name="username" id="username" class="form-control" style="width:100px;height:20px;" <?php echoValue('username'); ?> > 
-<span style="color:#848484">(เป็นตัวอักษรภาษาอังกฤษตัวเล็ก, เลข 0-9, หรือสัญลักษณ์ '-','_','.' ยาวไม่เกิน 60 ตัวอักษร)</span><br>
+<div id ="client_form">
 
-<span style="color:#FF0000">*</span>ชื่อ-สกุล :&nbsp;&nbsp;
-<input type="text" name="name" id="name" class="form-control" style="width:300px;height:20px;"  <?php echoValue('name'); ?> ><br>
+	<div class="form-group" >
+    	<label for="userbirthdate" class="col-sm-3 control-label">วัน-เดือน-ปี เกิด</label>
+	    <div class="col-sm-6">
+	      	<input type="text" class="form-control" id="userbirthdate" name="userbirthdate" placeholder="DD-MM-YYYY" <?php echoValue('userbirthdate'); ?> >
+	    </div>
+ 	</div>
+
+ 	<div class="form-group" >
+    	<label for="usernationality" class="col-sm-3 control-label">สัญชาติ</label>
+	    <div class="col-sm-6">
+	      	<input type="text" class="form-control" id="usernationality" name="usernationality" placeholder="สัญชาติ" <?php echoValue('usernationality'); ?> >
+	    </div>
+ 	</div>
+
+ 	<div class="form-group" >
+    	<label for="usertaxid" class="col-sm-3 control-label">เลขประจำตัวผู้เสียภาษี</label>
+	    <div class="col-sm-6">
+	      	<input type="text" class="form-control" id="usertaxid" name="usertaxid" placeholder="เลขประจำตัวผู้เสียภาษี" <?php echoValue('usertaxid'); ?> >
+	    </div>
+ 	</div>
+
+ 	<div class="form-group" >
+    	<label for="useraddrhouse" class="col-sm-3 control-label">ที่อยู่</label>
+	    <div class="col-sm-6">
+	      	<input type="text" class="form-control" id="useraddrhouse" name="useraddrhouse" placeholder="ที่อยู่" <?php echoValue('useraddrhouse'); ?> >
+	    </div>
+ 	</div>
+
+ 	<div class="form-group" >
+    	<label for="useraddrvillage" class="col-sm-3 control-label">หมู่ที่</label>
+	    <div class="col-sm-6">
+	      	<input type="text" class="form-control" id="useraddrvillage" name="useraddrvillage" placeholder="หมู่ที่" <?php echoValue('useraddrvillage'); ?> >
+	    </div>
+ 	</div>
+
+ 	<div class="form-group" >
+    	<label for="userdrive" class="col-sm-3 control-label">ตรอก/ซอย</label>
+	    <div class="col-sm-6">
+	      	<input type="text" class="form-control" id="userdrive" name="userdrive" placeholder="ตรอก/ซอย" <?php echoValue('userdrive'); ?> >
+	    </div>
+ 	</div>
+
+ 	<div class="form-group" >
+    	<label for="useraddrroad" class="col-sm-3 control-label">ถนน</label>
+	    <div class="col-sm-6">
+	      	<input type="text" class="form-control" id="useraddrroad" name="useraddrroad" placeholder="ถนน" <?php echoValue('useraddrroad'); ?> >
+	    </div>
+ 	</div>
+
+ 	<div class="form-group" >
+    	<label for="usersubdistrict" class="col-sm-3 control-label">ตำบล/แขวง</label>
+	    <div class="col-sm-6">
+	      	<input type="text" class="form-control" id="usersubdistrict" name="usersubdistrict" placeholder="ตำบล/แขวง" <?php echoValue('usersubdistrict'); ?> >
+	    </div>
+ 	</div>
+
+ 	<div class="form-group" >
+    	<label for="userprovince" class="col-sm-3 control-label">จังหวัด</label>
+	    <div class="col-sm-6">
+	      	<input type="text" class="form-control" id="userprovince" name="userprovince" placeholder="จังหวัด" <?php echoValue('userprovince'); ?> >
+	    </div>
+ 	</div>
+
+ 	<div class="form-group" >
+    	<label for="userpostalcode" class="col-sm-3 control-label">รหัสไปรษณีย์</label>
+	    <div class="col-sm-6">
+	      	<input type="text" class="form-control" id="userpostalcode" name="userpostalcode" placeholder="รหัสไปรษณีย์" <?php echoValue('userpostalcode'); ?> >
+	    </div>
+ 	</div>
+
+ 	<div class="form-group" >
+    	<label for="userphone" class="col-sm-3 control-label">หมายเลขโทรศัพท์</label>
+	    <div class="col-sm-6">
+	      	<input type="text" class="form-control" id="userphone" name="userphone" placeholder="หมายเลขโทรศัพท์" <?php echoValue('userphone'); ?> >
+	    </div>
+ 	</div>
+
+ 	<div class="form-group" >
+    	<label for="userfax" class="col-sm-3 control-label">หมายเลขโทรสาร</label>
+	    <div class="col-sm-6">
+	      	<input type="text" class="form-control" id="userfax" name="userfax" placeholder="หมายเลขโทรสาร" <?php echoValue('userfax'); ?> >
+	    </div>
+ 	</div>
 
 </div>
 
-<!--<button id="but">CLICK</button>-->
+	<button type="submit" class="btn btn-primary col-sm-offset-3">ลงทะเบียน</button>
 
-
-<div id ="client_form" align="left" class='frame3'>
-
-วัน-เดือน-ปี เกิด :&nbsp;&nbsp;
-<input type="text" name="userbirthdate" id="userbirthdate" class="form-control" style="width:300px;height:20px;" <?php echoValue('userbirthdate'); ?>> 
-<span style="color:#848484">[กรอกเป็น วัน-เลขเดือน-ปีพ.ศ.สี่หลัก] เช่น  31-01-2532 (ไม่ต้องระบุ กรณีที่เป็นนิติบุคคล)</span><br>
-
-สัญชาติ :&nbsp;&nbsp;
-<select name="usernationality" id="usernationality">
-<?php 
-	include(resolveHeader("includes/forms/element/nationality.php"));
-?>
-</select>  
-<span style="color:#848484">(ไม่ต้องระบุ กรณีที่เป็นนิติบุคคล)</span	><br>
-
-<span style="color:#FF0000">*</span>เลขประจำตัวผู้เสียภาษี :&nbsp;&nbsp; 
-<input type="text" name="usertaxid" id="usertaxid"  class="form-control" style="width:300px;height:20px;" <?php echoValue('usertaxid'); ?>>
-<span style="color:#848484">[กรอก: ตัวเลขล้วน]</span><br>
-
-<br>
-ที่อยู่:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#FF0000">*</span>บ้านเลขที่ :&nbsp;&nbsp;
-<input type="text" name="useraddrhouse" id="useraddrhouse" class="form-control" style="width:300px;height:20px;" <?php echoValue('useraddrhouse'); ?>><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;หมู่ที่ :&nbsp;&nbsp;    
-<input type="text" name="useraddrvillage" id="useraddrvillage" class="form-control" style="width:300px;height:20px;" <?php echoValue('useraddrvillage'); ?>><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;ตรอก/ซอย :&nbsp;&nbsp;
-<input type="text" name="userdrive" id="userdrive" class="form-control" style="width:300px;height:20px;" <?php echoValue('userdrive'); ?>><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#FF0000">*</span>ถนน :&nbsp;&nbsp;
-<input type="text" name="useraddrroad" id="useraddrroad" class="form-control" style="width:300px;height:20px;" <?php echoValue('useraddrroad'); ?>><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#FF0000">*</span>ตำบล/แขวง :&nbsp;&nbsp;
-<input type="text" name="usersubdistrict" id="usersubdistrict" class="form-control" style="width:300px;height:20px;" <?php echoValue('usersubdistrict'); ?>><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#FF0000">*</span>จังหวัด :&nbsp;&nbsp;
-<input type="text" name="userprovince" id="userprovince" class="form-control" style="width:300px;height:20px;" <?php echoValue('userprovince'); ?>><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#FF0000">*</span>รหัสไปรษณีย์ :&nbsp;&nbsp;
-<input type="text" name="userpostalcode" id="userpostalcode" class="form-control" style="width:300px;height:20px;" <?php echoValue('userpostalcode'); ?>><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#FF0000">*</span>หมายเลขโทรศัพท์ :&nbsp;&nbsp;
-<input type="text" name="userphone" id="userphone" class="form-control" style="width:300px;height:20px;" <?php echoValue('userphone'); ?>><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขโทรสาร :&nbsp;&nbsp;
-<input type="text" name="userfax" id="userfax"  class="form-control" style="width:300px;height:20px;" <?php echoValue('userfax'); ?>><br>
-
-</div>
-
-<input type="submit" value="เพิ่มผู้ใช้">
 </form>
  
 
