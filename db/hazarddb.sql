@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Dec 10, 2013 at 02:35 PM
--- Server version: 5.5.16
--- PHP Version: 5.3.8
+-- Host: 127.0.0.1
+-- Generation Time: Dec 11, 2013 at 07:53 AM
+-- Server version: 5.5.32
+-- PHP Version: 5.4.19
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `hazarddb`
 --
+CREATE DATABASE IF NOT EXISTS `hazarddb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `hazarddb`;
 
 -- --------------------------------------------------------
 
@@ -78,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `request` (
   `state` int(11) NOT NULL,
   `status` char(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `request`
@@ -88,7 +90,8 @@ INSERT INTO `request` (`id`, `type`, `userid`, `information`, `state`, `status`)
 (3, 1, 4, '[]', 3, 'reject'),
 (5, 1, 1, '{"amount":"1234","code":"sss"}', 31, 'complete'),
 (6, 1, 4, '{"amount":"123123123","code":"cg2"}', 31, 'complete'),
-(7, 1, 4, '{"code":"#EDA","amount":"123"}', 15, 'reject');
+(7, 1, 4, '{"code":"#EDA","amount":"123"}', 15, 'reject'),
+(8, 1, 4, '', 0, 'processing');
 
 -- --------------------------------------------------------
 
@@ -174,7 +177,8 @@ CREATE TABLE IF NOT EXISTS `usergroup_hazcontrol` (
 --
 
 INSERT INTO `usergroup_hazcontrol` (`userid`) VALUES
-(5);
+(5),
+(8);
 
 -- --------------------------------------------------------
 
@@ -225,7 +229,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `userallowed` tinyint(1) NOT NULL,
   `userrealname` varchar(256) NOT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `users`
@@ -238,7 +242,8 @@ INSERT INTO `users` (`userid`, `username`, `userpasssha1`, `userallowed`, `userr
 (4, 'test_client', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'client'),
 (5, 'test_hazcontrol', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'hazcontrol'),
 (6, 'test_plantprotection', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'plantprotection'),
-(7, 'test_registrar', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'registrar');
+(7, 'test_registrar', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'registrar'),
+(8, 'dxfdfh', 'b8281f2ed7f49dd67053afdefdd0cd9b866f7aac', 1, 'hdhd');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
