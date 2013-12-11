@@ -12,7 +12,10 @@ class Config
 		),
 		'path' =>array(
 			'main'=>'Hazard/',
-			'document_template'=>'assets/'
+		),
+		'template'=>array(
+			'print'=>'assets/printable/',
+			'request'=>'assets/requestdoc/'
 		)
 	);
 

@@ -1,4 +1,4 @@
-   <?php
+  <?php
  
  require_once('core/init.php');
  include(resolveHeader('includes/header.php'));
@@ -12,9 +12,6 @@
 
 
  <?php
- $da = '12-31-2556';
-
-var_dump(checkdate("AA", substr($da,3,2), substr($da,6,4)-543));
 
  include(resolveHeader('includes/footer.php'));
  ?>

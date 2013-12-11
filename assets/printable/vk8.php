@@ -1,5 +1,5 @@
 <?php
-require_once('../core/init.php');
+require_once('../../core/init.php');
 ?>
 <html>
 <style type="text/css">
@@ -76,7 +76,7 @@ font-size: 100%;
 <body>
 
 <div align = 'center'>
-	<img src='../image/krut.jpg' width = '70'>
+	<img src='<?php echo resolveURIHeader("/image/krut.jpg"); ?>' width = '70'>
 <div/>
 <div align="center">ใบอนุญาติมีไว้ในครอบครองซึ่งวัตถุอันตราย</div>
 <div style="font-size:15px">

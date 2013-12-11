@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2013 at 07:53 AM
+-- Generation Time: Dec 11, 2013 at 02:35 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -25,46 +25,31 @@ USE `hazarddb`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `documents`
+-- Table structure for table `certificate`
 --
 
-CREATE TABLE IF NOT EXISTS `documents` (
-  `docid` int(11) NOT NULL AUTO_INCREMENT,
-  `doctype` int(11) NOT NULL,
-  `docjson` text NOT NULL,
-  PRIMARY KEY (`docid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `documents`
---
-
-INSERT INTO `documents` (`docid`, `doctype`, `docjson`) VALUES
-(1, 0, '{"telno":"1234567"}'),
-(2, 0, '{"telno":"1001010111"}'),
-(3, 0, '{"telno":"123456789"}'),
-(4, 0, '{"telno":"12345dd"}');
+CREATE TABLE IF NOT EXISTS `certificate` (
+  `certid` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` int(11) NOT NULL,
+  `expdate` date NOT NULL,
+  `certtype` int(11) NOT NULL,
+  `jsondata` text NOT NULL,
+  PRIMARY KEY (`certid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `document_type`
+-- Table structure for table `picture`
 --
 
-CREATE TABLE IF NOT EXISTS `document_type` (
-  `doctype` int(11) NOT NULL,
-  `docabbr` varchar(20) NOT NULL,
-  `docname` varchar(50) NOT NULL,
-  `formpage` varchar(20) NOT NULL,
-  PRIMARY KEY (`doctype`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `document_type`
---
-
-INSERT INTO `document_type` (`doctype`, `docabbr`, `docname`, `formpage`) VALUES
-(0, 'ตย.นว.', 'ตัวอย่างหน้าเว็ป', 'example.php');
+CREATE TABLE IF NOT EXISTS `picture` (
+  `picid` int(11) NOT NULL AUTO_INCREMENT,
+  `requestid` int(11) NOT NULL,
+  `pictype` int(11) NOT NULL,
+  `picname` varchar(50) NOT NULL,
+  PRIMARY KEY (`picid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -73,25 +58,15 @@ INSERT INTO `document_type` (`doctype`, `docabbr`, `docname`, `formpage`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `request` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `type` int(11) NOT NULL,
+  `requestid` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
-  `information` text NOT NULL,
-  `state` int(11) NOT NULL,
-  `status` char(10) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
-
---
--- Dumping data for table `request`
---
-
-INSERT INTO `request` (`id`, `type`, `userid`, `information`, `state`, `status`) VALUES
-(3, 1, 4, '[]', 3, 'reject'),
-(5, 1, 1, '{"amount":"1234","code":"sss"}', 31, 'complete'),
-(6, 1, 4, '{"amount":"123123123","code":"cg2"}', 31, 'complete'),
-(7, 1, 4, '{"code":"#EDA","amount":"123"}', 15, 'reject'),
-(8, 1, 4, '', 0, 'processing');
+  `requesttype` int(11) NOT NULL,
+  `jsondata` text NOT NULL,
+  `progress` int(11) NOT NULL,
+  `certid` int(11) NOT NULL,
+  `certidref` int(11) NOT NULL,
+  PRIMARY KEY (`requestid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 

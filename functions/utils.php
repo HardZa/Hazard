@@ -17,7 +17,7 @@
 
  function resolvePrinterURI($doc_name,$information)
  {
- 	$printerURI = Config::get('path/document_template').$doc_name.'.php?';
+ 	$printerURI = Config::get('template/print').$doc_name.'.php?';
  	foreach($information as $field=>$data)
  	{
  		$printerURI= $printerURI.$field.'='.urlencode($data).'&';
@@ -32,6 +32,7 @@
  		return $array[$data];
  	return '';
  }
+
 
  
  ?>
