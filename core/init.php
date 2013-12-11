@@ -14,4 +14,5 @@ require_once(resolveHeader('classes/User.php'));
 require_once(resolveHeader('classes/Document.php'));
 require_once(resolveHeader('classes/Request.php'));
 require_once(resolveHeader('classes/RequestInfo.php'));
+require_once(resolveHeader('classes/Permission.php'));
 ?>

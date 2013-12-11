@@ -2,6 +2,12 @@
   
  require_once('core/init.php');
  include(resolveHeader('includes/header.php'));
+
+if(!Permission::userAddAllowed())
+{
+	Redirect::to(403);
+}
+
  ?>
  <script type="text/javascript">
  	function clearClientForm()
@@ -47,6 +53,7 @@
  		
  	});
  </script>
+<br><br><br>
 
  <?php 
  $errors=[];
@@ -128,6 +135,8 @@
 	echo ("<br>");
 	$errors = $validate->errors();
 	$client_errors = $client_validate->errors();
+	var_dump($errors);
+
 }
 
 function echoValue($field)
