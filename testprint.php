@@ -222,6 +222,8 @@
 		'addrpostalcode'=>'83110',
 		'addrphone'=>'076311650',
 		'addrfax'=>'076313535',
+		'group'=>'1',
+		'purposefirst'=>"จำหน่าย",
 		'hazardname'=>'น้ำจากเทือกเขา',
 		'hazardformulation'=>'H20',
 		'businessname'=>'น้ำเปล่า',
