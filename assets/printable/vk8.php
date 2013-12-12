@@ -232,7 +232,7 @@ font-size: 100%;
 		<span class="box_2"><?php echo Input::get("expyear"); ?></span>
 	</span>
 	<br>
-	<br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
 	<span class="right">
 		<div align="left">
 			(ลายมือชื่อ)
@@ -294,6 +294,49 @@ font-size: 100%;
 	</span>
 	<br>
 -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+รายการด้านหลังใบอนุญาตมีไว้ในครอบครองซึ่งวัตถุอันตราย<br>
+<span>
+	ใบอนุญาตมีไว้ในครอบครองซึ่งวัตถุอันตรายเลขที่
+	<span class="box_3"><?php echo Input::get("certid1"); ?></span>
+</span>
+<br>
+รายชื่อวัตถุอันตรายที่ได้รับอนุญาตมีไว้ในครอบครอง<br>
+<span>
+	๑. ชื่อวัตถุอันตราย
+	<span class="box_4"><?php echo Input::get("hazardname1"); ?></span>
+	<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ชื่อทางการค้า
+	<span class="box_4"><?php echo Input::get("businessname1"); ?></span>
+	<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ทะเบียนเลขคี่
+	<span class="box_4"><?php echo Input::get("hazardno1"); ?></span>
+</span>
+<br>
+<br>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+	<span class="right">
+		<div align="left">
+			(ลายมือชื่อ)
+			<div align="center" style="display:inline-block;width:200px"><?php echo Input::get(""); ?></div>
+			พนักงานเจ้าหน้าที่
+		</div>
+		<br>
+		<div align="left">
+			<div align="center" style="display:inline-block;width:350px">(<?php echo Input::get("officername"); ?>)</div>
+		</div>
+	</span>
+	<br>
+	<br>
+	<br>
+	<br>
 </div>
 <div style="font-size:10px">
 	<span class="left">
