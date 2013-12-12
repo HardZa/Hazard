@@ -1,3 +1,15 @@
+.head-box{
+	margin-top: 1px;
+}
+.data-box{
+	background-color: #FAFAFA;
+	padding: 1px 30px 30px;
+	border-radius: 5px;
+	margin: 30px auto;
+}
+.orange-container{
+	background-color: #F3E2A9;
+}
 .navbar{ 
     height: 50px;  
 }
@@ -97,4 +109,7 @@
 	background-color: #FAAC58;
 	border: 1px solid #;
 	border-radius: 5px;
+}
+.button-regis{
+	margin-right: 16px;
 }
