@@ -1,5 +1,40 @@
  <?php
-    
+   
+  function translate($key,$error){
+		$new_error = '';
+		$new_key = $key;
+		if( $key == "regis_type" ) $new_key = "ประเภทผู้ใช้";
+		if( $key == "name" ) $new_key = "ชื่อ-สกุล";
+		if( $key == "userbirthdate" ) $new_key = "วันเกิด";
+		if( $key == "useraddrhouse" ) $new_key = "บ้านเลขที่";
+		if( $key == "usertaxid" ) $new_key = "เลขผู้เสียภาษี";
+		if( $key == "useraddrroad" ) $new_key = "ถนน";
+		if( $key == "usersubdistrict" ) $new_key = "ตำบล/แขวง";
+		if( $key == "userprovince" ) $new_key = "จังหวัด";
+		if( $key == "userpostalcode" ) $new_key = "รหัสไปรษณีย์";
+		if( $key == "userphone" ) $new_key = "เลขโทรศัพท์";
+		
+		if( strstr($error,"so short") !== false ){
+			$new_error = $new_key." ไม่ควรสั้นเกินไป";
+		}
+		elseif( strstr($error,"so long") !== false ){
+			$new_error = $new_key." ไม่ควรยาวเกิน 60";
+		}
+		elseif( strstr($error,"we need") !== false ){
+			$new_error = "คุณยังไม่ได้กรอก ".$new_key;
+			if( $new_key == "regis_type" ){
+				$new_error = "คุณยังไม่ได้เลือก ".$new_key;
+			}
+		}
+		elseif( strstr($error,"should be number") !== false ){
+			$new_error = $new_key." ต้องเป็นตัวเลข";
+		}
+		elseif( strstr($error,"should format") !== false ){
+			$new_error = "วันเกิดควรอยู่ในรูป DD-MM-YY";
+		}
+		return "$('#$key').parent().parent().append('<label style=\"color:red\" class=\"error-message control-label\">".$new_error."</label>');";
+	
+  }
  require_once('core/init.php');
  include(resolveHeader('includes/header.php'));
 
@@ -40,7 +75,8 @@ if(!Permission::userAddAllowed())
 
  		$("#regis_type").change(function()
  		{
-			$('input').parent().parent().removeClass('has-error');
+			$('input,select').parent().parent().removeClass('has-error');
+			$('.error-message').remove();
  			if( $("#regis_type option:selected").val() =='client') 
  			{
  				clearClientForm();
@@ -128,15 +164,32 @@ if(!Permission::userAddAllowed())
 			Redirect::postto('user/add/summary',array_merge($_POST,array('password'=>$password)));
 		}
 	}else{
-		 echo "FAIL <script type='text/javascript'>";
+		 echo "<script type='text/javascript'>
+					$(document).ready(function(){";
 		 if( ! $validate->passed() ){
 			foreach( $validate->errors() as $key => $value){
 			
-			echo "
-					$(document).ready(function(){
-					$('#$key').parent().parent().addClass('has-error');
-					});
-			";
+				echo "
+						$(document).ready(function(){
+						$('#$key').parent().parent().addClass('has-error');
+						});
+				";
+
+				$error = $value[0];
+				echo translate($key,$error);
+			//	echo "$('#$key').parent().parent().append('<label>".$new_error."</label>');";
+			}
+
+		 }
+		if(Input::post('regis_type')=='client' &&  ! $client_validate->passed() ){
+			foreach( $client_validate->errors() as $key => $value){
+			
+				echo "
+						$('#$key').parent().parent().addClass('has-error');
+				";
+
+				$error = $value[0];
+				echo translate($key,$error);
 			
 			}
 		 }
@@ -144,15 +197,15 @@ if(!Permission::userAddAllowed())
 			foreach( $client_validate->errors() as $key => $value){
 			
 			echo "
-					$(document).ready(function(){
 					$('#$key').parent().parent().addClass('has-error');
-					});
 			";
+
+			
 			}
 		 }
 			
 
-		 echo "</script>";
+		 echo "});</script>";
 	}
 	echo ("<br>");
 	$errors = $validate->errors();
@@ -227,7 +280,7 @@ function echoValue($field)
  	</div>
 
  	<div class="form-group" >
-    	<label for="useraddrhouse" class="col-sm-3 control-label">*ที่อยู่</label>
+    	<label for="useraddrhouse" class="col-sm-3 control-label">*บ้านเลขที่</label>
 	    <div class="col-sm-6">
 	      	<input type="text" class="form-control" id="useraddrhouse" name="useraddrhouse" placeholder="ที่อยู่" <?php echoValue('useraddrhouse'); ?> >
 	    </div>
