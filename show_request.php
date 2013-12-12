@@ -29,6 +29,7 @@
  <br><br>
  <div class="row">
  <?php
+ include( resolveHeader('route_info.php') );
  include( resolveHeader('route_show_request.php') );
 
  ?>

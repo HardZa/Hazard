@@ -17,7 +17,8 @@ class Config
 			'print'=>'assets/printable/',
 			'request'=>'assets/requestdoc/',
 			'list'=>'assets/requestlist/',
-			'process'=>'assets/requestprocess/'
+			'process'=>'assets/requestprocess/',
+			'request_info' => 'assets/requestinfo/'
 		)
 	);
 
