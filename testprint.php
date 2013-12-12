@@ -138,6 +138,19 @@
 		'expmonth'=>'มกราคม',
 		'expyear'=>'2556',
 		'officername'=>'สมรัก คำสิงค์',
+		'certid1'=>'วอ.4-0007/2543',
+		'storename'=>'บ้านนกนางแอ่น',
+		'storehouse'=>'1/55',
+		'storevillage'=>'3',
+		'storedrive'=>'5',
+		'storeroad'=>'พหลโยธิน',
+		'storesubdistrict'=>'เทพกระษัตรี',
+		'storedistrict'=>'ถลาง',
+		'storeprovince'=>'ภูเก็ต',
+		'storepostalcode'=>'83110',
+		'storephone'=>'076311650',
+		'storefax'=>'076313535',
+		'storespecialist'=>'ดร. ภุชงค์ ชงไมโล'
 	);
 
 	$info8=array(
@@ -182,7 +195,11 @@
 		'expday'=>'12',
 		'expmonth'=>'มกราคม',
 		'expyear'=>'2556',
-		'officername'=>'สมรัก คำสิงค์'
+		'officername'=>'สมรัก คำสิงค์',
+		'certid1'=>'วอ.3-0031/2555',
+		'hazardname1'=>'น้ำจากเทือกเขา',
+		'businessname1'=>'โซดาไฟ',
+		'hazardno1'=>'51675754346',
 	);
 
 	$infoz2=array(
