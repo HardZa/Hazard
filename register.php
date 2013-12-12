@@ -5,12 +5,14 @@
 		$new_key = $key;
 		if( $key == "regis_type" ) $new_key = "ประเภทผู้ใช้";
 		if( $key == "name" ) $new_key = "ชื่อ-สกุล";
+		if( $key == "userbirthdate" ) $new_key = "วันเกิด";
+		if( $key == "useraddrhouse" ) $new_key = "บ้านเลขที่";
 		if( $key == "usertaxid" ) $new_key = "เลขผู้เสียภาษี";
-		if( $key == "useraddroad" ) $new_key = "ถนน";
+		if( $key == "useraddrroad" ) $new_key = "ถนน";
 		if( $key == "usersubdistrict" ) $new_key = "ตำบล/แขวง";
 		if( $key == "userprovince" ) $new_key = "จังหวัด";
 		if( $key == "userpostalcode" ) $new_key = "รหัสไปรษณีย์";
-		if( $key == "userphone" ) $new_key = "หมายเลขโทรศัพท์";
+		if( $key == "userphone" ) $new_key = "เลขโทรศัพท์";
 		
 		if( strstr($error,"so short") !== false ){
 			$new_error = $new_key." ไม่ควรสั้นเกินไป";
