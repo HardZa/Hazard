@@ -12,6 +12,7 @@ class Config
 		),
 		'path' =>array(
 			'main'=>'Hazard/',
+			'upload'=>'upload/'
 		),
 		'template'=>array(
 			'print'=>'assets/printable/',
