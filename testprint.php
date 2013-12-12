@@ -93,6 +93,8 @@
 		'expmonth'=>'มกราคม',
 		'expyear'=>'2556',
 		'officername'=>'สมรัก คำสิงค์',
+		'productcertid'=>'วอ./กษ./กวก.2-0001/2556',
+		'storename' => 'บ้านทองหยอด',
 		'storehouse'=>'52',
 		'storevillage'=>'1',
 		'storedrive'=>'2',
