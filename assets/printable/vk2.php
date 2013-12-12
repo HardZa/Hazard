@@ -47,6 +47,8 @@ font-size: 100%;
 </style>
 <body>
 
+<div align = "right">แบบ วอ.๒</div>	
+
 <div align = 'center'>
 	<img src='<?php echo resolveURIHeader("/image/krut.jpg"); ?>' width = '70'>
 </div>
@@ -112,7 +114,8 @@ font-size: 100%;
 <br>
 <!-- ---------------------------------------------------------------------- -->
 
-<br><br><br><br><br><br>
+<br><br><br><br><br>
+<div align = "center">-๑/๑-</div><br>
 รายการด้านหลังใบอนุญาตผลิตวัตถุอันตราย<br>
 ใบอนุญาตผลิตวัตถุอันตรายเลขที <?php echo Input::get("productcertid"); ?><br>
 
