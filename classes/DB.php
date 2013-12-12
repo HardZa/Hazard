@@ -64,7 +64,7 @@ class DB
 		if( $err )
 		{
 			echo "SELECT $fill_field FROM `$table` " . DB::getWhenNotStringEmpty($conditions,'where ')
-		. $conditions.' '.DB::getWhenNotStringEmpty($limit,'limit ').$limit;
+		. $conditions.' '.DB::getWhenNotStringEmpty($limit,'limit ').$limit."<br>";
 		}
 		while( $row = mysql_fetch_array($result) )
 		{
@@ -79,7 +79,6 @@ class DB
 		$fill_value = DB::bindArray2SQLFormat($value,"'");
 		
 		$sql = "INSERT INTO `".Config::get('mysql/db')."`.`$table` ($fill_field) VALUES ($fill_value);";
-		echo $sql;
 		return $this->query($sql);
 	}
 	

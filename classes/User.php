@@ -145,6 +145,19 @@ class User{
 	    }
 	    return $randomString;
 	}
+
+	public function get_requests()
+	{
+		if( $this->is_group('client') )
+		{
+			return Request::get_requests_by_userid($this->get('userid'));
+		}
+		else
+		{
+
+		}
+	}
+
 }
 
 ?>
