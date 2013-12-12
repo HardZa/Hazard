@@ -33,6 +33,9 @@ RewriteRule ^user/add$ user/add/
 RewriteRule ^user/add/summary/$ register_summary.php
 RewriteRule ^user/add/summary$ user/add/summary/
 
+RewriteRule ^pic/([^\?].*)/$ picture.php?pic=$1
+RewriteRule ^pic/([^\?].*)$ pic/$1/
+
 RewriteRule ^requests/$ requests.php
 RewriteRule ^requests$ requests/
 

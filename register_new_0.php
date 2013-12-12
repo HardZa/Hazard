@@ -18,7 +18,7 @@
 		if($validate->passed())
 		{
 			echo "<h1>pass</h1>";
-			Request::create_request(0,$_GET);
+			Request::create_request($user->get_user()->get('userid'),0,$_GET);
 		}else{
 			echo "<h1>fail</h1>";
 		}
@@ -36,10 +36,10 @@
     <label class="col-sm-4 control-label">เพื่อ</label>
     <div class="col-sm-8">
 		  <label class="radio-inline">
-		    <input type="radio" name="for" id="for1" value="นำเข้า" checked>นำเข้า
+		    <input type="radio" name="for" id="for1" value="1" checked>นำเข้า
 		  </label>
 		  <label class="radio-inline">
-		    <input type="radio" name="for" id="for2" value="ส่งออก">ส่งออก
+		    <input type="radio" name="for" id="for2" value="2">ส่งออก
 		  </label>
     </div>
   </div>

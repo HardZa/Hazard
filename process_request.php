@@ -5,10 +5,9 @@
  ?>
 
  <?php
- if(Input::get('not_process') == '')
- 	include( resolveHeader('request/route.php') );
- else
- 	include( resolveHeader('request/show.php') );
+
+ 
+
  ?>
 
   <?php
