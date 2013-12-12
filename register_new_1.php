@@ -11,12 +11,12 @@
       	<label class="col-sm-4 control-label">ขอขึ้นทะเบียนวัตถุอันตราย :</label>
       	<div class="col-sm-2">
     			<label class="radio-inline">
-    		   	<input type="radio" name="hazardtype" id="hazardtype" value="ชนิดที่ 2" checked>ชนิดที่ 2
+    		   	<input type="radio" name="hazardtype" value="2" checked>ชนิดที่ 2
     			</label>
         </div>
         <div class="col-sm-2">
     		  <label class="radio-inline">
-    		    <input type="radio" name="hazardtype" id="hazardtype" value="ชนิดที่ 3">ชนิดที่ 3
+    		    <input type="radio" name="hazardtype" value="3">ชนิดที่ 3
     		  </label>
       	</div>
   	</div> 
@@ -24,12 +24,12 @@
       	<label class="col-sm-4 control-label">โดยมีวัตถุประสงค์เพื่อ :</label>
       	<div class="col-sm-2">
     			<label class="radio-inline">
-    		    	<input type="radio" name="hazardfor" id="hazardfor" value="นำเข้า" checked>นำเข้า
+    		    	<input type="radio" name="hazardfor" value="import" checked>นำเข้า
     			</label>
         </div>
         <div class="col-sm-2">
   		  	<label class="radio-inline">
-  		    	<input type="radio" name="hazardfor" id="hazardfor" value="ส่งออก">ส่งออก
+  		    	<input type="radio" name="hazardfor" value="export">ส่งออก
   		  	</label>
       	</div>
   	</div>
