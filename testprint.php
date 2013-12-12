@@ -23,6 +23,7 @@
 		'addrpostalcode'=>'83110',
 		'addrphone'=>'076311650',
 		'addrfax'=>'076313535',
+		'productname' => 'รติก๊าส',
 		'producthouse'=>'52',
 		'productvillage'=>'1',
 		'productdrive'=>'2',
@@ -36,7 +37,7 @@
 		'hazardname'=>'น้ำจากเทือกเขา',
 		'hazardformulation'=>'H20',
 		'businessname'=>'น้ำเปล่า',
-		'quantity'=>'5 ถัง กบัอีก 3 ขวด',
+		'quantity'=>'5 ถัง กับอีก 3 ขวด',
 		'note'=>'มันลืนคอเหมือนดื่มอากาศ',
 		'producerspecialist'=>'ทักษิณ ชินวัตร',
 		'condition'=>'ต้องเขย่าก่อนดื่ม',
@@ -44,7 +45,19 @@
 		'expmonth'=>'มกราคม',
 		'expyear'=>'2556',
 		'officername'=>'สมรัก คำสิงค์',
-		'productcertid'=>'วอ./กษ./กวก.2-0001/2556'
+		'productcertid'=>'วอ./กษ./กวก.2-0001/2556',
+		'storename' => 'บ้านทองหยอด',
+		'storehouse' => '100/10',
+		'storevillage' => '51',
+		'storedrive' => 'บ้านบึง 3',
+		'storeroad' => 'งามวงวาน',
+		'storesubdistrict' => 'มะขามป้อม',
+		'storedistrict' => 'บางเขน',
+		'storeprovince' => 'กทม.',
+		'storepostalcode' => '10010',
+		'storephone' => '075123321',
+		'storefax' => '078123456',
+		'storespecialist' => 'สนธิ ลิ้มทองกุล'
 	);
 
 	$info4=array(
@@ -80,6 +93,8 @@
 		'expmonth'=>'มกราคม',
 		'expyear'=>'2556',
 		'officername'=>'สมรัก คำสิงค์',
+		'productcertid'=>'วอ./กษ./กวก.2-0001/2556',
+		'storename' => 'บ้านทองหยอด',
 		'storehouse'=>'52',
 		'storevillage'=>'1',
 		'storedrive'=>'2',
@@ -125,6 +140,19 @@
 		'expmonth'=>'มกราคม',
 		'expyear'=>'2556',
 		'officername'=>'สมรัก คำสิงค์',
+		'certid1'=>'วอ.4-0007/2543',
+		'storename'=>'บ้านนกนางแอ่น',
+		'storehouse'=>'1/55',
+		'storevillage'=>'3',
+		'storedrive'=>'5',
+		'storeroad'=>'พหลโยธิน',
+		'storesubdistrict'=>'เทพกระษัตรี',
+		'storedistrict'=>'ถลาง',
+		'storeprovince'=>'ภูเก็ต',
+		'storepostalcode'=>'83110',
+		'storephone'=>'076311650',
+		'storefax'=>'076313535',
+		'storespecialist'=>'ดร. ภุชงค์ ชงไมโล'
 	);
 
 	$info8=array(
@@ -147,6 +175,7 @@
 		'addrpostalcode'=>'83110',
 		'addrphone'=>'076311650',
 		'addrfax'=>'076313535',
+		'storename'=>'บ้านหลังเขา',
 		'storehouse'=>'52',
 		'storevillage'=>'1',
 		'storedrive'=>'2',
@@ -159,15 +188,20 @@
 		'storefax'=>'076313535',
 		'storespecialist'=>'ดร. ภุชงค์ ชงไมโล',
 		'quantity'=>'5 ถัง กบัอีก 3 ขวด',
-		'area'=>'3 ตาราง เซนติเมตร',
+		'area'=>'3',
 		'purpose'=>'เอามาให้ผู้ชุมนุมดื่ม',
 		'hazardname'=>'น้ำจากเทือกเขา',
 		'businessname'=>'น้ำเปล่า',
+		'hazardno'=>'514724554446',
 		'condition'=>'ต้องเขย่าก่อนดื่ม',
 		'expday'=>'12',
 		'expmonth'=>'มกราคม',
 		'expyear'=>'2556',
-		'officername'=>'สมรัก คำสิงค์'
+		'officername'=>'สมรัก คำสิงค์',
+		'certid1'=>'วอ.3-0031/2555',
+		'hazardname1'=>'น้ำจากเทือกเขา',
+		'businessname1'=>'โซดาไฟ',
+		'hazardno1'=>'51675754346',
 	);
 
 	$infoz2=array(
@@ -208,6 +242,7 @@
 		'day'=>'12',
 		'month'=>'มกราคม',
 		'year'=>'2556',
+		'certid'=>'วอ.4-0001/2556',		
 		'name'=>'นายสุเทพ เทือกสุบรรณ',
 		'nationality'=>'ไทย',
 		'taxno'=>'5410500199',
@@ -221,6 +256,7 @@
 		'addrpostalcode'=>'83110',
 		'addrphone'=>'076311650',
 		'addrfax'=>'076313535',
+		'storename'=>'บ้านหลังเขา',
 		'storehouse'=>'52',
 		'storevillage'=>'1',
 		'storedrive'=>'2',

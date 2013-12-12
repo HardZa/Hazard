@@ -12,7 +12,7 @@
 </div>
 
 <div class="form-horizontal">
-	<div class="form-group">
+	 <div class="form-group">
     	<label class="col-sm-3 control-label">ประเภทผู้ใช้</label>
     	<label class="col-sm-3 radio-inline"><?php echo  $registype[Input::post('regis_type')]; ?><label>
   	</div>

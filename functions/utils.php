@@ -33,6 +33,19 @@
  	return '';
  }
 
+$docData = array();
+
+function doc($field)
+{
+	global $docData ;
+	return getifset($docData,$field);
+}
+
+function set_doc($field,$v)
+{
+	global $docData ;
+	$docData[$field] = $v;
+}
 
  
  ?>

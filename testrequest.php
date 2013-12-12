@@ -50,12 +50,6 @@
 		'producerCountry'=>'ดูไบ',
 		'producer'=>'ทักษิณ ชินวัตร'
 	);
-
-	function doc($field)
-	{
-		global $docData ;
-		return getifset($docData,$field);
-	}
 ?>
 
 <div class="page-header">

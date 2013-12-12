@@ -66,24 +66,30 @@ display:inline-block;
 background-color:#999;
 width:500px;
 }
+span.test {
+display:inline-block;
+background-color:#999;
+word-wrap:break-word;
+}
 div.text {
 position: absolute;
-left: 40;
-right: 40;
+left: 0;
+right: 0;
 font-size: 100%;
 }
 </style>
 <body>
-
+<div class="text">
 <div align = 'center'>
 	<img src='<?php echo resolveURIHeader("/image/krut.jpg"); ?>' width = '70'>
-<div/>
+</div>
+<br>
 <div align="center">ใบอนุญาติมีไว้ในครอบครองซึ่งวัตถุอันตราย</div>
+<br><br>
 <div style="font-size:15px">
 	<div>
-		<span class="left">ใบอนุญาติเลขที่ <?php echo Input::get("certificate_no"); ?>
+		<span class="left">ใบอนุญาติเลขที่ <?php echo Input::get("certid"); ?>
 		</span>
-
 		<span class="right">
 			<div align="left">
 				กรม/สำนักงาน <?php echo Input::get("department"); ?>
@@ -99,156 +105,150 @@ font-size: 100%;
 		</span>
 	</div>
 	<br><br><br>
-	<span class="left">
 		อนุญาตให้ 
 		<span class="box_8"><?php echo Input::get("name"); ?></span>
 		สัญชาติ
 		<span class="box_2"><?php echo Input::get("nationality"); ?></span>
-	</span>
 	<br>
-	<span class="left">
+	<span>
 		เลขประจำตัวผู้เสียภาษีอากร 
-		<span class="box_8"><?php echo Input::get("tax_no"); ?></span>
+		<span class="box_8"><?php echo Input::get("taxno"); ?></span>
 	</span>
 	<br>
-	<span class="left">
+	<span>
 		สถานที่ติดต่อของผู้ได้รับใบอนุญาตตั้งอยู่เลขที่
-		<span class="box_2"><?php echo Input::get("house_no"); ?></span>
+		<span class="box_2"><?php echo Input::get("addrhouse"); ?></span>
 		หมู่ที่
-		<span class="box_1"><?php echo Input::get("mhoo"); ?></span>
+		<span class="box_1"><?php echo Input::get("addrvillage"); ?></span>
 		ตรอก/ซอย 
-		<span class="box_2"><?php echo Input::get("soi"); ?></span>
+		<span class="box_2"><?php echo Input::get("addrdrive"); ?></span>
 	</span>
 	<br>
-	<span class="left">
+	<span>
 		ถนน 
-		<span class="box_3"><?php echo Input::get("road"); ?></span>
+		<span class="box_3"><?php echo Input::get("addrroad"); ?></span>
 		ตำบล/แขวง 
-		<span class="box_3"><?php echo Input::get("district"); ?></span>
+		<span class="box_3"><?php echo Input::get("addrsubdistrict"); ?></span>
 		อำเภอ/เขต 
-		<span class="box_3"><?php echo Input::get("district1"); ?></span>
+		<span class="box_3"><?php echo Input::get("addrdistrict"); ?></span>
 	</span>
 	<br>
-	<span class="left">
+	<span>
 		จังหวัด 
-		<span class="box_3"><?php echo Input::get("province"); ?></span>
+		<span class="box_3"><?php echo Input::get("addrprovince"); ?></span>
 		รหัสไปรษณีย์ 
-		<span class="box_1"><?php echo Input::get("zip_code"); ?></span>
+		<span class="box_1"><?php echo Input::get("addrpostalcode"); ?></span>
 		โทรศัพท์ 
-		<span class="box_2"><?php echo Input::get("tel") ?></span>
+		<span class="box_2"><?php echo Input::get("addrphone") ?></span>
 		โทรสาร 
-		<span class="box_2"><?php echo Input::get("fax") ?></span>
+		<span class="box_2"><?php echo Input::get("addrfax") ?></span>
 	</span>
 	<br>
-	<span class="left">
+	<span>
 		สถานที่เก็บรักษาวัตถุอันตราย ชื่อ 
-		<span class="box_7"><?php echo Input::get("hazard_store"); ?></span>
+		<span class="box_7"><?php echo Input::get("storename"); ?></span>
 	</span>
 	<br>
-	<span class="left">
+	<span>
 		ตั้งอยู่เลขที่ 
-		<span class="box_2"><?php echo Input::get("hazard_store_no"); ?></span>
+		<span class="box_2"><?php echo Input::get("storehouse"); ?></span>
 		หมู่ที่
-		<span class="box_1"><?php echo Input::get("hazard_mhoo"); ?></span>
+		<span class="box_1"><?php echo Input::get("storevillage"); ?></span>
 		ตรอก/ซอย 
-		<span class="box_1"><?php echo Input::get("hazard_soi"); ?></span>
+		<span class="box_1"><?php echo Input::get("storedrive"); ?></span>
 		ถนน 
-		<span class="box_3"><?php echo Input::get("hazard_road"); ?></span>
+		<span class="box_3"><?php echo Input::get("storeroad"); ?></span>
 	</span>
 	<br>
-	<span class="left">
+	<span>
 		ตำบล/แขวง 
-		<span class="box_3"><?php echo Input::get("hazard_district"); ?></span>
+		<span class="box_3"><?php echo Input::get("storesubdistrict"); ?></span>
 		อำเภอ/เขต 
-		<span class="box_3"><?php echo Input::get("hazard_district1"); ?></span>
+		<span class="box_3"><?php echo Input::get("storedistrict"); ?></span>
 		จังหวัด 
-		<span class="box_3"><?php echo Input::get("hazard_province"); ?></span>
+		<span class="box_3"><?php echo Input::get("storeprovince"); ?></span>
 	</span>
 	<br>
-	<span class="left">
+	<span>
 		รหัสไปรษณีย์ 
-		<span class="box_3"><?php echo Input::get("hazard_zip_code"); ?></span>
+		<span class="box_3"><?php echo Input::get("storepostalcode"); ?></span>
 		โทรศัพท์ 
-		<span class="box_3"><?php echo Input::get("hazard_tel"); ?></span>
+		<span class="box_3"><?php echo Input::get("storephone"); ?></span>
 		โทรสาร 
-		<span class="box_3"><?php echo Input::get("hazard_fax"); ?></span>
+		<span class="box_3"><?php echo Input::get("storefax"); ?></span>
 	</span>
 	<br>
-	<span class="left">
+		<span>
 		ชื่อผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบสำหรับการเก็บรักษา(กรณีที่มีประกาศฯ 
-		ออกตาม
-	</span>
+		ออกตามความในมาตรา ๒๐ (๒) แห่งพระราชบัญญัติวัตถุอันตราย พ.ศ. ๒๕๓๕ กำหนดให้ต้องมีผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบ ฯ)
+		<br><?php echo Input::get("storespecialist"); ?>
+		</span>
 	<br>
-	<span class="left">
-		ความในมาตรา ๒๐ (๒) แห่งพระราชบัญญัติวัตถุอันตราย พ.ศ. ๒๕๓๕ 
-		กำหนดให้ต้องมีผู้เชี่ยวชาญหรือ
-	</span>
-	<br>
-	<span class="left">
-		บุคลากรเฉพาะรับผิดชอบ ฯ)&nbsp;&nbsp;&nbsp;
-		<?php echo Input::get("professor"); ?>
-	</span>
-	<br>
-	<span class="left">
+	<span>
 		ปริมาณการครอบครองรวมสูงสุด 
 		<span class="box_8"><?php echo Input::get("quantity"); ?></span>
 	</span>
 	<br>
-	<span class="left">
+	<span>
 		พื้นที่เฉพาะในส่วนของการครอบครองรวมสูงสุด 
-		<span class="box_6"><?php echo Input::get("quantity_map"); ?></span>
+		<span class="box_2"><?php echo Input::get("area"); ?></span>
 		&nbsp;&nbsp;&nbsp;ตารางเมตร
 	</span>
 	<br>
-	<span class="left">
+	<span>
 		มีไว้ในครอบครองซึ่งวัตถุอันตราย โดยมีวัตถุประสงค์ของการครอบครองเพื่อ 
-		<span class="box_4"><?php echo Input::get("hazard_purpose"); ?></span>
+		<span class="box_4"><?php echo Input::get("purpose"); ?></span>
 	</span>
 	<br>
-	<span class="left">
+	<span>
 		ชื่อวัตถุอันตราย <sup>(๑)</sup> ที่ได้รับอนุญาตมีไว้ในครอบครอง 
-		<span class="box_6"><?php echo Input::get("hazard_name"); ?></span>
+		<span class="box_6"><?php echo Input::get("hazardname"); ?></span>
 	</span>
 	<br>
-	<span class="left">
+	<span>
 		ชื่อทางการค้าของวัตถุอันตราย <sup>(๒)</sup> ที่ได้รับอนุญาตมีไว้ในครอบครอง
-		<span class="box_5"><?php echo Input::get("hazard_trade_name"); ?></span>
+		<span class="box_5"><?php echo Input::get("businessname"); ?></span>
 	</span>
 	<br>
-	<span class="left">
+	<span>
 		ทะเบียนเลขที่ 
-		<span class="box_8"><?php echo Input::get("hazard_no"); ?></span>
+		<span class="box_4"><?php echo Input::get("hazardno"); ?></span>
 	</span>
 	<br>
-	<span class="left" style="font-size:10px">
+	<span style="font-size:10px">
 		<i>(ในกรณีที่มีวัตถุอันตรายไว้ในครอบครองมากกว่า ๑ รายการ ให้ระบุรายละเอียดเพิ่มเติมด้านหลัง)</i>
+	</span>	
+	<br>
+	<span>
+		ใบอนุญาตนี้ออกให้โดยมีเงื่อนไข ดังต่อไปนี้ <br><?php echo Input::get("condition"); ?>
 	</span>
 	<br>
-	<span class="left">
-		ใบอนุญาตนี้ออกให้โดยมีเงื่อนไข ดังต่อไปนี้ <?php echo Input::get("hazard_condition"); ?>
-	</span>
-	<br>
-	<span class="left">
+	<span>
 		ใบอนุญาตนี้ให้ใช้ได้จนถึงวันที่ 
-		<span class="box_1"><?php echo Input::get("certificate_day"); ?></span>
+		<span class="box_1"><?php echo Input::get("expday"); ?></span>
 		เดือน 
-		<span class="box_3"><?php echo Input::get("certificate_month"); ?></span>
+		<span class="box_2"><?php echo Input::get("expmonth"); ?></span>
 		พ.ศ. 
-		<span class="box_2"><?php echo Input::get("certificate_year"); ?></span>
+		<span class="box_2"><?php echo Input::get("expyear"); ?></span>
 	</span>
 	<br>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
 	<span class="right">
 		<div align="left">
 			(ลายมือชื่อ)
-			<span class="box_4"><?php echo Input::get("signature"); ?></span>
+			<div align="center" style="display:inline-block;width:200px"><?php echo Input::get(""); ?></div>
 			พนักงานเจ้าหน้าที่
 		</div>
+		<br>
 		<div align="left">
-			<span class="box_7">(<?php echo Input::get("signature1"); ?>)</span>
+			<div align="center" style="display:inline-block;width:350px">(<?php echo Input::get("officername"); ?>)</div>
 		</div>
 	</span>
 	<br>
 	<br>
+	<br>
+	<br>
+	<!--
 	<span class="left">
 		รายการด้านหลังใบอนุญาตมีไว้ในครอบครองซึ่งวัตถุอันตราย
 	</span>
@@ -293,6 +293,50 @@ font-size: 100%;
 		(ระบุรายการเพิ่มเติมด้านล่าง)
 	</span>
 	<br>
+-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+รายการด้านหลังใบอนุญาตมีไว้ในครอบครองซึ่งวัตถุอันตราย<br>
+<span>
+	ใบอนุญาตมีไว้ในครอบครองซึ่งวัตถุอันตรายเลขที่
+	<span class="box_3"><?php echo Input::get("certid1"); ?></span>
+</span>
+<br>
+รายชื่อวัตถุอันตรายที่ได้รับอนุญาตมีไว้ในครอบครอง<br>
+<span>
+	๑. ชื่อวัตถุอันตราย
+	<span class="box_4"><?php echo Input::get("hazardname1"); ?></span>
+	<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ชื่อทางการค้า
+	<span class="box_4"><?php echo Input::get("businessname1"); ?></span>
+	<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ทะเบียนเลขคี่
+	<span class="box_4"><?php echo Input::get("hazardno1"); ?></span>
+</span>
+<br>
+<br>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+	<span class="right">
+		<div align="left">
+			(ลายมือชื่อ)
+			<div align="center" style="display:inline-block;width:200px"><?php echo Input::get(""); ?></div>
+			พนักงานเจ้าหน้าที่
+		</div>
+		<br>
+		<div align="left">
+			<div align="center" style="display:inline-block;width:350px">(<?php echo Input::get("officername"); ?>)</div>
+		</div>
+	</span>
+	<br>
+	<br>
+	<br>
+	<br>
 </div>
 <div style="font-size:10px">
 	<span class="left">
@@ -306,6 +350,7 @@ font-size: 100%;
 			ให้ระบุเฉพาะชื่อทางการค้า
 	</span>
 	<br>
+</div>
 </div>
 </body>
 </html>

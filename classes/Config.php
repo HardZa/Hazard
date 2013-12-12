@@ -16,7 +16,9 @@ class Config
 		),
 		'template'=>array(
 			'print'=>'assets/printable/',
-			'request'=>'assets/requestdoc/'
+			'request'=>'assets/requestdoc/',
+			'list'=>'assets/requestlist/',
+			'process'=>'assets/requestprocess/'
 		)
 	);
 
