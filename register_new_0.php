@@ -1,10 +1,18 @@
 <?php
  	require_once('core/init.php');
 	include(resolveHeader('includes/header.php'));
-
+	include(resolveHeader('includes/upload_head.php'));	
 	$errors=array();
-	if(Input::exists('get'))
+	if(Input::exists('post'))
 	{
+		//upload
+		$picarr=json_decode($_POST['picarr']);
+		$i;
+		for($i=0;$i<count($picarr);$i++)
+		{
+			echo "<script> pichead[".$i."]='".$picarr[$i]."'; </script>";
+		}
+		
 		$validate = new Validate();
 		$validate->check($_GET,array(
 			'hazardname'=> array(
@@ -19,6 +27,8 @@
 		{
 			echo "<h1>pass</h1>";
 			Request::create_request(0,$_GET);
+			
+			
 		}else{
 			echo "<h1>fail</h1>";
 		}
@@ -31,7 +41,7 @@
     <h1>คำขอขึ้นทะเบียนวัตถุอันตราย</h1>
 </div>
 
-<form class="form-horizontal" role="form" method="get" action="">
+<form class="form-horizontal" role="form" method="post" action="">
   <div class="form-group">
     <label class="col-sm-4 control-label">เพื่อ</label>
     <div class="col-sm-8">
@@ -60,8 +70,11 @@
       <button type="submit" class="btn btn-default">ลงทะเบียน</button>
     </div>
   </div>
+  <input type="hidden" id="picarr" name="picarr">
 </form>
-
+<?php
+include(resolveHeader('includes/upload_form.php'));
+?>
 
 <?php
  	include(resolveHeader('includes/footer.php'));
