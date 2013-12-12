@@ -21,33 +21,34 @@
 </head>
 
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="<?php echo resolveURIHeader("/");?>">
-          	<img src="<?php echo resolveURIHeader("image/cl-logo-32p.png");?>"></img>
-          	<?php if(User::is_session_exist()) echo User::get_user()->get("username"); ?>
-          </a>
-        </div>
-        <div class="collapse navbar-collapse pull-right">
-          <ul class="nav navbar-nav">
-       <!--     <li class="active"><a href="login">login</a></li> -->
-			<?php
-				$user = User::get_user();
-				if( !isset($user) || $user == null ) {
-			?>
-			<li><a href="<?php echo resolveURIHeader("login");?>">ลงชื่อเข้าระบบ</a></li>
-			<?php
-				}else{
-			?>
-			<li><a href="<?php echo resolveURIHeader("user");?>">หน้าของฉัน</a></li>
-			<li><a href="<?php echo resolveURIHeader("user/edit");?>">แก้ไขบัญชี</a></li>
-			<li><a href="<?php echo resolveURIHeader("logout");?>">ออกจากระบบ</a></li>
-			<?php
-				}
-			?>
-          </ul>
-        </div><!--/.nav-collapse --> 
-    </div>
-</div>
+<div class="orange-container">
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	    <div class="container">
+	        <div class="navbar-header">
+	          <a class="navbar-brand" href="<?php echo resolveURIHeader("/");?>">
+	          	<img src="<?php echo resolveURIHeader("image/cl-logo-32p.png");?>"></img>
+	          	<?php if(User::is_session_exist()) echo User::get_user()->get("username"); ?>
+	          </a>
+	        </div>
+	        <div class="collapse navbar-collapse pull-right">
+	          <ul class="nav navbar-nav">
+	       <!--     <li class="active"><a href="login">login</a></li> -->
+				<?php
+					$user = User::get_user();
+					if( !isset($user) || $user == null ) {
+				?>
+				<li><a href="<?php echo resolveURIHeader("login");?>">ลงชื่อเข้าระบบ</a></li>
+				<?php
+					}else{
+				?>
+				<li><a href="<?php echo resolveURIHeader("user");?>">หน้าของฉัน</a></li>
+				<li><a href="<?php echo resolveURIHeader("user/edit");?>">แก้ไขบัญชี</a></li>
+				<li><a href="<?php echo resolveURIHeader("logout");?>">ออกจากระบบ</a></li>
+				<?php
+					}
+				?>
+	          </ul>
+	        </div><!--/.nav-collapse --> 
+	    </div>
+	</div>	
 <div class="container">
