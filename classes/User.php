@@ -164,7 +164,7 @@ class User{
 	    return $randomString;
 	}
 
-<<<<<<< 866ac4373b4cf14134df12aff100cad0c175dbac
+
 	public function get_requests()
 	{
 		if( $this->is_group('client') )
@@ -177,7 +177,7 @@ class User{
 		}
 	}
 
-=======
+
 	public static function get_group_by_id($id)
 	{
 		$userid = $id;
@@ -252,7 +252,7 @@ class User{
 
 		return $user_db;
 	}
->>>>>>> d2e48b35c9cdd3c2a2425b05d020e0f28eb52f35
+
 }
 
 ?>
