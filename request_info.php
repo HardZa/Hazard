@@ -9,7 +9,7 @@
  if( $request == null || $user == null )
  	Redirect::to(403);
  $docData = array('progress' => $request->get('progress'),
- 				  'main_file' => 'show_request.php',
+ 				  'main_file' => 'request_info.php',
  				  'request' => $request ,
  				  'type' => $request->get('requesttype') ,
  				  'user' => $user);
