@@ -23,6 +23,7 @@
 		'addrpostalcode'=>'83110',
 		'addrphone'=>'076311650',
 		'addrfax'=>'076313535',
+		'productname' => 'รติก๊าส',
 		'producthouse'=>'52',
 		'productvillage'=>'1',
 		'productdrive'=>'2',
@@ -36,7 +37,7 @@
 		'hazardname'=>'น้ำจากเทือกเขา',
 		'hazardformulation'=>'H20',
 		'businessname'=>'น้ำเปล่า',
-		'quantity'=>'5 ถัง กบัอีก 3 ขวด',
+		'quantity'=>'5 ถัง กับอีก 3 ขวด',
 		'note'=>'มันลืนคอเหมือนดื่มอากาศ',
 		'producerspecialist'=>'ทักษิณ ชินวัตร',
 		'condition'=>'ต้องเขย่าก่อนดื่ม',
@@ -44,7 +45,19 @@
 		'expmonth'=>'มกราคม',
 		'expyear'=>'2556',
 		'officername'=>'สมรัก คำสิงค์',
-		'productcertid'=>'วอ./กษ./กวก.2-0001/2556'
+		'productcertid'=>'วอ./กษ./กวก.2-0001/2556',
+		'storename' => 'บ้านทองหยอด',
+		'storehouse' => '100/10',
+		'storevillage' => '51',
+		'storedrive' => 'บ้านบึง 3',
+		'storeroad' => 'งามวงวาน',
+		'storesubdistrict' => 'มะขามป้อม',
+		'storedistrict' => 'บางเขน',
+		'storeprovince' => 'กทม.',
+		'storepostalcode' => '10010',
+		'storephone' => '075123321',
+		'storefax' => '078123456',
+		'storespecialist' => 'สนธิ ลิ้มทองกุล'
 	);
 
 	$info4=array(
