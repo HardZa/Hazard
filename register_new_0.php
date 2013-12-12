@@ -11,8 +11,7 @@
 				'required'=>true
 			),
 			'for'=> array(
-				'required'=>true,
-				'numeric'=>true
+				'required'=>true
 			)
 		));
 		if($validate->passed())
@@ -46,7 +45,7 @@
   <div class="form-group" >
     <label for="hazardname" class="col-sm-4 control-label">ชื่อวัตถุอันตราย</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="hazardname" name="hazardname" placeholder="ชื่อวัตถุอันตราย" >
+      <input type="text" class="form-control" id="hazardname" name="hazardname" placeholder="ชื่อวัตถุอันตราย" value="<?php echo Input::get('hazardname'); ?>" >
     </div>
   </div>
   <div class="form-group" >
