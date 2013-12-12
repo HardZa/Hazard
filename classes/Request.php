@@ -34,6 +34,7 @@ class Request
 			case PRG_ACCEPT_PAY:
 				return 'รอบิล';
 		}
+		return 'unknow progress ('.$progress.')';
 	}
 
 	public static function create_request($userid,$type,$jsondata)
@@ -52,6 +53,38 @@ class Request
 	public static function get_requests_by_userid($userid)
 	{
 		$rows = DB::get_db()->select('request',null,"userid='$userid'");
+		$ret = array();
+		foreach ($rows as $value) {
+			$ret[] = new Request($value);
+		}
+		return $ret;
+	}
+
+	public static function get_requests()
+	{
+		$rows = DB::get_db()->select('request');
+		$ret = array();
+		foreach ($rows as $value) {
+			$ret[] = new Request($value);
+		}
+		return $ret;
+	}
+
+	public static function get_requests_by_progress($progress)
+	{
+		if( is_array($progress) == false )
+		{
+			$progress = array($progress);
+		}
+		$fillWhere = '';
+		$isfirst = true;
+		foreach ($progress as $value) {
+			if($isfirst == false)
+				$fillWhere .= ' or ';
+			$isfirst = false;
+			$fillWhere .= "progress='$value'";
+		}
+		$rows = DB::get_db()->select('request',null,$fillWhere);
 		$ret = array();
 		foreach ($rows as $value) {
 			$ret[] = new Request($value);

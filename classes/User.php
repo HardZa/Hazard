@@ -30,6 +30,8 @@ class User{
 			return 'plantprotection';
 		else if($this->is_group('registrar'))
 			return 'registrar';
+
+		return 'others';
 	}
 	
 	public function set($key,$value)
@@ -162,6 +164,7 @@ class User{
 	    return $randomString;
 	}
 
+<<<<<<< 866ac4373b4cf14134df12aff100cad0c175dbac
 	public function get_requests()
 	{
 		if( $this->is_group('client') )
@@ -174,6 +177,82 @@ class User{
 		}
 	}
 
+=======
+	public static function get_group_by_id($id)
+	{
+		$userid = $id;
+		$table = 'usergroup_'.'agriproduction';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		if( count($rows) == 1 )
+		{
+			return 'agriproduction';
+		}
+		
+		$table = 'usergroup_'.'cashier';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		if( count($rows) == 1 )
+		{
+			return 'cashier';
+		}
+
+		$table = 'usergroup_'.'client';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		if( count($rows) == 1 )
+		{
+			return 'client';
+		}
+
+		$table = 'usergroup_'.'hazcontrol';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		if( count($rows) == 1 )
+		{
+			return 'hazcontrol';
+		}
+
+		$table = 'usergroup_'.'plantprotection';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		if( count($rows) == 1 )
+		{
+			return 'plantprotection';
+		}
+
+		$table = 'usergroup_'.'registrar';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		if( count($rows) == 1 )
+		{
+			return 'registrar';
+		}
+
+		return 'others';
+
+
+	}
+
+	public static function get_client_by_id($id)
+	{
+		$userid = $id;
+		$table = 'users';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		$user_db = $rows[0];
+
+		$table = 'usergroup_client';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		$user_db_client = $rows[0];
+
+
+		return array_merge($user_db, $user_db_client);
+	}
+
+	public static function get_user_by_id($id)
+	{
+		$userid = $id;
+		$table = 'users';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		$user_db = $rows[0];
+
+		return $user_db;
+	}
+>>>>>>> d2e48b35c9cdd3c2a2425b05d020e0f28eb52f35
 }
 
 ?>

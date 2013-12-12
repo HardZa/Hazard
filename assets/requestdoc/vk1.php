@@ -50,7 +50,7 @@
 <div class="row">
 	<div class="col-md-3"><b>รหัสไปรษณีย์</b> <?php echo doc('productpostalcode')?></div>
 	<div class="col-md-3"><b>โทรศัพท์</b> <?php echo doc('productphone')?></div>
-	<div class="col-md-3"><b>โทรสาร</b><?php echo doc('productfax')?></div>
+	<div class="col-md-3"><b>โทรสาร</b> <?php echo doc('productfax')?></div>
 </div>
 <br>
 <div class="row">
@@ -179,7 +179,7 @@
 	<br>
 </div>
 <div class="row">
-	<div class="col-md-11"><b>สถานที่เก็บรักษาวัตถุอันตรายแห่งที่๒ ชื่อ </b></div>
+	<div class="col-md-11"><b>สถานที่เก็บรักษาวัตถุอันตรายแห่งที่๒ ชื่อ </b><?php echo doc('storename')?></div>
 </div>
 <div class="row">
 	<div class="col-md-3"><b>ตั้งอยู่เลขที่</b> <?php echo doc('storehouse')?></div>
@@ -195,7 +195,7 @@
 <div class="row">
 	<div class="col-md-3"><b>รหัสไปรษณีย์</b> <?php echo doc('storepostalcode')?></div>
 	<div class="col-md-3"><b>โทรศัพท์</b> <?php echo doc('storephone')?></div>
-	<div class="col-md-3"><b>โทรสาร</b><?php echo doc('storefax')?></div>
+	<div class="col-md-3"><b>โทรสาร </b><?php echo doc('storefax')?></div>
 </div>
 
 <br>
