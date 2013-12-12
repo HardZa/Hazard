@@ -2,7 +2,7 @@
 
 class User{
 	private static $all_group_name = array('agriproduction','cashier','client','hazcontrol','plantprotection','registrar');
-	private static $user_fields = array('userid','username','userrealname','userallowed');
+	private static $user_fields = array('userid','username','userrealname','userallowed','userpasssha1');
 	private $user_db;
 	public static $user_field_allow_edit = array('userrealname');
 
@@ -15,9 +15,25 @@ class User{
 	{
 		return $this->user_db[$key];
 	}
+
+	public function get_groupname()
+	{
+		if($this->is_group('agriproduction'))
+			return 'agriproduction';
+		else if($this->is_group('cashier'))
+			return 'cashier';
+		else if($this->is_group('client'))
+			return 'client';
+		else if($this->is_group('hazcontrol'))
+			return 'hazcontrol';
+		else if($this->is_group('plantprotection'))
+			return 'plantprotection';
+		else if($this->is_group('registrar'))
+			return 'registrar';
+	}
 	
 	public function set($key,$value)
-	{
+	{	
 		$this->user_db[$key] = $value;
 	}
 	

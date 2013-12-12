@@ -1,5 +1,5 @@
  <?php
-  
+    
  require_once('core/init.php');
  include(resolveHeader('includes/header.php'));
 
@@ -27,7 +27,6 @@ if(!Permission::userAddAllowed())
  	}
 
  	$(document).ready(function(){
-
  		<?php
  			echo '$("#regis_type").val("'.Input::post('regis_type').'");';
  		?>
@@ -41,6 +40,7 @@ if(!Permission::userAddAllowed())
 
  		$("#regis_type").change(function()
  		{
+			$('input').parent().parent().removeClass('has-error');
  			if( $("#regis_type option:selected").val() =='client') 
  			{
  				clearClientForm();
@@ -128,12 +128,37 @@ if(!Permission::userAddAllowed())
 			Redirect::postto('user/add/summary',array_merge($_POST,array('password'=>$password)));
 		}
 	}else{
-		 echo "FAIL";
+		 echo "FAIL <script type='text/javascript'>";
+		 if( ! $validate->passed() ){
+			foreach( $validate->errors() as $key => $value){
+			
+			echo "
+					$(document).ready(function(){
+					$('#$key').parent().parent().addClass('has-error');
+					});
+			";
+			
+			}
+		 }
+		if(Input::post('regis_type')=='client' &&  ! $client_validate->passed() ){
+			foreach( $client_validate->errors() as $key => $value){
+			
+			echo "
+					$(document).ready(function(){
+					$('#$key').parent().parent().addClass('has-error');
+					});
+			";
+			}
+		 }
+			
+
+		 echo "</script>";
 	}
 	echo ("<br>");
 	$errors = $validate->errors();
 	$client_errors = $client_validate->errors();
-	var_dump($errors);
+	//var_dump($errors);
+	//var_dump($client_errors);
 
 }
 
@@ -165,14 +190,14 @@ function echoValue($field)
   	</div>
 
   	<div class="form-group" >
-    	<label for="username" class="col-sm-3 control-label">ชื่อล็อกอิน</label>
+    	<label for="username" class="col-sm-3 control-label">*ชื่อล็อกอิน</label>
 	    <div class="col-sm-6">
 	      	<input type="text" class="form-control" id="username" name="username" placeholder="ชื่อล็อกอิน" >
 	    </div>
  	</div>
 
  	<div class="form-group" >
-    	<label for="name" class="col-sm-3 control-label">ชื่อ-สกุล</label>
+    	<label for="name" class="col-sm-3 control-label">*ชื่อ-สกุล</label>
 	    <div class="col-sm-6">
 	      	<input type="text" class="form-control" id="name" name="name" placeholder="ชื่อ-สกุล" <?php echoValue('name'); ?> >
 	    </div>
@@ -181,7 +206,7 @@ function echoValue($field)
 <div id ="client_form">
 
 	<div class="form-group" >
-    	<label for="userbirthdate" class="col-sm-3 control-label">วัน-เดือน-ปี เกิด</label>
+    	<label for="userbirthdate" class="col-sm-3 control-label">*วัน-เดือน-ปี เกิด</label>
 	    <div class="col-sm-6">
 	      	<input type="text" class="form-control" id="userbirthdate" name="userbirthdate" placeholder="DD-MM-YYYY" <?php echoValue('userbirthdate'); ?> >
 	    </div>
@@ -195,14 +220,14 @@ function echoValue($field)
  	</div>
 
  	<div class="form-group" >
-    	<label for="usertaxid" class="col-sm-3 control-label">เลขประจำตัวผู้เสียภาษี</label>
+    	<label for="usertaxid" class="col-sm-3 control-label">*เลขประจำตัวผู้เสียภาษี</label>
 	    <div class="col-sm-6">
 	      	<input type="text" class="form-control" id="usertaxid" name="usertaxid" placeholder="เลขประจำตัวผู้เสียภาษี" <?php echoValue('usertaxid'); ?> >
 	    </div>
  	</div>
 
  	<div class="form-group" >
-    	<label for="useraddrhouse" class="col-sm-3 control-label">ที่อยู่</label>
+    	<label for="useraddrhouse" class="col-sm-3 control-label">*ที่อยู่</label>
 	    <div class="col-sm-6">
 	      	<input type="text" class="form-control" id="useraddrhouse" name="useraddrhouse" placeholder="ที่อยู่" <?php echoValue('useraddrhouse'); ?> >
 	    </div>
@@ -223,35 +248,35 @@ function echoValue($field)
  	</div>
 
  	<div class="form-group" >
-    	<label for="useraddrroad" class="col-sm-3 control-label">ถนน</label>
+    	<label for="useraddrroad" class="col-sm-3 control-label">*ถนน</label>
 	    <div class="col-sm-6">
 	      	<input type="text" class="form-control" id="useraddrroad" name="useraddrroad" placeholder="ถนน" <?php echoValue('useraddrroad'); ?> >
 	    </div>
  	</div>
 
  	<div class="form-group" >
-    	<label for="usersubdistrict" class="col-sm-3 control-label">ตำบล/แขวง</label>
+    	<label for="usersubdistrict" class="col-sm-3 control-label">*ตำบล/แขวง</label>
 	    <div class="col-sm-6">
 	      	<input type="text" class="form-control" id="usersubdistrict" name="usersubdistrict" placeholder="ตำบล/แขวง" <?php echoValue('usersubdistrict'); ?> >
 	    </div>
  	</div>
 
  	<div class="form-group" >
-    	<label for="userprovince" class="col-sm-3 control-label">จังหวัด</label>
+    	<label for="userprovince" class="col-sm-3 control-label">*จังหวัด</label>
 	    <div class="col-sm-6">
 	      	<input type="text" class="form-control" id="userprovince" name="userprovince" placeholder="จังหวัด" <?php echoValue('userprovince'); ?> >
 	    </div>
  	</div>
 
  	<div class="form-group" >
-    	<label for="userpostalcode" class="col-sm-3 control-label">รหัสไปรษณีย์</label>
+    	<label for="userpostalcode" class="col-sm-3 control-label">*รหัสไปรษณีย์</label>
 	    <div class="col-sm-6">
 	      	<input type="text" class="form-control" id="userpostalcode" name="userpostalcode" placeholder="รหัสไปรษณีย์" <?php echoValue('userpostalcode'); ?> >
 	    </div>
  	</div>
 
  	<div class="form-group" >
-    	<label for="userphone" class="col-sm-3 control-label">หมายเลขโทรศัพท์</label>
+    	<label for="userphone" class="col-sm-3 control-label">*หมายเลขโทรศัพท์</label>
 	    <div class="col-sm-6">
 	      	<input type="text" class="form-control" id="userphone" name="userphone" placeholder="หมายเลขโทรศัพท์" <?php echoValue('userphone'); ?> >
 	    </div>
