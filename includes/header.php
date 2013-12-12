@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Hazardous object tracking system</title>
+	<title>ระบบใบรับรองการนำเข้า ครอบครอง ส่งออก และขึ้นทะเบียนวัตถุอันตราย</title>
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/dist/css/bootstrap.css");?>">
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/dist/css/bootstrap-theme.css");?>">
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/non-responsive.css");?>">
@@ -36,13 +36,13 @@
 				$user = User::get_user();
 				if( !isset($user) || $user == null ) {
 			?>
-			<li><a href="<?php echo resolveURIHeader("login");?>">login</a></li>
+			<li><a href="<?php echo resolveURIHeader("login");?>">ลงชื่อเข้าระบบ</a></li>
 			<?php
 				}else{
 			?>
-			<li><a href="<?php echo resolveURIHeader("user");?>">user</a></li>
-			<li><a href="<?php echo resolveURIHeader("user/edit");?>">edit</a></li>
-			<li><a href="<?php echo resolveURIHeader("logout");?>">logout</a></li>
+			<li><a href="<?php echo resolveURIHeader("user");?>">หน้าของฉัน</a></li>
+			<li><a href="<?php echo resolveURIHeader("user/edit");?>">แก้ไขบัญชี</a></li>
+			<li><a href="<?php echo resolveURIHeader("logout");?>">ออกจากระบบ</a></li>
 			<?php
 				}
 			?>
