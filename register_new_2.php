@@ -5,11 +5,11 @@
 <div class="page-header">
     <h1>คำขอต่ออายุใบสำคัญการขึ้นทะเบียนวัตถุอันตราย</h1>
 </div>
-<form class="form-horizontal" role="form" method="get" action="">
+<form class="form-horizontal" role="form" method="post" action="">
 	<div class="form-group" >
     	<label for="hazardno" class="col-sm-6">มีความประสงค์จะขอต่ออายุใบสำคัญการขึ้นทะเบียนวัตถุอันตรายเลขที่</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="hazardno" name="hazardno" placeholder="วัตถุอันตรายเลขที" >
+      		<input type="text" class="form-control" id="hazardno" name="hazardno" placeholder="วัตถุอันตรายเลขที" value="<?php echo Input::post('hazardno'); ?>">
     	</div>
   	</div>
 	<div class="form-group">

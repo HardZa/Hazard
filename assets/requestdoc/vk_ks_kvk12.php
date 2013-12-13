@@ -34,14 +34,13 @@
 	<div class="col-md-3"><b>โทรสาร</b> <?php echo doc('addrfax')?></div>
 </div>
 <div class="row">
-	<div class="col-md-11"><b>E-mail address</b> <?php echo doc('email')?></div>
+	<div class="col-md-11"><b>E-mail address</b> <?php echo doc('addremail')?></div>
 </div>
 <br>
 <div class="row">
 	<div class="col-md-3"><b>มีความประสงค์จะขออนุญาต</b> </div>
-	<div class="col-md-2"><font size ="3">O</font>&nbsp;&nbsp; นำเข้า </div>
-	<div class="col-md-2"><font size ="3">O</font>&nbsp;&nbsp; ผลิต </div>
-	<div class="col-md-4"><b>ตัวอย่างวัตถุอันตรายเพื่อใช้ในการขึ้นทะเบียน</b> </div>
+	<div class="col-md-2"> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('purposefirst')?></div>
+	<div class="col-md-6"><b>ตัวอย่างวัตถุอันตรายเพื่อใช้ในการขึ้นทะเบียน</b> </div>
 </div>
 <br>
 <div class="row">
@@ -64,7 +63,7 @@
 	<div class="col-md-3"><b>โทรสาร</b> <?php echo doc('storefax')?></div>
 </div>
 <div class="row">
-	<div class="col-md-11"><b>E-mail address</b> <?php echo doc('email')?></div>
+	<div class="col-md-11"><b>E-mail address</b> <?php echo doc('storeemail')?></div>
 </div>
 <br>
 
@@ -78,7 +77,7 @@
 		<div class="col-md-11"><b>๒. สูตรอัตราส่วนผสมของสารสําคัญและลักษณะ </b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('hazardformulation')?></div>
 		<div class="col-md-11"><b>๓. ชื่อทางการค้าหรือหมายเลขรหัส </b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('businessname')?></div>
 		<div class="col-md-11"><b>๔. ชื่อผู้ผลิตและแหล่งผลิต </b>&nbsp;&nbsp;&nbsp;&nbsp;<b>ชื่อ</b> <?php echo doc('producer')?> <b>ผลิตที่</b> <?php echo doc('productname')?></div>
-		<div class="col-md-11"><b>๕. ชื่อผู้นําเข้า</b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('incomename')?></div>
+		<div class="col-md-11"><b>๕. ชื่อผู้นำเข้า</b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('importer')?></div>
 		<div class="col-md-11"><b>๖. ปริมาณ</b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('quantity')?></div>
 		<div class="col-md-11"><b>๗. เอกสารและตัวอย่างที่ต้องส่งประกอบการขออนุญาต</b></div>
 		<div class="row">
