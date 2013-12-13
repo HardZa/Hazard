@@ -18,6 +18,9 @@ RewriteRule ^$ home.php
 RewriteRule ^login/$ login.php
 RewriteRule ^login$ login/
 
+RewriteRule ^d/$ home2.php
+RewriteRule ^d$ d/
+
 RewriteRule ^logout/$ logout.php
 RewriteRule ^logout$ logout/
 
