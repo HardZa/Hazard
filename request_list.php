@@ -33,8 +33,7 @@ if( isset($_GET['user']) && $_GET['user'] != ''){
 }
 
 
-//$data = $db->select('request',array('userid','requesttype','progress'),$condition);
-$data = $db->select('request',array('userid','requesttype','progress'));
+$data = $db->select('request',array('userid','requesttype','progress'),$condition);
 ?>
 <div class='container' >
 	<div class='page-header'>
