@@ -3,6 +3,7 @@
   function translate($key,$error){
 		$new_error = '';
 		$new_key = $key;
+		if( $key == "username" ) $new_key = "ชื่อล็อกอิน";
 		if( $key == "regis_type" ) $new_key = "ประเภทผู้ใช้";
 		if( $key == "name" ) $new_key = "ชื่อ-สกุล";
 		if( $key == "userbirthdate" ) $new_key = "วันเกิด";
