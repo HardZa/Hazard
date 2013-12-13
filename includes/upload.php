@@ -17,7 +17,7 @@ else
     	$increment++;
 	}
 	
-	$basename = $name.$increment.'.'.$extension;
+	$basename = mysql_real_escape_string($name.$increment.'.'.$extension);
 
 	if(move_uploaded_file($_FILES['file1']['tmp_name'], $folder.$basename))
 	{

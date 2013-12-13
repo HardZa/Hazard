@@ -5,10 +5,15 @@ function _(el)
 {
 	return document.getElementById(el);
 }
+function mysqlEscape(stringToEscape){
+    return stringToEscape
+        .replace("\\", "\\\\")
+        .replace("\'", "\\\'");
+}
 function updatepic()
 {
 	var arr=_("picarr");
-	arr.value=JSON.stringify(picup);
+	arr.value=mysqlEscape(JSON.stringify(picup));
 	//alert(JSON.stringify(picup));
 }
 function delRow(picname)
@@ -118,6 +123,7 @@ function initial()
 		$i;
 		for($i=0;$i<count($picarr);$i++)
 		{
+			
 			echo "<script> pichead[".$i."]='".$picarr[$i]."'; </script>";
 		}
 	}

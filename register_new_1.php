@@ -17,7 +17,7 @@
 			$j;
 			for($j=0;$j<count($picarr);$j++)
 			{
-				$r->add_pic(PIC_DOC_ATTACH,$picarr[$j]);
+				$r->add_pic(PIC_DOC_ATTACH,mysql_real_escape_string($picarr[$j]));
 			}
 			$r->redirect();
         }
