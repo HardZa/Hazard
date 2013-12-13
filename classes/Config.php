@@ -23,7 +23,14 @@ class Config
 		),
 		'progress_maping' => array(
 			VO_GS_GVG_1 => 
-				array(PRG_CHK_DOC => 'req1/1.jpg')
+				array(PRG_CHK_DOC => 'req1/1.jpg',
+					  PRG_SURVEY => 'req1/2.jpg',
+					  PRG_CONSIDER => 'req1/3.jpg',
+					  PRG_WAIT_PAY => 'req1/4.jpg',
+					  PRG_ACCEPT_PAY => 'req1/5.jpg',
+					  PRG_PRINTING => 'req1/6.jpg',
+					  PRG_COMPLETE => 'req1/7.jpg',
+					  PRG_REJECT => 'req1/8.jpg')
 		)
 	);
 

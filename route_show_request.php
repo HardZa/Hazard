@@ -32,6 +32,9 @@ else if($user->is_group('hazcontrol'))
 		case PRG_COMPLETE:
 			$route_file = 'haz_printing.php';
 			break;
+		case PRG_REJECT:
+			$route_file = 'empty.php';
+			break;
 	}
 }
 else if($user->is_group('cashier'))

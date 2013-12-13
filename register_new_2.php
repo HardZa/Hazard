@@ -7,9 +7,9 @@
 </div>
 <form class="form-horizontal" role="form" method="get" action="">
 	<div class="form-group" >
-    	<label for="hazardid" class="col-sm-6">มีความประสงค์จะขอต่ออายุใบสำคัญการขึ้นทะเบียนวัตถุอันตรายเลขที่</label>
+    	<label for="hazardno" class="col-sm-6">มีความประสงค์จะขอต่ออายุใบสำคัญการขึ้นทะเบียนวัตถุอันตรายเลขที่</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="hazardid" name="hazardid" placeholder="วัตถุอันตรายเลขที" >
+      		<input type="text" class="form-control" id="hazardno" name="hazardno" placeholder="วัตถุอันตรายเลขที" >
     	</div>
   	</div>
 	<div class="form-group">

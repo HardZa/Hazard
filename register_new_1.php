@@ -73,9 +73,9 @@
       	</div>
     </div>
   	<div class="form-group" >
-    	<label for="solchem" class="col-sm-4" >๒. สูตรอัตราส่วนผสมของสารสำคัญและลักษณะ</label>
+    	<label for="hazardformulation" class="col-sm-4" >๒. สูตรอัตราส่วนผสมของสารสำคัญและลักษณะ</label>
     	<div class="col-sm-8">
-      		<textarea class="form-control" rows="2" id="solchem" name="solchem" placeholder="สูตรอัตราส่วนผสมของสารสำคัญและลักษณะ" ></textarea>
+      		<textarea class="form-control" rows="2" id="hazardformulation" name="hazardformulation" placeholder="สูตรอัตราส่วนผสมของสารสำคัญและลักษณะ" ></textarea>
     	</div>
   	</div>
   	<div class="form-group" >
@@ -85,33 +85,33 @@
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="producername" class="col-sm-4" >๔. ชื่อผู้ผลิตและแหล่งผลิต</label>
+    	<label for="producer" class="col-sm-4" >๔. ชื่อผู้ผลิตและแหล่งผลิต</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="producername" name="producername" placeholder="ชื่อผู้ผลิตและแหล่งผลิต" >
+      		<input type="text" class="form-control" id="producer" name="producer" placeholder="ชื่อผู้ผลิตและแหล่งผลิต" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="importername" class="col-sm-4" >๕. ชื่อผู้นำเข้า</label>
+    	<label for="importer" class="col-sm-4" >๕. ชื่อผู้นำเข้า</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="importername" name="importername" placeholder="ชื่อผู้นำเข้า" >
+      		<input type="text" class="form-control" id="importer" name="importer" placeholder="ชื่อผู้นำเข้า" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="agentname" class="col-sm-4" >๖. ชื่อผู้จำหน่าย/ผู้จัดจำหน่าย</label>
+    	<label for="saleman" class="col-sm-4" >๖. ชื่อผู้จำหน่าย/ผู้จัดจำหน่าย</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="agentname" name="agentname" placeholder="ชื่อผู้จำหน่าย/ผู้จัดจำหน่าย" >
+      		<input type="text" class="form-control" id="saleman" name="saleman" placeholder="ชื่อผู้จำหน่าย/ผู้จัดจำหน่าย" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="detailpackage" class="col-sm-4" >๗. ชนิดและลักษณะหีบห่อหรือภาชนะบรรจุ พร้อมทั้งขนาดบรรจุ</label>
+    	<label for="container" class="col-sm-4" >๗. ชนิดและลักษณะหีบห่อหรือภาชนะบรรจุ พร้อมทั้งขนาดบรรจุ</label>
     	<div class="col-sm-8">
-      		<textarea class="form-control" rows="5" id="detailpackage" name="detailpackage" placeholder="ชนิดและลักษณะหีบห่อหรือภาชนะบรรจุ พร้อมทั้งขนาดบรรจุ" ></textarea>
+      		<textarea class="form-control" rows="5" id="container" name="container" placeholder="ชนิดและลักษณะหีบห่อหรือภาชนะบรรจุ พร้อมทั้งขนาดบรรจุ" ></textarea>
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="typeforuse" class="col-sm-4" >๘. ประเภทของการใช้</label>
+    	<label for="purpose" class="col-sm-4" >๘. ประเภทของการใช้</label>
     	<div class="col-sm-8">
-      		<textarea class="form-control" rows="5" id="typeforuse" name="typeforuse" placeholder="ประเภทของการใช้" ></textarea>
+      		<textarea class="form-control" rows="5" id="purpose" name="purpose" placeholder="ประเภทของการใช้" ></textarea>
     	</div>
   	</div>
   	<div class="form-group">
