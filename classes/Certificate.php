@@ -58,7 +58,8 @@ class Certificate
 	{
 		$certno = Certificate::gen_exp_certno($certtype);
 		$expdate = Certificate::gen_exp_date();
-		DB::get_db()->insert('certificate',array('certno','userid','expdate','certtype','jsondata'),array($certno,$userid,$expdate,$certtype,json_encode($jsondata)));
+		DB::get_db()->insert('certificate',array('certno','userid','expdate','certtype','jsondata'),array($certno,$userid,$expdate,$certtype,
+			mysql_real_escape_string(json_encode($jsondata)));
 		return Certificate::load( DB::get_db()->getLastInsertID() );
 	}
 
@@ -80,7 +81,7 @@ class Certificate
 		$cert->userid = $certdb[0]['userid'];
 		$cert->expdate = $certdb[0]['expdate'];
 		$cert->certtype = $certdb[0]['certtype'];
-		$cert->jsondata = $certdb[0]['jsondata'];
+		$cert->jsondata = (array)json_decode($certdb[0]['jsondata']);
 		$cert->certno = $certdb[0]['certno'];
 		$cert->set_certid( $certdb[0]['certid']);
 		return $cert;
