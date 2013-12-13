@@ -60,6 +60,11 @@ class Picture
 		return $ret;
 	}
 
+	public function get_uri()
+	{
+		return 'upload/'.$this->file;
+	}
+
 }
 
 ?>
