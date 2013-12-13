@@ -53,5 +53,15 @@ function set_doc($field,$v)
 	$docData[$field] = $v;
 }
 
+function DMY_to_YMD($date)
+{
+	return substr($date,6,4).'-'.substr($date,3,2).'-'.substr($date,0,2);
+}
+
+function YMD_to_DMY($date)
+{
+	return substr($date,8,2).'-'.substr($date,5,2).'-'.substr($date,0,4);
+}
+
  
  ?>

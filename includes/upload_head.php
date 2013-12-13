@@ -21,7 +21,7 @@ function delRow(picname)
 }
 function uploadFile()
 {
-	var file=_("file1").files[0];
+	var file = _('file1').files[0];
 	if(file.size>8388608)
 	{
 		_("status").innerHTML="ไฟล์มีขนาดใหญ่เกินไป";
@@ -80,8 +80,7 @@ function gentable(picnameja)
 
 }
 function completeHandler(event)
-{	
-	_("progressBar").value=100;
+{	_("progressBar").value=100;
 	_("progressBar").hidden=1;
 	if(event.target.responseText=="-1")
 	{
