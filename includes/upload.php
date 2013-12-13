@@ -12,6 +12,10 @@ else
 
 	$increment = ''; //start with no suffix
 	
+	if( ereg("[ก-๙]", $name ) )
+	{
+		$name = 'image';
+	}
 
 	while(file_exists($folder.$name.$increment.'.'.$extension)) {
     	$increment++;
