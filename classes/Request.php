@@ -179,7 +179,6 @@ class Request
 		}
 		$this->_data = $new_data;
 		$this->_data['jsondata'] = (array)json_decode($this->_data['jsondata']);
-		var_dump($this->_data['jsondata']);
 	}
 
 	public function progress($prog)
