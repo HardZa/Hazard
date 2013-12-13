@@ -17,7 +17,7 @@ if( $user->get_groupname() == "client" ){
 	$condition = $condition." and userid='".$user->get('userid')."'";
 }
 if( $user->get_groupname() == "cashier" )
-	$condition = $condition." and progress='".PRG_WAIT_PAY."'";
+	$condition = $condition." and progress='".PRG_ACCEPT_PAY."'";
 if( $user->get_groupname() == "plantprotection"
  ||  $user->get_groupname() == "agriproduction" )
 	$condition = $condition." and progress='".PRG_SURVEY."'";
