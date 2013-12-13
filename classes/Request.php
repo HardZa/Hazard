@@ -172,6 +172,11 @@ class Request
 		$this->set('progress',$prog);
 	}
 
+	public function redirect()
+	{
+		Redirect::to( 'request_info.php?id='.( $this->get('requestid') ) );
+	}
+
 }
 
 
