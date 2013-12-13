@@ -1,32 +1,27 @@
 <?php
  	require_once('core/init.php');
 	include(resolveHeader('includes/header.php'));
-  include(resolveHeader('includes/upload_head.php')); 
-
-  $user = User::get_user();
-
+    include(resolveHeader('includes/upload_head.php')); 
+  
     if(Input::exists('post'))
-    {
-        $picarr=json_decode($_POST['picarr']);
-        $i;
-        for($i=0;$i<count($picarr);$i++)
-        {
-          echo "<script> pichead[".$i."]='".$picarr[$i]."'; </script>";
-        }
-
-        var_dump($picarr);
-
-        $validate = new Validate();
+    {    
+		$validate = new Validate();
         $validate->check($_POST,array(
-          'hazardname'=> array(
-            'required'=>true
-          )
-        ));
+										  'hazardname'=> array('required'=>true)
+  									 )
+						);
+		$user = User::get_user();
         if($validate->passed())
         {
-            Request::create_request($user->get('userid'),1,$_POST);
-            echo "PASS";
+            $r = Request::create_request($user->get('userid'),VO_GS_GVG_1,$_POST);
+			$j;
+			for($j=0;$j<count($picarr);$j++)
+			{
+				$r->add_pic(PIC_DOC_ATTACH,$picarr[$j]);
+			}
+			$r->redirect();
         }
+		
     }
 ?>
 <div class="container">
@@ -114,18 +109,21 @@
       		<textarea class="form-control" rows="5" id="purpose" name="purpose" placeholder="ประเภทของการใช้" ><?php echo Input::post('purpose'); ?></textarea>
     	</div>
   	</div>
-  	<div class="form-group">
-    	<div class="button-regis pull-right">
-      		<button type="submit" class="btn btn-success">ลงทะเบียน</button>
-    	</div>
-  	</div>
-     <input type="hidden" id="picarr" name="picarr">
+    <div class="row">
+    	<label class="col-sm-3 col-sm-offset-1 control-label">แนบไฟล์เอกสารที่เกี่ยวข้อง</label>
+    	<?php include(resolveHeader('includes/upload_block.php')); ?>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div class="button-regis pull-right">
+                <button type="submit" class="btn btn-success">ลงทะเบียน</button>
+            </div>
+        </div>
+    </div>
   </form>
 
 
-<?php
-include(resolveHeader('includes/upload_form.php'));
-?>
+
 </div> 
 
 </div>
