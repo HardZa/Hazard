@@ -51,7 +51,7 @@ class Request
 
 	public static function create_request($userid,$type,$jsondata)
 	{
-		DB::get_db()->insert('request',array('userid','requesttype','jsondata','progress'),array($userid,$type,json_encode($jsondata),0));
+		DB::get_db()->insert('request',array('userid','requesttype','jsondata','progress'),array($userid,$type,json_encode($jsondata),PRG_CHK_DOC));
 		return Request::load( DB::get_db()->getLastInsertID() );
 	}
 

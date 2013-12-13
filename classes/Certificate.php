@@ -83,7 +83,7 @@ class Certificate
 
 	public static function get_user_certs($userid)
 	{
-		$allcert=[];
+		$allcert=array();
 		$allid = DB::get_db()->select('certificate',array('certid'),'userid='.$userid);
 		for($i =0 ; $i<count($allid);$i++)
 		{
