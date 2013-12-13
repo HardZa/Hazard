@@ -3,6 +3,7 @@
 	include(resolveHeader('includes/header.php'));
 
 	$docData = array(
+		'no'=>'no',
 		'day'=>'12',
 		'month'=>'มกราคม',
 		'year'=>'2556',
@@ -20,6 +21,7 @@
 		'addrpostalcode'=>'83110',
 		'addrphone'=>'076311650',
 		'addrfax'=>'076313535',
+		'productname'=>'productname',
 		'producthouse'=>'52',
 		'productvillage'=>'1',
 		'productdrive'=>'2',
@@ -30,6 +32,7 @@
 		'productpostalcode'=>'83110',
 		'productphone'=>'076311650',
 		'productfax'=>'076313535',
+		'storename'=>'storename',
 		'storehouse'=>'52',
 		'storevillage'=>'1',
 		'storedrive'=>'2',
@@ -44,11 +47,18 @@
 		'hazardname'=>'น้ำจากเทือกเขา',
 		'hazardformulation'=>'H20',
 		'businessname'=>'น้ำเปล่า',
-		'quantity'=>'5 ถัง กบัอีก 3 ขวด',
+		'quantity'=>'5 ถัง กับอีก 3 ขวด',
 		'note'=>'มันลืนคอเหมือนดื่มอากาศ',
 		'producerspecialist'=>'ดร. ภุชงค์ ชงไมโล',
 		'producerCountry'=>'ดูไบ',
-		'producer'=>'ทักษิณ ชินวัตร'
+		'producer'=>'ทักษิณ ชินวัตร',
+		'destinationCountry'=>'destinationCountry',
+		'tabean'=>'tabean',
+		'area'=>'area',
+		'email'=>'email',
+		'hazardid'=>'hazardid',
+		'incomename'=>'incomename',
+		'saleman'=>'saleman'
 	);
 ?>
 

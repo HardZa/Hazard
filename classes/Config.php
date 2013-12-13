@@ -1,7 +1,7 @@
 <?php
 
 class Config
-{
+{ 
 	private static $config = array(
 		'mysql' => array(
 			'host'=>'127.0.0.1',

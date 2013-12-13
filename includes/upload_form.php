@@ -110,7 +110,7 @@ function completeHandler(event)
 	else _("status").innerHTML="อัพโหลดไฟล์ "+event.target.responseText+" สมบูรณ์";
 	gentable(event.target.responseText);
 	
-	
+	_("file1").value="";
 }
 function errorHandler(event)
 {
