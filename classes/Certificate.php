@@ -35,6 +35,11 @@ class Certificate
 		$this->certid = $certid;
 	}
 
+	public function is_expired()
+	{
+		return false;
+	}
+
 	public function get_exp_day()
 	{
 		return (string)(int)date_format(date_create($this->expdate), 'd');
