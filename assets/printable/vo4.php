@@ -55,7 +55,7 @@ font-size: 100%;
 
 <div class="text">
 <br>
-<div align="center">ใบอนุญาตผลิตวัตถุอันตราย</div>
+<div align="center">ใบอนุญาตนำเข้าวัตถุอันตราย</div>
 <br>
 
 <span >ใบอนุญาติเลขที่ <?php echo Input::get("certid"); ?></span>
@@ -94,11 +94,13 @@ font-size: 100%;
 ชื่อวัตถุอันตราย สูตรเคมี และอัตราส่วน <span class="box_4"><?php echo Input::get("hazardname"); ?></span><br><br>
 ลักษณะและสูตร (Formulation) <?php echo Input::get("hazardformulation"); ?><br>
 ชื่อทางการค้า (ถ้ามี) <?php echo Input::get("businessname"); ?><br>
+ผู้ผลิต <?php echo Input::get("producer"); ?><br>
+ประเทศที่ผลิต <?php echo Input::get("producerCountry"); ?><br>
 ปริมาณ <?php echo Input::get("quantity"); ?><br>
 หมายเหตุ <?php echo Input::get("note"); ?><br>
-สถานที่เก็บวัตถุอันตรายตามรายการด้านหลังใบอนุญาตนี้<br>
+สถานที่เก็บรักษาวัตถุอันตรายตามรายการด้านหลังใบอนุญาตนี้<br>
 ใบอนุญาตนี้ออกให้โดยมีเงื่อนไขดังต่อไปนี้ <span class="box_4"><?php echo Input::get("condition"); ?></span><br><br>
-ใบอนุญาตนี้ใช้ได้จนถึงวันที่ <span class="box_1"><?php echo Input::get("expday"); ?></span> เดือน <span class="box_3"><?php echo Input::get("expmonth"); ?></span> พ.ศ. <span class="box_3"><?php echo Input::get("expyear"); ?></span><br>
+ใบอนุญาตนี้ให้ใช้ได้จนถึงวันที่ <span class="box_1"><?php echo Input::get("expday"); ?></span> เดือน <span class="box_3"><?php echo Input::get("expmonth"); ?></span> พ.ศ. <span class="box_3"><?php echo Input::get("expyear"); ?></span><br>
 <br><br>
 <div align="right">( ลายมือชื่อ )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;พนักงานเจ้าหน้าที่ </div>
 <div align="right">( <?php echo Input::get("officername"); ?> )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><br>
@@ -106,8 +108,8 @@ font-size: 100%;
 
 <br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br>
 <div align = "center">-๑/๑-</div><br>
-รายการด้านหลังใบอนุญาตผลิตวัตถุอันตราย<br>
-ใบอนุญาตผลิตวัตถุอันตรายเลขที <?php echo Input::get("productcertid"); ?><br>
+รายการด้านหลังใบอนุญาตนำเข้าวัตถุอันตราย<br>
+ใบอนุญาตนำเข้าวัตถุอันตรายเลขที <?php echo Input::get("productcertid"); ?><br>
 
 <!-- ---------------------------------------------------------------------- -->
 
@@ -118,7 +120,7 @@ font-size: 100%;
 
 <!-- ---------------------------------------------------------------------- -->
 
-ชื่อผู้เชี่ยวชาญสำหรับรับผิดชอบการเก็บรักษา (ในกรณีที่มีใบประกาศฯ ออกตามความในมาตรา ๒๐(๒) แห่งพระราชบัญญัติวัตถุอันตราย พ.ศ.๒๕๓๕ กำหนดให้ต้องมีผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบ) <?php echo Input::get("storespecialist"); ?><br>
+ชื่อผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบสำหรับการเก็บรักษา (ในกรณีที่มีใบประกาศฯ ออกตามความในมาตรา ๒๐(๒) แห่งพระราชบัญญัติวัตถุอันตราย พ.ศ.๒๕๓๕ กำหนดให้ต้องมีผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบ) <?php echo Input::get("storespecialist"); ?><br>
 <br>
 <div align="right">( ลายมือชื่อ )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;พนักงานเจ้าหน้าที่ </div>
 <div align="right">( <?php echo Input::get("officername"); ?> )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><br>
