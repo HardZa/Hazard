@@ -357,7 +357,7 @@ function echoValue($field)
 		 	</div>
 		</div>
 
-			<button type="submit" class="btn btn-warning" style="margin-left:232px;">ลงทะเบียน</button>
+			<button type="submit" class="btn btn-warning" style="margin-left:240px;">ลงทะเบียน</button>
 		</form>
 	</div>
  </div>

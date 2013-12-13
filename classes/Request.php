@@ -51,7 +51,7 @@ class Request
 
 	public static function create_request($userid,$type,$jsondata)
 	{
-		DB::get_db()->insert('request',array('userid','requesttype','jsondata','progress'),array($userid,$type,json_encode($jsondata),PRG_CHK_DOC));
+		DB::get_db()->insert('request',array('userid','requesttype','jsondata','progress'),array($userid,$type,mysql_real_escape_string(json_encode($jsondata)),PRG_CHK_DOC));
 		return Request::load( DB::get_db()->getLastInsertID() );
 	}
 
@@ -120,7 +120,9 @@ class Request
 	public function get_data($s)
 	{
 		$tmp = $this->_data['jsondata'];
-		return $tmp[$s];
+		if(!isset($tmp[$s]))
+			return "not have";
+		else return $tmp[$s];
 	}
 
 	public function set($s,$v)

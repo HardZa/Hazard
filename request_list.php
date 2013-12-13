@@ -33,8 +33,7 @@ if( isset($_GET['user']) && $_GET['user'] != ''){
 }
 
 
-$data = $db->select('request',array('userid','requesttype','progress'),$condition);
-
+$data = $db->select('request',array('userid','requesttype','progress','requestid'),$condition);
 ?>
 <div class='container' >
 	<div class='page-header'>
@@ -48,7 +47,7 @@ $data = $db->select('request',array('userid','requesttype','progress'),$conditio
 					<option value="" >--เลือกชนิดคำร้อง--</option>
 					<option value="" >ชนิดใดก็ได้</option>
 <?php 
-	$all_requesttype = array(0,1);
+	$all_requesttype = array(0,1,2,3,4,5,6);
 	foreach( $all_requesttype as $item ){
 		echo "<option value='".$item."'>".Request::type_to_string($item)."</option>\n";
 	}
@@ -114,7 +113,11 @@ foreach( $data as $item ){
 			<td>$data_requesttype</td>
 			<td>$data_user</td>
 			<td>$data_progress</td>
-			<td><button type='button'>เปิดดู</button></td>
+			<td>
+				<form action='request_info.php' action='get'>
+					<button type='submit' name='id' value='".$item['requestid']."'>เปิดดู</button>
+				</form>
+			</td>
 		  </tr>";
 }
 echo "</table></div>";
