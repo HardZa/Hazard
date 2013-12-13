@@ -80,7 +80,7 @@
 	<div class="col-md-11"><b>ชื่อทางการค้าของวัตถุอันตราย<sup>(๒)</sup>ที่ขออนุญาตมีไว้ในครอบครอง </b> &nbsp;&nbsp;<?php echo doc('businessname')?></div>
 </div>
 <div class="row">
-	<div class="col-md-11"><b>ทะเบียนเลขที่ </b> &nbsp;&nbsp;<?php echo doc('tabean')?></div>
+	<div class="col-md-11"><b>ทะเบียนเลขที่ </b> &nbsp;&nbsp;<?php echo doc('hazardno')?></div>
 </div>
 <div class="row">
 	<div class="col-md-11"><b>ปริมาณการครอบครองรวมสูงสุด</b> &nbsp;&nbsp;<?php echo doc('quantity')?></div>
