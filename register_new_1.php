@@ -2,7 +2,7 @@
  	require_once('core/init.php');
 	include(resolveHeader('includes/header.php'));
     include(resolveHeader('includes/upload_head.php')); 
-  
+
     if(Input::exists('post'))
     {    
 		$validate = new Validate();

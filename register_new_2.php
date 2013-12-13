@@ -23,6 +23,7 @@
         }
 		
     }
+    $certs = Certificate::get_user_certs( $user->get('userid') );
 ?>
 <div class="container">
 <div class="data-box">
@@ -32,9 +33,19 @@
 <form class="form-horizontal" role="form" method="post" action="">
 	<div class="form-group" >
     	<label for="hazardno" class="col-sm-6">มีความประสงค์จะขอต่ออายุใบสำคัญการขึ้นทะเบียนวัตถุอันตรายเลขที่</label>
-    	<div class="col-sm-8">
+    	 <div class="col-sm-8">
+      <!--
       		<input type="text" class="form-control" id="hazardno" name="hazardno" placeholder="วัตถุอันตรายเลขที" value="<?php echo Input::post('hazardno'); ?>">
-    	</div>
+    	-->
+      <select class="form-control">
+        <?php
+          foreach ($certs as $cert) {
+            echo '<option value="'.$cert->certno.'">'.$cert->certno.'</option>';
+          }
+        ?>
+      </select>
+      </div>
+      
   	</div>
 	<div class="form-group">
     	<label class="col-sm-6">พร้อมนี้ข้าพเจ้าได้แนบเอกสารเพื่อประกอบการพิจราณา ดังนี้</label>

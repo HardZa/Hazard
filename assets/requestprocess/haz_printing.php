@@ -1,10 +1,17 @@
 <?php
 
+$ctype = -1;
+switch (doc('type')) {
+	case VO_GS_GVG_1:
+		$ctype = VO_GS_GVG_2;
+		break;
+}
 if( doc('request')->get('progress') != PRG_COMPLETE )
 {
-
 	if(Input::get('approve') != '')
 	{
+		$cert = Certificate::create(doc('user')->get('userid'), $ctype ,doc('request')->get('jsondata'));
+		doc('request')->set('certid',$cert->certid );
 		doc('request')->progress( PRG_COMPLETE );
 		doc('request')->save();
 		doc('request')->redirect();
@@ -17,8 +24,8 @@ if( doc('request')->get('progress') != PRG_COMPLETE )
 	<div class="col-md-2">
 		<a class="btnPrint" href='<?php
 		$file = 'empty.php';
-		switch ( doc('type') ) {
-			case VO_GS_GVG_1:
+		switch ( $ctype ) {
+			case VO_GS_GVG_2:
 				$file = 'vo_gs_gvg_2';
 				break;
 		}

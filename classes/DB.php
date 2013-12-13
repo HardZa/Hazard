@@ -97,7 +97,7 @@ class DB
 			if( $first == false )
 				$fill_set .= ',';
 			$first = false;
-			$fill_set .= "`$k`='$v'";
+			$fill_set .= "`$k`='".mysql_real_escape_string($v)."'";
 		}
 		return $this->query( "UPDATE `".Config::get('mysql/db')."`.`$table` SET $fill_set " . DB::getWhenNotStringEmpty($conditions,'where ')
 		. $conditions.' '.DB::getWhenNotStringEmpty($limit,'limit ').$limit );
