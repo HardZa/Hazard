@@ -15,22 +15,22 @@ else if($user->is_group('hazcontrol'))
 {
 	switch ($route_progress) {
 		case PRG_CHK_DOC:
-			set_doc('next_progress',PRG_SURVEY);
+			if( doc('type') == VO_GS_GVG_1 )
+				set_doc('next_progress',PRG_SURVEY);
+			else if( doc('type') == VO_GS_GVG_3 )
+				set_doc('next_progress',PRG_CONSIDER);
 			$route_file = 'normal_approve.php';
 			break;
 		case PRG_SURVEY:
-			set_doc('next_progress',PRG_CONSIDER);
-			$route_file = 'normal_approve.php';
+			$route_file = 'haz_survey.php';
 			break;
 		case PRG_CONSIDER:
 			set_doc('next_progress',PRG_WAIT_PAY);
 			$route_file = 'normal_approve.php';
 			break;
 		case PRG_PRINTING:
-			$route_file = 'haz_printing.php';
-			break;
 		case PRG_COMPLETE:
-			$route_file = 'haz_printing.php';
+				$route_file = 'haz_printing.php';
 			break;
 		case PRG_REJECT:
 			$route_file = 'empty.php';

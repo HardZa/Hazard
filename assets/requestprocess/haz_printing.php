@@ -15,7 +15,16 @@ if( doc('request')->get('progress') != PRG_COMPLETE )
 
 <div class="row">
 	<div class="col-md-2">
-		<input type="button" value="พิมพ์ใบรับรอง" class="btn btn-success" onclick="parent.location=''">
+		<input type="button" value="พิมพ์ใบรับรอง" class="btn btn-success" onclick="parent.location='<?php
+		$file = '';
+		switch ( doc('type') ) {
+			case VO_GS_GVG_1:
+				$file = 'vo_gs_gvg_1.php';
+				break;
+		}
+		//if( $file != '' )
+		//	include( resolveHeader( Config::get('template/bindprint'). ) );
+		?>'">
 	</div>
 	<?php if( doc('request')->get('progress') != PRG_COMPLETE ) { ?>
 	<div class="col-md-2">
