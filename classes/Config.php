@@ -6,7 +6,7 @@ class Config
 		'mysql' => array(
 			'host'=>'127.0.0.1',
 			'username'=>'root',
-			'password'=>'haxnia99',
+			'password'=>'',
 			'db'=>'hazarddb',
 			'encode' => 'UTF8'
 		),
