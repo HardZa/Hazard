@@ -59,7 +59,7 @@ class Certificate
 		$certno = Certificate::gen_exp_certno($certtype);
 		$expdate = Certificate::gen_exp_date();
 		DB::get_db()->insert('certificate',array('certno','userid','expdate','certtype','jsondata'),array($certno,$userid,$expdate,$certtype,
-			mysql_real_escape_string(json_encode($jsondata)));
+			mysql_real_escape_string(json_encode($jsondata))));
 		return Certificate::load( DB::get_db()->getLastInsertID() );
 	}
 
