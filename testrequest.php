@@ -43,7 +43,7 @@
 		'storepostalcode'=>'83110',
 		'storephone'=>'076311650',
 		'storefax'=>'076313535',
-		'storespecialist'=>'ดร. ภุชงค์ ชงไมโล',
+		'storespecialist'=>'ดร. ภุชงค์ เก็บไมโล',
 		'hazardname'=>'น้ำจากเทือกเขา',
 		'hazardformulation'=>'H20',
 		'businessname'=>'น้ำเปล่า',
@@ -52,13 +52,17 @@
 		'producerspecialist'=>'ดร. ภุชงค์ ชงไมโล',
 		'producerCountry'=>'ดูไบ',
 		'producer'=>'ทักษิณ ชินวัตร',
-		'destinationCountry'=>'destinationCountry',
-		'tabean'=>'tabean',
-		'area'=>'area',
-		'email'=>'email',
-		'hazardid'=>'hazardid',
-		'incomename'=>'incomename',
-		'saleman'=>'saleman'
+		'orderCountry'=>'orderCountryX',
+		'hazardno'=>'hazardnoX',
+		'area'=>'areaX',
+		'hazardid'=>'hazardidX',
+		'importer'=>'importerX',
+		'saleman'=>'salemanX',
+		'container'=>'containerX',
+		'purpose'=>'purposeX',
+		'addremail'=>'addremailX',
+		'productemail'=>'productemailX',
+		'storeemail'=>'storeemailX'
 	);
 ?>
 
