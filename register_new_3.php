@@ -23,69 +23,75 @@
     	<label class="col-sm-4">ชื่อและที่อยู่ของสถานที่ผลิต/เก็บรักษาวัตถุอันตราย</label>
  	</div>
  		<div class="form-group" >
-    	<label for="addrname" class="col-sm-4 control-label">ชื่อ</label>
+    	<label for="storename" class="col-sm-4 control-label">ชื่อ</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrname" name="addrname" placeholder="ชื่อ" >
+      		<input type="text" class="form-control" id="storename" name="storename" placeholder="ชื่อ" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrhouse" class="col-sm-4 control-label">ตั้งอยู่เลขที่</label>
+    	<label for="storehouse" class="col-sm-4 control-label">ตั้งอยู่เลขที่</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrhouse" name="addrhouse" placeholder="เลขที่" >
+      		<input type="text" class="form-control" id="storehouse" name="storehouse" placeholder="เลขที่" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrvillage" class="col-sm-4 control-label">หมู่ที่</label>
+    	<label for="storevillage" class="col-sm-4 control-label">หมู่ที่</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrvillage" name="addrvillage" placeholder="หมู่ที่" >
+      		<input type="text" class="form-control" id="storevillage" name="storevillage" placeholder="หมู่ที่" >
+    	</div>
+  	</div>
+    <div class="form-group" >
+      <label for="storedrive" class="col-sm-4 control-label">ตรอก/ซอย</label>
+      <div class="col-sm-8">
+          <input type="text" class="form-control" id="storedrive" name="storedrive" placeholder="ตรอก/ซอย" >
+      </div>
+    </div>
+  	<div class="form-group" >
+    	<label for="storeroad" class="col-sm-4 control-label">ถนน</label>
+    	<div class="col-sm-8">
+      		<input type="text" class="form-control" id="storeroad" name="storeroad" placeholder="ถนน" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrroad" class="col-sm-4 control-label">ถนน</label>
+    	<label for="storesubdistrict" class="col-sm-4 control-label">ตำบล/แขวง</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrroad" name="addrroad" placeholder="ถนน" >
+      		<input type="text" class="form-control" id="storesubdistrict" name="storesubdistrict" placeholder="ตำบล/แขวง" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrsubdistrict" class="col-sm-4 control-label">ตำบล/แขวง</label>
+    	<label for="storedistrict" class="col-sm-4 control-label">อำเภอ/เขต</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrsubdistrict" name="addrsubdistrict" placeholder="ตำบล/แขวง" >
+      		<input type="text" class="form-control" id="storedistrict" name="storedistrict" placeholder="อำเภอ/เขต" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrdistrict" class="col-sm-4 control-label">อำเภอ/เขต</label>
+    	<label for="storeprovince" class="col-sm-4 control-label">จังหวัด</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrdistrict" name="addrdistrict" placeholder="อำเภอ/เขต" >
+      		<input type="text" class="form-control" id="storeprovince" name="storeprovince" placeholder="จังหวัด" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrprovince" class="col-sm-4 control-label">จังหวัด</label>
+    	<label for="storepostalcode" class="col-sm-4 control-label">รหัสไปรษณีย์</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrprovince" name="addrprovince" placeholder="จังหวัด" >
+      		<input type="text" class="form-control" id="storepostalcode" name="storepostalcode" placeholder="รหัสไปรษณีย์" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrpostalcode" class="col-sm-4 control-label">รหัสไปรษณีย์</label>
+    	<label for="storephone" class="col-sm-4 control-label">โทรศัพท์</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrpostalcode" name="addrpostalcode" placeholder="รหัสไปรษณีย์" >
+      		<input type="text" class="form-control" id="storephone" name="storephone" placeholder="โทรศัพท์" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrphone" class="col-sm-4 control-label">โทรศัพท์</label>
+    	<label for="storefax" class="col-sm-4 control-label">โทรสาร</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrphone" name="addrphone" placeholder="โทรศัพท์" >
+      		<input type="text" class="form-control" id="storefax" name="storefax" placeholder="โทรสาร" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrfax" class="col-sm-4 control-label">โทรสาร</label>
+    	<label for="storeemail" class="col-sm-4 control-label">E-mail address</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrfax" name="addrfax" placeholder="โทรสาร" >
-    	</div>
-  	</div>
-  	<div class="form-group" >
-    	<label for="addremail" class="col-sm-4 control-label">E-mail address</label>
-    	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addremail" name="addremail" placeholder="E-mail" >
+      		<input type="text" class="form-control" id="storeemail" name="storeemail" placeholder="E-mail" >
     	</div>
   	</div>
 
@@ -99,9 +105,9 @@
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="solchem" class="col-sm-4" >๒. สูตรอัตราส่วนผสมของสารสำคัญและลักษณะ</label>
+    	<label for="hazardformulation" class="col-sm-4" >๒. สูตรอัตราส่วนผสมของสารสำคัญและลักษณะ</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="solchem" name="solchem" placeholder="สูตรอัตราส่วนผสมของสารสำคัญและลักษณะ" >
+      		<input type="text" class="form-control" id="hazardformulation" name="hazardformulation" placeholder="สูตรอัตราส่วนผสมของสารสำคัญและลักษณะ" >
     	</div>
   	</div>
   	<div class="form-group" >
@@ -111,15 +117,15 @@
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="producername" class="col-sm-4" >๔. ชื่อผู้ผลิตและแหล่งผลิต</label>
+    	<label for="producer" class="col-sm-4" >๔. ชื่อผู้ผลิตและแหล่งผลิต</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="producername" name="producername" placeholder="ชื่อผู้ผลิตและแหล่งผลิต" >
+      		<input type="text" class="form-control" id="producer" name="producer" placeholder="ชื่อผู้ผลิตและแหล่งผลิต" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="importername" class="col-sm-4" >๕. ชื่อผู้นำเข้า</label>
+    	<label for="importer" class="col-sm-4" >๕. ชื่อผู้นำเข้า</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="importername" name="importername" placeholder="ชื่อผู้นำเข้า" >
+      		<input type="text" class="form-control" id="importer" name="importer" placeholder="ชื่อผู้นำเข้า" >
     	</div>
   	</div>
   	<div class="form-group" >

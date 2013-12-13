@@ -3,6 +3,7 @@
   function translate($key,$error){
 		$new_error = '';
 		$new_key = $key;
+		if( $key == "username" ) $new_key = "ชื่อล็อกอิน";
 		if( $key == "regis_type" ) $new_key = "ประเภทผู้ใช้";
 		if( $key == "name" ) $new_key = "ชื่อ-สกุล";
 		if( $key == "userbirthdate" ) $new_key = "วันเกิด";
@@ -32,8 +33,42 @@
 		elseif( strstr($error,"should format") !== false ){
 			$new_error = "วันเกิดควรอยู่ในรูป DD-MM-YY";
 		}
+		elseif( strstr($error,"duplicate") !== false ){
+			$new_error = $new_key . " ถูกใช้ไปแล้ว";
+		}
 		return "$('#$key').parent().parent().append('<label style=\"color:red\" class=\"error-message control-label\">".$new_error."</label>');";
 	
+  }
+  function users_error($validate){
+  		 if( ! $validate->passed() ){
+			foreach( $validate->errors() as $key => $value){
+			
+				echo "
+						$(document).ready(function(){
+						$('#$key').parent().parent().addClass('has-error');
+						});
+				";
+
+				$error = $value[0];
+				echo translate($key,$error);
+			//	echo "$('#$key').parent().parent().append('<label>".$new_error."</label>');";
+			}
+
+		 }	
+  }
+  function client_error($client_validate){
+  		if(Input::post('regis_type')=='client' &&  ! $client_validate->passed() ){
+			foreach( $client_validate->errors() as $key => $value){
+			
+				echo "
+						$('#$key').parent().parent().addClass('has-error');
+				";
+
+				$error = $value[0];
+				echo translate($key,$error);
+			
+			}
+		 }	
   }
  require_once('core/init.php');
  include(resolveHeader('includes/header.php'));
@@ -140,69 +175,47 @@ if(!Permission::userAddAllowed())
 		)
 	));
 	
+		
 	if($validate->passed())
 	{
-		if(Input::post('regis_type')=='client')
-		{
-			if($client_validate->passed())
-			{
-				echo "CLIENT PASS";
-				$password = User::get_rand_password();
-				User::create_client(Input::post('username'),$password,Input::post('name'),Input::post('userbirthdate')
-					,Input::post('usernationality'),Input::post('usertaxid'),Input::post('useraddrhouse')
-					,Input::post('useraddrvillage'),Input::post('userdrive'),Input::post('useraddrroad')
-					,Input::post('usersubdistrict'),Input::post('userprovince'),Input::post('userpostalcode')
-					,Input::post('userphone'),Input::post('userfax'));
-				Redirect::postto('user/add/summary',array_merge($_POST,array('password'=>$password)));
-			}else{
-				echo "CLIENT FAIL";
-			}
+		$mydb =  DB::get_db();
+		$result = $mydb->select('users',null,"username='".Input::post('username')."'");
+		if( count($result) > 0 ){
+			echo "<script type='text/javascript'>
+						$(document).ready(function(){
+							$('#username').parent().parent().addClass('has-error'); ";
+			echo translate('username','duplicate');
+			echo "});</script>";
+			client_error($client_validate);
 		}else{
-			echo "PASS";
-			$password = User::get_rand_password();
-			User::create_user(Input::post('regis_type'),Input::post('username'),$password,Input::post('name'));
-			Redirect::postto('user/add/summary',array_merge($_POST,array('password'=>$password)));
+			if(Input::post('regis_type')=='client')
+			{
+				if($client_validate->passed())
+				{
+					echo "CLIENT PASS";
+					$password = User::get_rand_password();
+					User::create_client(Input::post('username'),$password,Input::post('name'),Input::post('userbirthdate')
+						,Input::post('usernationality'),Input::post('usertaxid'),Input::post('useraddrhouse')
+						,Input::post('useraddrvillage'),Input::post('userdrive'),Input::post('useraddrroad')
+						,Input::post('usersubdistrict'),Input::post('userprovince'),Input::post('userpostalcode')
+						,Input::post('userphone'),Input::post('userfax'));
+					Redirect::postto('user/add/summary',array_merge($_POST,array('password'=>$password)));
+				}else{
+					client_error($client_validate);
+				}
+			}else{
+				echo "PASS";
+				$password = User::get_rand_password();
+				User::create_user(Input::post('regis_type'),Input::post('username'),$password,Input::post('name'));
+				Redirect::postto('user/add/summary',array_merge($_POST,array('password'=>$password)));
+			}
 		}
 	}else{
 		 echo "<script type='text/javascript'>
 					$(document).ready(function(){";
-		 if( ! $validate->passed() ){
-			foreach( $validate->errors() as $key => $value){
-			
-				echo "
-						$(document).ready(function(){
-						$('#$key').parent().parent().addClass('has-error');
-						});
-				";
 
-				$error = $value[0];
-				echo translate($key,$error);
-			//	echo "$('#$key').parent().parent().append('<label>".$new_error."</label>');";
-			}
-
-		 }
-		if(Input::post('regis_type')=='client' &&  ! $client_validate->passed() ){
-			foreach( $client_validate->errors() as $key => $value){
-			
-				echo "
-						$('#$key').parent().parent().addClass('has-error');
-				";
-
-				$error = $value[0];
-				echo translate($key,$error);
-			
-			}
-		 }
-		if(Input::post('regis_type')=='client' &&  ! $client_validate->passed() ){
-			foreach( $client_validate->errors() as $key => $value){
-			
-			echo "
-					$('#$key').parent().parent().addClass('has-error');
-			";
-
-			
-			}
-		 }
+		users_error($validate);
+		client_error($client_validate);
 			
 
 		 echo "});</script>";

@@ -5,16 +5,10 @@
 	$errors=array();
 	if(Input::exists('post'))
 	{
-		//upload
-		$picarr=json_decode($_POST['picarr']);
-		$i;
-		for($i=0;$i<count($picarr);$i++)
-		{
-			echo "<script> pichead[".$i."]='".$picarr[$i]."'; </script>";
-		}
+	
 		
 		$validate = new Validate();
-		$validate->check($_GET,array(
+		$validate->check($_POST,array(
 			'hazardname'=> array(
 				'required'=>true
 			),
@@ -36,6 +30,7 @@
 	}
 
 ?>
+<div class="container">
 
 <div class="page-header">
     <h1>คำขอขึ้นทะเบียนวัตถุอันตราย</h1>
@@ -65,17 +60,23 @@
       <input type="text" class="form-control" id="solchem" name="solchem" placeholder="สูตรอัตราส่วนผสมของสารสำคัญและลักษณะ" >
     </div>
   </div>
+  <?php
+include(resolveHeader('includes/upload_form.php'));
+?>
   <div class="form-group">
     <div class="col-sm-offset-4 col-sm-10">
       <button type="submit" class="btn btn-default">ลงทะเบียน</button>
     </div>
   </div>
-  <input type="hidden" id="picarr" name="picarr">
 </form>
-<?php
-include(resolveHeader('includes/upload_form.php'));
-?>
 
+
+
+
+
+
+
+</div>
 <?php
  	include(resolveHeader('includes/footer.php'));
 ?>
