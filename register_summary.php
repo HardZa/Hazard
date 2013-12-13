@@ -6,12 +6,12 @@
  $registype = array('client'=>'เอกชน','hazcontrol'=>'เจ้าหน้าที่ควบคุมวัตถุอันตราย','plantprotection'=>'เจ้าหน้าที่สำนักอารักขาพืช','agriproduction'=>'เจ้าหน้าที่สำนักปัจจัยการผลิต','cashier'=>'เจ้าหน้าที่การเงิน'); 
 
  ?>
-<div class="container">
+<div class="mod container">
   <div class="register-page">
-    <div class="approve-icon">
-    </div>
     <div class="page-header">
         <h1>ผลการลงทะเบียน</h1>
+        <div class="approve-icon">
+        </div>
     </div>
 
     <div class="form-horizontal">
