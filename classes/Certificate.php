@@ -2,7 +2,7 @@
 
 class Certificate
 {
-	private $certid;
+	public $certid;
 	public $certno;
 	public $userid;
 	public $expdate;
@@ -12,19 +12,19 @@ class Certificate
 	public static function certtype_to_string($certtype)
 	{
 		switch ($certtype) {
-			case 1:
+			case VO_2:
 				return 'วอ.2';
-			case 2:
+			case VO_4:
 				return 'วอ.4';
-			case 3:
+			case VO_6:
 				return 'วอ.6';
-			case 4:
+			case VO_8:
 				return 'วอ.8';
-			case 5:
+			case VO_GS_GVG_2:
 				return 'วอ./กษ./กวก.2';
-			case 6:
+			case VO_GS_GVG_13:
 				return 'วอ./กษ./กวก.13';
-			case 7:
+			case VO_GS_GVG_14:
 				return 'วอ./กษ./กวก.14';
 		}
 		return 'กระดาษเน่าๆ';
