@@ -22,14 +22,78 @@ if( $user->get_groupname() == "plantprotection"
  ||  $user->get_groupname() == "agriproduction" )
 	$condition = $condition." and progress='".PRG_SURVEY."'";
 
-$data = $db->select('request',array('userid','requesttype','progress'),$condition);
-//var_dump($data);
+if( isset($_GET['requesttype']) && $_GET['requesttype'] != ''){
+	$condition = $condition." and requesttype='".$_GET['requesttype']."'";
+}
+if( isset($_GET['progress']) && $_GET['progress'] != ''){
+	$condition = $condition." and progress='".$_GET['progress']."'";
+}
+if( isset($_GET['user']) && $_GET['user'] != ''){
+	$condition = $condition." and userid='".$_GET['user']."'";
+}
 
-echo "<div class='container'>
-		  <div class='page-header'>
-			<h1>รายการคำร้อง</h1>
-	 	 </div>
-		<table class='table'>
+
+$data = $db->select('request',array('userid','requesttype','progress'),$condition);
+
+?>
+<div class='container' >
+	<div class='page-header'>
+		<h1>รายการคำร้อง</h1>
+	</div>
+	
+	<form  method="get" action="" role="form" >
+		<div class="form-group" >
+			<div class="col-sm-3" >
+				<select class="form-control" name="requesttype">
+					<option value="" >--เลือกชนิดคำร้อง--</option>
+					<option value="" >ชนิดใดก็ได้</option>
+<?php 
+	$all_requesttype = array(0,1);
+	foreach( $all_requesttype as $item ){
+		echo "<option value='".$item."'>".Request::type_to_string($item)."</option>\n";
+	}
+?>
+			</select> 
+	    </div>
+  	</div>
+ 	<div class="form-group" >
+	    <div class="col-sm-3">
+			<select class="form-control" name="progress">
+				<option value="">--เลือกความก้าวหน้า--</option>
+				<option value="">ความก้าวหน้าใดก็ได้</option>
+<?php
+	$all_progress = array(1,2,3,4,5,6,100,101);
+	foreach( $all_progress as $item ){
+		echo "<option value='".$item."'>".Request::progress_to_string($item)."</option>\n";
+	}
+?>
+			</select>
+		</div>
+	</div>
+ 	<div class="form-group" >
+	    <div class="col-sm-3" >
+			<select class="form-control" name="user">
+				<option value="">--เลือกผู้ยื่นคำร้อง--</option>
+				<option value="">ผู้ยื่นคำร้องใดก็ได้</option>
+<?php
+	$db = DB::get_db();
+	$data_user = $db->select('usergroup_client',array('userid'));
+	foreach( $data_user as $user ){
+		$data_name = $db->select('users',array('userrealname'),'userid='.$user['userid']);
+		$name = $data_name[0]['userrealname'];
+		echo "<option value='".$user['userid']."'>".$name."</option>\n";
+	}
+?>
+			</select>
+		</div>
+	</div>
+	<button type="submit" class="btn btn-primary">ค้นหา</button>
+</form>
+</div>
+<div class='container'>
+<?php
+
+echo "<table class='table'>
 			<tr>
 				<th>ชนิดคำร้อง</th>
 				<th>ผู้ยื่นคำร้อง</th>
