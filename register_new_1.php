@@ -39,12 +39,12 @@
       	<label class="col-sm-4 control-label">ขอขึ้นทะเบียนวัตถุอันตราย :</label>
       	<div class="col-sm-2">
     			<label class="radio-inline">
-    		   	<input type="radio" name="hazardtype" value="2" checked>ชนิดที่ 2
+    		   	<input type="radio" name="group" value="2" checked>ชนิดที่ 2
     			</label>
         </div>
         <div class="col-sm-2">
     		  <label class="radio-inline">
-    		    <input type="radio" name="hazardtype" value="3">ชนิดที่ 3
+    		    <input type="radio" name="group" value="3">ชนิดที่ 3
     		  </label>
       	</div>
   	</div> 
@@ -52,12 +52,12 @@
       	<label class="col-sm-4 control-label">โดยมีวัตถุประสงค์เพื่อ :</label>
       	<div class="col-sm-2">
     			<label class="radio-inline">
-    		    	<input type="radio" name="hazardfor" value="นำเข้า" checked>นำเข้า
+    		    	<input type="radio" name="purposefirst" value="นำเข้า" checked>นำเข้า
     			</label>
         </div>
         <div class="col-sm-2">
   		  	<label class="radio-inline">
-  		    	<input type="radio" name="hazardfor" value="ส่งออก">ส่งออก
+  		    	<input type="radio" name="purposefirst" value="ส่งออก">ส่งออก
   		  	</label>
       	</div>
   	</div>
@@ -69,49 +69,49 @@
    	<div class="form-group" >
       	<label for="hazardname" class="col-sm-4">๑. ชื่อวัตถุอันตราย</label>
       	<div class="col-sm-8">
-        		<input type="text" class="form-control" id="hazardname" name="hazardname" placeholder="ชื่อวัตถุอันตราย" >
+        		<input type="text" class="form-control" id="hazardname" name="hazardname" placeholder="ชื่อวัตถุอันตราย" value="<?php echo Input::post('hazardname'); ?>" >
       	</div>
     </div>
   	<div class="form-group" >
     	<label for="hazardformulation" class="col-sm-4" >๒. สูตรอัตราส่วนผสมของสารสำคัญและลักษณะ</label>
     	<div class="col-sm-8">
-      		<textarea class="form-control" rows="2" id="hazardformulation" name="hazardformulation" placeholder="สูตรอัตราส่วนผสมของสารสำคัญและลักษณะ" ></textarea>
+      		<textarea class="form-control" rows="2" id="hazardformulation" name="hazardformulation" placeholder="สูตรอัตราส่วนผสมของสารสำคัญและลักษณะ" ><?php echo Input::post('hazardformulation'); ?></textarea>
     	</div>
   	</div>
   	<div class="form-group" >
     	<label for="businessname" class="col-sm-4" >๓. ชื่อทางการค้าหรือหมายเลขรหัส</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="businessname" name="businessname" placeholder="ชื่อทางการค้าหรือหมายเลขรหัส" >
+      		<input type="text" class="form-control" id="businessname" name="businessname" placeholder="ชื่อทางการค้าหรือหมายเลขรหัส" value="<?php echo Input::post('businessname'); ?>">
     	</div>
   	</div>
   	<div class="form-group" >
     	<label for="producer" class="col-sm-4" >๔. ชื่อผู้ผลิตและแหล่งผลิต</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="producer" name="producer" placeholder="ชื่อผู้ผลิตและแหล่งผลิต" >
+      		<input type="text" class="form-control" id="producer" name="producer" placeholder="ชื่อผู้ผลิตและแหล่งผลิต" value="<?php echo Input::post('producer'); ?>">
     	</div>
   	</div>
   	<div class="form-group" >
     	<label for="importer" class="col-sm-4" >๕. ชื่อผู้นำเข้า</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="importer" name="importer" placeholder="ชื่อผู้นำเข้า" >
+      		<input type="text" class="form-control" id="importer" name="importer" placeholder="ชื่อผู้นำเข้า" value="<?php echo Input::post('importer'); ?>">
     	</div>
   	</div>
   	<div class="form-group" >
     	<label for="saleman" class="col-sm-4" >๖. ชื่อผู้จำหน่าย/ผู้จัดจำหน่าย</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="saleman" name="saleman" placeholder="ชื่อผู้จำหน่าย/ผู้จัดจำหน่าย" >
+      		<input type="text" class="form-control" id="saleman" name="saleman" placeholder="ชื่อผู้จำหน่าย/ผู้จัดจำหน่าย" value="<?php echo Input::post('saleman'); ?>">
     	</div>
   	</div>
   	<div class="form-group" >
     	<label for="container" class="col-sm-4" >๗. ชนิดและลักษณะหีบห่อหรือภาชนะบรรจุ พร้อมทั้งขนาดบรรจุ</label>
     	<div class="col-sm-8">
-      		<textarea class="form-control" rows="5" id="container" name="container" placeholder="ชนิดและลักษณะหีบห่อหรือภาชนะบรรจุ พร้อมทั้งขนาดบรรจุ" ></textarea>
+      		<textarea class="form-control" rows="5" id="container" name="container" placeholder="ชนิดและลักษณะหีบห่อหรือภาชนะบรรจุ พร้อมทั้งขนาดบรรจุ" ><?php echo Input::post('container'); ?></textarea>
     	</div>
   	</div>
   	<div class="form-group" >
     	<label for="purpose" class="col-sm-4" >๘. ประเภทของการใช้</label>
     	<div class="col-sm-8">
-      		<textarea class="form-control" rows="5" id="purpose" name="purpose" placeholder="ประเภทของการใช้" ></textarea>
+      		<textarea class="form-control" rows="5" id="purpose" name="purpose" placeholder="ประเภทของการใช้" ><?php echo Input::post('purpose'); ?></textarea>
     	</div>
   	</div>
   	<div class="form-group">

@@ -1,10 +1,15 @@
 <?php
-if( Input::post('code') != '' )
+
+include( resolveHeader('includes/upload_head.php') );
+
+if( Input::post('isclick') != '' )
 {
-	doc('request')->set_data('code_pay',Input::post('code'));
+	foreach ($picarr as $value) {
+		doc('request')->add_pic( PIC_BILL , $value );
+	}
 	doc('request')->progress( PRG_ACCEPT_PAY );
 	doc('request')->save();
-	echo "จ่ายตังแย้ว";
+	doc('request')->redirect();
 }
 else
 {
@@ -14,12 +19,15 @@ else
 <form class="form-horizontal" method="post" action="" role="form" >
 
 	<div class="form-group">
-    	<label class="col-sm-3 control-label">โค้ด true money 12 หลัก : </label>
-    	<div class="col-sm-6">
-	      	<input type="text" class="form-control" name="code" placeholder="code" >
-	    </div>
- 	</div>
+	<div class="row">
+	<input type="hidden" name="isclick" value="1">
+	<label class="col-sm-3 col-sm-offset-1 control-label">ใบเสร็จ </label>
+	<?php include( resolveHeader('includes/upload_block.php') ); ?>
+</div>
+<div class="row">
 	<button type="submit" class="btn btn-primary col-sm-offset-3">จ่ายเงิน</button>
+</div>
+	</div>
 </form>
 
 <?php

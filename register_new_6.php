@@ -7,105 +7,106 @@
     <h1>คำขออนุญาตส่งออกวัตถุอันตราย</h1>
 </div>
 
-<form class="form-horizontal" role="form" method="get" action="สถานที่เก็บรักษาวัตถุอัตราย">
+<form class="form-horizontal" role="form" method="post" action="">
   <div class="form-group">
   			<label class="col-sm-offset-1">
     			สถานที่เก็บรักษาวัตถุอันตราย
   			</label>
   </div>
   <div class="form-group" >
-    <label for="storehazardname" class="col-sm-4 control-label">ชื่อ</label>
+    <label for="storename" class="col-sm-4 control-label">ชื่อ</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="storehazardname" name="storehazardname" placeholder="ชื่อ" >
+      <input type="text" class="form-control" id="storename" name="storename" placeholder="ชื่อ" value="<?php echo Input::post('storename'); ?>">
     </div>
   </div>
   <div class="form-group" >
-    <label for="storehazardaddrhouse" class="col-sm-4 control-label">ตั้งอยู่เลขที่</label>
+    <label for="storehouse" class="col-sm-4 control-label">ตั้งอยู่เลขที่</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="storehazardaddrhouse" name="storehazardaddrhouse" placeholder="ตั้งอยู่เลขที่" >
+      <input type="text" class="form-control" id="storehouse" name="storehouse" placeholder="ตั้งอยู่เลขที่" value="<?php echo Input::post('storehouse'); ?>">
     </div>
   </div>
   <div class="form-group" >
-    <label for="storehazardaddrvillage" class="col-sm-4 control-label">หมู่ที่</label>
+    <label for="storevillage" class="col-sm-4 control-label">หมู่ที่</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="storehazardaddrvillage" name="storehazardaddrvillage" placeholder="หมู่ที่" >
+      <input type="text" class="form-control" id="storevillage" name="storevillage" placeholder="หมู่ที่" value="<?php echo Input::post('storevillage'); ?>">
     </div>
   </div>
   <div class="form-group" >
-    <label for="storehazardaddrdrive" class="col-sm-4 control-label">ตรอก/ซอย</label>
+    <label for="storedrive" class="col-sm-4 control-label">ตรอก/ซอย</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="storehazardaddrdrive" name="storehazardaddrdrive" placeholder="ตรอก/ซอย" >
+      <input type="text" class="form-control" id="storedrive" name="storedrive" placeholder="ตรอก/ซอย" value="<?php echo Input::post('storedrive'); ?>">
     </div>
   </div>
   <div class="form-group" >
-    <label for="storehazardaddrroad" class="col-sm-4 control-label">ถนน</label>
+    <label for="storerroad" class="col-sm-4 control-label">ถนน</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="storehazardaddrroad" name="storehazardaddrroad" placeholder="ถนน" >
+      <input type="text" class="form-control" id="storeroad" name="storeroad" placeholder="ถนน" value="<?php echo Input::post('storeroad'); ?>">
     </div>
   </div>
   <div class="form-group" >
-    <label for="storehazardaddrsubdistrict" class="col-sm-4 control-label">ตำบล/แขวง</label>
+    <label for="storesubdistrict" class="col-sm-4 control-label">ตำบล/แขวง</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="storehazardaddrsubdistrict" name="storehazardaddrsubdistrict" placeholder="ตำบล/แขวง" >
+      <input type="text" class="form-control" id="storesubdistrict" name="storesubdistrict" placeholder="ตำบล/แขวง" value="<?php echo Input::post('storesubdistrict'); ?>">
     </div>
   </div>
   <div class="form-group" >
-    <label for="storehazardaddrdistrict" class="col-sm-4 control-label">อำเภอ/เขต</label>
+    <label for="storedistrict" class="col-sm-4 control-label">อำเภอ/เขต</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="storehazardaddrdistrict" name="storehazardaddrdistrict" placeholder="อำเภอ/เขต" >
+      <input type="text" class="form-control" id="storedistrict" name="storedistrict" placeholder="อำเภอ/เขต" value="<?php echo Input::post('storedistrict'); ?>">
     </div>
   </div>
   <div class="form-group" >
-    <label for="storehazardaddrprovince" class="col-sm-4 control-label">จังหวัด</label>
+    <label for="storeprovince" class="col-sm-4 control-label">จังหวัด</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="storehazardaddrprovince" name="storehazardaddrprovince" placeholder="จังหวัด" >
+      <input type="text" class="form-control" id="storeprovince" name="storeprovince" placeholder="จังหวัด" value="<?php echo Input::post('storeprovince'); ?>" >
+  </div>
+  </div>
+  <div class="form-group" >
+
+    <label for="storepostalcode" class="col-sm-4 control-label">รหัสไปรษณีย์</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="storepostalcode" name="storepostalcode" placeholder="รหัสไปรษณีย์" value="<?php echo Input::post('storepostalcode'); ?>">
     </div>
   </div>
   <div class="form-group" >
-    <label for="storehazardaddrpostalcode" class="col-sm-4 control-label">รหัสไปรษณีย์</label>
+    <label for="storephone" class="col-sm-4 control-label">โทรศัพท์</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="storehazardaddrpostalcode" name="storehazardaddrpostalcode" placeholder="รหัสไปรษณีย์" >
+      <input type="text" class="form-control" id="storephone" name="storephone" placeholder="โทรศัพท์" value="<?php echo Input::post('storephone'); ?>">
     </div>
   </div>
   <div class="form-group" >
-    <label for="storehazardaddrphone" class="col-sm-4 control-label">โทรศัพท์</label>
+    <label for="storefax" class="col-sm-4 control-label">โทรสาร</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="storehazardaddrphone" name="storehazardaddrphone" placeholder="โทรศัพท์" >
-    </div>
-  </div>
-  <div class="form-group" >
-    <label for="storehazardaddrfax" class="col-sm-4 control-label">โทรสาร</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" id="storehazardaddrfax" name="storehazardaddrfax" placeholder="โทรสาร" >
+      <input type="text" class="form-control" id="storefax" name="storefax" placeholder="โทรสาร" value="<?php echo Input::post('storefax'); ?>">
     </div>
   </div>
 
 
-  <div class="form-group" >
-    <label for="specialstorehazardname" class="col-sm-4 control-label">ชื่อผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบสำหรับการเก็บรักษา(ในกรณีที่มีประกาศฯ ออกตามความในมาตรา ๒๐(๒)แห่งพระราชบัญญัติวัตถุอันตราย พ.ศ.๒๕๓๕ กำหนดให้ต้องมีผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบฯ)</label>
+ <div class="form-group" >
+    <label for="storespecialist" class="col-sm-4 control-label">ชื่อผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบสำหรับการเก็บรักษา(ในกรณีที่มีประกาศฯ ออกตามความในมาตรา ๒๐(๒)แห่งพระราชบัญญัติวัตถุอันตราย พ.ศ.๒๕๓๕ กำหนดให้ต้องมีผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบฯ)</label>
     <div class="col-sm-8">
-      <textarea type="text" class="form-control" rows="5" id="specialstorehazardname" name="specialstorehazardname" placeholder="" ></textarea>
+      <textarea type="text" class="form-control" rows="5" id="storespecialist" name="storespecialist" placeholder="" ><?php echo Input::post('storespecialist'); ?></textarea>
 
     </div>
   </div>
   <div class="form-group" >
-    <label for="hazarddestination" class="col-sm-4 control-label">ประเทศปลายทาง</label>
+    <label for="orderCountry" class="col-sm-4 control-label">ประเทศปลายทาง</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="hazarddestination" name="hazarddestination" placeholder="ประเทศปลายทาง" >
-    </div>
-  </div>
-
-<div class="form-group" >
-    <label for="hazardquantity" class="col-sm-4 control-label">ปริมาณ</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" id="hazardquantity" name="hazardquantity" placeholder="ปริมาณ" >
+      <input type="text" class="form-control" id="orderCountry" name="orderCountry" placeholder="ประเทศปลายทาง" value="<?php echo Input::post('orderCountry'); ?>">
     </div>
   </div>
 
 <div class="form-group" >
-    <label for="storehazardnote" class="col-sm-4 control-label">หมายเหตุ</label>
+    <label for="quantity" class="col-sm-4 control-label">ปริมาณ</label>
     <div class="col-sm-8">
-      <textarea type="text" class="form-control" rows="3" id="storehazardnote" name="storehazardnote" placeholder="หมายเหตุ" ></textarea>
+      <input type="text" class="form-control" id="quantity" name="quantity" placeholder="ปริมาณ" value="<?php echo Input::post('quantity'); ?>">
+    </div>
+  </div>
+
+<div class="form-group" >
+    <label for="note" class="col-sm-4 control-label">หมายเหตุ</label>
+    <div class="col-sm-8">
+      <textarea type="text" class="form-control" rows="3" id="note" name="note" placeholder="หมายเหตุ" ><?php echo Input::post('note'); ?></textarea>
     </div>
   </div>
 
@@ -131,7 +132,7 @@
   </div>
   <div class="form-group">
   			<label class="col-sm-10 col-sm-offset-1">
-    			- เอกสารแสดงความรู้ความชำนาญหรือบุคลากรเฉพาะรับผิดชอบสำหรับการเก็บรักษา
+    			- เอกสารแสดงความรู้ความชำนาญของผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบสำหรับการเก็บรักษา
   			</label>
   </div>
   <div class="form-group">
@@ -155,10 +156,10 @@
     			มาเพื่อประกอบการพิจารณาด้วย
   			</label>
   <div class="form-group">
-    <div class="col-sm-offset-4 col-sm-10">
-      <button type="submit" class="btn btn-default">ส่งคำขอ</button>
+      <div class="button-regis pull-right">
+          <button type="submit" class="btn btn-success">ส่งคำร้อง</button>
+      </div>
     </div>
-  </div>
 </form>
 
 <?php

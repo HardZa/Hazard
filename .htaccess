@@ -45,7 +45,7 @@ RewriteRule ^requests/new$ requests/new/
 RewriteRule ^requests/new/([0-9]+)/$ new_request.php?type=$1
 RewriteRule ^requests/new/([0-9]+)$ requests/new/$1/
 
-RewriteRule ^requests/([0-9]+)/$ show_request.php?id=$1
+RewriteRule ^requests/([0-9]+)/$ request_info.php?id=$1
 RewriteRule ^requests/([0-9]+)$ requests/$1/
 
 RewriteRule ^requests/([0-9]+)/edit/$ requests.php?requestid=$1&edit=1
