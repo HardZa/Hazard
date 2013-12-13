@@ -104,7 +104,7 @@
 
 <br>
 <div class="row">
-	<div class="col-md-5 col-md-offset-6"><b>( ลายมือชื่อ ) ……………………………… ผู้ขออนุญาต</b></div>
+	<div class="col-md-5 col-md-offset-6"><b>( ลายมือชื่อ ) <u><?php echo doc('name')?></u> ผู้ขออนุญาต</b></div>
 </div>
 <br>
 </div>

@@ -67,7 +67,7 @@
 	<div class="col-md-11"><u><b>ขออนุญาตมีไว้ในครอบครองซึ่งวัตถุอันตราย โดยมีวัตถุประสงค์ในการครอบครองเพื่อ</b></u></div>
 </div>
 <div class="row">
-	<div class="col-md-10  col-md-offset-1"><?php echo doc('purpose')?></div>
+	<div class="col-md-10  col-md-offset-1"><?php if(doc('purpose')=="อื่นๆ") echo doc('purpose_other'); else echo doc('purpose');?></div>
 	<!--
 	<div class="col-md-2 col-md-offset-1"><font size ="3">O</font> ขาย</div>
 	<div class="col-md-2"><font size ="3">O</font> ขนส่ง</div>
@@ -149,7 +149,7 @@
 </div>
 
 <div class="row">
-	<div class="col-md-5 col-md-offset-6"><b>( ลายมือชื่อ ) ……………………………… ผู้ขออนุญาต</b></div>
+	<div class="col-md-5 col-md-offset-6"><b>( ลายมือชื่อ ) <u><?php echo doc('name')?></u> ผู้ขออนุญาต</b></div>
 </div>
 
 <div class="row">

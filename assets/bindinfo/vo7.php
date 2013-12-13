@@ -1,0 +1,45 @@
+<?php
+$userinfo=User::get_client_by_id($request->get('userid'));
+$docData = array( 
+					"day" => $request->get_data('field'),
+					"month" => $request->get_data('field'),
+					"year" => $request->get_data('field'),
+					"name"=>$userinfo['userrealname'], 
+					"age" => 20,//$userinfo['userage'],
+					'nationality'=>$userinfo["usernationality"],
+					'taxno'=>$userinfo["usertaxid"],
+					'addrhouse'=>$userinfo["useraddrhouse"],
+					'addrvillage'=>$userinfo["useraddrvillage"],
+					'addrdrive'=>$userinfo["useraddrdrive"],
+					'addrroad'=>$userinfo["useraddrroad"],
+					'addrsubdistrict'=>$userinfo["useraddrsubdistrict"],
+					'addrdistrict'=>$userinfo["useraddrdistrict"],
+					'addrprovince'=>$userinfo["useraddrprovince"],
+					'addrpostalcode'=>$userinfo["userpostalcode"],
+					'addrphone'=>$userinfo["userphone"],
+					'addrfax'=>$userinfo["userfax"],
+					'storename'=>$request->get_data('storename'),
+					'storehouse'=>$request->get_data('storehouse'),
+					'storevillage'=>$request->get_data('storevillage'),
+					'storedrive'=>$request->get_data('storedrive'),
+					'storeroad'=>$request->get_data('storeroad'),
+					'storesubdistrict'=>$request->get_data('storesubdistrict'),
+					'storedistrict'=>$request->get_data('storedistrict'),
+					'storeprovince'=>$request->get_data('storeprovince'),
+					'storepostalcode'=>$request->get_data('storepostalcode'),
+					'storephone'=>$request->get_data('storephone'),
+					'storefax'=>$request->get_data('storefax'),
+					'storespecialist'=>$request->get_data('storespecialist'),
+					'purpose'=>$request->get_data('purpose'),
+					'purpose_other'=>$request->get_data('purpose_other'),
+					'hazardno'=>$request->get_data('certidref'),
+					'hazardname'=>55,//$get_hname_by_certi_id('certidref'),
+					'businessname'=>66,//$get_bname_by_certi_id('certidref'),
+					
+					
+					'quantity'=>$request->get_data('quantity'),
+					'area'=>$request->get_data('area')
+					
+				);
+				
+?>

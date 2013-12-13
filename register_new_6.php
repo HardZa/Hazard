@@ -112,6 +112,14 @@
 
     </div>
   </div>
+  
+  <div class="form-group" >
+    	<label for="certidref" class="col-sm-4 control-label">ทะเบียนเลขที่</label>
+    	<div class="col-sm-8">
+      		<input type="text" class="form-control" id="certidref" name="certidref" placeholder="ทะเบียนเลขที่" value="<?php echo Input::post('certidref'); ?>">
+    	</div>
+  	</div>
+  
   <div class="form-group" >
     <label for="orderCountry" class="col-sm-4 control-label">ประเทศปลายทาง</label>
     <div class="col-sm-8">

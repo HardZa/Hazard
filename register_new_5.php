@@ -113,11 +113,17 @@
     </div>
   </div>
   <div class="form-group" >
+    	<label for="certidref" class="col-sm-4 control-label">ทะเบียนเลขที่</label>
+    	<div class="col-sm-8">
+      		<input type="text" class="form-control" id="certidref" name="certidref" placeholder="ทะเบียนเลขที่" value="<?php echo Input::post('certidref'); ?>">
+    	</div>
+  	</div>
+  <!--<div class="form-group" >
     <label for="producerCountry" class="col-sm-4 control-label">ประเทศที่ผลิต</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" id="producerCountry" name="producerCountry" placeholder="ประเทศที่ผลิต" value="<?php echo Input::post('producerCountry'); ?>">
     </div>
-  </div>
+  </div>-->
 
 <div class="form-group" >
     <label for="quantity" class="col-sm-4 control-label">ปริมาณ</label>
