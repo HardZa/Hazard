@@ -3,7 +3,7 @@ require_once('core/init.php');
 include(resolveHeader('includes/header.php'));
 
 ?>
-
+<div class="container">
 <div class="page-header">
     <h1>รายการผู้ใช้</h1>
 </div>
@@ -24,7 +24,7 @@ for($i=1;(DB::get_db()->select('users',null,'userid='.$i,1))!=null;$i++)
 	$row = DB::get_db()->select('users',null,'userid='.$i,1);
 	$user = $row[0];
 	$name = $user['username'];
-	$type = User::get_group_by_id($user['userid']);
+	$type = User::group_to_string(User::get_group_by_id($user['userid']));
 	$url = "parent.location='edituser.php?user=";
 
 
@@ -38,7 +38,7 @@ for($i=1;(DB::get_db()->select('users',null,'userid='.$i,1))!=null;$i++)
 ?>
 
 </table>
-
+</div>
 <?php
 
 

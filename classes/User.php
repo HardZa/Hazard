@@ -1,10 +1,16 @@
 <?php
 
 class User{
-	private static $all_group_name = array('agriproduction','cashier','client','hazcontrol','plantprotection','registrar');
 	private static $user_fields = array('userid','username','userrealname','userallowed','userpasssha1');
 	private $user_db;
 	public static $user_field_allow_edit = array('userrealname');
+	private static $registype = array('registrar'=>'เจ้าหน้าที่ทะเบียน','client'=>'เอกชน','hazcontrol'=>'เจ้าหน้าที่ควบคุมวัตถุอันตราย','plantprotection'=>'เจ้าหน้าที่สำนักอารักขาพืช','agriproduction'=>'เจ้าหน้าที่สำนักปัจจัยการผลิต','cashier'=>'เจ้าหน้าที่การเงิน'); 
+
+	public static function group_to_string($group)
+	{
+		if(isset(User::$registype[$group]))return User::$registype[$group];
+		return 'ผู้ใช้นิรนาม';
+	}
 
 	public function __construct($user_db)
 	{
@@ -252,6 +258,7 @@ class User{
 
 		return $user_db;
 	}
+
 
 }
 
