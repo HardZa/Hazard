@@ -243,7 +243,10 @@ class User{
 
 		$table = 'usergroup_client';
 		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
-		$user_db_client = $rows[0];
+		if( count( $rows ) == 0 )
+			$user_db_client = array();	
+		else
+			$user_db_client = $rows[0];
 
 
 		return array_merge($user_db, $user_db_client);
