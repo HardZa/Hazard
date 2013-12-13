@@ -92,6 +92,14 @@ class Request
 		return $ret;
 	}
 
+	public function get_img_uri()
+	{
+		$tmp = Config::get('progress_maping/'.$this->get('requesttype').'/'.$this->get('progress') );
+		if( is_array($tmp) )
+			return 'image/progress/unknow.jpg';
+		return 'image/progress/'.Config::get('progress_maping/'.$this->get('requesttype').'/'.$this->get('progress'));
+	}
+
 	public function get($s)
 	{
 		return $this->_data[$s];
@@ -132,14 +140,14 @@ class Request
 		$this->_data['jsondata'] = (array)json_decode($this->_data['jsondata']);
 	}
 
-	public function addPic()
+	public function add_pic($type,$file)
 	{
-
+		return Picture::create($this->get('requestid'),$type,$file);
 	}
 
-	public function deletePic()
+	public function get_pics_by_type($type)
 	{
-		
+		return Picture::get_pics_by_requestid_and_type($this->get('requestid'),$type);
 	}
 
 	public function reject()

@@ -14,5 +14,6 @@ require_once(resolveHeader('classes/Rule.php'));
 require_once(resolveHeader('classes/User.php'));
 require_once(resolveHeader('classes/Request.php'));
 require_once(resolveHeader('classes/Permission.php'));
+require_once(resolveHeader('classes/Picture.php'));
 require_once(resolveHeader('classes/Certificate.php'));
 ?>

@@ -16,13 +16,13 @@
  ?>
 
 <div class="page-header">
-    <h1>Request</h1>
+    <h1><?php echo $request->get_type(); ?></h1>
 </div>
  <div class="row">
 	<div class="form-group">
-    	<label class="col-sm-3 control-label">สถานะคำร้้อง : </label>
+    	<!-- <label class="col-sm-3 control-label">สถานะคำร้้อง : </label> -->
     	<div class="col-sm-6">
-	      	<input type="text" class="form-control" disabled value="<?php echo $request->get_status(); ?>" >
+    		<?php echo $request->get_img_uri(); ?>
 	    </div>
  	</div>
  </div>
