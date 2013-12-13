@@ -80,6 +80,9 @@ font-size: 100%;
 </style>
 <body>
 <div class="text">
+<div align="right">
+	แบบ วอ.๘
+</div>
 <div align = 'center'>
 	<img src='<?php echo resolveURIHeader("/image/krut.jpg"); ?>' width = '70'>
 </div>
@@ -300,6 +303,10 @@ font-size: 100%;
 <br>
 <br>
 <br>
+<!--page2-->
+<div align="center">-๑/๑-</div>
+<br>
+<br>
 รายการด้านหลังใบอนุญาตมีไว้ในครอบครองซึ่งวัตถุอันตราย<br>
 <span>
 	ใบอนุญาตมีไว้ในครอบครองซึ่งวัตถุอันตรายเลขที่
@@ -317,9 +324,7 @@ font-size: 100%;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ทะเบียนเลขคี่
 	<span class="box_4"><?php echo Input::get("hazardno1"); ?></span>
 </span>
-<br>
-<br>
-	<br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br>
 	<br><br><br><br><br><br><br><br><br><br><br><br>
 	<br><br><br><br><br><br><br><br><br><br><br><br>
 	<span class="right">

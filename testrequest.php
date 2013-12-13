@@ -43,7 +43,7 @@
 		'storepostalcode'=>'83110',
 		'storephone'=>'076311650',
 		'storefax'=>'076313535',
-		'storespecialist'=>'ดร. ภุชงค์ ชงไมโล',
+		'storespecialist'=>'ดร. ภุชงค์ เก็บไมโล',
 		'hazardname'=>'น้ำจากเทือกเขา',
 		'hazardformulation'=>'H20',
 		'businessname'=>'น้ำเปล่า',
@@ -52,16 +52,22 @@
 		'producerspecialist'=>'ดร. ภุชงค์ ชงไมโล',
 		'producerCountry'=>'ดูไบ',
 		'producer'=>'ทักษิณ ชินวัตร',
-		'destinationCountry'=>'destinationCountry',
-		'tabean'=>'tabean',
-		'area'=>'area',
-		'email'=>'email',
-		'hazardid'=>'hazardid',
-		'incomename'=>'incomename',
-		'saleman'=>'saleman'
+		'orderCountry'=>'orderCountryX',
+		'hazardno'=>'hazardnoX',
+		'area'=>'areaX',
+		'hazardid'=>'hazardidX',
+		'importer'=>'importerX',
+		'saleman'=>'salemanX',
+		'container'=>'containerX',
+		'purpose'=>'purposeX',
+		'addremail'=>'addremailX',
+		'productemail'=>'productemailX',
+		'storeemail'=>'storeemailX',
+		'group'=>'groupX',
+		'purposefirst'=>'purposefirst'
 	);
 ?>
-
+<div class="container">
 <div class="page-header">
     <h1>ทดสอบหน้าแสดงคำร้อง</h1>
 </div>
@@ -92,9 +98,9 @@
 	<a href="<?php echo resolveURIHeader("testrequest.php?page=vk_ks_kvk3");?>">วอ./กษ./กวก.3</a>
 </div>
 <div>
-	<a href="<?php echo resolveURIHeader("testrequest.php?page=vk_ks_kvk13");?>">วอ./กษ./กวก.13</a>
+	<a href="<?php echo resolveURIHeader("testrequest.php?page=vk_ks_kvk12");?>">วอ./กษ./กวก.12</a>
 </div>
-
+</div>
 <?php
  	include(resolveHeader('includes/footer.php'));
 ?>

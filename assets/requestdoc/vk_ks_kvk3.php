@@ -34,7 +34,7 @@
 	<div class="col-md-3"><b>โทรสาร</b> <?php echo doc('addrfax')?></div>
 </div>
 <div class="row">
-	<div class="col-md-11"><b>E-mail address</b> <?php echo doc('email')?></div>
+	<div class="col-md-11"><b>E-mail address</b> <?php echo doc('addremail')?></div>
 </div>
 <div class="row">
 	<div class="col-md-11"><b>มีความประสงค์จะขอต่ออายุใบสําคัญการขึ้นทะเบียนวัตถุอันตรายเลขที่</b> <?php echo doc('hazardid')?></div>

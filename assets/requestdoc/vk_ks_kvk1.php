@@ -18,7 +18,7 @@
 </div>
 <br>
 <div class="row">
-	<div class="col-md-5"><b>สถานที่ติดต่อของข้าพเจ้าตั้งอยู่เลขที่</b> <?php echo doc('addrhouse');?></div>
+	<div class="col-md-5"><b>สถานที่ติดต่อผู้ขอขึ้นทะเบียน ตั้งอยู่เลขที่</b> <?php echo doc('addrhouse');?></div>
 	<div class="col-md-3"><b>หมู่ที่</b> <?php echo doc('addrvillage'); ?></div>
 	<div class="col-md-3"><b>ตรอก/ซอย</b> <?php echo doc('addrdrive'); ?></div>
 </div>
@@ -34,16 +34,14 @@
 	<div class="col-md-3"><b>โทรสาร</b> <?php echo doc('addrfax')?></div>
 </div>
 <div class="row">
-	<div class="col-md-11"><b>E-mail address</b> <?php echo doc('email')?></div>
+	<div class="col-md-11"><b>E-mail address</b> <?php echo doc('addremail')?></div>
 </div>
 <br>
 
 <div class="row">
-	<div class="col-md-2"><b>ขอขึ้นทะเบียนวัตถุอันตราย</b></div>
-	<div class="col-md-2"><font size ="3">O</font> ชนิดที่ 2</div>
-	<div class="col-md-2"><font size ="3">O</font> ชนิดที่ 3</div>
-	<div class="col-md-2"><b>เพื่อ</b> &nbsp;&nbsp;&nbsp;&nbsp;<font size ="3">O</font> นำเข้า</div>
-	<div class="col-md-2"><font size ="3">O</font> ผลิต</div>
+	<div class="col-md-3"><b>ขอขึ้นทะเบียนวัตถุอันตราย</b></div>
+	<div class="col-md-3"><?php echo doc('group')?></div>
+	<div class="col-md-5"><b>เพื่อ</b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('purposefirst')?></div>
 </div>
 
 <br>
@@ -57,10 +55,10 @@
 		<div class="col-md-11"><b>๒. สูตรอัตราส่วนผสมของสารสําคัญและลักษณะ </b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('hazardformulation')?></div>
 		<div class="col-md-11"><b>๓. ชื่อทางการค้าหรือหมายเลขรหัส </b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('businessname')?></div>
 		<div class="col-md-11"><b>๔. ชื่อผู้ผลิตและแหล่งผลิต </b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('producer')?> <b>จาก</b> <?php echo doc('productname')?></div>
-		<div class="col-md-11"><b>๕. ชื่อผู้นําเข้า</b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('incomename')?></div>
+		<div class="col-md-11"><b>๕. ชื่อผู้นําเข้า</b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('importer')?></div>
 		<div class="col-md-11"><b>๖. ชื่อผู้จําหน่าย/ผู้จัดจําหน่าย</b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('saleman')?></div>
-		<div class="col-md-11"><b>๗. ชนิดและลักษณะหีบห่อหรือภาชนะบรรจุ พร้อมทั้งขนาดบรรจุ</b>??? &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('')?></div>
-		<div class="col-md-11"><b>๘. ประเภทของการใช้</b>??? &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('')?></div>
+		<div class="col-md-11"><b>๗. ชนิดและลักษณะหีบห่อหรือภาชนะบรรจุ พร้อมทั้งขนาดบรรจุ</b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('container')?></div>
+		<div class="col-md-11"><b>๘. ประเภทของการใช้</b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('purpose')?></div>
 		<div class="col-md-11"><b>๙. เอกสารและตัวอย่างที่ต้องส่งประกอบการขึ้นทะเบียน</b></div>
 		<div class="row">
 			<div class="col-md-11">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size ="3">O</font> สําเนาบัตรประจําตัวประชาชน/สําเนาใบสําคัญประจําตัวคนต่างด้าว</div>
