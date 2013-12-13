@@ -1,7 +1,31 @@
 <?php
  	require_once('core/init.php');
 	include(resolveHeader('includes/header.php'));
+	include(resolveHeader('includes/upload_head.php')); 
+  
+    if(Input::exists('post'))
+    {    
+		$validate = new Validate();
+        $validate->check($_POST,array(
+										  'storename'=> array('required'=>true)
+  									 )
+						);
+		$user = User::get_user();
+        if($validate->passed())
+        {
+            $r = Request::create_request($user->get('userid'),VO_7,$_POST);
+			$j;
+			for($j=0;$j<count($picarr);$j++)
+			{
+				$r->add_pic(PIC_DOC_ATTACH,$picarr[$j]);
+			}
+			$r->redirect();
+        }
+		
+    }
 ?>
+<div class="container">
+<div class="data-box">
 <div class="page-header">
     <h1>คำขออนุญาตมีไว้ในครอบครองซึ่งวัตถุอันตราย</h1>
 </div>
@@ -172,12 +196,20 @@
   	<div class="form-group">
     	<label class="col-sm-10">มาเพื่อประกอบการพิจารณา</label>
  	</div>
+    <div class="row">
+    	<label class="col-sm-3 col-sm-offset-1 control-label">แนบไฟล์เอกสารที่เกี่ยวข้อง</label>
+    	<?php include(resolveHeader('includes/upload_block.php')); ?>
+    </div>
+    <div class="row">
  	<div class="form-group">
     	<div class="col-sm-offset-4 col-sm-10">
       		<button type="submit" class="btn btn-default">ส่งคำร้อง</button>
     	</div>
   	</div>
+    </div>
 </form>
+</div>
+</div>
 <?php
  	include(resolveHeader('includes/footer.php'));
 ?>

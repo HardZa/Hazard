@@ -3,7 +3,7 @@ ob_start();
 $folder="../upload/";
 if($_FILES['file1']['error']>0)
 {
-	echo "Error: ".$_FILES['file1']['error']."<br/>";
+	echo "-1";
 }
 else 
 {
