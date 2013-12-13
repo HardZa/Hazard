@@ -39,11 +39,9 @@
 <br>
 
 <div class="row">
-	<div class="col-md-2"><b>ขอขึ้นทะเบียนวัตถุอันตราย</b></div>
-	<div class="col-md-2"><font size ="3">O</font> ชนิดที่ 2</div>
-	<div class="col-md-2"><font size ="3">O</font> ชนิดที่ 3</div>
-	<div class="col-md-2"><b>เพื่อ</b> &nbsp;&nbsp;&nbsp;&nbsp;<font size ="3">O</font> นำเข้า</div>
-	<div class="col-md-2"><font size ="3">O</font> ผลิต</div>
+	<div class="col-md-3"><b>ขอขึ้นทะเบียนวัตถุอันตราย</b></div>
+	<div class="col-md-3"><?php echo doc('group')?></div>
+	<div class="col-md-5"><b>เพื่อ</b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('purposefirst')?></div>
 </div>
 
 <br>

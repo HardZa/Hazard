@@ -62,10 +62,12 @@
 		'purpose'=>'purposeX',
 		'addremail'=>'addremailX',
 		'productemail'=>'productemailX',
-		'storeemail'=>'storeemailX'
+		'storeemail'=>'storeemailX',
+		'group'=>'groupX',
+		'purposefirst'=>'purposefirst'
 	);
 ?>
-
+<div class="container">
 <div class="page-header">
     <h1>ทดสอบหน้าแสดงคำร้อง</h1>
 </div>
@@ -96,9 +98,9 @@
 	<a href="<?php echo resolveURIHeader("testrequest.php?page=vk_ks_kvk3");?>">วอ./กษ./กวก.3</a>
 </div>
 <div>
-	<a href="<?php echo resolveURIHeader("testrequest.php?page=vk_ks_kvk13");?>">วอ./กษ./กวก.13</a>
+	<a href="<?php echo resolveURIHeader("testrequest.php?page=vk_ks_kvk12");?>">วอ./กษ./กวก.12</a>
 </div>
-
+</div>
 <?php
  	include(resolveHeader('includes/footer.php'));
 ?>

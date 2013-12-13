@@ -39,9 +39,8 @@
 <br>
 <div class="row">
 	<div class="col-md-3"><b>มีความประสงค์จะขออนุญาต</b> </div>
-	<div class="col-md-2"><font size ="3">O</font>&nbsp;&nbsp; นำเข้า </div>
-	<div class="col-md-2"><font size ="3">O</font>&nbsp;&nbsp; ผลิต </div>
-	<div class="col-md-4"><b>ตัวอย่างวัตถุอันตรายเพื่อใช้ในการขึ้นทะเบียน</b> </div>
+	<div class="col-md-2"> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('purposefirst')?></div>
+	<div class="col-md-6"><b>ตัวอย่างวัตถุอันตรายเพื่อใช้ในการขึ้นทะเบียน</b> </div>
 </div>
 <br>
 <div class="row">
