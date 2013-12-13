@@ -24,6 +24,14 @@
 		
     }
     $certs = Certificate::get_user_certs( $user->get('userid') );
+    $new_certs = array();
+    foreach ($certs as $cert) {
+        if( $cert->certtype == VO_GS_GVG_2 )
+        {
+          $new_certs[] = $cert;
+        }
+    }
+    $certs = $new_certs;
 ?>
 <div class="container">
 <div class="data-box">
@@ -33,18 +41,21 @@
 <form class="form-horizontal" role="form" method="post" action="">
 	<div class="form-group" >
     	<label for="hazardno" class="col-sm-6">มีความประสงค์จะขอต่ออายุใบสำคัญการขึ้นทะเบียนวัตถุอันตรายเลขที่</label>
-    	 <div class="col-sm-8">
-      <!--
-      		<input type="text" class="form-control" id="hazardno" name="hazardno" placeholder="วัตถุอันตรายเลขที" value="<?php echo Input::post('hazardno'); ?>">
-    	-->
-      <select class="form-control">
+    	 <?php if(count($certs) > 0){ ?>
+       <div class="col-sm-8">
+      <select name="hazardno" class="form-control">
         <?php
           foreach ($certs as $cert) {
-            echo '<option value="'.$cert->certno.'">'.$cert->certno.'</option>';
+            echo '<option value="'.$cert->certid.'">'.$cert->certno.'</option>';
           }
         ?>
       </select>
       </div>
+      <?php }
+      else
+        { ?>
+          <div class="col-sm-8">คุณยังไม่มีใบที่สามารถต่ออายุได้</div>
+      <?php } ?>
       
   	</div>
 	<div class="form-group">
@@ -82,6 +93,7 @@
     	<label class="col-sm-3 col-sm-offset-1 control-label">แนบไฟล์เอกสารที่เกี่ยวข้อง</label>
     	<?php include(resolveHeader('includes/upload_block.php')); ?>
     </div>
+    <?php if(count($certs) > 0){ ?>
     <div class="row">
     <div class="form-group">
     <div class="col-sm-offset-4 col-sm-10">
@@ -89,6 +101,7 @@
     </div>
   	</div>
     </div>
+    <?php } ?>
 </form>
 </div>
 </div>

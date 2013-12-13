@@ -45,13 +45,15 @@ class Request
 				return 'เสร็จสมบูรณ์';
 			case PRG_ACCEPT_PAY:
 				return 'รอบิล';
+			case PRG_NEXT_EXPIRE:
+				return 'รอผลการต่ออายุ';
 		}
 		return 'unknow progress ('.$progress.')';
 	}
 
-	public static function create_request($userid,$type,$jsondata)
+	public static function create_request($userid,$type,$jsondata,$certref = 0)
 	{
-		DB::get_db()->insert('request',array('userid','requesttype','jsondata','progress'),array($userid,$type,mysql_real_escape_string(json_encode($jsondata)),PRG_CHK_DOC));
+		DB::get_db()->insert('request',array('userid','requesttype','jsondata','progress','certidref'),array($userid,$type,mysql_real_escape_string(json_encode($jsondata)),PRG_CHK_DOC,$certref));
 		return Request::load( DB::get_db()->getLastInsertID() );
 	}
 
@@ -189,6 +191,20 @@ class Request
 	public function redirect()
 	{
 		Redirect::to( 'request_info.php?id='.( $this->get('requestid') ) );
+	}
+
+	public function get_certificate()
+	{
+		if( $this->get('certid') == 0 ) 
+			return null;
+		return Certificate::load( $this->get('certid') );
+	}
+
+	public function get_certificate_ref()
+	{
+		if( $this->get('certidref') == 0 ) 
+			return null;
+		return Certificate::load( $this->get('certidref') );
 	}
 
 }
