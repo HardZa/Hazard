@@ -2,6 +2,11 @@
 
 define ("VO_GS_GVG_1",0);
 define ("VO_GS_GVG_3",1);
+define ("VO_1",2);
+define ("VO_3",3);
+define ("VO_5",4);
+define ("VO_7",5);
+define ("VO_GS_GVG_12",6);
 
 define ("PRG_CHK_DOC",1);
 define ("PRG_SURVEY",2);

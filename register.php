@@ -125,8 +125,8 @@ if(!Permission::userAddAllowed())
  </script>
 
  <?php 
- $errors=[];
- $client_errors=[];
+ $errors=array();
+ $client_errors=array();
 
  if(Input::Exists())
 {
@@ -235,134 +235,132 @@ function echoValue($field)
 
  ?>
  
+<div class="container">
+	<div class="register-page">
+		<div class="page-header">
+		    <h1>ลงทะเบียนผู้ใช้</h1>
+		</div>
 
-<div class="page-header">
-    <h1>ลงทะเบียนผู้ใช้</h1>
-</div>
+		 <form class="form-horizontal" method="post" action="" role="form" >
+		 	<div class="form-group">
+		    	<label class="col-sm-3 control-label">ประเภทผู้ใช้</label>
+			    <div class="col-sm-4">
+					<select class="form-control" name="regis_type" id="regis_type">
+						<option value="" >--เลือกประเภทผู้ใช้--</option>
+					    <option value="client"  >เอกชน</option>
+					    <option value="hazcontrol"  >เจ้าหน้าที่ควบคุมวัตถุอันตราย</option>
+					    <option value="plantprotection">เจ้าหน้าที่สำนักอารักขาพืช</option>
+					    <option value="agriproduction" >เจ้าหน้าที่สำนักปัจจัยการผลิต</option>
+					    <option value="cashier" >เจ้าหน้าที่การเงิน</option>
+					</select> 
+			    </div>
+		  	</div>
 
- <form class="form-horizontal" method="post" action="" role="form" >
- 	<div class="form-group">
-    	<label class="col-sm-3 control-label">ประเภทผู้ใช้</label>
-	    <div class="col-sm-4">
-			<select class="form-control" name="regis_type" id="regis_type">
-				<option value="" >--เลือกประเภทผู้ใช้--</option>
-			    <option value="client"  >เอกชน</option>
-			    <option value="hazcontrol"  >เจ้าหน้าที่ควบคุมวัตถุอันตราย</option>
-			    <option value="plantprotection">เจ้าหน้าที่สำนักอารักขาพืช</option>
-			    <option value="agriproduction" >เจ้าหน้าที่สำนักปัจจัยการผลิต</option>
-			    <option value="cashier" >เจ้าหน้าที่การเงิน</option>
-			</select> 
-	    </div>
-  	</div>
+		  	<div class="form-group" >
+		    	<label for="username" class="col-sm-3 control-label">*ชื่อล็อกอิน</label>
+			    <div class="col-sm-6">
+			      	<input type="text" class="form-control" id="username" name="username" placeholder="ชื่อล็อกอิน" >
+			    </div>
+		 	</div>
 
-  	<div class="form-group" >
-    	<label for="username" class="col-sm-3 control-label">*ชื่อล็อกอิน</label>
-	    <div class="col-sm-6">
-	      	<input type="text" class="form-control" id="username" name="username" placeholder="ชื่อล็อกอิน" >
-	    </div>
- 	</div>
+		 	<div class="form-group" >
+		    	<label for="name" class="col-sm-3 control-label">*ชื่อ-สกุล</label>
+			    <div class="col-sm-6">
+			      	<input type="text" class="form-control" id="name" name="name" placeholder="ชื่อ-สกุล" <?php echoValue('name'); ?> >
+			    </div>
+		 	</div>
 
- 	<div class="form-group" >
-    	<label for="name" class="col-sm-3 control-label">*ชื่อ-สกุล</label>
-	    <div class="col-sm-6">
-	      	<input type="text" class="form-control" id="name" name="name" placeholder="ชื่อ-สกุล" <?php echoValue('name'); ?> >
-	    </div>
- 	</div>
+		<div id ="client_form">
 
-<div id ="client_form">
+			<div class="form-group" >
+		    	<label for="userbirthdate" class="col-sm-3 control-label">*วัน-เดือน-ปี เกิด</label>
+			    <div class="col-sm-6">
+			      	<input type="text" class="form-control" id="userbirthdate" name="userbirthdate" placeholder="DD-MM-YYYY" <?php echoValue('userbirthdate'); ?> >
+			    </div>
+		 	</div>
 
-	<div class="form-group" >
-    	<label for="userbirthdate" class="col-sm-3 control-label">*วัน-เดือน-ปี เกิด</label>
-	    <div class="col-sm-6">
-	      	<input type="text" class="form-control" id="userbirthdate" name="userbirthdate" placeholder="DD-MM-YYYY" <?php echoValue('userbirthdate'); ?> >
-	    </div>
- 	</div>
+		 	<div class="form-group" >
+		    	<label for="usernationality" class="col-sm-3 control-label">สัญชาติ</label>
+			    <div class="col-sm-6">
+			      	<input type="text" class="form-control" id="usernationality" name="usernationality" placeholder="สัญชาติ" <?php echoValue('usernationality'); ?> >
+			    </div>
+		 	</div>
 
- 	<div class="form-group" >
-    	<label for="usernationality" class="col-sm-3 control-label">สัญชาติ</label>
-	    <div class="col-sm-6">
-	      	<input type="text" class="form-control" id="usernationality" name="usernationality" placeholder="สัญชาติ" <?php echoValue('usernationality'); ?> >
-	    </div>
- 	</div>
+		 	<div class="form-group" >
+		    	<label for="usertaxid" class="col-sm-3 control-label">*เลขประจำตัวผู้เสียภาษี</label>
+			    <div class="col-sm-6">
+			      	<input type="text" class="form-control" id="usertaxid" name="usertaxid" placeholder="เลขประจำตัวผู้เสียภาษี" <?php echoValue('usertaxid'); ?> >
+			    </div>
+		 	</div>
 
- 	<div class="form-group" >
-    	<label for="usertaxid" class="col-sm-3 control-label">*เลขประจำตัวผู้เสียภาษี</label>
-	    <div class="col-sm-6">
-	      	<input type="text" class="form-control" id="usertaxid" name="usertaxid" placeholder="เลขประจำตัวผู้เสียภาษี" <?php echoValue('usertaxid'); ?> >
-	    </div>
- 	</div>
+		 	<div class="form-group" >
+		    	<label for="useraddrhouse" class="col-sm-3 control-label">*บ้านเลขที่</label>
+			    <div class="col-sm-6">
+			      	<input type="text" class="form-control" id="useraddrhouse" name="useraddrhouse" placeholder="ที่อยู่" <?php echoValue('useraddrhouse'); ?> >
+			    </div>
+		 	</div>
 
- 	<div class="form-group" >
-    	<label for="useraddrhouse" class="col-sm-3 control-label">*บ้านเลขที่</label>
-	    <div class="col-sm-6">
-	      	<input type="text" class="form-control" id="useraddrhouse" name="useraddrhouse" placeholder="ที่อยู่" <?php echoValue('useraddrhouse'); ?> >
-	    </div>
- 	</div>
+		 	<div class="form-group" >
+		    	<label for="useraddrvillage" class="col-sm-3 control-label">หมู่ที่</label>
+			    <div class="col-sm-6">
+			      	<input type="text" class="form-control" id="useraddrvillage" name="useraddrvillage" placeholder="หมู่ที่" <?php echoValue('useraddrvillage'); ?> >
+			    </div>
+		 	</div>
 
- 	<div class="form-group" >
-    	<label for="useraddrvillage" class="col-sm-3 control-label">หมู่ที่</label>
-	    <div class="col-sm-6">
-	      	<input type="text" class="form-control" id="useraddrvillage" name="useraddrvillage" placeholder="หมู่ที่" <?php echoValue('useraddrvillage'); ?> >
-	    </div>
- 	</div>
+		 	<div class="form-group" >
+		    	<label for="userdrive" class="col-sm-3 control-label">ตรอก/ซอย</label>
+			    <div class="col-sm-6">
+			      	<input type="text" class="form-control" id="userdrive" name="userdrive" placeholder="ตรอก/ซอย" <?php echoValue('userdrive'); ?> >
+			    </div>
+		 	</div>
 
- 	<div class="form-group" >
-    	<label for="userdrive" class="col-sm-3 control-label">ตรอก/ซอย</label>
-	    <div class="col-sm-6">
-	      	<input type="text" class="form-control" id="userdrive" name="userdrive" placeholder="ตรอก/ซอย" <?php echoValue('userdrive'); ?> >
-	    </div>
- 	</div>
+		 	<div class="form-group" >
+		    	<label for="useraddrroad" class="col-sm-3 control-label">*ถนน</label>
+			    <div class="col-sm-6">
+			      	<input type="text" class="form-control" id="useraddrroad" name="useraddrroad" placeholder="ถนน" <?php echoValue('useraddrroad'); ?> >
+			    </div>
+		 	</div>
 
- 	<div class="form-group" >
-    	<label for="useraddrroad" class="col-sm-3 control-label">*ถนน</label>
-	    <div class="col-sm-6">
-	      	<input type="text" class="form-control" id="useraddrroad" name="useraddrroad" placeholder="ถนน" <?php echoValue('useraddrroad'); ?> >
-	    </div>
- 	</div>
+		 	<div class="form-group" >
+		    	<label for="usersubdistrict" class="col-sm-3 control-label">*ตำบล/แขวง</label>
+			    <div class="col-sm-6">
+			      	<input type="text" class="form-control" id="usersubdistrict" name="usersubdistrict" placeholder="ตำบล/แขวง" <?php echoValue('usersubdistrict'); ?> >
+			    </div>
+		 	</div>
 
- 	<div class="form-group" >
-    	<label for="usersubdistrict" class="col-sm-3 control-label">*ตำบล/แขวง</label>
-	    <div class="col-sm-6">
-	      	<input type="text" class="form-control" id="usersubdistrict" name="usersubdistrict" placeholder="ตำบล/แขวง" <?php echoValue('usersubdistrict'); ?> >
-	    </div>
- 	</div>
+		 	<div class="form-group" >
+		    	<label for="userprovince" class="col-sm-3 control-label">*จังหวัด</label>
+			    <div class="col-sm-6">
+			      	<input type="text" class="form-control" id="userprovince" name="userprovince" placeholder="จังหวัด" <?php echoValue('userprovince'); ?> >
+			    </div>
+		 	</div>
 
- 	<div class="form-group" >
-    	<label for="userprovince" class="col-sm-3 control-label">*จังหวัด</label>
-	    <div class="col-sm-6">
-	      	<input type="text" class="form-control" id="userprovince" name="userprovince" placeholder="จังหวัด" <?php echoValue('userprovince'); ?> >
-	    </div>
- 	</div>
+		 	<div class="form-group" >
+		    	<label for="userpostalcode" class="col-sm-3 control-label">*รหัสไปรษณีย์</label>
+			    <div class="col-sm-6">
+			      	<input type="text" class="form-control" id="userpostalcode" name="userpostalcode" placeholder="รหัสไปรษณีย์" <?php echoValue('userpostalcode'); ?> >
+			    </div>
+		 	</div>
 
- 	<div class="form-group" >
-    	<label for="userpostalcode" class="col-sm-3 control-label">*รหัสไปรษณีย์</label>
-	    <div class="col-sm-6">
-	      	<input type="text" class="form-control" id="userpostalcode" name="userpostalcode" placeholder="รหัสไปรษณีย์" <?php echoValue('userpostalcode'); ?> >
-	    </div>
- 	</div>
+		 	<div class="form-group" >
+		    	<label for="userphone" class="col-sm-3 control-label">*หมายเลขโทรศัพท์</label>
+			    <div class="col-sm-6">
+			      	<input type="text" class="form-control" id="userphone" name="userphone" placeholder="หมายเลขโทรศัพท์" <?php echoValue('userphone'); ?> >
+			    </div>
+		 	</div>
 
- 	<div class="form-group" >
-    	<label for="userphone" class="col-sm-3 control-label">*หมายเลขโทรศัพท์</label>
-	    <div class="col-sm-6">
-	      	<input type="text" class="form-control" id="userphone" name="userphone" placeholder="หมายเลขโทรศัพท์" <?php echoValue('userphone'); ?> >
-	    </div>
- 	</div>
+		 	<div class="form-group" >
+		    	<label for="userfax" class="col-sm-3 control-label">หมายเลขโทรสาร</label>
+			    <div class="col-sm-6">
+			      	<input type="text" class="form-control" id="userfax" name="userfax" placeholder="หมายเลขโทรสาร" <?php echoValue('userfax'); ?> >
+			    </div>
+		 	</div>
+		</div>
 
- 	<div class="form-group" >
-    	<label for="userfax" class="col-sm-3 control-label">หมายเลขโทรสาร</label>
-	    <div class="col-sm-6">
-	      	<input type="text" class="form-control" id="userfax" name="userfax" placeholder="หมายเลขโทรสาร" <?php echoValue('userfax'); ?> >
-	    </div>
- 	</div>
-
-</div>
-
-	<button type="submit" class="btn btn-primary col-sm-offset-3">ลงทะเบียน</button>
-
-</form>
- 
-
-
+			<button type="submit" class="btn btn-warning" style="margin-left:232px;">ลงทะเบียน</button>
+		</form>
+	</div>
+ </div>
 
  <?php
  include(resolveHeader('includes/footer.php'));

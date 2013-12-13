@@ -19,7 +19,9 @@ class Config
 			'request'=>'assets/requestdoc/',
 			'list'=>'assets/requestlist/',
 			'process'=>'assets/requestprocess/',
-			'request_info' => 'assets/requestinfo/'
+			'request_info' => 'assets/requestdoc/',
+			'bindprint' => 'assets/bindprint/' ,
+			'bindinfo' => 'assets/bindinfo/' ,
 		),
 		'progress_maping' => array(
 			VO_GS_GVG_1 => 

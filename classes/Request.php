@@ -8,7 +8,19 @@ class Request
 	{
 		switch ($type) {
 			case VO_GS_GVG_1:
-				return 'วอ./กส./กวก.';
+				return 'วอ./กษ./กวก.1';
+			case VO_GS_GVG_3:
+				return 'วอ./กษ./กวก.3';
+			case VO_GS_GVG_12:
+				return 'วอ./กษ./กวก.12';
+			case VO_1:
+				return 'วอ.1';
+			case VO_3:
+				return 'วอ.3';
+			case VO_5:
+				return 'วอ.5';
+			case VO_7:
+				return 'วอ.7';
 			default:
 				return 'unknow';
 		}
@@ -39,7 +51,7 @@ class Request
 
 	public static function create_request($userid,$type,$jsondata)
 	{
-		DB::get_db()->insert('request',array('userid','requesttype','jsondata','progress'),array($userid,$type,json_encode($jsondata),0));
+		DB::get_db()->insert('request',array('userid','requesttype','jsondata','progress'),array($userid,$type,json_encode($jsondata),PRG_CHK_DOC));
 		return Request::load( DB::get_db()->getLastInsertID() );
 	}
 

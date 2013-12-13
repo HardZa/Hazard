@@ -145,7 +145,7 @@ class User{
 			throw new Exception("There was a problem creating new user");
 		}
 
-		$newbirthdate = substr($userbirthdate,6,4).'-'.substr($userbirthdate,3,2).'-'.substr($userbirthdate,0,2);
+		$newbirthdate = DMY_to_YMD($userbirthdate);
 
 		if(!DB::get_db()->insert('usergroup_client',
 			array('userid','userbirthdate','usernationality','usertaxid','useraddrhouse'

@@ -8,11 +8,7 @@
  $request = Request::load( Input::get('id') );
  if( $request == null || $user == null )
  	Redirect::to(403);
- $docData = array('progress' => $request->get('progress'),
- 				  'main_file' => 'request_info.php',
- 				  'request' => $request ,
- 				  'type' => $request->get('requesttype') ,
- 				  'user' => $user);
+ //$docData = array();
  
  function printPic($type)
  {
@@ -48,6 +44,11 @@
 
  <div class="row">
  <?php
+ $docData = array('progress' => $request->get('progress'),
+ 				  'main_file' => 'request_info.php',
+ 				  'request' => $request ,
+ 				  'type' => $request->get('requesttype') ,
+ 				  'user' => $user);
  include( resolveHeader('route_info.php') );
  ?>
  </div>
@@ -60,6 +61,11 @@
 
  <div class="row">
  <?php
+ $docData = array('progress' => $request->get('progress'),
+ 				  'main_file' => 'request_info.php',
+ 				  'request' => $request ,
+ 				  'type' => $request->get('requesttype') ,
+ 				  'user' => $user);
  include( resolveHeader('route_show_request.php') );
  ?>
  </div>

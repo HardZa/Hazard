@@ -123,10 +123,17 @@
     }
     else if($user->is_group("plantprotection"))
     {
-
+        $docData = array(
+                'requests' => Request::get_requests_by_progress(PRG_CONSIDER)
+            );
+        include(resolveHeader(Config::get('template/list').'list.php'));
     }
     else if($user->is_group("agriproduction"))
     {
+        $docData = array(
+                'requests' => Request::get_requests_by_progress(PRG_CONSIDER)
+            );
+        include(resolveHeader(Config::get('template/list').'list.php'));
     }
     else if($user->is_group("cashier"))
     {
