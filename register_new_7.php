@@ -10,97 +10,103 @@
     	<label class="col-sm-4">สถานที่เก็บวัตถุอันตราย</label>
  	</div>
  	<div class="form-group" >
-    	<label for="addrname" class="col-sm-4 control-label">ชื่อ</label>
+    	<label for="storename" class="col-sm-4 control-label">ชื่อ</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrname" name="addrname" placeholder="ชื่อ" >
+      		<input type="text" class="form-control" id="storename" name="storename" placeholder="ชื่อ" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrhouse" class="col-sm-4 control-label">ตั้งอยู่เลขที่</label>
+    	<label for="storehouse" class="col-sm-4 control-label">ตั้งอยู่เลขที่</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrhouse" name="addrhouse" placeholder="เลขที่" >
+      		<input type="text" class="form-control" id="storehouse" name="storehouse" placeholder="เลขที่" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrvillage" class="col-sm-4 control-label">หมู่ที่</label>
+    	<label for="storevillage" class="col-sm-4 control-label">หมู่ที่</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrvillage" name="addrvillage" placeholder="หมู่ที่" >
+      		<input type="text" class="form-control" id="storevillage" name="storevillage" placeholder="หมู่ที่" >
+    	</div>
+  	</div>
+    <div class="form-group" >
+      <label for="storedrive" class="col-sm-4 control-label">ตรอก/ซอย</label>
+      <div class="col-sm-8">
+          <input type="text" class="form-control" id="storedrive" name="storedrive" placeholder="ตรอก/ซอย" >
+      </div>
+    </div>
+  	<div class="form-group" >
+    	<label for="storeroad" class="col-sm-4 control-label">ถนน</label>
+    	<div class="col-sm-8">
+      		<input type="text" class="form-control" id="storeroad" name="storeroad" placeholder="ถนน" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrroad" class="col-sm-4 control-label">ถนน</label>
+    	<label for="storesubdistrict" class="col-sm-4 control-label">ตำบล/แขวง</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrroad" name="addrroad" placeholder="ถนน" >
+      		<input type="text" class="form-control" id="storesubdistrict" name="storesubdistrict" placeholder="ตำบล/แขวง" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrsubdistrict" class="col-sm-4 control-label">ตำบล/แขวง</label>
+    	<label for="storedistrict" class="col-sm-4 control-label">อำเภอ/เขต</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrsubdistrict" name="addrsubdistrict" placeholder="ตำบล/แขวง" >
+      		<input type="text" class="form-control" id="storedistrict" name="storedistrict" placeholder="อำเภอ/เขต" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrdistrict" class="col-sm-4 control-label">อำเภอ/เขต</label>
+    	<label for="storeprovince" class="col-sm-4 control-label">จังหวัด</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrdistrict" name="addrdistrict" placeholder="อำเภอ/เขต" >
+      		<input type="text" class="form-control" id="storeprovince" name="storeprovince" placeholder="จังหวัด" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrprovince" class="col-sm-4 control-label">จังหวัด</label>
+    	<label for="storepostalcode" class="col-sm-4 control-label">รหัสไปรษณีย์</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrprovince" name="addrprovince" placeholder="จังหวัด" >
+      		<input type="text" class="form-control" id="storepostalcode" name="storepostalcode" placeholder="รหัสไปรษณีย์" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrpostalcode" class="col-sm-4 control-label">รหัสไปรษณีย์</label>
+    	<label for="storephone" class="col-sm-4 control-label">โทรศัพท์</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrpostalcode" name="addrpostalcode" placeholder="รหัสไปรษณีย์" >
+      		<input type="text" class="form-control" id="storephone" name="storephone" placeholder="โทรศัพท์" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrphone" class="col-sm-4 control-label">โทรศัพท์</label>
+    	<label for="storefax" class="col-sm-4 control-label">โทรสาร</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrphone" name="addrphone" placeholder="โทรศัพท์" >
+      		<input type="text" class="form-control" id="storefax" name="storefax" placeholder="โทรสาร" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="addrfax" class="col-sm-4 control-label">โทรสาร</label>
+    	<label for="storespecialist" class="col-sm-12">ชื่อผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบสำหรับการเก็บรักษา/การใช้รับจ้าง(ในกรณีที่มีประกาศฯออกตามความในมาตรา ๒๐(๒) แห่งพระราชบัญญัติวัตถุอันตราย พ.ศ. ๒๕๓๕ กำหนดให้ต้องมีผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบฯ)</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="addrfax" name="addrfax" placeholder="โทรสาร" >
+      		<input type="text" class="form-control" id="storespecialist" name="storespecialist" placeholder="ชื่อผู้เชี่ยวชาญ" >
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="expertname" class="col-sm-12">ชื่อผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบสำหรับการเก็บรักษา/การใช้รับจ้าง(ในกรณีที่มีประกาศฯออกตามความในมาตรา ๒๐(๒) แห่งพระราชบัญญัติวัตถุอันตราย พ.ศ. ๒๕๓๕ กำหนดให้ต้องมีผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบฯ)</label>
-    	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="expertname" name="expertname" placeholder="ชื่อผู้เชี่ยวชาญ" >
-    	</div>
-  	</div>
-  	<div class="form-group" >
-    	<label for="expertname" class="col-sm-8">ขออนุญาติมีไว้ครอบครองซึ่งวัตถุอันตราย โดยมีวัตถุประสงค์ในการครอบครองเพื่อ</label>
+    	<label for="purpose" class="col-sm-8">ขออนุญาติมีไว้ครอบครองซึ่งวัตถุอันตราย โดยมีวัตถุประสงค์ในการครอบครองเพื่อ</label>
     	<div class="col-sm-12">
     		<div class="col-sm-4">
       		<label class="radio-inline">
-		    	<input type="radio" name="hazardfor" id="hazardfor" value="ขาย" checked>ขาย
+		    	<input type="radio" name="purpose" id="purpose" value="ขาย" checked>ขาย
 			</label>
 		  	<label class="radio-inline">
-		    	<input type="radio" name="hazardfor" id="hazardfor" value="ขนส่ง">ขนส่ง
+		    	<input type="radio" name="purpose" id="purpose" value="ขนส่ง">ขนส่ง
 		  	</label>
 		  	<label class="radio-inline">
-		    	<input type="radio" name="hazardfor" id="hazardfor" value="ใช้">ใช้
+		    	<input type="radio" name="purpose" id="purpose" value="ใช้">ใช้
 		  	</label>
 		  	<label class="radio-inline">
-		    	<input type="radio" name="hazardfor" id="hazardfor" value="อื่นๆ">อื่นๆ(ระบุ)
+		    	<input type="radio" name="purpose" id="purpose" value="อื่นๆ">อื่นๆ(ระบุ)
 		  	</label>
 		  	</div>
     		<div class="col-sm-4">
-      			<input type="text" class="form-control" id="hazardfor_other" name="hazardfor_other" placeholder="(ระบุ)" >
+      			<input type="text" class="form-control" id="purpose" name="purpose" placeholder="(ระบุ)" >
     		</div>
     	</div>
   	</div>
   	<div class="form-group" >
-    	<label for="hazardnumber" class="col-sm-4 control-label">ทะเบียนเลขที่</label>
+    	<label for="certidref" class="col-sm-4 control-label">ทะเบียนเลขที่</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="hazardnumber" name="hazardnumber" placeholder="ทะเบียนเลขที่" >
+      		<input type="text" class="form-control" id="certidref" name="certidref" placeholder="ทะเบียนเลขที่" >
     	</div>
   	</div>
   	<div class="form-group" >
@@ -109,6 +115,12 @@
       		<input type="text" class="form-control" id="quantity" name="quantity" placeholder="ปริมาณสูงสุด" >
     	</div>
   	</div>
+    <div class="form-group" >
+      <label for="area" class="col-sm-4 control-label">พื้นที่เฉพาะในส่วนของการครอบครองรวมสูงสุด</label>
+      <div class="col-sm-8">
+          <input type="text" class="form-control" id="area" name="area" placeholder="ตารางเมตร" >
+      </div>
+    </div>
   	<div class="form-group">
     	<label class="col-sm-10">พร้อมกันนี้ข้าพเจ้าได้ส่งมอบเอกสารประกอบคำขออนุญาต ดังต่อไปนี้</label>
  	</div>
