@@ -80,6 +80,9 @@ font-size: 100%;
 </style>
 <body>
 <div class="text">
+<div align="right">
+	แบบ วอ.๖
+</div>
 <div align = 'center'>
 	<img src='<?php echo resolveURIHeader("/image/krut.jpg"); ?>' width = '70'>
 </div>
@@ -278,8 +281,10 @@ font-size: 100%;
 </div>
 <br>
 <br>
-<br>
 <!--page2-->
+<div align="center">-๑/๑-</div>
+<br>
+<br>
 รายการด้านหลังใบอนุญาตส่งออกวัตถุอันตราย<br>
 <span>
 	ใบอนุญาตส่งออกวัตถุอันตรายเลขที่

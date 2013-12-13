@@ -238,9 +238,7 @@
 		'expyear'=>'2556',
 		'officername'=>'สมรัก คำสิงค์'
 	);
-
-	$infoz14=array(
-		'no'=>'0001',
+	$infoz13=array(	
 		'day'=>'12',
 		'month'=>'มกราคม',
 		'year'=>'2556',
@@ -281,6 +279,48 @@
 		'expyear'=>'2556',
 		'officername'=>'สมรัก คำสิงค์'
 	);
+	$infoz14=array(
+		'no'=>'0001',	
+		'day'=>'12',
+		'month'=>'มกราคม',
+		'year'=>'2556',
+		'certid'=>'วอ.4-0001/2556',		
+		'name'=>'นายสุเทพ เทือกสุบรรณ',
+		'nationality'=>'ไทย',
+		'taxno'=>'5410500199',
+		'addrhouse'=>'52',
+		'addrvillage'=>'1',
+		'addrdrive'=>'2',
+		'addrroad'=>'เทพกระษัตรี',
+		'addrsubdistrict'=>'เทพกระษัตรี',
+		'addrdistrict'=>'ถลาง',
+		'addrprovince'=>'ภูเก็ต',
+		'addrpostalcode'=>'83110',
+		'addrphone'=>'076311650',
+		'addrfax'=>'076313535',
+		'storename'=>'บ้านหลังเขา',
+		'storehouse'=>'52',
+		'storevillage'=>'1',
+		'storedrive'=>'2',
+		'storeroad'=>'เทพกระษัตรี',
+		'storesubdistrict'=>'เทพกระษัตรี',
+		'storedistrict'=>'ถลาง',
+		'storeprovince'=>'ภูเก็ต',
+		'storepostalcode'=>'83110',
+		'storephone'=>'076311650',
+		'storefax'=>'076313535',
+		'hazardname'=>'น้ำจากเทือกเขา',
+		'hazardformulation'=>'H20',
+		'businessname'=>'น้ำเปล่า',
+		'producer'=>'นาย อากง แซ่ยี้ ผลิตที่ เขาใหญ่',
+		'importer'=>'ดร. ภุชงค์ ชงไมโล',
+		'quantity'=>'5 ถัง กับอีก 3 ขวด',
+		'other'=>'-',
+		'expday'=>'12',
+		'expmonth'=>'มกราคม',
+		'expyear'=>'2556',
+		'officername'=>'สมรัก คำสิงค์'
+	);
 
 ?>
 
@@ -304,9 +344,11 @@
 	<a class="btnPrint" href='<?php echo resolvePrinterURI("vk_ks_kvk2", $infoz2 );?>'>ทดสอบ วอ./กษ./กวก.2</a>
 </div>
 <div>
+	<a class="btnPrint" href='<?php echo resolvePrinterURI("vk_ks_kvk13", $infoz13 );?>'>ทดสอบ วอ./กษ./กวก.13</a>
+</div>
+<div>
 	<a class="btnPrint" href='<?php echo resolvePrinterURI("vk_ks_kvk14", $infoz14 );?>'>ทดสอบ วอ./กษ./กวก.14</a>
 </div>
-
 <?php
  	include(resolveHeader('includes/footer.php'));
 ?>
