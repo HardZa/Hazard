@@ -1,12 +1,8 @@
-
 <?php
-
 if(Input::get('approve') == '1')
 {
-	if( doc('type') != VO_GS_GVG_3 )
-		doc('request')->progress( PRG_PRINTING );
-	else
-		doc('request')->progress( PRG_NEXT_EXPIRE );
+	Certificate::load( doc('request')->get_data('hazardno') )->next_expire();
+	doc('request')->progress( PRG_COMPLETE );
 	doc('request')->save();
 	doc('request')->redirect();
 }
@@ -21,10 +17,8 @@ else
 ?>
 
 <div class="row">
-	<br>
- 		<div class="row">
 	<div class="col-md-2">
-		<input type="button" value="ผ่าน" class="btn btn-success" onclick="parent.location='<?php 
+		<input type="button" value="ต่ออายุ" class="btn btn-success" onclick="parent.location='<?php 
 			echo resolveURIHeader(doc('main_file').'?id='.doc('request')->get('requestid')."&approve=1");
 		?>'">
 	</div>
@@ -33,7 +27,6 @@ else
 			echo resolveURIHeader(doc('main_file').'?id='.doc('request')->get('requestid')."&approve=0");
 		?>'">
 	</div>
-</div>
 </div>
 
 <?php

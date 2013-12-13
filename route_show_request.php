@@ -30,10 +30,14 @@ else if($user->is_group('hazcontrol'))
 			break;
 		case PRG_PRINTING:
 		case PRG_COMPLETE:
-				$route_file = 'haz_printing.php';
+				if(doc('type') != VO_GS_GVG_3)
+					$route_file = 'haz_printing.php';
 			break;
 		case PRG_REJECT:
 			$route_file = 'empty.php';
+			break;
+		case PRG_NEXT_EXPIRE:
+			$route_file = 'haz_next_expire.php';
 			break;
 	}
 }

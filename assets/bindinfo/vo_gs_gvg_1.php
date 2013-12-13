@@ -1,5 +1,5 @@
 <?php
-$userinfo=User::get_client_by_id($user->get('userid'));
+$userinfo=User::get_client_by_id($request->get('userid'));
 $docData = array( 
 					"day" => $request->get_data('field'),
 					"month" => $request->get_data('field'),

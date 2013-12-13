@@ -10,7 +10,7 @@ if( doc('request')->get('progress') != PRG_COMPLETE )
 {
 	if(Input::get('approve') != '')
 	{
-		$cert = Certificate::create(doc('user')->get('userid'), $ctype ,doc('request')->get('jsondata'));
+		$cert = Certificate::create(doc('request')->get('userid'), $ctype ,doc('request')->get('jsondata'));
 		doc('request')->set('certid',$cert->certid );
 		doc('request')->progress( PRG_COMPLETE );
 		doc('request')->save();

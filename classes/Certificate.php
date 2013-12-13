@@ -69,12 +69,17 @@ class Certificate
 		DB::get_db()->update('certificate',array('expdate'=>$this->expdate),'certid='.$this->certid);
 	}
 
+	public function next_expire()
+	{
+		$this->set_exp_date( $this->get_exp_day() , $this->get_exp_month() , $this->get_exp_year() + 1 );
+	}
+
 	public static function load($id)
 	{
 		$certdb = DB::get_db()->select('certificate',null,'certid='.$id);
 		if(count($certdb)==0)
 		{
-			throw new Exception("Certificate not found");
+			return null;
 		}
 
 		$cert = new Certificate();

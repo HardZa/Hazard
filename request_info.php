@@ -9,6 +9,17 @@
  if( $request == null || $user == null )
  	Redirect::to(403);
  //$docData = array();
+
+ function get_exp_cert()
+ {
+ 	global $request;
+ 	$cert = $request->get_certificate();
+ 	if( $cert == null )
+ 	{
+ 		return '';
+ 	}
+ 	return $cert->get_exp_day() . '-' . $cert->get_exp_month() . '-' . $cert->get_exp_year();
+ }
  
  function printPic($type)
  {
@@ -31,10 +42,16 @@
  	}
  }
 
+ $cexp = get_exp_cert();
+
  ?>
 <div class="container">
 <div class="page-header">
-    <h1><?php echo $request->get_type(); ?></h1>
+    <h1>
+    		<?php echo $request->get_type(); ?>
+    		(<?php echo $request->get_status(); ?>)
+    		<?php echo $cexp; ?>
+    </h1>
 </div>
  <div class="row">
     	<div class="col-sm-6">

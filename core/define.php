@@ -22,6 +22,7 @@ define ("PRG_CONSIDER",3);
 define ("PRG_WAIT_PAY",4);
 define ("PRG_ACCEPT_PAY",5);
 define ("PRG_PRINTING",6);
+define ("PRG_NEXT_EXPIRE",7);
 define ("PRG_REJECT",100);
 define ("PRG_COMPLETE",101);
 
