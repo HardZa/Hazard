@@ -5,7 +5,6 @@
 	$errors=array();
 	if(Input::exists('post'))
 	{
-		//upload
 		$picarr=json_decode($_POST['picarr']);
 		$i;
 		for($i=0;$i<count($picarr);$i++)
@@ -14,7 +13,7 @@
 		}
 		
 		$validate = new Validate();
-		$validate->check($_GET,array(
+		$validate->check($_POST,array(
 			'hazardname'=> array(
 				'required'=>true
 			),
@@ -36,6 +35,7 @@
 	}
 
 ?>
+<div class="container">
 
 <div class="page-header">
     <h1>คำขอขึ้นทะเบียนวัตถุอันตราย</h1>
@@ -72,10 +72,16 @@
   </div>
   <input type="hidden" id="picarr" name="picarr">
 </form>
+
+
+
 <?php
 include(resolveHeader('includes/upload_form.php'));
 ?>
 
+
+
+</div>
 <?php
  	include(resolveHeader('includes/footer.php'));
 ?>
