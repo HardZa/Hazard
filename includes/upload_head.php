@@ -13,7 +13,7 @@ function mysqlEscape(stringToEscape){
 function updatepic()
 {
 	var arr=_("picarr");
-	arr.value=mysqlEscape(JSON.stringify(picup));
+	arr.value=JSON.stringify(picup);
 	//alert(JSON.stringify(picup));
 }
 function delRow(picname)
