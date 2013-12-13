@@ -10,10 +10,10 @@
     	<label class="col-sm-4 control-label">มีความประสงค์จะขออนุญาต</label>
     	<div class="col-sm-2">
 			<label class="radio-inline">
-		    	<input type="radio" name="hazardtype" value="import" checked>นำเข้า
+		    	<input type="radio" name="purposefirst" value="import" checked>นำเข้า
 			</label>
 		  	<label class="radio-inline">
-		    	<input type="radio" name="hazardtype" value="produce">ผลิต
+		    	<input type="radio" name="purposefirst" value="produce">ผลิต
 		  	</label>
     	</div>
     	<label class="col-sm-4 control-label">ตัวอย่างวัตถุอันตรายเพื่อใช้ในการขึ้นทะเบียน
