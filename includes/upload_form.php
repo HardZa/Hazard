@@ -1,9 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-</head>
+
 <script>
 var picup = new Array();
 function _(el)
@@ -107,7 +102,7 @@ function completeHandler(event)
 		_("status").innerHTML="อัพโหลดผิดพลาด";
 		return;
 	}
-	else _("status").innerHTML="อัพโหลดไฟล์ "+event.target.responseText+" สมบูรณ์";
+	else _("status").innerHTML="";//"อัพโหลดไฟล์ "+event.target.responseText+" สมบูรณ์";
 	gentable(event.target.responseText);
 	
 	_("file1").value="";
@@ -130,24 +125,20 @@ function initial()
 	}
 }
 </script>
-<body>
-<form action="upload.php" name="form" method="post" enctype="multipart/form-data">
+<label class="col-sm-3 col-sm-offset-1 control-label">แนบเอกสารที่เกี่ยวข้อง</label>
+<div class = "col-sm-4">
 
 <table class = "table" name="uptab" id="uptab" style="width:35%"></table>
 
 <input type="file" name="file1" id="file1"/><br>
 <button type="button" class="btn btn-default" onclick="uploadFile()">อัพโหลดไฟล์</button>
-<!--- <input type="button" value="Upload File" onclick="uploadFile()"> --->
+
 <progress hidden="1" id="progressBar" value="0" max="100" style="width:150px;"></progress>
 <h id="status"></h>
-<?php //<input type="submit" name="submit" value="Upload"><br />
-?>
 <script>
 if(pichead[0])
 {
 	initial();
 }
 </script>
-</form>
-</body>
-</html>
+</div>
