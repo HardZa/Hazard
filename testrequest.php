@@ -3,6 +3,7 @@
 	include(resolveHeader('includes/header.php'));
 
 	$docData = array(
+		'no'=>'no',
 		'day'=>'12',
 		'month'=>'มกราคม',
 		'year'=>'2556',
@@ -20,6 +21,7 @@
 		'addrpostalcode'=>'83110',
 		'addrphone'=>'076311650',
 		'addrfax'=>'076313535',
+		'productname'=>'productname',
 		'producthouse'=>'52',
 		'productvillage'=>'1',
 		'productdrive'=>'2',
@@ -30,6 +32,7 @@
 		'productpostalcode'=>'83110',
 		'productphone'=>'076311650',
 		'productfax'=>'076313535',
+		'storename'=>'storename',
 		'storehouse'=>'52',
 		'storevillage'=>'1',
 		'storedrive'=>'2',
@@ -40,18 +43,31 @@
 		'storepostalcode'=>'83110',
 		'storephone'=>'076311650',
 		'storefax'=>'076313535',
-		'storespecialist'=>'ดร. ภุชงค์ ชงไมโล',
+		'storespecialist'=>'ดร. ภุชงค์ เก็บไมโล',
 		'hazardname'=>'น้ำจากเทือกเขา',
 		'hazardformulation'=>'H20',
 		'businessname'=>'น้ำเปล่า',
-		'quantity'=>'5 ถัง กบัอีก 3 ขวด',
+		'quantity'=>'5 ถัง กับอีก 3 ขวด',
 		'note'=>'มันลืนคอเหมือนดื่มอากาศ',
 		'producerspecialist'=>'ดร. ภุชงค์ ชงไมโล',
 		'producerCountry'=>'ดูไบ',
-		'producer'=>'ทักษิณ ชินวัตร'
+		'producer'=>'ทักษิณ ชินวัตร',
+		'orderCountry'=>'orderCountryX',
+		'hazardno'=>'hazardnoX',
+		'area'=>'areaX',
+		'hazardid'=>'hazardidX',
+		'importer'=>'importerX',
+		'saleman'=>'salemanX',
+		'container'=>'containerX',
+		'purpose'=>'purposeX',
+		'addremail'=>'addremailX',
+		'productemail'=>'productemailX',
+		'storeemail'=>'storeemailX',
+		'group'=>'groupX',
+		'purposefirst'=>'purposefirst'
 	);
 ?>
-
+<div class="container">
 <div class="page-header">
     <h1>ทดสอบหน้าแสดงคำร้อง</h1>
 </div>
@@ -82,9 +98,9 @@
 	<a href="<?php echo resolveURIHeader("testrequest.php?page=vk_ks_kvk3");?>">วอ./กษ./กวก.3</a>
 </div>
 <div>
-	<a href="<?php echo resolveURIHeader("testrequest.php?page=vk_ks_kvk13");?>">วอ./กษ./กวก.13</a>
+	<a href="<?php echo resolveURIHeader("testrequest.php?page=vk_ks_kvk12");?>">วอ./กษ./กวก.12</a>
 </div>
-
+</div>
 <?php
  	include(resolveHeader('includes/footer.php'));
 ?>

@@ -26,6 +26,12 @@
  	return resolveURIHeader($printerURI);
  }
 
+  function resolvePictureURI($pic_name)
+ {
+ 	$pictureURI = 'pic/'.$pic_name;
+ 	return resolveURIHeader($pictureURI);
+ }
+
  function getifset($array,$data)
  {
  	if(isset($array[$data]))

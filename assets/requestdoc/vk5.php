@@ -80,7 +80,7 @@
 </div>
 
 <div class="row">
-	<div class="col-md-11"><b>ประเทศปลายทาง</b> &nbsp;&nbsp;???<?php echo doc('')?></div>
+	<div class="col-md-11"><b>ประเทศปลายทาง</b> &nbsp;&nbsp;<?php echo doc('orderCountry')?></div>
 </div>
 
 

@@ -13,27 +13,58 @@
  				  'request' => $request ,
  				  'type' => $request->get('requesttype') ,
  				  'user' => $user);
- ?>
+ 
+ function printPic($type)
+ {
+ 	global $request;
+ 	$pics = $request->get_pics_by_type($type);
+ 	if( count($pics) != 0 )
+ 	{
+ 		echo '<div class="row">';
+ 		echo '<div class="row"><label class="col-sm-3 control-label">'.Picture::type_to_string($type).'</label></div>';
+ 		echo '<div class="row">';
+ 		foreach ($pics as $pic) {
+ 			echo '<div class="col-sm-3">';
+ 			echo '<img src="';
+ 			echo resolveURIHeader( $pic->get_uri() );
+ 			echo '" width="200" height="200"></img>';
+ 			echo '</div>';
+ 		}
+ 		echo '</div>';
+ 		echo '</div>';
+ 	}
+ }
 
+ ?>
+<div class="container">
 <div class="page-header">
-    <h1>Request</h1>
+    <h1><?php echo $request->get_type(); ?></h1>
 </div>
  <div class="row">
-	<div class="form-group">
-    	<label class="col-sm-3 control-label">สถานะคำร้้อง : </label>
     	<div class="col-sm-6">
-	      	<input type="text" class="form-control" disabled value="<?php echo $request->get_status(); ?>" >
+    		<img src="<?php echo resolveURIHeader( $request->get_img_uri() ); ?>"></img>
 	    </div>
- 	</div>
  </div>
- <br><br>
+
  <div class="row">
  <?php
  include( resolveHeader('route_info.php') );
- include( resolveHeader('route_show_request.php') );
-
  ?>
+ </div>
+
+ <?php
+ 	printPic(PIC_DOC_ATTACH);
+ 	printPic(PIC_TEST_ATTACH);
+ 	printPic(PIC_BILL);
+ ?>
+
+ <div class="row">
+ <?php
+ include( resolveHeader('route_show_request.php') );
+ ?>
+ </div>
 </div>
+
 
  <?php
  include(resolveHeader('includes/footer.php'));

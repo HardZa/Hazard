@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 
 require_once(str_replace('\\','/',__dir__).'/../functions/utils.php');
 
@@ -14,5 +15,6 @@ require_once(resolveHeader('classes/Rule.php'));
 require_once(resolveHeader('classes/User.php'));
 require_once(resolveHeader('classes/Request.php'));
 require_once(resolveHeader('classes/Permission.php'));
+require_once(resolveHeader('classes/Picture.php'));
 require_once(resolveHeader('classes/Certificate.php'));
 ?>

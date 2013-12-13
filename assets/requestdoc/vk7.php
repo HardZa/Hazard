@@ -67,10 +67,13 @@
 	<div class="col-md-11"><u><b>ขออนุญาตมีไว้ในครอบครองซึ่งวัตถุอันตราย โดยมีวัตถุประสงค์ในการครอบครองเพื่อ</b></u></div>
 </div>
 <div class="row">
+	<div class="col-md-10  col-md-offset-1"><?php echo doc('purpose')?></div>
+	<!--
 	<div class="col-md-2 col-md-offset-1"><font size ="3">O</font> ขาย</div>
 	<div class="col-md-2"><font size ="3">O</font> ขนส่ง</div>
 	<div class="col-md-2"><font size ="3">O</font> ใช้</div>
 	<div class="col-md-4"><font size ="3">O</font>  อื่น ๆ  (ระบุ)  .................................. </div>
+	-->
 </div>
 <br>
 <div class="row">
@@ -80,13 +83,13 @@
 	<div class="col-md-11"><b>ชื่อทางการค้าของวัตถุอันตราย<sup>(๒)</sup>ที่ขออนุญาตมีไว้ในครอบครอง </b> &nbsp;&nbsp;<?php echo doc('businessname')?></div>
 </div>
 <div class="row">
-	<div class="col-md-11"><b>ทะเบียนเลขที่ </b> &nbsp;&nbsp;???<?php echo doc('')?></div>
+	<div class="col-md-11"><b>ทะเบียนเลขที่ </b> &nbsp;&nbsp;<?php echo doc('hazardno')?></div>
 </div>
 <div class="row">
 	<div class="col-md-11"><b>ปริมาณการครอบครองรวมสูงสุด</b> &nbsp;&nbsp;<?php echo doc('quantity')?></div>
 </div>
 <div class="row">
-	<div class="col-md-11"><b>พื้นที่เฉพาะในส่วนของการครอบครองรวมสูงสุด </b> &nbsp;&nbsp;???<?php echo doc('')?> <b>ตารางเมตร</b></div>
+	<div class="col-md-11"><b>พื้นที่เฉพาะในส่วนของการครอบครองรวมสูงสุด </b> &nbsp;&nbsp;<?php echo doc('area')?> <b>ตารางเมตร</b></div>
 </div>
 <div class="row">
 	<div class="col-md-11">(ถ้ามีหลายรายการให้ระบุว่า “ดังบัญชีรายชื่อแนบท้าย”) </div>
