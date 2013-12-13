@@ -2,15 +2,15 @@
 
 if(Input::get('approve') == '1')
 {
-	echo "อนุญาติ";
 	doc('request')->progress( doc('next_progress') );
 	doc('request')->save();
+	doc('request')->redirect();
 }
 else if(Input::get('approve') == '0')
 {
-	echo "ไม่อณุญาติ";
 	doc('request')->reject();
 	doc('request')->save();
+	doc('request')->redirect();
 }
 else
 {

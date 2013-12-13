@@ -11,17 +11,15 @@
 		$validate->check($_POST,array(
 			'hazardname'=> array(
 				'required'=>true
-			),
-			'for'=> array(
-				'required'=>true,
-				'numeric'=>true
 			)
 		));
 		if($validate->passed())
 		{
 			echo "<h1>pass</h1>";
-			Request::create_request(0,$_GET);
-			
+			$r = Request::create_request($user->get('userid'),0,$_GET);
+			foreach ($picarr as $value) {
+				$r->add_pic(PIC_DOC_ATTACH,$value);
+			}
 			
 		}else{
 			echo "<h1>fail</h1>";

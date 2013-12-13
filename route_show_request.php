@@ -45,6 +45,22 @@ else if($user->is_group('cashier'))
 			break;
 	}
 }
+else if($user->is_group('plantprotection'))
+{
+	switch ($route_progress) {
+		case PRG_SURVEY:
+			$route_file = 'normal_lab.php';
+			break;
+	}
+}
+else if($user->is_group('agriproduction'))
+{
+	switch ($route_progress) {
+		case PRG_SURVEY:
+			$route_file = 'normal_lab.php';
+			break;
+	}
+}
 
 include(resolveHeader(Config::get('template/process').$route_file));
 

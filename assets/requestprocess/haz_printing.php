@@ -7,6 +7,7 @@ if( doc('request')->get('progress') != PRG_COMPLETE )
 	{
 		doc('request')->progress( PRG_COMPLETE );
 		doc('request')->save();
+		doc('request')->redirect();
 	}
 
 }
