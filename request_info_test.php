@@ -6,44 +6,32 @@
 	<div class="container">
 		<div class="request-flow">
 			<div class="dot1">
-				<img src="<?php echo resolveURIHeader("image/dot1.png");?>"></img>
+				
 			</div>
 			<div class="dot2">
-				<img src="<?php echo resolveURIHeader("image/dot1.png");?>"></img>
+			
 			</div>
 			<div class="dot3">
-				<img src="<?php echo resolveURIHeader("image/dot1.png");?>"></img>
+				
 			</div>
 			<div class="dot4">
-				<img src="<?php echo resolveURIHeader("image/dot1.png");?>"></img>
+			
 			</div>
 			<div class="dot5">
-				<img src="<?php echo resolveURIHeader("image/dot1.png");?>"></img>
+
 			</div>
 			<div class="dot6">
-				<img src="<?php echo resolveURIHeader("image/dot1.png");?>"></img>
+
 			</div>
 
-			<div class="flow-msg1">
-				Test
-			</div>
-			<div class="flow-msg2">
-				Test1
-			</div>
-			<div class="flow-msg3">
-				Test2
-			</div>
-			<div class="flow-msg4">
-				Test3
-			</div>
-			<div class="flow-msg5">
-				Test4
-			</div>
-			<div class="flow-msg6">
-				Test5
+			<div class="flow-msg-head">
+				<h4>สถานะคำร้อง</h4>
 			</div>
 		</div>
 	</div>
+</section>
+<section>
+	
 </section>
 <?php
  	include(resolveHeader('includes/footer.php'));
