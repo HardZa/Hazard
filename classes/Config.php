@@ -20,6 +20,10 @@ class Config
 			'list'=>'assets/requestlist/',
 			'process'=>'assets/requestprocess/',
 			'request_info' => 'assets/requestinfo/'
+		),
+		'progress_maping' => array(
+			VO_GS_GVG_1 => 
+				array(PRG_CHK_DOC => 'req1/1.jpg')
 		)
 	);
 

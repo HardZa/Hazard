@@ -12,4 +12,8 @@ define ("PRG_PRINTING",6);
 define ("PRG_REJECT",100);
 define ("PRG_COMPLETE",101);
 
+define ("PIC_DOC_ATTACH",1);
+define ("PIC_TEST_ATTACH",2);
+define ("PIC_BILL",3);
+
 ?>

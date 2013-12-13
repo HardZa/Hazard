@@ -1,12 +1,40 @@
 <?php
  	require_once('core/init.php');
 	include(resolveHeader('includes/header.php'));
+  include(resolveHeader('includes/upload_head.php')); 
+
+  $user = User::get_user();
+
+    if(Input::exists('post'))
+    {
+        $picarr=json_decode($_POST['picarr']);
+        $i;
+        for($i=0;$i<count($picarr);$i++)
+        {
+          echo "<script> pichead[".$i."]='".$picarr[$i]."'; </script>";
+        }
+
+        var_dump($picarr);
+
+        $validate = new Validate();
+        $validate->check($_POST,array(
+          'hazardname'=> array(
+            'required'=>true
+          )
+        ));
+        if($validate->passed())
+        {
+            Request::create_request($user->get('userid'),1,$_POST);
+            echo "PASS";
+        }
+    }
 ?>
+<div class="container">
 <div class="data-box">
   <div class="head-box page-header">
     <h1>คำขอขึ้นทะเบียนวัตถุอันตราย</h1>  
   </div>
-  <form class="form-horizontal" role="form" method="get" action="">
+  <form class="form-horizontal" role="form" method="post" action="">
   	<div class="form-group">
       	<label class="col-sm-4 control-label">ขอขึ้นทะเบียนวัตถุอันตราย :</label>
       	<div class="col-sm-2">
@@ -24,12 +52,12 @@
       	<label class="col-sm-4 control-label">โดยมีวัตถุประสงค์เพื่อ :</label>
       	<div class="col-sm-2">
     			<label class="radio-inline">
-    		    	<input type="radio" name="hazardfor" value="import" checked>นำเข้า
+    		    	<input type="radio" name="hazardfor" value="นำเข้า" checked>นำเข้า
     			</label>
         </div>
         <div class="col-sm-2">
   		  	<label class="radio-inline">
-  		    	<input type="radio" name="hazardfor" value="export">ส่งออก
+  		    	<input type="radio" name="hazardfor" value="ส่งออก">ส่งออก
   		  	</label>
       	</div>
   	</div>
@@ -91,9 +119,16 @@
       		<button type="submit" class="btn btn-success">ลงทะเบียน</button>
     	</div>
   	</div>
+     <input type="hidden" id="picarr" name="picarr">
   </form>
+
+
+<?php
+include(resolveHeader('includes/upload_form.php'));
+?>
 </div> 
 
+</div>
 <?php
  	include(resolveHeader('includes/footer.php'));
 ?>
