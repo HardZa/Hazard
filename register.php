@@ -125,8 +125,8 @@ if(!Permission::userAddAllowed())
  </script>
 
  <?php 
- $errors=[];
- $client_errors=[];
+ $errors=array();
+ $client_errors=array();
 
  if(Input::Exists())
 {
