@@ -1,10 +1,16 @@
 <?php
 
 class User{
-	private static $all_group_name = array('agriproduction','cashier','client','hazcontrol','plantprotection','registrar');
-	private static $user_fields = array('userid','username','userrealname','userallowed');
+	private static $user_fields = array('userid','username','userrealname','userallowed','userpasssha1');
 	private $user_db;
 	public static $user_field_allow_edit = array('userrealname');
+	private static $registype = array('registrar'=>'เจ้าหน้าที่ทะเบียน','client'=>'เอกชน','hazcontrol'=>'เจ้าหน้าที่ควบคุมวัตถุอันตราย','plantprotection'=>'เจ้าหน้าที่สำนักอารักขาพืช','agriproduction'=>'เจ้าหน้าที่สำนักปัจจัยการผลิต','cashier'=>'เจ้าหน้าที่การเงิน'); 
+
+	public static function group_to_string($group)
+	{
+		if(isset(User::$registype[$group]))return User::$registype[$group];
+		return 'ผู้ใช้นิรนาม';
+	}
 
 	public function __construct($user_db)
 	{
@@ -15,9 +21,27 @@ class User{
 	{
 		return $this->user_db[$key];
 	}
+
+	public function get_groupname()
+	{
+		if($this->is_group('agriproduction'))
+			return 'agriproduction';
+		else if($this->is_group('cashier'))
+			return 'cashier';
+		else if($this->is_group('client'))
+			return 'client';
+		else if($this->is_group('hazcontrol'))
+			return 'hazcontrol';
+		else if($this->is_group('plantprotection'))
+			return 'plantprotection';
+		else if($this->is_group('registrar'))
+			return 'registrar';
+
+		return 'others';
+	}
 	
 	public function set($key,$value)
-	{
+	{	
 		$this->user_db[$key] = $value;
 	}
 	
@@ -145,6 +169,97 @@ class User{
 	    }
 	    return $randomString;
 	}
+
+
+	public function get_requests()
+	{
+		if( $this->is_group('client') )
+		{
+			return Request::get_requests_by_userid($this->get('userid'));
+		}
+		else
+		{
+
+		}
+	}
+
+
+	public static function get_group_by_id($id)
+	{
+		$userid = $id;
+		$table = 'usergroup_'.'agriproduction';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		if( count($rows) == 1 )
+		{
+			return 'agriproduction';
+		}
+		
+		$table = 'usergroup_'.'cashier';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		if( count($rows) == 1 )
+		{
+			return 'cashier';
+		}
+
+		$table = 'usergroup_'.'client';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		if( count($rows) == 1 )
+		{
+			return 'client';
+		}
+
+		$table = 'usergroup_'.'hazcontrol';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		if( count($rows) == 1 )
+		{
+			return 'hazcontrol';
+		}
+
+		$table = 'usergroup_'.'plantprotection';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		if( count($rows) == 1 )
+		{
+			return 'plantprotection';
+		}
+
+		$table = 'usergroup_'.'registrar';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		if( count($rows) == 1 )
+		{
+			return 'registrar';
+		}
+
+		return 'others';
+
+
+	}
+
+	public static function get_client_by_id($id)
+	{
+		$userid = $id;
+		$table = 'users';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		$user_db = $rows[0];
+
+		$table = 'usergroup_client';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		$user_db_client = $rows[0];
+
+
+		return array_merge($user_db, $user_db_client);
+	}
+
+	public static function get_user_by_id($id)
+	{
+		$userid = $id;
+		$table = 'users';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		$user_db = $rows[0];
+
+		return $user_db;
+	}
+
+
 }
 
 ?>

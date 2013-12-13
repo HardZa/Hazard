@@ -1,3 +1,18 @@
+body{
+	padding-bottom: 0px;
+}
+.head-box{
+	margin-top: 1px;
+}
+.data-box{
+	background-color: #FAFAFA;
+	padding: 1px 30px 30px;
+	border-radius: 5px;
+	margin: 30px auto;
+}
+.orange-container{
+	background-color: #F3E2A9;
+}
 .navbar{ 
     height: 50px;  
 }
@@ -97,4 +112,119 @@
 	background-color: #FAAC58;
 	border: 1px solid #;
 	border-radius: 5px;
+}
+.button-regis{
+	margin-right: 16px;
+}
+.top-sec{
+	height: 350px;
+	background-color: #DB8E19;
+}
+.request-flow{
+	height: 300px;
+	width: 920px;
+	position: absolute;
+	background-image: url("../image/flow.png");
+}
+.dot1{
+	position: absolute;
+	height: 24px;
+	width: 24px;
+	top: 50px;
+	left: 82px;
+}
+.dot2{
+	position: absolute;
+	height: 24px;
+	width: 24px;
+	top: 190px;
+	left: 210px;
+}
+.dot3{
+	position: absolute;
+	height: 24px;
+	width: 24px;
+	top: 190px;
+	left: 320px;
+}
+.dot4{
+	position: absolute;
+	height: 24px;
+	width: 24px;
+	top: 190px;
+	left: 440px;
+}
+.dot5{
+	position: absolute;
+	height: 24px;
+	width: 24px;
+	top: 190px;
+	left: 560px;
+}
+.dot6{
+	position: absolute;
+	height: 24px;
+	width: 24px;
+	top: 190px;
+	left: 680px;
+}
+.flow-msg1{
+	padding: 10px;
+	left: 140px;
+	top: 40px;
+	background-color: white;
+	border-radius: 4px;
+	position: absolute;
+	width: 140px;
+	height: 40px;
+}
+.flow-msg2{
+	padding: 10px;
+	left: 140px;
+	top: 240px;
+	background-color: white;
+	border-radius: 4px;
+	position: absolute;
+	width: 140px;
+	height: 40px;
+}
+.flow-msg3{
+	padding: 10px;
+	left: 260px;
+	top: 125px;
+	background-color: white;
+	border-radius: 4px;
+	position: absolute;
+	width: 140px;
+	height: 40px;
+}
+.flow-msg4{
+	padding: 10px;
+	left: 380px;
+	top: 240px;
+	background-color: white;
+	border-radius: 4px;
+	position: absolute;
+	width: 140px;
+	height: 40px;
+}
+.flow-msg5{
+	padding: 10px;
+	left: 500px;
+	top: 125px;
+	background-color: white;
+	border-radius: 4px;
+	position: absolute;
+	width: 140px;
+	height: 40px;
+}
+.flow-msg6{
+	padding: 10px;
+	left: 630px;
+	top: 240px;
+	background-color: white;
+	border-radius: 4px;
+	position: absolute;
+	width: 140px;
+	height: 40px;
 }

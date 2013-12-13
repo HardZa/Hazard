@@ -12,10 +12,14 @@ class Config
 		),
 		'path' =>array(
 			'main'=>'Hazard/',
+			'upload'=>'upload/'
 		),
 		'template'=>array(
 			'print'=>'assets/printable/',
-			'request'=>'assets/requestdoc/'
+			'request'=>'assets/requestdoc/',
+			'list'=>'assets/requestlist/',
+			'process'=>'assets/requestprocess/',
+			'request_info' => 'assets/requestinfo/'
 		)
 	);
 
