@@ -5,7 +5,7 @@ body{
 	background-color: #F3E2A9;
 }
 .mod{
-
+	height: 970px;
 }
 .home-container{
 	background: -webkit-radial-gradient(circle,#EBC697,#DB8E19);
@@ -248,8 +248,8 @@ body{
 	height: 40px;
 }
 .register-page{
-	margin: 100px 0px;
-	background-color: white;
+	margin: 100px auto;
+	background-color: #fafafa;
 	border-radius: 4px;
 	padding: 20px;
 	position: absolute;

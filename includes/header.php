@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/dist/css/bootstrap-theme.css");?>">
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/non-responsive.css");?>">
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/signin.css");?>" >
-	<link rel="stylesheet" href="<?php echo resolveURIHeader("style/vg_style.css");?>" >
+	<link rel="stylesheet" href="<?php echo resolveURIHeader("style/css_style.css");?>" >
 
 	<script src="<?php echo resolveURIHeader("lib/jquery/jquery-1.10.2.js");?>"></script>
 	<script src="<?php echo resolveURIHeader("lib/bootstrap/dist/js/bootstrap.js");?>"></script>
