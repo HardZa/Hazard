@@ -277,6 +277,7 @@ function echoValue($field)
 
 		<div id ="client_form">
 
+			
 			<div class="form-group" >
 		    	<label for="userbirthdate" class="col-sm-3 control-label">*เดือน-วัน-ปี เกิด</label>
 			    <div class="col-sm-6">
@@ -378,9 +379,29 @@ function echoValue($field)
 
 			<button type="submit" class="btn btn-warning" style="margin-left:240px;">ลงทะเบียน</button>
 		</form>
+		<button type="submit" id="cheat" >ปุ่มโกง</button>
 	</div>
  </div>
-
+ <script type='text/javascript'>
+			$("#cheat").on("click",function(){
+  				$("#username").val("serpierio");
+  				$("#name").val("ชานน  จิตพรหม");
+  				$("#userbirthdate").val("01-10-2536");
+  				$("#usernationality").val("ไทย");
+  				$("#usertaxid").val("1709900774223");
+  				$("#useraddrhouse").val("90/96");
+  				$("#useraddrvillage").val("1");
+  				$("#userdrive").val("9");
+  				$("#useraddrroad").val("-");
+  				$("#usersubdistrict").val("หนองอ้อ");
+  				$("#userdistrict").val("บ้านโป่ง");
+  				$("#userprovince").val("ราชบุรี");
+  				$("#userpostalcode").val("70110");
+  				$("#userphone").val("087-7552233");
+  				$("#userfax").val("-");
+  				$("#useremail").val("serpierio@gmail.com");
+			});
+			</script>
  <?php
  include(resolveHeader('includes/footer.php'));
  ?>
