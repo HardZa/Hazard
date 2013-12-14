@@ -195,10 +195,8 @@
 </div>
 </div>
 
-<button type="submit" id="cheat" >ปุ่มโกง</button>
-
 <script type='text/javascript'>
-$("#cheat").on("click",function(){
+$(document).bind('keydown', 'alt+f1', function assets() {
   $("#storename").val("บริษัท เมอร์ค จำกัด");
   $("#storehouse").val("2170");
   $("#storevillage").val("3");

@@ -12,6 +12,7 @@
 	<script src="<?php echo resolveURIHeader("lib/jquery/jquery-1.10.2.js");?>"></script>
 	<script src="<?php echo resolveURIHeader("lib/bootstrap/dist/js/bootstrap.js");?>"></script>
 	<script src="<?php echo resolveURIHeader("lib/jquery/jquery.printPage.js");?>"></script>
+	<script src="<?php echo resolveURIHeader("lib/jquery/jquery.hotkeys.js");?>"></script>
 
 	<script>  
   	$(document).ready(function(){

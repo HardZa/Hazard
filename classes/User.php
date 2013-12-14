@@ -246,7 +246,7 @@ class User{
 		$user_db_client = $rows[0];
 
 		$ret = array_merge($user_db, $user_db_client);
-		$diff = date_create( date('Y-m-d') )->diff( date_create( $ret['userbirthdate'] ) );
+		$diff = date_create( $ret['userbirthdate'] )->diff( date_create( date('Y-m-d') ) );
 		$ret['userage'] = $diff->format('%y');
 		return $ret;
 	}
