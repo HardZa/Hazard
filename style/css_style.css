@@ -218,7 +218,7 @@ body{
 	height: 104px;
 }
 .banking-icon{
-	background-image: url("../image/Money-Transfer-128.png");
+	background-image: url("../image/Payment-128.png");
 	width: 128px;
 	height:128px;
 	top: -50px;
@@ -230,7 +230,7 @@ body{
 	width: 128px;
 	height:128px;
 	top: -50px;
-	left: 240px;
+	left: 295px;
 	position: absolute;
 }
 .approve-gruop{

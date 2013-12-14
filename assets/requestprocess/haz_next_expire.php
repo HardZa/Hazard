@@ -23,7 +23,7 @@ else
 		?>'">
 	</div>
 	<div class="col-md-2">
-		<input type="button" value="ไม่ผ่าน" class="btn btn-success" onclick="parent.location='<?php 
+		<input type="button" value="ไม่ผ่าน" class="btn btn-danger" onclick="parent.location='<?php 
 			echo resolveURIHeader(doc('main_file').'?id='.doc('request')->get('requestid')."&approve=0");
 		?>'">
 	</div>
