@@ -201,7 +201,20 @@
 
 <script type='text/javascript'>
 $("#cheat").on("click",function(){
-  $("#storename").val("test");
+  $("#storename").val("บริษัท เมอร์ค จำกัด");
+  $("#storehouse").val("2170");
+  $("#storevillage").val("3");
+  $("#storedrive").val("-");
+  $("#storeroad").val("เพชรบุรีตัดใหม่");
+  $("#storesubdistrict").val("บางกะปิ");
+  $("#storedistrict").val("ห้วยขวาง");
+  $("#storeprovince").val("กรุงเทพ");
+  $("#storepostalcode").val("10320");
+  $("#storephone").val("(662) 308 - 0218");
+  $("#storefax").val("-");
+  $("#storeemail").val("hazard_studio@thai.com");
+  //$("#certidref").val("");
+  $("#quantity").val("200 แกลลอน");
 });
 </script>
 <?php
