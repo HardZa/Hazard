@@ -70,7 +70,7 @@ function gentable(picnameja)
 	//new cell picname bootstrap
 	var cellb1=document.createElement("div");
 	cellb1.className="col-md-8";
-	cellb1.innerHTML='<a target="_blank" href="http://localhost/Hazard/upload/'+picnameja+'">'+picnameja+'</a>';
+	cellb1.innerHTML='<a target="_blank" href="http://localhost/Hazard/pic/'+picnameja+'">'+picnameja+'</a>';
 	//alert('<a target="_blank" href="http://localhost/Hazard/upload/'+picnameja+'">'+picnameja+'</a>');
 	rowb.appendChild(cellb1);
 	//new cell btn bootstrap http://localhost/Hazard/upload/sohee.jpg
