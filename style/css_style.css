@@ -254,3 +254,14 @@ body{
 	width: 117px;
 	height: 104px;
 }
+.banking-icon{
+	background-image: url("../image/Money-Transfer-128.png");
+	width: 128px;
+	height:128px;
+	top: -50px;
+	left: 240px;
+	position: absolute;
+}
+.approve-gruop{
+	margin-right: 100px;
+}
