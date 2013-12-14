@@ -86,7 +86,7 @@
 		</div>
 	</div>
 </section>	
-<section>
+<section class="bottom-sec">
 	<div class="container">
 		<?php
 			printPic(PIC_DOC_ATTACH);
@@ -94,8 +94,7 @@
 			printPic(PIC_BILL);
 		?>
 	</div>
-</section>
-<section>
+
 	<div class="container">
 		<div class="well">
 			<div class="row">
