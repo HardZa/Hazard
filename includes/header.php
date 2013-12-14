@@ -37,8 +37,8 @@
 			<?php
 				$user = User::get_user();
 				if( !isset($user) || $user == null ) {
+			//		<li><a href="?php echo resolveURIHeader("login");?">ลงชื่อเข้าระบบ</a></li>
 			?>
-					<li><a href="<?php echo resolveURIHeader("login");?>">ลงชื่อเข้าระบบ</a></li>
 			<?php
 				}
 				else{
