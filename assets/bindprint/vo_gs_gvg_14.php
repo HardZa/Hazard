@@ -1,5 +1,5 @@
 <?php 
-
+ 
 	$user_info = User::get_client_by_id($request->get('userid'));
 	$me_info = User::get_user();
 	$cert = $request->get_certificate();
