@@ -1,5 +1,5 @@
 <?php 
-//var_dump($Request);
+//var_dump($request);
 //	$user_info = User::get_client_by_id($request->get('userid'));
 //var_dump($user_info);
 	$print_info=array(

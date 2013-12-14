@@ -101,12 +101,12 @@ font-size: 100%;
 สถานที่เก็บรักษาวัตถุอันตรายตามรายการด้านหลังใบอนุญาตนี้<br>
 ใบอนุญาตนี้ออกให้โดยมีเงื่อนไขดังต่อไปนี้ <span class="box_4"><?php echo Input::get("condition"); ?></span><br><br>
 ใบอนุญาตนี้ให้ใช้ได้จนถึงวันที่ <span class="box_1"><?php echo Input::get("expday"); ?></span> เดือน <span class="box_3"><?php echo Input::get("expmonth"); ?></span> พ.ศ. <span class="box_3"><?php echo Input::get("expyear"); ?></span><br>
-<br><br>
+<br><br><br><br>
 <div align="right">( ลายมือชื่อ )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;พนักงานเจ้าหน้าที่ </div>
 <div align="right">( <?php echo Input::get("officername"); ?> )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><br>
 <!-- ---------------------------------------------------------------------- -->
 
-<br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br>
 <div align = "center">-๑/๑-</div><br>
 รายการด้านหลังใบอนุญาตนำเข้าวัตถุอันตราย<br>
 ใบอนุญาตนำเข้าวัตถุอันตรายเลขที <?php echo Input::get("productcertid"); ?><br>
@@ -121,7 +121,7 @@ font-size: 100%;
 <!-- ---------------------------------------------------------------------- -->
 
 ชื่อผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบสำหรับการเก็บรักษา (ในกรณีที่มีใบประกาศฯ ออกตามความในมาตรา ๒๐(๒) แห่งพระราชบัญญัติวัตถุอันตราย พ.ศ.๒๕๓๕ กำหนดให้ต้องมีผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบ) <?php echo Input::get("storespecialist"); ?><br>
-<br>
+<br><br><br><br>
 <div align="right">( ลายมือชื่อ )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;พนักงานเจ้าหน้าที่ </div>
 <div align="right">( <?php echo Input::get("officername"); ?> )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><br>
 (ในกรณีที่มีสถานที่เก็บวัตถุอันตรายมากกว่า ๑ แห่งให้ระบุรายละเอียดเพิ่มเติมด้านล่าง)<br><br><br><br>

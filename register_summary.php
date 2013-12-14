@@ -1,8 +1,9 @@
   <?php
- 
  require_once('core/init.php');
  include(resolveHeader('includes/header.php'));
-
+ 
+ if(!Permission::registerSummary())
+   Redirect::to(403);
  $registype = array('client'=>'เอกชน','hazcontrol'=>'เจ้าหน้าที่ควบคุมวัตถุอันตราย','plantprotection'=>'เจ้าหน้าที่สำนักอารักขาพืช','agriproduction'=>'เจ้าหน้าที่สำนักปัจจัยการผลิต','cashier'=>'เจ้าหน้าที่การเงิน'); 
 
  ?>
@@ -37,7 +38,7 @@
     	{
     ?>
     	  <div class="form-group">
-        	<label class="col-sm-3 control-label">วัน-เดือน-ปี เกิด</label>
+        	<label class="col-sm-3 control-label">เดือน-วัน-ปี เกิด</label>
         	<label class="col-sm-3 radio-inline"><?php echo Input::post('userbirthdate'); ?><label>
       	</div>
       	<div class="form-group">
@@ -64,6 +65,10 @@
         	<label class="col-sm-3 control-label">ตำบล/แขวง</label>
         	<label class="col-sm-3 radio-inline"><?php echo Input::post('usersubdistrict'); ?><label>
       	</div>
+        <div class="form-group">
+        	<label class="col-sm-3 control-label">อำเภอ/เขต</label>
+        	<label class="col-sm-3 radio-inline"><?php echo Input::post('userdistrict'); ?><label>
+      	</div>
       	<div class="form-group">
         	<label class="col-sm-3 control-label">จังหวัด</label>
         	<label class="col-sm-3 radio-inline"><?php echo Input::post('userprovince'); ?><label>
@@ -80,7 +85,10 @@
         	<label class="col-sm-3 control-label">หมายเลขโทรสาร</label>
         	<label class="col-sm-3 radio-inline"><?php echo Input::post('userfax'); ?><label>
       	</div>
-
+		<div class="form-group">
+        	<label class="col-sm-3 control-label">E-Mail</label>
+        	<label class="col-sm-3 radio-inline"><?php echo Input::post('useremail'); ?><label>
+      	</div>
     <?php
     	}
     ?>

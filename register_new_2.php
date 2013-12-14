@@ -3,6 +3,8 @@
 	include(resolveHeader('includes/header.php'));
 	include(resolveHeader('includes/upload_head.php')); 
 	
+	if(!Permission::requestSubmissionAllowed())
+   Redirect::to(403);
 	if(Input::exists('post'))
     {    
 		$validate = new Validate();
@@ -31,7 +33,7 @@
     <h1>คำขอต่ออายุใบสำคัญการขึ้นทะเบียนวัตถุอันตราย</h1>
 </div>
 <form class="form-horizontal" role="form" method="post" action="">
-<?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'มีความประสงค์จะขอต่ออายุใบสำคัญการขึ้นทะเบียนวัตถุอันตรายเลขที่' )); ?>
+<?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'มีความประสงค์จะขอต่ออายุใบสำคัญการขึ้นทะเบียนวัตถุอันตรายเลขที่' , 'no_cert' => 'คุณยังไม่มีใบที่สามารถต่ออายุได้' )); ?>
 	<div class="form-group">
     	<label class="col-sm-6">พร้อมนี้ข้าพเจ้าได้แนบเอกสารเพื่อประกอบการพิจราณา ดังนี้</label>
  	</div>

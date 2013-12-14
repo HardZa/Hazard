@@ -3,6 +3,8 @@
 	include(resolveHeader('includes/header.php'));
 	include(resolveHeader('includes/upload_head.php')); 
   
+  if(!Permission::requestSubmissionAllowed())
+   Redirect::to(403);
     if(Input::exists('post'))
     {    
 		$validate = new Validate();
@@ -185,7 +187,7 @@
 
     </div>
   </div>
-    <?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'ทะเบียนเลขที่' )); ?>
+    <?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'ทะเบียนเลขที่' , 'no_cert' => 'ไม่มีการลงทะเบียนไว้' )); ?>
     <div class="form-group" >
     <label for="quantity" class="col-sm-4 control-label">ปริมาณ</label>
     <div class="col-sm-8">
