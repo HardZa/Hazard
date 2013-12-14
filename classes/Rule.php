@@ -36,7 +36,7 @@ class Rule
 		$year = substr($value,6,4);
 		if(!is_numeric($day) || !is_numeric($month) || !is_numeric($year))	
 			return false;
-		return checkdate($day,$month,$year-543);
+		return checkdate($month,$day,$year-543);
 	}
 	
 	
