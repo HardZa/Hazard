@@ -76,7 +76,9 @@
 		<div class="col-md-11"><b>๑. ชื่อวัตถุอันตราย </b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('hazardname')?></div>
 		<div class="col-md-11"><b>๒. สูตรอัตราส่วนผสมของสารสําคัญและลักษณะ </b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('hazardformulation')?></div>
 		<div class="col-md-11"><b>๓. ชื่อทางการค้าหรือหมายเลขรหัส </b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('businessname')?></div>
-		<div class="col-md-11"><b>๔. ชื่อผู้ผลิตและแหล่งผลิต </b>&nbsp;&nbsp;&nbsp;&nbsp;<b>ชื่อ</b> <?php echo doc('producer')?> <b>ผลิตที่</b> <?php echo doc('productname')?></div>
+		<div class="col-md-11"><b>๔. ชื่อผู้ผลิตและแหล่งผลิต </b>&nbsp;&nbsp;&nbsp;&nbsp;<b>ชื่อ</b> <?php echo doc('producer')?> 
+				<!--<b>ผลิตที่</b> <?php echo doc('productname')?>-->
+		</div>
 		<div class="col-md-11"><b>๕. ชื่อผู้นำเข้า</b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('importer')?></div>
 		<div class="col-md-11"><b>๖. ปริมาณ</b>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('quantity')?></div>
 		<div class="col-md-11"><b>๗. เอกสารและตัวอย่างที่ต้องส่งประกอบการขออนุญาต</b></div>
