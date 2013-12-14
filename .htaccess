@@ -15,50 +15,38 @@ RewriteEngine On
 
 RewriteRule ^$ home.php
 
-RewriteRule ^login/$ login.php
-RewriteRule ^login$ login/
-
 RewriteRule ^d/$ home2.php
 RewriteRule ^d$ d/
+
+RewriteRule ^r/$ requests.php
+RewriteRule ^r$ r/
+
+RewriteRule ^profile/$ profile.php
+RewriteRule ^profile$ profile/
 
 RewriteRule ^logout/$ logout.php
 RewriteRule ^logout$ logout/
 
-RewriteRule ^user/$ user.php
+RewriteRule ^request/$ request_list.php
+RewriteRule ^request$ request/
+
+RewriteRule ^request/([0-9]+)/$ request_info.php?id=$1
+RewriteRule ^request/([0-9]+)$ request/$1/
+
+RewriteRule ^request/new/([0-9]+)/$ register_new_$1.php
+RewriteRule ^request/new/([0-9]+)$ request/new/$1/
+
+RewriteRule ^user/$ userlist.php
 RewriteRule ^user$ user/
 
-RewriteRule ^user/edit$ user.php?edit=1
-RewriteRule ^user/edit/$ user/edit
+RewriteRule ^user/([0-9]+)/$ edituser.php?user=$1
+RewriteRule ^user/([0-9]+)$ user/$1/
 
-RewriteRule ^user/add/$ register.php
-RewriteRule ^user/add$ user/add/
+RewriteRule ^register/$ register.php
+RewriteRule ^register$ register/
 
-RewriteRule ^user/add/summary/$ register_summary.php
-RewriteRule ^user/add/summary$ user/add/summary/
+RewriteRule ^register/summary/$ register_summary.php
+RewriteRule ^register/summary$ register/summary/
 
 RewriteRule ^pic/([^\?].*)/$ picture.php?pic=$1
 RewriteRule ^pic/([^\?].*)$ pic/$1/
-
-RewriteRule ^requests/$ requests.php
-RewriteRule ^requests$ requests/
-
-RewriteRule ^requests/new/$ new_request.php
-RewriteRule ^requests/new$ requests/new/
-
-RewriteRule ^requests/new/([0-9]+)/$ new_request.php?type=$1
-RewriteRule ^requests/new/([0-9]+)$ requests/new/$1/
-
-RewriteRule ^requests/([0-9]+)/$ request_info.php?id=$1
-RewriteRule ^requests/([0-9]+)$ requests/$1/
-
-RewriteRule ^requests/([0-9]+)/edit/$ requests.php?requestid=$1&edit=1
-RewriteRule ^requests/([0-9]+)/edit$ requests/$1/edit/
-
-RewriteRule ^doc/([0-9]+)/([0-9]+)/([0-9]+)/$ doc.php?requestid=$1&doctype=$2&docid=$3
-RewriteRule ^doc/([0-9]+)/([0-9]+)/([0-9]+)$ doc/$1/$2/$3/
-
-RewriteRule ^doc/([0-9]+)/([0-9]+)/new/$ doc.php?requestid=$1&doctype=$2&new=1
-RewriteRule ^doc/([0-9]+)/([0-9]+)/new$ doc/$1/$2/new/
-
-RewriteRule ^r/$ requests.php
-RewriteRule ^r$ r/
