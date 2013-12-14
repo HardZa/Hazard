@@ -2,7 +2,7 @@
 
 class Certificate
 {
-	private $certid;
+	public $certid;
 	public $certno;
 	public $userid;
 	public $expdate;
@@ -12,19 +12,19 @@ class Certificate
 	public static function certtype_to_string($certtype)
 	{
 		switch ($certtype) {
-			case 1:
+			case VO_2:
 				return 'วอ.2';
-			case 2:
+			case VO_4:
 				return 'วอ.4';
-			case 3:
+			case VO_6:
 				return 'วอ.6';
-			case 4:
+			case VO_8:
 				return 'วอ.8';
-			case 5:
+			case VO_GS_GVG_2:
 				return 'วอ./กษ./กวก.2';
-			case 6:
+			case VO_GS_GVG_13:
 				return 'วอ./กษ./กวก.13';
-			case 7:
+			case VO_GS_GVG_14:
 				return 'วอ./กษ./กวก.14';
 		}
 		return 'กระดาษเน่าๆ';
@@ -58,7 +58,8 @@ class Certificate
 	{
 		$certno = Certificate::gen_exp_certno($certtype);
 		$expdate = Certificate::gen_exp_date();
-		DB::get_db()->insert('certificate',array('certno','userid','expdate','certtype','jsondata'),array($certno,$userid,$expdate,$certtype,json_encode($jsondata)));
+		DB::get_db()->insert('certificate',array('certno','userid','expdate','certtype','jsondata'),array($certno,$userid,$expdate,$certtype,
+			mysql_real_escape_string(json_encode($jsondata))));
 		return Certificate::load( DB::get_db()->getLastInsertID() );
 	}
 
@@ -68,19 +69,24 @@ class Certificate
 		DB::get_db()->update('certificate',array('expdate'=>$this->expdate),'certid='.$this->certid);
 	}
 
+	public function next_expire()
+	{
+		$this->set_exp_date( $this->get_exp_day() , $this->get_exp_month() , $this->get_exp_year() + 1 );
+	}
+
 	public static function load($id)
 	{
 		$certdb = DB::get_db()->select('certificate',null,'certid='.$id);
 		if(count($certdb)==0)
 		{
-			throw new Exception("Certificate not found");
+			return null;
 		}
 
 		$cert = new Certificate();
 		$cert->userid = $certdb[0]['userid'];
 		$cert->expdate = $certdb[0]['expdate'];
 		$cert->certtype = $certdb[0]['certtype'];
-		$cert->jsondata = $certdb[0]['jsondata'];
+		$cert->jsondata = (array)json_decode($certdb[0]['jsondata']);
 		$cert->certno = $certdb[0]['certno'];
 		$cert->set_certid( $certdb[0]['certid']);
 		return $cert;

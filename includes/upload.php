@@ -12,12 +12,16 @@ else
 
 	$increment = ''; //start with no suffix
 	
+	if( ereg("[ก-๙]", $name ) )
+	{
+		$name = 'image';
+	}
 
 	while(file_exists($folder.$name.$increment.'.'.$extension)) {
     	$increment++;
 	}
 	
-	$basename = mysql_real_escape_string($name.$increment.'.'.$extension);
+	$basename = ($name.$increment.'.'.$extension);
 
 	if(move_uploaded_file($_FILES['file1']['tmp_name'], $folder.$basename))
 	{
