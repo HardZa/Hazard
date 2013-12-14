@@ -42,20 +42,6 @@ CREATE TABLE IF NOT EXISTS `certificate` (
 -- dump ตาราง `certificate`
 --
 
-INSERT INTO `certificate` (`certid`, `certno`, `userid`, `expdate`, `certtype`, `jsondata`) VALUES
-(1, '', 1, '2557-01-31', 1, '31'),
-(2, '', 1, '2013-12-09', 1, 'sasdas'),
-(3, '??.4 0023/', 1, '2014-12-13', 2, '""'),
-(4, 'วอ.4 0024/', 1, '2014-12-13', 2, '""'),
-(5, 'วอ.4 0025/', 1, '2014-12-13', 2, '""'),
-(6, 'วอ.4 0026/', 1, '2014-12-13', 2, '""'),
-(7, 'วอ.4 0027/', 1, '2014-12-13', 2, '""'),
-(8, 'วอ.4 0028/', 1, '2014-12-13', 2, '""'),
-(9, 'วอ.4 0029/', 1, '2014-12-13', 2, '""'),
-(10, 'วอ.4 0030/2556', 1, '2014-12-13', 2, '""'),
-(11, 'วอ.4 0031/2556', 1, '2014-12-13', 2, '""'),
-(12, 'วอ.4 0032/2556', 1, '2014-12-13', 2, '""');
-
 -- --------------------------------------------------------
 
 --
@@ -123,11 +109,6 @@ CREATE TABLE IF NOT EXISTS `request` (
 --
 -- dump ตาราง `request`
 --
-
-INSERT INTO `request` (`requestid`, `userid`, `requesttype`, `jsondata`, `progress`, `certid`, `certidref`, `date`) VALUES
-(1, 4, 1, '{"hazardtype":"3","hazardfor":"u0e19u0e33u0e40u0e02u0e49u0e32","hazardname":"u0e19u0e49u0e33u0e04u0e27u0e22","solchem":"/u0e45-","businessname":"/u0e33u0e44u0e14","producername":"u0e33u0e14u0e33","importername":"u0e40u0e33u0e40u0e33","agentname":"u0e33u0e40u0e33","detailpackage":"u0e40u0e33u0e40","typeforuse":"u0e33u0e40u0e33"}', 0, 0, 0, '0000-00-00'),
-(2, 4, 1, '{"hazardtype":"2","hazardfor":"u0e19u0e33u0e40u0e02u0e49u0e32","hazardname":"fee","solchem":"","businessname":"","producername":"","importername":"","agentname":"","detailpackage":"","typeforuse":"","file1":"THIRD-I - WIN_20131113_232529.JPG","picarr":""}', 0, 0, 0, '0000-00-00'),
-(3, 4, 0, '{"group":"3","purposefirst":"u0e19u0e33u0e40u0e02u0e49u0e32","hazardname":"u0e19u0e49u0e33u0e40u0e1bu0e25u0e48u0e32","hazardformulation":"H2O","businessname":"u0e40u0e19u0e2au0e40u0e25","producer":"u0e44u0e17u0e22u0e04u0e39u0e48u0e1fu0e49u0e32","importer":"u0e2du0e32u0e01u0e07","saleman":"u0e2du0e32u0e21u0e32","container":"u0e02u0e27u0e14u0e40u0e1bu0e4au0e1bu0e0bu0e35u0e48","purpose":"u0e01u0e34u0e19u0e01u0e34u0e19","picarr":"["sohee4.jpg"]"}', 1, 0, 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -265,7 +246,7 @@ CREATE TABLE IF NOT EXISTS `usergroup_registrar` (
 --
 
 INSERT INTO `usergroup_registrar` (`regis_id`, `userid`) VALUES
-(7, 0);
+(7, 7);
 
 -- --------------------------------------------------------
 
