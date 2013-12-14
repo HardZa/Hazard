@@ -13,7 +13,7 @@ if(!Permission::userListAllowed())
 
 <table class="table">
 <tr>
-<th>ชื่อ-สกุล</th>
+<th>ชื่อผู้ใช้</th>
 <th>ประเภทผู้ใช้</th>
 <th>แก้ไข</th>
 </tr>

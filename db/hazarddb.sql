@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
 -- โฮสต์: 127.0.0.1
 -- เวลาในการสร้าง: 
 -- เวอร์ชั่นของเซิร์ฟเวอร์: 5.5.32
--- รุ่นของ PHP: 5.4.19
+-- รุ่นของ PHP: 5.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -136,16 +136,19 @@ INSERT INTO `request` (`requestid`, `userid`, `requesttype`, `jsondata`, `progre
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_agriproduction` (
+  `agri_id` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
-  PRIMARY KEY (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`agri_id`),
+  UNIQUE KEY `userid` (`userid`),
+  KEY `userid_2` (`userid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- dump ตาราง `usergroup_agriproduction`
 --
 
-INSERT INTO `usergroup_agriproduction` (`userid`) VALUES
-(2);
+INSERT INTO `usergroup_agriproduction` (`agri_id`, `userid`) VALUES
+(1, 2);
 
 -- --------------------------------------------------------
 
@@ -154,17 +157,18 @@ INSERT INTO `usergroup_agriproduction` (`userid`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_cashier` (
+  `cash_id` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
-  PRIMARY KEY (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`cash_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- dump ตาราง `usergroup_cashier`
 --
 
-INSERT INTO `usergroup_cashier` (`userid`) VALUES
-(3),
-(9);
+INSERT INTO `usergroup_cashier` (`cash_id`, `userid`) VALUES
+(1, 9),
+(2, 3);
 
 -- --------------------------------------------------------
 
@@ -173,6 +177,7 @@ INSERT INTO `usergroup_cashier` (`userid`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_client` (
+  `client_id` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
   `userbirthdate` date NOT NULL,
   `usernationality` char(20) NOT NULL,
@@ -188,17 +193,17 @@ CREATE TABLE IF NOT EXISTS `usergroup_client` (
   `userphone` varchar(32) NOT NULL,
   `userfax` varchar(32) NOT NULL,
   `useremail` varchar(254) NOT NULL,
-  PRIMARY KEY (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`client_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- dump ตาราง `usergroup_client`
 --
 
-INSERT INTO `usergroup_client` (`userid`, `userbirthdate`, `usernationality`, `usertaxid`, `useraddrhouse`, `useraddrvillage`, `useraddrdrive`, `useraddrroad`, `useraddrsubdistrict`, `useraddrdistrict`, `useraddrprovince`, `userpostalcode`, `userphone`, `userfax`, `useremail`) VALUES
-(4, '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(13, '2556-12-12', '', '123', '213', '', '', 'wwq', 'w', '', 'w', 'w', 'w', '', ''),
-(15, '0000-00-00', '', '1', 'sda', 'dsa', '', 'd', 'dsa', '', 'sda', 'dsa', 'ads', '', '');
+INSERT INTO `usergroup_client` (`client_id`, `userid`, `userbirthdate`, `usernationality`, `usertaxid`, `useraddrhouse`, `useraddrvillage`, `useraddrdrive`, `useraddrroad`, `useraddrsubdistrict`, `useraddrdistrict`, `useraddrprovince`, `userpostalcode`, `userphone`, `userfax`, `useremail`) VALUES
+(1, 13, '2556-12-12', '', '123', '213', '', '', 'wwq', 'w', '', 'w', 'w', 'w', '', ''),
+(2, 15, '0000-00-00', '', '1', 'sda', 'dsa', '', 'd', 'dsa', '', 'sda', 'dsa', 'ads', '', ''),
+(3, 4, '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -207,19 +212,20 @@ INSERT INTO `usergroup_client` (`userid`, `userbirthdate`, `usernationality`, `u
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_hazcontrol` (
+  `haz_id` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
-  PRIMARY KEY (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`haz_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- dump ตาราง `usergroup_hazcontrol`
 --
 
-INSERT INTO `usergroup_hazcontrol` (`userid`) VALUES
-(5),
-(8),
-(11),
-(12);
+INSERT INTO `usergroup_hazcontrol` (`haz_id`, `userid`) VALUES
+(1, 8),
+(2, 11),
+(3, 12),
+(4, 5);
 
 -- --------------------------------------------------------
 
@@ -228,18 +234,19 @@ INSERT INTO `usergroup_hazcontrol` (`userid`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_plantprotection` (
+  `plant_id` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
-  PRIMARY KEY (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`plant_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- dump ตาราง `usergroup_plantprotection`
 --
 
-INSERT INTO `usergroup_plantprotection` (`userid`) VALUES
-(6),
-(10),
-(14);
+INSERT INTO `usergroup_plantprotection` (`plant_id`, `userid`) VALUES
+(1, 6),
+(2, 10),
+(3, 14);
 
 -- --------------------------------------------------------
 
@@ -248,16 +255,17 @@ INSERT INTO `usergroup_plantprotection` (`userid`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_registrar` (
+  `regis_id` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
-  PRIMARY KEY (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`regis_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- dump ตาราง `usergroup_registrar`
 --
 
-INSERT INTO `usergroup_registrar` (`userid`) VALUES
-(7);
+INSERT INTO `usergroup_registrar` (`regis_id`, `userid`) VALUES
+(7, 0);
 
 -- --------------------------------------------------------
 
