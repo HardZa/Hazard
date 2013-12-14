@@ -56,13 +56,13 @@
 		<div class="request-flow">
 			<div class="dot1">		
 			</div>
-			<div class="arrow_box">
+			<!--<div class="arrow_box">
 				<h4>
 					<span class="glyphicon glyphicon-search"></span>
 					(<?php echo $request->get_status();?>)
 					<?php echo $cexp;?>
 				</h4>
-			</div>
+			</div>-->
 			<div class="flow-msg-head">
 				<h4>สถานะคำร้อง <?php echo $request->get_type(); ?> </h4>
 			</div>
