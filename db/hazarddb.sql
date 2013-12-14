@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4
+-- version 3.5.8.1deb1
 -- http://www.phpmyadmin.net
 --
--- โฮสต์: 127.0.0.1
--- เวลาในการสร้าง: 
--- เวอร์ชั่นของเซิร์ฟเวอร์: 5.5.32
--- รุ่นของ PHP: 5.4.16
+-- Host: localhost
+-- Generation Time: Dec 14, 2013 at 05:01 PM
+-- Server version: 5.5.34-0ubuntu0.13.04.1
+-- PHP Version: 5.5.6-1+debphp.org~raring+2
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,15 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- ฐานข้อมูล: `hazarddb`
+-- Database: `hazarddb`
 --
-CREATE DATABASE IF NOT EXISTS `hazarddb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `hazarddb`;
 
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `certificate`
+-- Table structure for table `certificate`
 --
 
 CREATE TABLE IF NOT EXISTS `certificate` (
@@ -39,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `certificate` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
--- dump ตาราง `certificate`
+-- Dumping data for table `certificate`
 --
 
 INSERT INTO `certificate` (`certid`, `certno`, `userid`, `expdate`, `certtype`, `jsondata`) VALUES
@@ -59,7 +57,7 @@ INSERT INTO `certificate` (`certid`, `certno`, `userid`, `expdate`, `certtype`, 
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `certificate_running_no`
+-- Table structure for table `certificate_running_no`
 --
 
 CREATE TABLE IF NOT EXISTS `certificate_running_no` (
@@ -69,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `certificate_running_no` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- dump ตาราง `certificate_running_no`
+-- Dumping data for table `certificate_running_no`
 --
 
 INSERT INTO `certificate_running_no` (`certtype`, `no`) VALUES
@@ -84,7 +82,7 @@ INSERT INTO `certificate_running_no` (`certtype`, `no`) VALUES
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `picture`
+-- Table structure for table `picture`
 --
 
 CREATE TABLE IF NOT EXISTS `picture` (
@@ -96,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `picture` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- dump ตาราง `picture`
+-- Dumping data for table `picture`
 --
 
 INSERT INTO `picture` (`picid`, `requestid`, `pictype`, `picname`) VALUES
@@ -105,7 +103,7 @@ INSERT INTO `picture` (`picid`, `requestid`, `pictype`, `picname`) VALUES
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `request`
+-- Table structure for table `request`
 --
 
 CREATE TABLE IF NOT EXISTS `request` (
@@ -121,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `request` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- dump ตาราง `request`
+-- Dumping data for table `request`
 --
 
 INSERT INTO `request` (`requestid`, `userid`, `requesttype`, `jsondata`, `progress`, `certid`, `certidref`, `date`) VALUES
@@ -132,7 +130,7 @@ INSERT INTO `request` (`requestid`, `userid`, `requesttype`, `jsondata`, `progre
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `usergroup_agriproduction`
+-- Table structure for table `usergroup_agriproduction`
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_agriproduction` (
@@ -144,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `usergroup_agriproduction` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- dump ตาราง `usergroup_agriproduction`
+-- Dumping data for table `usergroup_agriproduction`
 --
 
 INSERT INTO `usergroup_agriproduction` (`agri_id`, `userid`) VALUES
@@ -153,7 +151,7 @@ INSERT INTO `usergroup_agriproduction` (`agri_id`, `userid`) VALUES
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `usergroup_cashier`
+-- Table structure for table `usergroup_cashier`
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_cashier` (
@@ -163,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `usergroup_cashier` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- dump ตาราง `usergroup_cashier`
+-- Dumping data for table `usergroup_cashier`
 --
 
 INSERT INTO `usergroup_cashier` (`cash_id`, `userid`) VALUES
@@ -173,7 +171,7 @@ INSERT INTO `usergroup_cashier` (`cash_id`, `userid`) VALUES
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `usergroup_client`
+-- Table structure for table `usergroup_client`
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_client` (
@@ -197,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `usergroup_client` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- dump ตาราง `usergroup_client`
+-- Dumping data for table `usergroup_client`
 --
 
 INSERT INTO `usergroup_client` (`client_id`, `userid`, `userbirthdate`, `usernationality`, `usertaxid`, `useraddrhouse`, `useraddrvillage`, `useraddrdrive`, `useraddrroad`, `useraddrsubdistrict`, `useraddrdistrict`, `useraddrprovince`, `userpostalcode`, `userphone`, `userfax`, `useremail`) VALUES
@@ -208,7 +206,7 @@ INSERT INTO `usergroup_client` (`client_id`, `userid`, `userbirthdate`, `usernat
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `usergroup_hazcontrol`
+-- Table structure for table `usergroup_hazcontrol`
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_hazcontrol` (
@@ -218,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `usergroup_hazcontrol` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
--- dump ตาราง `usergroup_hazcontrol`
+-- Dumping data for table `usergroup_hazcontrol`
 --
 
 INSERT INTO `usergroup_hazcontrol` (`haz_id`, `userid`) VALUES
@@ -230,7 +228,7 @@ INSERT INTO `usergroup_hazcontrol` (`haz_id`, `userid`) VALUES
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `usergroup_plantprotection`
+-- Table structure for table `usergroup_plantprotection`
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_plantprotection` (
@@ -240,7 +238,7 @@ CREATE TABLE IF NOT EXISTS `usergroup_plantprotection` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- dump ตาราง `usergroup_plantprotection`
+-- Dumping data for table `usergroup_plantprotection`
 --
 
 INSERT INTO `usergroup_plantprotection` (`plant_id`, `userid`) VALUES
@@ -251,7 +249,7 @@ INSERT INTO `usergroup_plantprotection` (`plant_id`, `userid`) VALUES
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `usergroup_registrar`
+-- Table structure for table `usergroup_registrar`
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_registrar` (
@@ -261,16 +259,16 @@ CREATE TABLE IF NOT EXISTS `usergroup_registrar` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
--- dump ตาราง `usergroup_registrar`
+-- Dumping data for table `usergroup_registrar`
 --
 
 INSERT INTO `usergroup_registrar` (`regis_id`, `userid`) VALUES
-(7, 0);
+(7, 7);
 
 -- --------------------------------------------------------
 
 --
--- โครงสร้างตาราง `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -283,7 +281,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
--- dump ตาราง `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`userid`, `username`, `userpasssha1`, `userallowed`, `userrealname`) VALUES
