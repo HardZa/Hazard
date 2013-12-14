@@ -36,12 +36,12 @@
       	<label class="col-sm-4 control-label">ขอขึ้นทะเบียนวัตถุอันตราย :</label>
       	<div class="col-sm-2">
     			<label class="radio-inline">
-    		   	<input type="radio" name="group" value="2" checked>ชนิดที่ 2
+    		   	<input type="radio" name="group" value="ชนิดที่ 2" checked>ชนิดที่ 2
     			</label>
         </div>
         <div class="col-sm-2">
     		  <label class="radio-inline">
-    		    <input type="radio" name="group" value="3">ชนิดที่ 3
+    		    <input type="radio" name="group" value="ชนิดที่ 3">ชนิดที่ 3
     		  </label>
       	</div>
   	</div> 
