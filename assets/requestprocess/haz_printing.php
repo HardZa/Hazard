@@ -15,7 +15,7 @@ if( doc('request')->get('progress') != PRG_COMPLETE )
 
 <div class="row">
 	<div class="col-md-6" style="margin-left:100px;">
-		<a class="btn btn-default" href='<?php
+		<a class="btn btn-default btnPrint" href='<?php
 		$file = 'empty.php';
 		switch ( $ctype ) {
 			case VO_GS_GVG_2:
