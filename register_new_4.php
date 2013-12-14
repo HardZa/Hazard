@@ -5,6 +5,7 @@
   
   if(!Permission::requestSubmissionAllowed())
    Redirect::to(403);
+  $error = array();
     if(Input::exists('post'))
     {    
 		$validate = new Validate();
@@ -23,7 +24,7 @@
 			}
 			$r->redirect();
         }
-		
+		  $error = $validate->errors();
     }
     $certs = Certificate::get_user_certs( $user->get('userid') , VO_GS_GVG_2 );
 ?>
@@ -38,7 +39,7 @@
     			สถานที่ผลิตวัตถุอันตราย
   			</label>
   </div>
-  <div class="form-group" >
+  <div class="form-group <?php if(isset($error['productname']))echo 'has-error'; ?>" >
     <label for="productname" class="col-sm-4 control-label">ชื่อ</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" id="productname" name="productname" placeholder="ชื่อ" value="<?php echo Input::post('productname'); ?>">

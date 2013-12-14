@@ -5,6 +5,7 @@
   
   if(!Permission::requestSubmissionAllowed())
    Redirect::to(403);
+    $error = array();
     if(Input::exists('post'))
     {    
 		$validate = new Validate();
@@ -23,7 +24,7 @@
 			}
 			$r->redirect();
         }
-		
+		  $error = $validate->errors();
     }
     $certs = Certificate::get_user_certs( $user->get('userid') , VO_GS_GVG_2 );
 ?>
@@ -34,9 +35,9 @@
 </div>
 <form class="form-horizontal" role="form" method="post" action="">
 	<div class="form-group">
-    	<label class="col-sm-4">สถานที่เก็บวัตถุอันตราย</label>
+    	<label class="col-sm-offset-1">สถานที่เก็บวัตถุอันตราย</label>
  	</div>
- 	<div class="form-group" >
+ 	<div class="form-group <?php if(isset($error['storename']))echo 'has-error'; ?>" >
     	<label for="storename" class="col-sm-4 control-label">ชื่อ</label>
     	<div class="col-sm-8">
       		<input type="text" class="form-control" id="storename" name="storename" placeholder="ชื่อ" value="<?php echo Input::post('storename'); ?>">
@@ -200,8 +201,8 @@
     </div>
     <div class="row">
  	<div class="form-group">
-    	<div class="col-sm-offset-4 col-sm-10">
-      		<button type="submit" <?php printDisableWhenEmpty($certs); ?> class="btn btn-default">ส่งคำร้อง</button>
+    	<div class="button-regis pull-right">
+      		<button type="submit" <?php printDisableWhenEmpty($certs); ?> class="btn btn-success">ส่งคำร้อง</button>
     	</div>
   	</div>
     </div>

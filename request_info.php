@@ -42,7 +42,7 @@
  				echo '<a target="_blank" href="' . resolveURIHeader('pic/'.$pic->file) .'">';
 	 			echo '<img src="';
 	 			echo resolveURIHeader( $pic->get_uri() );
-	 			echo '" width="200" height="200"></img>';
+	 			echo '" width="200" height="200" class="img-thumbnail"></img>';
 	 			echo '</a>';
  			echo '</div>';
  		}
@@ -55,7 +55,7 @@
 
  ?>
 <section class="top-sec">
-	<div class="container" style="width:1024px;">
+	<div class="container" style="width:1049px;">
 		<div class="request-flow">
 			<div class="dot1">		
 			</div>

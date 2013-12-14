@@ -131,15 +131,15 @@ body{
 	border-bottom: 40px solid #DBA85C;
 }
 .doc-sec{
-	border-bottom: 100px solid #E4CFB0;
+	border-bottom: 40px solid #EBC997;
 }
 .bottom-sec{
 	background-color: #FADDA6;
 }
 .request-flow{
-	top: 100px;
+	top: 130px;
 	height: 400px;
-	width: 1024px;
+	width: 1049px;
 	position: absolute;
 }
 .dot1{
@@ -184,7 +184,7 @@ body{
 	text-align: center;
 	padding: 5px 0px 0px;
 	left: 26px;
-	top: -50px;
+	top: -80px;
 	background-color: rgb(146, 221, 143);
 	border-radius: inherit;
 	position: absolute;
