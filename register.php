@@ -279,7 +279,7 @@ function echoValue($field)
 
 			
 			<div class="form-group" >
-		    	<label for="userbirthdate" class="col-sm-3 control-label">*เดือน-วัน-ปี เกิด</label>
+		    	<label for="userbirthdate" class="col-sm-3 control-label">*วัน-เดือน-ปี เกิด</label>
 			    <div class="col-sm-6">
 			      	<input type="text" class="form-control" id="userbirthdate" name="userbirthdate" placeholder="MM-DD-YYYY" <?php echoValue('userbirthdate'); ?> >
 			    </div>
