@@ -206,6 +206,28 @@
 </form>
 </div>
 </div>
+
+<button type="submit" id="cheat" >ปุ่มโกง</button>
+
+<script type='text/javascript'>
+$("#cheat").on("click",function(){
+  $("#storename").val("บริษัท ป.เคมีเทค จำกัด");
+  $("#storehouse").val("249");
+  $("#storevillage").val("5");
+  $("#storedrive").val("1");
+  $("#storeroad").val("สิรินธร");
+  $("#storesubdistrict").val("บางบำหรุ");
+  $("#storedistrict").val("บางพลัด");
+  $("#storeprovince").val("กรุงเทพ");
+  $("#storepostalcode").val("10700");
+  $("#storephone").val("0-2424-9438 , 0-2433-2348 , 0-2433-2026 , 0-2435-5778-9");
+  $("#storefax").val("0-2434-6103 , 0-2886-5239");
+  $("#storespecialist").val("นาย สมบัติ  เหสกุล");
+  $("#orderCountry").val("ไทย");
+  $("#quantity").val("200 แกลลอน");
+  $("#area").val("1000 ตารางเมตร");
+});
+</script>
 <?php
  	include(resolveHeader('includes/footer.php'));
 ?>
