@@ -14,8 +14,8 @@ if( doc('request')->get('progress') != PRG_COMPLETE )
 ?>
 
 <div class="row">
-	<div class="col-md-2">
-		<a class="btnPrint" href='<?php
+	<div class="col-md-6" style="margin-left:100px;">
+		<a class="btn btn-default btnPrint" href='<?php
 		$file = 'empty.php';
 		switch ( $ctype ) {
 			case VO_GS_GVG_2:
@@ -45,11 +45,9 @@ if( doc('request')->get('progress') != PRG_COMPLETE )
 		echo resolvePrinterURI($file,$print_info);
 		?>
 		'>
-		พิมพ์ใบรับรอง</a>
-	</div>
+		<span class="glyphicon glyphicon-print" style="margin-right:10px;"></span>พิมพ์ใบรับรอง</a>
 	<?php if( doc('request')->get('progress') != PRG_COMPLETE ) { ?>
-	<div class="col-md-2">
-		<input type="button" value="เสร็จ" class="btn btn-success" onclick="parent.location='<?php 
+		<input type="button" value="เสร็จ" class="btn btn-success" style="margin-left:20px;" onclick="parent.location='<?php 
 			echo resolveURIHeader(doc('main_file').'?id='.doc('request')->get('requestid')."&approve=1");
 		?>'">
 	</div>
