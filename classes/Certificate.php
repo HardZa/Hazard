@@ -37,7 +37,7 @@ class Certificate
 
 	public function is_expired()
 	{
-		return false;
+		return date_create($this->expdate)->diff( date_create( date('Y-m-d') ) )->invert == 0;
 	}
 
 	public function get_exp_day()
