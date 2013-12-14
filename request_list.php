@@ -266,8 +266,8 @@ foreach( $data as $item ){
 			<td>$data_user</td>
 			<td>$data_progress</td>
 			<td>
-				<form action='request_info.php' action='get'>
-					<button type='submit' class='btn btn-info btn-xs' name='id' value='".$item['requestid']."'>เปิดดู</button>
+				<form action='request/".$item['requestid']."' action='get'>
+					<button type='submit' class='btn btn-info btn-xs' >เปิดดู</button>
 				</form>
 			</td>
 		  </tr>";
