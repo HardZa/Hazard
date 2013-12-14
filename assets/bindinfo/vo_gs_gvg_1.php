@@ -2,7 +2,7 @@
 $userinfo=User::get_client_by_id($request->get('userid'));
 $docData = array( 
 					"day" => $request->get_day(),
-					"month" => $request->get_month(),
+					"month" => get_month( $request->get_month() ),
 					"year" => $request->get_year(),
 					"name"=>$userinfo['userrealname'], 
 					"age" => $userinfo['userage'],

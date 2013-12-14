@@ -1,12 +1,19 @@
 
 <?php
 
+$ctype = Request::get_print_type(doc('type'));
+
 if(Input::get('approve') == '1')
 {
 	if( doc('type') != VO_GS_GVG_3 )
 		doc('request')->progress( PRG_PRINTING );
 	else
 		doc('request')->progress( PRG_NEXT_EXPIRE );
+	if( $ctype != -1 )
+	{
+		$cert = Certificate::create(doc('request')->get('userid'), $ctype ,doc('request')->get('jsondata'));
+		doc('request')->set('certid',$cert->certid );
+	}
 	doc('request')->save();
 	doc('request')->redirect();
 }

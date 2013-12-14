@@ -54,6 +54,13 @@ class Certificate
 		return (string)(int)date_format(date_create($this->expdate), 'Y');
 	}
 
+	public function get_data($s)
+	{
+		if( isset($this->jsondata[$s]) )
+			return $this->jsondata[$s];
+		return 'not have';
+	}
+
 	public static function create($userid,$certtype,$jsondata)
 	{
 		$certno = Certificate::gen_exp_certno($certtype);
