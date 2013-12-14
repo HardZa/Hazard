@@ -18,7 +18,7 @@ body{
 }
 .data-box{
 	background-color: #FAFAFA;
-	padding: 1px 30px 30px;
+	padding: 10px 30px 30px;
 	border-radius: 5px;
 	margin: 30px auto;
 }
@@ -123,68 +123,52 @@ body{
 }
 .top-sec{
 	height: 450px;
-	background-color: #F5C570;
+	background-color: #f5c570;
+	margin-bottom: 40px;
 }
 .request-flow{
 	top: 100px;
 	height: 400px;
 	width: 1024px;
 	position: absolute;
-	background-image: url("../image/flow.png");
 }
 .dot1{
 	position: absolute;
-	background-color: white;
 	border-radius: 3px;
 	height: 50px;
 	width: 50px;
-	top: 50px;
-	left: 68px;
+	top: 56px;
+	left: 67px;
 }
-.dot2{
+.dot1:hover{
 	position: absolute;
-	background-color: white;
+	background-color: rgba(0, 0, 0, 0.21);
 	border-radius: 3px;
 	height: 50px;
 	width: 50px;
-	top: 180px;
-	left: 68px;
+	top: 56px;
+	left: 67px;
 }
-.dot3{
+.arrow_box {
 	position: absolute;
-	background-color: white;
-	border-radius: 3px;
-	height: 50px;
-	width: 50px;
-	top: 265px;
-	left: 220px;
+	background: #E0D8C4;
+	padding: 8px;
+	left: 130px;
+	top: 55px;
 }
-.dot4{
+.arrow_box:after {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0px;
+	width: 0px;
 	position: absolute;
-	background-color: white;
-	border-radius: 3px;
-	height: 50px;
-	width: 50px;
-	top: 265px;
-	left: 420px;
-}
-.dot5{
-	position: absolute;
-	background-color: white;
-	border-radius: 3px;
-	height: 50px;
-	width: 50px;
-	top: 265px;
-	left: 620px;
-}
-.dot6{
-	position: absolute;
-	background-color: white;
-	border-radius: 3px;
-	height: 50px;
-	width: 50px;
-	top: 265px;
-	left: 820px;
+	pointer-events: none;
+	border-color: rgba(136, 183, 213, 0);
+	border-right-color: #E0D8C4;
+	border-width: 10px;
+	margin-top: -10px;
 }
 .flow-msg-head{
 	text-align: center;
@@ -194,17 +178,17 @@ body{
 	background-color: rgb(146, 221, 143);
 	border-radius: inherit;
 	position: absolute;
-	width: 140px;
+	width: 260px;
 	height: 50px;
 }
 .flow-msg2{
-	padding: 10px;
-	left: 140px;
-	top: 240px;
+	padding: 0px 10px;
+	left: 130px;
+	top: 60px;
 	background-color: white;
 	border-radius: 4px;
 	position: absolute;
-	width: 140px;
+	width: 180px;
 	height: 40px;
 }
 .flow-msg3{

@@ -1,1 +1,1 @@
-Permission denied!
+<div align="center" style="padding:60px"><img src="<?php echo resolveURIHeader('image/permission_cutout.png'); ?>"></div>
