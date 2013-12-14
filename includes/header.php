@@ -20,6 +20,7 @@
     	$(".btnPrint").printPage();
   	});
   	</script>
+  	<?php include(resolveHeader('includes/hotkey_init.php')); ?>
 </head>
 
 <body>
