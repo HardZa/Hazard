@@ -2,6 +2,8 @@
 
 $route_file = 'empty.php';
 $route_progress = doc('progress');
+set_doc('approve_button','ผ่าน');
+set_doc('reject_button','ไม่ผ่าน');
 
 if($user->is_group('client'))
 {

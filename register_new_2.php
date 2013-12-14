@@ -93,18 +93,17 @@
     	<label class="col-sm-3 col-sm-offset-1 control-label">แนบไฟล์เอกสารที่เกี่ยวข้อง</label>
     	<?php include(resolveHeader('includes/upload_block.php')); ?>
     </div>
-    <?php if(count($certs) > 0){ ?>
     <div class="row">
     <div class="form-group">
     <div class="col-sm-offset-4 col-sm-10">
-      <button type="submit" class="btn btn-default">ส่งคำร้อง</button>
+      <button type="submit" <?php if( count($certs) == 0 ) echo 'disabled'; ?> class="btn btn-default">ส่งคำร้อง</button>
     </div>
   	</div>
     </div>
-    <?php } ?>
 </form>
 </div>
 </div>
+
 <?php
  	include(resolveHeader('includes/footer.php'));
 ?>

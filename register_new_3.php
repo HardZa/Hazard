@@ -190,6 +190,14 @@
 </form>
 </div>
 </div>
+
+<button type="submit" id="cheat" >ปุ่มโกง</button>
+
+<script type='text/javascript'>
+$("#cheat").on("click",function(){
+  $("#storename").val("test");
+});
+</script>
 <?php
  	include(resolveHeader('includes/footer.php'));
 ?>
