@@ -6,7 +6,7 @@
 	$cert = $request->get_certificate();
 	$datecert = date_create( $cert->get_data('create_date') );
 	$print_info=array(
-	//	'no' => $request->get('requestid'),
+		'no' => $cert->certno,
 		"day" => date_format($datecert,'d'),
 		"month" => get_month( date_format($datecert,'m') ),
 		"year" => date_format($datecert,'Y'),//$request->get_year(),

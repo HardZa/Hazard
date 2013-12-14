@@ -116,12 +116,12 @@
     </div>
   </div>
     <?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'ทะเบียนเลขที่' , 'no_cert' => 'ไม่มีการลงทะเบียนไว้' )); ?>
-  <!--<div class="form-group" >
+  <div class="form-group" >
     <label for="producerCountry" class="col-sm-4 control-label">ประเทศที่ผลิต</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" id="producerCountry" name="producerCountry" placeholder="ประเทศที่ผลิต" value="<?php echo Input::post('producerCountry'); ?>">
     </div>
-  </div>-->
+  </div>
 
 <div class="form-group" >
     <label for="quantity" class="col-sm-4 control-label">ปริมาณ</label>
@@ -213,6 +213,7 @@ $(document).bind('keydown', 'alt+f1', function assets() {
   $("#storespecialist").val("นาย สมบัติ  เหสกุล");
   $("#quantity").val("200 แกลลอน");
   $("#note").val("-");
+  $("#producerCountry").val("ประเทศไทย");
 });
 </script>
 <?php
