@@ -38,9 +38,11 @@
  		echo '<div class="row">';
  		foreach ($pics as $pic) {
  			echo '<div class="col-sm-3">';
+ 				echo '<a href="' . resolveURIHeader('pic/'.$pic->file) .'">';
 	 			echo '<img src="';
 	 			echo resolveURIHeader( $pic->get_uri() );
 	 			echo '" width="200" height="200"></img>';
+	 			echo '</a>';
  			echo '</div>';
  		}
  		echo '</div>';
