@@ -21,9 +21,7 @@
 <?php
 	}else{
 ?>
-	<div class="page-header">
-    <h1>ไม่พบรูปที่ต้องการ</h1>
-	</div>
+	<div align="center" style="padding:60px"><img src="<?php echo resolveURIHeader('image/404_cutout.png'); ?>"></div>
 <?php
 	}
 

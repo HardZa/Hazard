@@ -1,1 +1,1 @@
-<div align="center" style="padding:60px"><img src="<?php echo resolveURIHeader('image/permission_cutout.png'); ?>"></div>
+<div align="center" style="padding:60px"><img src="<?php echo resolveURIHeader('image/403_cutout.png'); ?>"></div>
