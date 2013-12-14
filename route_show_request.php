@@ -19,7 +19,7 @@ else if($user->is_group('hazcontrol'))
 		case PRG_CHK_DOC:
 			if( doc('type') == VO_GS_GVG_1 )
 				set_doc('next_progress',PRG_SURVEY);
-			else if( doc('type') == VO_GS_GVG_3 )
+			else
 				set_doc('next_progress',PRG_CONSIDER);
 			$route_file = 'normal_approve.php';
 			break;

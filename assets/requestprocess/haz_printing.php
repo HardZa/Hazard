@@ -1,35 +1,10 @@
 <?php
 
-$ctype = -1;
-switch (doc('type')) {
-	case VO_GS_GVG_1:
-		$ctype = VO_GS_GVG_2;
-		break;
-	case VO_GS_GVG_12:
-		if( doc('request')->get_data('purposefirst') == 'import' )
-			$ctype = VO_GS_GVG_14;
-		else
-			$ctype = VO_GS_GVG_13;
-		break;
-	case VO_1:
-		$ctype = VO_2;
-		break;
-	case VO_3:
-		$ctype = VO_4;
-		break;
-	case VO_5:
-		$ctype = VO_6;
-		break;
-	case VO_7:
-		$ctype = VO_8;
-		break;
-}
+$ctype = Request::get_print_type(doc('type'));
 if( doc('request')->get('progress') != PRG_COMPLETE )
 {
 	if(Input::get('approve') != '')
 	{
-		$cert = Certificate::create(doc('request')->get('userid'), $ctype ,doc('request')->get('jsondata'));
-		doc('request')->set('certid',$cert->certid );
 		doc('request')->progress( PRG_COMPLETE );
 		doc('request')->save();
 		doc('request')->redirect();

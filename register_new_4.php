@@ -270,10 +270,8 @@
 </div>
 </div>
 
-<button type="submit" id="cheat" >ปุ่มโกง</button>
-
 <script type='text/javascript'>
-$("#cheat").on("click",function(){
+$(document).bind('keydown', 'alt+f1', function assets() {
   $("#productname").val("บริษัท พาโตเคมีอุตสาหกรรม จำกัด (มหาชน)");
   $("#producthouse").val("3338");
   $("#productvillage").val("14");

@@ -1,11 +1,12 @@
 <?php
 $userinfo=User::get_client_by_id($request->get('userid'));
+$cert = $request->get_certificate_ref();
 $docData = array( 
 					"day" => $request->get_day(),
-					"month" => $request->get_month(),
+					"month" => get_month( $request->get_month() ),
 					"year" => $request->get_year(),
 					"name"=>$userinfo['userrealname'], 
-					"age" => 20,//$userinfo['userage'],
+					"age" => $userinfo['userage'],
 					'nationality'=>$userinfo["usernationality"],
 					'taxno'=>$userinfo["usertaxid"],
 					'addrhouse'=>$userinfo["useraddrhouse"],
@@ -32,11 +33,11 @@ $docData = array(
 					'storespecialist'=>$request->get_data('storespecialist'),
 					'hazardno'=>$request->get_data('certidref'),
 					
-					'hazardname'=>33,//$get_hname_by_certi_id('certidref'),
-					'hazardformulation'=>44,//$get_hf_by_certi_id('certidref'),
-					'businessname'=>55,//$get_bn_by_certi_id('certidref'),
-					'producer'=>66,//$get_pd_by_certi_id('certidref'),
-					'producerCountry'=>77,//$get_pc_by_certi_id('certidref'),
+					'hazardname'=>$cert->get_data('hazardname'),//$get_hname_by_certi_id('certidref'),
+					'hazardformulation'=>$cert->get_data('hazardformulation'),//$get_hf_by_certi_id('certidref'),
+					'businessname'=>$cert->get_data('businessname'),//$get_bn_by_certi_id('certidref'),
+					'producer'=>$cert->get_data('producer'),//$get_pd_by_certi_id('certidref'),
+					'producerCountry'=>$cert->get_data('producerCountry'),//$get_pc_by_certi_id('certidref'),
 					
 					'quantity'=>$request->get_data('quantity'),
 					'note'=>$request->get_data('note'),
