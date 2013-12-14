@@ -4,7 +4,7 @@ include(resolveHeader('includes/header.php'));
 
 if(!Permission::userEditAllowed())
    Redirect::to(403);
-echo "<br><br>";
+//echo "<br><br>";
 
 if(Input::exists('post'))
 {
@@ -42,8 +42,12 @@ if(Input::exists('post'))
 	echo "Update completed";
 
 }
+?>
 
-
+<div class="container">
+<div class="data-box">
+<br>
+<?php
 if(Input::exists('get'))
 {
 	//echo Input::get('user');
@@ -166,8 +170,9 @@ if(Input::exists('get'))
 	      	<input type="text" class="form-control" id="useremail" name="useremail" placeholder="E-Mail" value="<?php echo $user['useremail']?>" >
 	    </div>
  	</div>
+ 	<div style="margin:0px 0px 0px 100px">
 	 	<button type="submit" class="btn btn-primary col-sm-offset-2">แก้ไข</button>
-
+	</div>
 	 	<?php
 	 }
 	 else
@@ -188,14 +193,16 @@ if(Input::exists('get'))
 	      		<input type="text" class="form-control" id="userrealname" name="userrealname" placeholder="DD-MM-YYYY" value="<?php echo $user['userrealname']?>" >
 	    	</div>
 	  	</div>
-
-	  	<button type="submit" class="btn btn-primary col-sm-offset-2">แก้ไข</button>
+	  	<div style="margin:0px 0px 0px 100px">
+	  		<button type="submit" class="btn btn-primary col-sm-offset-2">แก้ไข</button>
+	  	</div>
 	  	<?php
 
 	 }
-
 }
-
-
+?>
+</div>
+</div>
+<?php
 include(resolveHeader('includes/footer.php'));
 ?>
