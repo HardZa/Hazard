@@ -23,13 +23,13 @@ else
 			<label class="col-sm-4 control-label" style="margin-top:11px;">กรุณาอัพโหลดใบเสร็จสำหรับการชำระเงิน</label>
 			<?php include( resolveHeader('includes/upload_block.php') ); ?>
 			<div class="col-sm-4">
-				<div class="banking-icon">
-					
+				<div class="lab-icon">
+
 				</div>
 			</div>
 		</div>
 		<div class="row">
-			<button type="submit" class="btn btn-warning"style="margin-left:75px;">จ่ายเงิน<span class="glyphicon glyphicon-usd"></span></button>
+			<button type="submit" class="btn btn-warning" style="margin-left:75px;">จ่ายเงิน<span class="glyphicon glyphicon-usd"></span></button>
 		</div>
 	</div>
 </form>
