@@ -7,7 +7,7 @@
 //	echo "realname";
 //	echo $me_info->get('username');
 	$print_info=array(
-		'no' => $request->get('requestid'),
+	//	'no' => $request->get('requestid'),
 		'day' => '[unknown]',
 		'month' => '[unknown]',
 		'year' => '[unknown]',
