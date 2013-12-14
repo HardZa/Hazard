@@ -2,6 +2,8 @@
 require_once('core/init.php');
 include(resolveHeader('includes/header.php'));
 
+if(!Permission::userListAllowed())
+   Redirect::to(403);
 ?>
 <div class="container">
 <div class="data-box">

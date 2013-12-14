@@ -117,10 +117,6 @@ left: 40;
 <br>
 ใบสำคัญการขึ้นทะเบียนวัตถุอันตรายนี้ให้ใช้จนถึงวันที่ <span style="display:inline-block;background-color:#999;width:20px;"><?php echo Input::get("expday"); ?></span> เดือน <span class="box_2"><?php echo Input::get("expmonth"); ?></span> พ.ศ. <span class="box_3"><?php echo Input::get("expyear"); ?></span>
 <br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br><br><br>
-<br><br>
 <div align="right">( ลายมือชื่อ )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;พนักงานเจ้าหน้าที่ </div>
 <div align="right">( <?php echo Input::get("officername"); ?> )&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><br>

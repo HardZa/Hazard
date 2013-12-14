@@ -1,4 +1,9 @@
  <?php
+  require_once('core/init.php');
+ include(resolveHeader('includes/header.php'));
+ 
+   if(!Permission::userAddAllowed())
+   Redirect::to(403);
    
   function translate($key,$error){
 		$new_error = '';
@@ -11,6 +16,7 @@
 		if( $key == "usertaxid" ) $new_key = "เลขผู้เสียภาษี";
 		if( $key == "useraddrroad" ) $new_key = "ถนน";
 		if( $key == "usersubdistrict" ) $new_key = "ตำบล/แขวง";
+		if( $key == "userdistrict" ) $new_key = "อำเภอ/เขต";
 		if( $key == "userprovince" ) $new_key = "จังหวัด";
 		if( $key == "userpostalcode" ) $new_key = "รหัสไปรษณีย์";
 		if( $key == "userphone" ) $new_key = "เลขโทรศัพท์";
@@ -70,15 +76,10 @@
 			}
 		 }	
   }
- require_once('core/init.php');
- include(resolveHeader('includes/header.php'));
 
-if(!Permission::userAddAllowed())
-{
-	//Redirect::to(403);
-}
 
  ?>
+ 
  <script type="text/javascript">
  	function clearClientForm()
  	{
@@ -89,10 +90,12 @@ if(!Permission::userAddAllowed())
  		$("#userdrive").val('');
  		$("#useraddrroad").val('');
  		$("#usersubdistrict").val('');
+		$("#userdistrict").val('');
  		$("#userprovince").val('');
  		$("#userpostalcode").val('');
  		$("#userphone").val('');
  		$("#userfax").val('');
+		$("#useremail").val('');
  		$("#usernationality").val('');
  	}
 
@@ -130,7 +133,6 @@ if(!Permission::userAddAllowed())
 
  if(Input::Exists())
 {
-
 	$validate = new Validate();
 	$validate->check($_POST,array(
 		"regis_type" => array(
@@ -162,6 +164,9 @@ if(!Permission::userAddAllowed())
 			"required"=>true
 		),
 		"usersubdistrict" => array(
+			"required"=>true
+		),
+		"userdistrict" => array(
 			"required"=>true
 		),
 		"userprovince" => array(
@@ -197,8 +202,8 @@ if(!Permission::userAddAllowed())
 					User::create_client(Input::post('username'),$password,Input::post('name'),Input::post('userbirthdate')
 						,Input::post('usernationality'),Input::post('usertaxid'),Input::post('useraddrhouse')
 						,Input::post('useraddrvillage'),Input::post('userdrive'),Input::post('useraddrroad')
-						,Input::post('usersubdistrict'),Input::post('userprovince'),Input::post('userpostalcode')
-						,Input::post('userphone'),Input::post('userfax'));
+						,Input::post('usersubdistrict'),Input::post('userdistrict'),Input::post('userprovince')
+						,Input::post('userpostalcode'),Input::post('userphone'),Input::post('userfax'),Input::post('useremail'));
 					Redirect::postto('user/add/summary',array_merge($_POST,array('password'=>$password)));
 				}else{
 					client_error($client_validate);
@@ -272,10 +277,11 @@ function echoValue($field)
 
 		<div id ="client_form">
 
+			
 			<div class="form-group" >
 		    	<label for="userbirthdate" class="col-sm-3 control-label">*วัน-เดือน-ปี เกิด</label>
 			    <div class="col-sm-6">
-			      	<input type="text" class="form-control" id="userbirthdate" name="userbirthdate" placeholder="DD-MM-YYYY" <?php echoValue('userbirthdate'); ?> >
+			      	<input type="text" class="form-control" id="userbirthdate" name="userbirthdate" placeholder="MM-DD-YYYY" <?php echoValue('userbirthdate'); ?> >
 			    </div>
 		 	</div>
 
@@ -327,6 +333,13 @@ function echoValue($field)
 			      	<input type="text" class="form-control" id="usersubdistrict" name="usersubdistrict" placeholder="ตำบล/แขวง" <?php echoValue('usersubdistrict'); ?> >
 			    </div>
 		 	</div>
+            
+            <div class="form-group" >
+		    	<label for="userdistrict" class="col-sm-3 control-label">*อำเภอ/เขต</label>
+			    <div class="col-sm-6">
+			      	<input type="text" class="form-control" id="userdistrict" name="userdistrict" placeholder="อำเภอ/เขต" <?php echoValue('userdistrict'); ?> >
+			    </div>
+		 	</div>
 
 		 	<div class="form-group" >
 		    	<label for="userprovince" class="col-sm-3 control-label">*จังหวัด</label>
@@ -355,13 +368,40 @@ function echoValue($field)
 			      	<input type="text" class="form-control" id="userfax" name="userfax" placeholder="หมายเลขโทรสาร" <?php echoValue('userfax'); ?> >
 			    </div>
 		 	</div>
+            
+            <div class="form-group" >
+		    	<label for="userfax" class="col-sm-3 control-label">E-Mail</label>
+			    <div class="col-sm-6">
+			      	<input type="text" class="form-control" id="useremail" name="useremail" placeholder="E-Mail" <?php echoValue('useremail'); ?> >
+			    </div>
+		 	</div>
 		</div>
 
 			<button type="submit" class="btn btn-warning" style="margin-left:240px;">ลงทะเบียน</button>
 		</form>
+		<button type="submit" id="cheat" >ปุ่มโกง</button>
 	</div>
  </div>
-
+ <script type='text/javascript'>
+			$("#cheat").on("click",function(){
+  				$("#username").val("serpierio");
+  				$("#name").val("ชานน  จิตพรหม");
+  				$("#userbirthdate").val("01-10-2536");
+  				$("#usernationality").val("ไทย");
+  				$("#usertaxid").val("1709900774223");
+  				$("#useraddrhouse").val("90/96");
+  				$("#useraddrvillage").val("1");
+  				$("#userdrive").val("9");
+  				$("#useraddrroad").val("-");
+  				$("#usersubdistrict").val("หนองอ้อ");
+  				$("#userdistrict").val("บ้านโป่ง");
+  				$("#userprovince").val("ราชบุรี");
+  				$("#userpostalcode").val("70110");
+  				$("#userphone").val("087-7552233");
+  				$("#userfax").val("-");
+  				$("#useremail").val("serpierio@gmail.com");
+			});
+			</script>
  <?php
  include(resolveHeader('includes/footer.php'));
  ?>

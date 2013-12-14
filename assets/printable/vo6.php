@@ -198,9 +198,6 @@ font-size: 100%;
 		<span class="box_2"><?php echo Input::get("expyear"); ?></span>
 	</span>
 	<br>
-	<br><br><br><br><br><br><br><br><br><br>
-	<br>
-	<br>
 	<br>
 	<br>
 	<br>
@@ -218,6 +215,8 @@ font-size: 100%;
 	<br>
 	<br>
 	<br>
+	<br><br><br><br><br><br><br><br>
+	<br><br>
 	<br>
 	<!--
 	<span class="left">
@@ -281,6 +280,8 @@ font-size: 100%;
 </div>
 <br>
 <br>
+<br>
+<br>
 <!--page2-->
 <div align="center">-๑/๑-</div>
 <br>
@@ -330,23 +331,6 @@ font-size: 100%;
 		ออกตามความในมาตรา ๒๐ (๒) แห่งพระราชบัญญัติวัตถุอันตราย พ.ศ. ๒๕๓๕ กำหนดให้ต้องมีผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบ ฯ)
 		<br><?php echo Input::get("storespecialist"); ?>
 </span>
-<br><br><br><br><br><br><br><br><br><br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 	<br>
 	<br>
 	<br>
@@ -362,6 +346,19 @@ font-size: 100%;
 			<div align="center" style="display:inline-block;width:350px">(<?php echo Input::get("officername"); ?>)</div>
 		</div>
 	</span>
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<br>
 	<br>
 	<br>

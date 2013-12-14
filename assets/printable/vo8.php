@@ -235,7 +235,7 @@ font-size: 100%;
 		<span class="box_2"><?php echo Input::get("expyear"); ?></span>
 	</span>
 	<br>
-	<br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br>
 	<span class="right">
 		<div align="left">
 			(ลายมือชื่อ)
@@ -247,7 +247,7 @@ font-size: 100%;
 			<div align="center" style="display:inline-block;width:350px">(<?php echo Input::get("officername"); ?>)</div>
 		</div>
 	</span>
-	<br>
+	<br><br><br><br><br><br><br><br><br><br>
 	<br>
 	<br>
 	<br>
@@ -324,9 +324,7 @@ font-size: 100%;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ทะเบียนเลขคี่
 	<span class="box_4"><?php echo Input::get("hazardno1"); ?></span>
 </span>
-	<br><br><br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br>
 	<span class="right">
 		<div align="left">
 			(ลายมือชื่อ)
@@ -342,6 +340,9 @@ font-size: 100%;
 	<br>
 	<br>
 	<br>
+	<br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 <div style="font-size:10px">
 	<span class="left">

@@ -23,31 +23,47 @@
 
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="<?php echo resolveURIHeader("/");?>">
+	<div style="margin:0px 0px 0px 40px">
+        <a class="navbar-brand" href="<?php echo resolveURIHeader("/");?>">
           	<img src="<?php echo resolveURIHeader("image/cl-logo-32p.png");?>"></img>
-          	<?php if(User::is_session_exist()) echo User::get_user()->get("username"); ?>
-          </a>
-        </div>
-        <div class="collapse navbar-collapse pull-right">
-          <ul class="nav navbar-nav">
+          	<?php if(User::is_session_exist()) {
+          		echo "&nbsp;สวัสดี &nbsp;"; 
+          		echo User::get_user()->get("userrealname");} ?>
+        </a>
+    </div>
+    <div class="collapse navbar-collapse pull-right"">
+ 	    <ul class="nav navbar-nav">
        <!--     <li class="active"><a href="login">login</a></li> -->
 			<?php
 				$user = User::get_user();
 				if( !isset($user) || $user == null ) {
 			?>
-			<li><a href="<?php echo resolveURIHeader("login");?>">ลงชื่อเข้าระบบ</a></li>
+					<li><a href="<?php echo resolveURIHeader("login");?>">ลงชื่อเข้าระบบ</a></li>
 			<?php
-				}else{
+				}
+				else{
+					if(User::get_user()->is_group('registrar')){
+			?>			
+						<li><a href="<?php echo resolveURIHeader("user");?>">รายชื่อผู้ใช้</a></li>
+						<li><a href="<?php echo resolveURIHeader("register");?>">เพิ่มผู้ใช้</a></li>
+						<li><a href="<?php echo resolveURIHeader("logout");?>">ออกจากระบบ</a></li>
+			<?php		
+					}
+					else if(User::get_user()->is_group('client')){
 			?>
-			<li><a href="<?php echo resolveURIHeader("user");?>">หน้าของฉัน</a></li>
-			<li><a href="<?php echo resolveURIHeader("user/edit");?>">แก้ไขบัญชี</a></li>
-			<li><a href="<?php echo resolveURIHeader("logout");?>">ออกจากระบบ</a></li>
-			<?php
+						<li><a href="<?php echo resolveURIHeader("request");?>">รายการคำร้อง</a></li>
+						<li><a href="<?php echo resolveURIHeader("profile");?>">แก้ไขข้อมูลส่วนตัว</a></li>
+						<li><a href="<?php echo resolveURIHeader("logout");?>">ออกจากระบบ</a></li>
+			<?php		
+					}
+					else{
+			?>
+						<li><a href="<?php echo resolveURIHeader("request");?>">รายการคำร้อง</a></li>
+						<li><a href="<?php echo resolveURIHeader("logout");?>">ออกจากระบบ</a></li>
+			<?php		
+					}
 				}
 			?>
           </ul>
-        </div><!--/.nav-collapse --> 
     </div>
 </div>	

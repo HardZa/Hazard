@@ -133,8 +133,8 @@ class User{
 
 	public static function create_client(
 		$username,$password,$name,$userbirthdate,$usernationality,$usertaxid
-		,$useraddrhouse,$useraddrvillage,$userdrive,$useraddrroad,$usersubdistrict
-		,$userprovince,$userpostalcode,$userphone,$userfax
+		,$useraddrhouse,$useraddrvillage,$userdrive,$useraddrroad,$usersubdistrict,$userdistrict
+		,$userprovince,$userpostalcode,$userphone,$userfax,$useremail
 	)
 	{
 		$passwordSha1 = sha1($password);
@@ -149,11 +149,11 @@ class User{
 
 		if(!DB::get_db()->insert('usergroup_client',
 			array('userid','userbirthdate','usernationality','usertaxid','useraddrhouse'
-				,'useraddrvillage','useraddrdrive','useraddrroad','useraddrsubdistrict'
-				,'useraddrprovince','userpostalcode','userphone','userfax'),
+				,'useraddrvillage','useraddrdrive','useraddrroad','useraddrsubdistrict','useraddrdistrict'
+				,'useraddrprovince','userpostalcode','userphone','userfax','useremail'),
 			array(DB::get_db()->getLastInsertID(),$newbirthdate,$usernationality,$usertaxid,$useraddrhouse
-				,$useraddrvillage,$userdrive,$useraddrroad,$usersubdistrict,$userprovince
-				,$userpostalcode,$userphone,$userfax)))
+				,$useraddrvillage,$userdrive,$useraddrroad,$usersubdistrict,$userdistrict,$userprovince
+				,$userpostalcode,$userphone,$userfax,$useremail)))
 		{
 			throw new Exception("There was a problem add new user to group usergroup_client");
 		}

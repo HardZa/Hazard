@@ -6,6 +6,10 @@
 
  <?php
  $request = Request::load( Input::get('id') );
+ 
+ if(!Permission::requestInfoAllowed($request))
+   Redirect::to(403);
+ 
  if( $request == null || $user == null )
  	Redirect::to(403);
  //$docData = array();

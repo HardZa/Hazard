@@ -93,8 +93,13 @@ if( $user == null )
 </div>
 
 <?php } 
- else {
-	Redirect::to('user');
+else {
+	if(User::get_user()->is_group('registrar')){
+		Redirect::to('user');
+	}
+	else{
+		Redirect::to('request');
+	}
  ?>
  
  Already Login :)
