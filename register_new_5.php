@@ -13,7 +13,7 @@
 		$user = User::get_user();
         if($validate->passed())
         {
-            $r = Request::create_request($user->get('userid'),VO_3,$_POST,$_POST['hazardno']);
+            $r = Request::create_request($user->get('userid'),VO_3,$_POST,$_POST['certidref']);
 			$j;
 			for($j=0;$j<count($picarr);$j++)
 			{
@@ -113,12 +113,7 @@
 
     </div>
   </div>
-  <div class="form-group" >
-    	<label for="certidref" class="col-sm-4 control-label">ทะเบียนเลขที่</label>
-    	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="certidref" name="certidref" placeholder="ทะเบียนเลขที่" value="<?php echo Input::post('certidref'); ?>">
-    	</div>
-  	</div>
+    <?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'ทะเบียนเลขที่' )); ?>
   <!--<div class="form-group" >
     <label for="producerCountry" class="col-sm-4 control-label">ประเทศที่ผลิต</label>
     <div class="col-sm-8">
@@ -139,7 +134,6 @@
       <textarea type="text" class="form-control" rows="3" id="note" name="note" placeholder="หมายเหตุ" ><?php echo Input::post('note'); ?></textarea>
     </div>
   </div>
-<?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'ใบอนุญาต' )); ?>
   <div class="form-group">
   			<label class="col-sm-10">
     			พร้อมกันนี้ข้าพเจ้าได้ส่งมอบเอกสารประกอบคำอนุญาต ดังต่อไปนี้
