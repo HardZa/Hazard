@@ -100,7 +100,7 @@ if($user->is_group('client'))
 	    	<label class="col-sm-3 control-label">วัน-เดือน-ปี เกิด</label>
 	    	<label class="col-sm-3 radio-inline"><?php 
 	    		$tmp = DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'));
-	    		echo $tmp[0]['userbirthdate']; ?><label>
+	    		echo date_format(date_create($tmp[0]['userbirthdate']),'d ').get_month(date_format(date_create($tmp[0]['userbirthdate']),'m')).' พ.ศ. '.(date_format(date_create($tmp[0]['userbirthdate']),'Y') + 543); ?><label>
 	  	</div>
 
 	  	<div class="form-group">
