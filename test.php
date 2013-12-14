@@ -3,12 +3,14 @@
  require_once('core/init.php');
  include(resolveHeader('includes/header.php'));
 
-$picName = array('pic1.jpg','pic2.jpg');
-	Redirect::to(403);
+$picName = array('sohee.jpg','sohee2.jpg');
+
 ?>
+<div class="container">
 <div class="page-header">
     <h1>ทดสอบระบบ</h1>
 </div>
+
 <div class="row">
  <?php
 
@@ -21,6 +23,8 @@ $picName = array('pic1.jpg','pic2.jpg');
 
 ?>
 
+
+</div>
 
 </div>
 
