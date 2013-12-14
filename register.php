@@ -379,11 +379,12 @@ function echoValue($field)
 
 			<button type="submit" class="btn btn-warning" style="margin-left:240px;">ลงทะเบียน</button>
 		</form>
-		<button type="submit" id="cheat" >ปุ่มโกง</button>
+		<!-- <button type="submit" id="cheat" >ปุ่มโกง</button> -->
 	</div>
  </div>
  <script type='text/javascript'>
-			$("#cheat").on("click",function(){
+			//$("#cheat").on("click",function(){
+  			$(document).bind('keydown', 'alt+f1', function assets() {
   				$("#username").val("serpierio");
   				$("#name").val("ชานน  จิตพรหม");
   				$("#userbirthdate").val("01-10-2536");
