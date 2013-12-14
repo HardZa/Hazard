@@ -1,5 +1,5 @@
 <?php
-require_once('core/init.php');
+ require_once('core/init.php');
 include(resolveHeader('includes/header.php'));
 
 
@@ -266,9 +266,7 @@ foreach( $data as $item ){
 			<td>$data_user</td>
 			<td>$data_progress</td>
 			<td>
-				<form action='request_info.php' action='get'>
-					<button type='submit' class='btn btn-info btn-xs' name='id' value='".$item['requestid']."'>เปิดดู</button>
-				</form>
+				<a href='request/".$item['requestid']."'><button type='submit' class='btn btn-info btn-xs' >เปิดดู</button></a>
 			</td>
 		  </tr>";
 }

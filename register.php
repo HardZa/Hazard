@@ -199,7 +199,9 @@
 				{
 					echo "CLIENT PASS";
 					$password = User::get_rand_password();
-					User::create_client(Input::post('username'),$password,Input::post('name'),Input::post('userbirthdate')
+					$birthdate = date_create( Input::post('userbirthdate') );
+					$sbirthdate = date_format($birthdate,'d').'-'.date_format($birthdate,'m').'-'.( date_format($birthdate,'Y') - 543 );
+					User::create_client(Input::post('username'),$password,Input::post('name'),$sbirthdate
 						,Input::post('usernationality'),Input::post('usertaxid'),Input::post('useraddrhouse')
 						,Input::post('useraddrvillage'),Input::post('userdrive'),Input::post('useraddrroad')
 						,Input::post('usersubdistrict'),Input::post('userdistrict'),Input::post('userprovince')
@@ -281,7 +283,7 @@ function echoValue($field)
 			<div class="form-group" >
 		    	<label for="userbirthdate" class="col-sm-3 control-label">*วัน-เดือน-ปี เกิด</label>
 			    <div class="col-sm-6">
-			      	<input type="text" class="form-control" id="userbirthdate" name="userbirthdate" placeholder="MM-DD-YYYY" <?php echoValue('userbirthdate'); ?> >
+			      	<input type="text" class="form-control" id="userbirthdate" name="userbirthdate" placeholder="DD-MM-YYYY" <?php echoValue('userbirthdate'); ?> >
 			    </div>
 		 	</div>
 

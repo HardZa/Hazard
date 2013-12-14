@@ -16,13 +16,13 @@ if(Input::get('approve') == '1')
 		doc('request')->set('certid',$cert->certid );
 	}
 	doc('request')->save();
-	doc('request')->redirect();
+	Redirect::to('request');
 }
 else if(Input::get('approve') == '0')
 {
 	doc('request')->reject();
 	doc('request')->save();
-	doc('request')->redirect();
+	Redirect::to('request');
 }
 else
 {

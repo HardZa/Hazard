@@ -5,6 +5,7 @@
 
 	if(!Permission::requestSubmissionAllowed())
    Redirect::to(403);
+  $error = array();
     if(Input::exists('post'))
     {    
 		$validate = new Validate();
@@ -23,7 +24,7 @@
 			}
 			$r->redirect();
         }
-		
+		  $error = $validate->errors();
     }
 ?>
 <div class="container">
@@ -63,7 +64,7 @@
   	<div class="form-group">
       	<label class="col-sm-4"> และมีรายละเอียดดังนี้</label>
    	</div>
-   	<div class="form-group" >
+   	<div class="form-group <?php if(isset($error['hazardname']))echo 'has-error'; ?>" >
       	<label for="hazardname" class="col-sm-4">๑. ชื่อวัตถุอันตราย</label>
       	<div class="col-sm-8">
         		<input type="text" class="form-control" id="hazardname" name="hazardname" placeholder="ชื่อวัตถุอันตราย" value="<?php echo Input::post('hazardname'); ?>" >

@@ -7,11 +7,12 @@
  <?php
  $request = Request::load( Input::get('id') );
  
+ if( $request == null || $user == null )
+ 	Redirect::to(403);
+ 
  if(!Permission::requestInfoAllowed($request))
    Redirect::to(403);
  
- if( $request == null || $user == null )
- 	Redirect::to(403);
  //$docData = array();
 
  function get_exp_cert()
