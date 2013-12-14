@@ -61,6 +61,12 @@ class Certificate
 		return 'not have';
 	}
 
+	public function set_data($s,$v)
+	{
+		$this->jsondata[$s] = $v;
+		DB::get_db()->update('certificate',array('jsondata'=>json_encode($this->jsondata)),'certid='.$this->certid);
+	}
+
 	public static function create($userid,$certtype,$jsondata)
 	{
 		$certno = Certificate::gen_exp_certno($certtype);
