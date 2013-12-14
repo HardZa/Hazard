@@ -29,7 +29,7 @@ body{
     height: 50px;  
 }
 .navbar-brand {
-	padding: 10px;
+	padding: 5px;
 }
 .navbar-header{
 	padding-left: 160px;
@@ -253,4 +253,23 @@ body{
 	left: 900px;
 	width: 117px;
 	height: 104px;
+}
+.banking-icon{
+	background-image: url("../image/Money-Transfer-128.png");
+	width: 128px;
+	height:128px;
+	top: -50px;
+	left: 240px;
+	position: absolute;
+}
+.lab-icon{
+	background-image: url("../image/Hospital-Lab-128.png");
+	width: 128px;
+	height:128px;
+	top: -50px;
+	left: 240px;
+	position: absolute;
+}
+.approve-gruop{
+	margin-right: 100px;
 }

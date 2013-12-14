@@ -97,15 +97,17 @@
 </section>
 <section>
 	<div class="container">
-		<div class="row">
-		<?php
-		$docData = array('progress' => $request->get('progress'),
-						  'main_file' => 'request_info.php',
-						  'request' => $request ,
-						  'type' => $request->get('requesttype') ,
-						  'user' => $user);
-		include( resolveHeader('route_show_request.php') );
-		?>
+		<div class="well">
+			<div class="row">
+			<?php
+			$docData = array('progress' => $request->get('progress'),
+							  'main_file' => 'request_info.php',
+							  'request' => $request ,
+							  'type' => $request->get('requesttype') ,
+							  'user' => $user);
+			include( resolveHeader('route_show_request.php') );
+			?>
+			</div>
 		</div>
 	</div>
 </section>

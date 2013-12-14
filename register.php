@@ -204,7 +204,7 @@
 						,Input::post('useraddrvillage'),Input::post('userdrive'),Input::post('useraddrroad')
 						,Input::post('usersubdistrict'),Input::post('userdistrict'),Input::post('userprovince')
 						,Input::post('userpostalcode'),Input::post('userphone'),Input::post('userfax'),Input::post('useremail'));
-					Redirect::postto('user/add/summary',array_merge($_POST,array('password'=>$password)));
+					Redirect::postto('register/summary',array_merge($_POST,array('password'=>$password)));
 				}else{
 					client_error($client_validate);
 				}
@@ -212,7 +212,7 @@
 				echo "PASS";
 				$password = User::get_rand_password();
 				User::create_user(Input::post('regis_type'),Input::post('username'),$password,Input::post('name'));
-				Redirect::postto('user/add/summary',array_merge($_POST,array('password'=>$password)));
+				Redirect::postto('register/summary',array_merge($_POST,array('password'=>$password)));
 			}
 		}
 	}else{

@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$folder="../upload/";
+$folder='../upload/';
 if($_FILES['file1']['error']>0)
 {
 	echo "-1";

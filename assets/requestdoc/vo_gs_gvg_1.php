@@ -54,7 +54,7 @@
 		<div class="col-md-11"><b>๑. ชื่อวัตถุอันตราย </b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('hazardname')?></div>
 		<div class="col-md-11"><b>๒. สูตรอัตราส่วนผสมของสารสําคัญและลักษณะ </b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('hazardformulation')?></div>
 		<div class="col-md-11"><b>๓. ชื่อทางการค้าหรือหมายเลขรหัส </b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('businessname')?></div>
-		<div class="col-md-11"><b>๔. ชื่อผู้ผลิตและแหล่งผลิต </b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('producer')?> <b>จาก</b> <?php echo doc('productname')?></div>
+		<div class="col-md-11"><b>๔. ชื่อผู้ผลิตและแหล่งผลิต </b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('producer')?> <!-- <b>จาก</b> <?php //echo doc('productname')?>--></div>
 		<div class="col-md-11"><b>๕. ชื่อผู้นําเข้า</b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('importer')?></div>
 		<div class="col-md-11"><b>๖. ชื่อผู้จําหน่าย/ผู้จัดจําหน่าย</b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('saleman')?></div>
 		<div class="col-md-11"><b>๗. ชนิดและลักษณะหีบห่อหรือภาชนะบรรจุ พร้อมทั้งขนาดบรรจุ</b> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('container')?></div>

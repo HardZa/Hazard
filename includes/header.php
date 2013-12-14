@@ -25,7 +25,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div style="margin:0px 0px 0px 40px">
         <a class="navbar-brand" href="<?php echo resolveURIHeader("/");?>">
-          	<img src="<?php echo resolveURIHeader("image/cl-logo-32p.png");?>"></img>
+          	<img src="<?php echo resolveURIHeader("image/logo.png");?>"></img>
           	<?php if(User::is_session_exist()) {
           		echo "&nbsp;สวัสดี &nbsp;"; 
           		echo User::get_user()->get("userrealname");} ?>
