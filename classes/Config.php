@@ -31,7 +31,7 @@ class Config
 					  PRG_WAIT_PAY => 'flow5step/flow_4_5.png',
 					  PRG_ACCEPT_PAY => 'flow5step/flow_4_5.png',
 					  PRG_PRINTING => 'flow5step/flow_5_5.png',
-					  PRG_COMPLETE => 'flow5step/flow_c_5.png',
+					  PRG_COMPLETE => 'flow5step/flow_5_5.png',
 					  PRG_REJECT => 'flow5step/flow_r_5.png'),
 			VO_1 =>
 				array(
