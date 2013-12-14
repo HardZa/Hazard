@@ -18,7 +18,9 @@
  	{
  		return '';
  	}
- 	return $cert->get_exp_day() . '-' . $cert->get_exp_month() . '-' . $cert->get_exp_year();
+ 	if( $cert->is_expired() )
+ 		return 'หมดอายุแล้ว';
+ 	return 'หมดอายุวันที่ '.$cert->get_exp_day() . '-' . $cert->get_exp_month() . '-' . ( $cert->get_exp_year() + 543 );
  }
  
  function printPic($type)
