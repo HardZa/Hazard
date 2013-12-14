@@ -23,7 +23,7 @@ else
 			<label class="col-sm-4 control-label" style="margin-top:11px;">กรุณาอัพโหลดใบเสร็จสำหรับการชำระเงิน</label>
 			<?php include( resolveHeader('includes/upload_block.php') ); ?>
 			<div class="col-sm-4">
-				<div class="lab-icon">
+				<div class="banking-icon">
 
 				</div>
 			</div>
