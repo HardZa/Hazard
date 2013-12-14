@@ -2,6 +2,7 @@
 require_once('core/init.php');
 include(resolveHeader('includes/header.php'));
 
+
 if(!Permission::canShowList())
    Redirect::to(403);
 function translateProgress($progress){
@@ -36,7 +37,141 @@ if( isset($_GET['user']) && $_GET['user'] != ''){
 
 $data = $db->select('request',array('userid','requesttype','progress','requestid'),$condition);
 ?>
-<div class='container' >
+
+<?php
+if(User::get_user()->is_group('client')){
+?>
+<script>
+function showTabtab()
+{
+	var table=document.getElementById('tabtab');
+	var textbtn=document.getElementById('showbtn');
+	
+	if(table.hidden == 1){
+		table.hidden =0;
+		textbtn.innerHTML="&nbsp;-&nbsp;";
+	}
+	else{
+		table.hidden = 1;
+		textbtn.innerHTML="&nbsp;+&nbsp;";
+	}
+
+	
+	/*var rowcount=table.rows.length;
+	var row1=table.insertRow(rowcount);
+	var cell1=row1.insertCell(0);
+
+	var element = document.createElement("label");
+	element.innerHTML="อิอิ";
+	cell1.appendChild(element);*/
+}
+</script>
+
+
+<div class='container'>
+<div class="data-box">
+	<div class='page-header'>
+		<h1>ส่งคำร้อง</h1>
+		<div style="margin:20px 0px 10px 50px">
+			แสดงรายละเอียดเพิ่มเติม <button type="button" class='btn btn-success btn-xs' onclick="showTabtab()" id="showbtn" name="showbtn">&nbsp;+&nbsp;</button>
+		</div>
+	</div>
+
+	<div hidden="1" name="tabtab" id="tabtab">
+	
+	<table border = 0 align="center">
+        <tr>
+        <td>
+            <div class="block-option">
+                <a href="register.php" class="block-link" style="text-decoration:none;">
+                    <div class="block-option-image">
+                       <img src="<?php echo resolveURIHeader("image/edit_user.png");  ?>" class="img-circle">  
+                    </div>
+                    <div align="center">
+                       <br>
+                       <h4>ขออนุญาตผลิตวัตถุอันตราย</h4>
+                    </div>
+                </a>
+            </div>
+        </td>           
+       <td>
+            <div class="block-option">
+                <a href="register.php" class="block-link" style="text-decoration:none;">
+                    <div class ="block-option-image">
+                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+                    </div>
+                    <div align="center">
+                       <br>
+                       <h4>ขออนุญาตนำเข้าวัตถุอันตราย</h4>
+                    </div>
+                </a>
+            </div>
+        </td>
+        <td>
+            <div class="block-option">
+                <a href="register.php" class="block-link" style="text-decoration:none;">
+                    <div class ="block-option-image">
+                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+                    </div>
+                    <div align="center">
+                       <br>
+                       <h4>ขออนุญาตส่งออกวัตถุอันตราย</h4>
+                    </div>
+                </a>
+            </div>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <div class="block-option">
+                <a href="register.php" class="block-link" style="text-decoration:none;">
+                    <div class ="block-option-image">
+                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+                    </div>
+                    <div align="center">
+                       <br>
+                       <h4>ขออนุญาตครอบครองวัตถุอันตราย</h4>
+                    </div>
+                </a>
+            </div>
+        </td>
+        <td>
+            <div class="block-option">
+                <a href="register.php" class="block-link" style="text-decoration:none;">
+                    <div class ="block-option-image">
+                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+                    </div>
+                    <div align="center">
+                       <br>
+                       <h4>ขอขึ้นทะเบียนวัตถุอันตราย</h4>
+                    </div>
+                </a>
+            </div>
+        </td>
+        <td>
+            <div class="block-option">
+                <a href="register.php" class="block-link" style="text-decoration:none;">
+                    <div class ="block-option-image">
+                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+                    </div>
+                    <div align="center">
+                       <br>
+                       <h4>ขอต่ออายุทะเบียนวัตถุอันตราย</h4>
+                    </div>
+                </a>
+            </div>
+        </td>
+    </table>
+	</div>    
+
+</div>
+</div>
+
+<?php
+}
+?>
+
+<div class='container'>
 <div class="data-box">
 	<div class='page-header'>
 		<h1>รายการคำร้อง</h1>
