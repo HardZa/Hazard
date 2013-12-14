@@ -13,7 +13,7 @@
 		$user = User::get_user();
         if($validate->passed())
         {
-            $r = Request::create_request($user->get('userid'),VO_5,$_POST);
+            $r = Request::create_request($user->get('userid'),VO_5,$_POST,$_POST['certidref']);
 			$j;
 			for($j=0;$j<count($picarr);$j++)
 			{
@@ -23,6 +23,7 @@
         }
 		
     }
+    $certs = Certificate::get_user_certs( $user->get('userid') , VO_GS_GVG_2 );
 ?>
 <div class="container">
 <div class="data-box">
@@ -112,6 +113,9 @@
 
     </div>
   </div>
+  
+    <?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'ทะเบียนเลขที่' )); ?>
+  
   <div class="form-group" >
     <label for="orderCountry" class="col-sm-4 control-label">ประเทศปลายทาง</label>
     <div class="col-sm-8">
@@ -132,6 +136,7 @@
       <textarea type="text" class="form-control" rows="3" id="note" name="note" placeholder="หมายเหตุ" ><?php echo Input::post('note'); ?></textarea>
     </div>
   </div>
+
 
   <div class="form-group">
   			<label class="col-sm-10">
@@ -186,7 +191,7 @@
     <div class="row">
   <div class="form-group">
       <div class="button-regis pull-right">
-          <button type="submit" class="btn btn-success">ส่งคำร้อง</button>
+          <button type="submit" <?php printDisableWhenEmpty($certs); ?> class="btn btn-success">ส่งคำร้อง</button>
       </div>
     </div>
     </div>

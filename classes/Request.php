@@ -53,7 +53,7 @@ class Request
 
 	public static function create_request($userid,$type,$jsondata,$certref = 0)
 	{
-		DB::get_db()->insert('request',array('userid','requesttype','jsondata','progress','certidref'),array($userid,$type,mysql_real_escape_string(json_encode($jsondata)),PRG_CHK_DOC,$certref));
+		DB::get_db()->insert('request',array('userid','requesttype','jsondata','progress','certidref','date'),array($userid,$type,mysql_real_escape_string(json_encode($jsondata)),PRG_CHK_DOC,$certref,date('Y-m-d')));
 		return Request::load( DB::get_db()->getLastInsertID() );
 	}
 
@@ -104,6 +104,21 @@ class Request
 			$ret[] = new Request($value);
 		}
 		return $ret;
+	}
+
+	public function get_day()
+	{
+		return date_format( date_create( $this->get('date') ) , 'd' );
+	}
+	
+	public function get_month()
+	{
+		return date_format( date_create( $this->get('date') ) , 'm' );	
+	}
+
+	public function get_year()
+	{
+		return date_format( date_create( $this->get('date') ) , 'Y' ) + 543;
 	}
 
 	public function get_img_uri()

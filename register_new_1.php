@@ -84,7 +84,16 @@
     	<div class="col-sm-8">
       		<input type="text" class="form-control" id="producer" name="producer" placeholder="ชื่อผู้ผลิตและแหล่งผลิต" value="<?php echo Input::post('producer'); ?>">
     	</div>
+        
   	</div>
+    <!--
+    <div class="form-group" >
+    	<label for="productname" class="col-sm-4" >จาก</label>
+    <div class="col-sm-8">
+      		<input type="text" class="form-control" id="productname" name="productname" placeholder="จาก" value="<?php echo Input::post('productname'); ?>">
+    	</div>
+    </div>
+    -->
   	<div class="form-group" >
     	<label for="importer" class="col-sm-4" >๕. ชื่อผู้นำเข้า</label>
     	<div class="col-sm-8">
@@ -127,6 +136,20 @@
 </div> 
 
 </div>
+<button type="submit" id="cheat" >ปุ่มโกง</button>
+
+<script type='text/javascript'>
+$("#cheat").on("click",function(){
+  $("#hazardname").val("Acetonitrile ; Methylcyanide");
+  $("#hazardformulation").val("C2H3N");
+  $("#businessname").val("75-05-8");
+  $("#producer").val("J.T. Baker INC MADE IN USA");
+  $("#importer").val("J.T. Baker INC");
+  $("#saleman").val("บริษัท เมอร์ค จำกัด");
+  $("#container").val("บรรจุใส่แกลลอนที่มิดชิดในห้องที่มีระบบระบายอากาศ โดยมีขนาดบรรจุไม่เกิน 1 แกลลอน");
+  $("#purpose").val("ใช้เป็นสารวิเคราะห์และทดสอบ (reagent) ทางเคมีในห้องปฏิบัติการ");
+});
+</script>
 <?php
  	include(resolveHeader('includes/footer.php'));
 ?>

@@ -13,7 +13,7 @@
 		$user = User::get_user();
         if($validate->passed())
         {
-            $r = Request::create_request($user->get('userid'),VO_7,$_POST);
+            $r = Request::create_request($user->get('userid'),VO_7,$_POST,$_POST['certidref']);
 			$j;
 			for($j=0;$j<count($picarr);$j++)
 			{
@@ -23,6 +23,7 @@
         }
 		
     }
+    $certs = Certificate::get_user_certs( $user->get('userid') , VO_GS_GVG_2 );
 ?>
 <div class="container">
 <div class="data-box">
@@ -123,16 +124,11 @@
 		  	</label>
 		  	</div>
     		<div class="col-sm-4">
-      			<input type="text" class="form-control" id="purpose" name="purpose" placeholder="(ระบุ)" >
+      			<input type="text" class="form-control" id="purpose_other" name="purpose_other" placeholder="(ระบุ)" >
     		</div>
     	</div>
   	</div>
-  	<div class="form-group" >
-    	<label for="certidref" class="col-sm-4 control-label">ทะเบียนเลขที่</label>
-    	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="certidref" name="certidref" placeholder="ทะเบียนเลขที่" value="<?php echo Input::post('certidref'); ?>">
-    	</div>
-  	</div>
+      <?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'ทะเบียนเลขที่' )); ?>
   	<div class="form-group" >
     	<label for="quantity" class="col-sm-4 control-label">ปริมาณการครอบครองรวมสูงสุด</label>
     	<div class="col-sm-8">
@@ -203,7 +199,7 @@
     <div class="row">
  	<div class="form-group">
     	<div class="col-sm-offset-4 col-sm-10">
-      		<button type="submit" class="btn btn-default">ส่งคำร้อง</button>
+      		<button type="submit" <?php printDisableWhenEmpty($certs); ?> class="btn btn-default">ส่งคำร้อง</button>
     	</div>
   	</div>
     </div>
