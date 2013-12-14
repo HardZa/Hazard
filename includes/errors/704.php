@@ -1,1 +1,1 @@
-don't have certificate
+<div align="center" style="padding:60px"><img src="<?php echo resolveURIHeader('image/704_cutout.png'); ?>"></div>
