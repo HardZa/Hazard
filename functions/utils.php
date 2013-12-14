@@ -1,4 +1,16 @@
  <?php
+
+ function printDisableWhenEmpty($e)
+ {
+ 	if( count($e) == 0 ) echo 'disabled';
+ }
+
+ function fastRender( $file , $arr )
+ {
+ 	global $docData;
+ 	$docData = array_merge($docData,$arr);
+ 	include( resolveHeader('assets/').$file );
+ }
  
  function resolveHeader($location)
  {

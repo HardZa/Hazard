@@ -1,7 +1,58 @@
 <?php
  	require_once('core/init.php');
 	include(resolveHeader('includes/header.php'));
+
+$user = User::get_user(); 
+ $error_msg = '';
+ if( $user == null && Input::exists() )
+ {
+	$validate = new Validate();
+	$validate->check($_POST,array(
+		"username" => array(
+			"required"=>true,
+			"min"=>6,
+			"max"=>30
+		),
+		"password" => array(
+			"required"=>true,
+			"min"=>6,
+			"max"=>20
+		)
+	));
+	
+	if($validate->passed())
+	{
+		try
+		{
+			$user = User::auth( Input::post('username') , Input::post('password') );
+		}catch(Exception $e )
+		{
+			$error_msg .= $e->getMessage()."<br>";
+		}
+		
+	}else{
+		foreach($validate->errors() as $e)
+		{
+			$error_msg .= $e."<br>";
+		}
+	}
+ 
+ }
+ 
+ ?>
+  
+ <?php
+if( $user == null )
+{
 ?>
+
+<?php
+	if( $error_msg != '' )
+	{
+		echo $error_msg;
+	}
+?>
+
 <div class="home-container">
 		<div class="front-card">
 			<div class="front-welcome">
@@ -15,40 +66,41 @@
 				</div>
 			</div>
 			<div class="front-signin">
-				<div class="username">
-					<input class="form-control" placeholder="Username / ชื่อผู้ใช้" type="text" name="username" autocomplete="off" autofocus="" required="">
-				</div>
-				<table>
-					<tbody>
-						<tr>
-							<td>
-								<div class="password">
-									<input type="password" name="password" required="" class="form-control" placeholder="Password / รหัสผ่าน">
-								</div>
-							</td>
-							<td>
-								<div>	
-									<button type="submit" value="Login" class="btn btn-warning">เข้าสู่ระบบ</button>
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+				<form method="post" action="">
+					<div class="username">
+						<input class="form-control" placeholder="Username / ชื่อผู้ใช้" type="text" name="username" autocomplete="off" autofocus="" required="">
+					</div>
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									<div class="password">
+										<input type="password" name="password" required="" class="form-control" placeholder="Password / รหัสผ่าน">
+									</div>
+								</td>
+								<td>
+									<div>	
+										<button type="submit" value="Login" class="btn btn-warning">เข้าสู่ระบบ</button>
+										<!-- <input class="btn btn-lg btn-primary btn-block" type="submit" value="Login"> -->
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
 			</div>
 		</div>
 </div>
 
-<?php 
-	if(!User::is_session_exist())
-	{	
-?>
-	 <input class="btn btn-lg btn-success btn-block" type="button" value="Login as Client" onclick="parent.location='fakelogin.php?user=test_client'"> 
-	 <input class="btn btn-lg btn-primary btn-block" type="button" value="Login as Hazard Control Officer" onclick="parent.location='fakelogin.php?user=test_hazcontrol'"> 
-	 <input class="btn btn-lg btn-warning btn-block" type="button" value="Login as Plant Protection Officer" onclick="parent.location='fakelogin.php?user=test_plantprotection'"> 
-	 <input class="btn btn-lg btn-warning btn-block" type="button" value="Login as หน่วยผลิต" onclick="parent.location='fakelogin.php?user=test_agriproduction'"> 
-	 <input class="btn btn-lg btn-danger btn-block" type="button" value="Login as Cashier" onclick="parent.location='fakelogin.php?user=test_cashier'"> 
-	 <input class="btn btn-lg btn-info btn-block" type="button" value="Login as Registrar" onclick="parent.location='fakelogin.php?user=test_registrar'"> 
+<?php } 
+ else {
+	Redirect::to('user');
+ ?>
+ 
+ Already Login :)
+ 
+ <?php } ?>
+
 <?php
- 	}
  	include(resolveHeader('includes/footer.php'));
 ?>
