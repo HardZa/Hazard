@@ -2,6 +2,8 @@
 
 $route_file = 'empty.php';
 $route_progress = doc('progress');
+set_doc('approve_button','ผ่าน');
+set_doc('reject_button','ไม่ผ่าน');
 
 if($user->is_group('client'))
 {
@@ -22,7 +24,10 @@ else if($user->is_group('hazcontrol'))
 			$route_file = 'normal_approve.php';
 			break;
 		case PRG_SURVEY:
-			$route_file = 'haz_survey.php';
+			set_doc('next_progress',PRG_CONSIDER);
+			set_doc('approve_button','ผลการทดสอบผ่าน');
+			set_doc('reject_button','ผลการทดสอบไม่ผ่าน');
+			$route_file = 'normal_approve.php';
 			break;
 		case PRG_CONSIDER:
 			set_doc('next_progress',PRG_WAIT_PAY);

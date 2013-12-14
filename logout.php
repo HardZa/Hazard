@@ -6,9 +6,9 @@
  
  ?>
  
-  <h1>Logout Page</h1>
- 
- Already Logout :)
+ <?php
+ 	Redirect::to('/');
+ ?>
  
   <?php
  include(resolveHeader('includes/footer.php'));

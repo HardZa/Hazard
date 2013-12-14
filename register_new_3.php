@@ -15,7 +15,7 @@
 		$user = User::get_user();
         if($validate->passed())
         {
-            $r = Request::create_request($user->get('userid'),VO_GS_GVG_12,$_POST);
+            $r = Request::create_request($user->get('userid'),VO_GS_GVG_12,$_POST,$_POST['certidref']);
 			$j;
 			for($j=0;$j<count($picarr);$j++)
 			{
@@ -25,6 +25,7 @@
         }
 		
     }
+    $certs = Certificate::get_user_certs( $user->get('userid') , VO_GS_GVG_2 );
 ?>
 <div class="container">
 <div class="data-box">
@@ -120,12 +121,7 @@
       		<input type="text" class="form-control" id="storeemail" name="storeemail" placeholder="E-mail" value="<?php echo Input::post('storeemail'); ?>">
     	</div>
   	</div>
- <div class="form-group" >
-    	<label for="certidref" class="col-sm-4 control-label">ทะเบียนเลขที่</label>
-    	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="certidref" name="certidref" placeholder="ทะเบียนเลขที่" value="<?php echo Input::post('certidref'); ?>">
-    	</div>
-  	</div>
+      <?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'ทะเบียนเลขที่' , 'no_cert' => 'ไม่มีการลงทะเบียนไว้' )); ?>
 <!--    
   	<div class="form-group">
     	<label class="col-sm-4">โดยมีรายละเอียดดังนี้</label>
@@ -191,13 +187,34 @@
     <div class="row">
   	<div class="form-group">
     	<div class="col-sm-offset-4 col-sm-10">
-      		<button type="submit" class="btn btn-default">ส่งคำร้อง</button>
+      		<button type="submit" <?php printDisableWhenEmpty($certs); ?>  class="btn btn-success">ส่งคำร้อง</button>
     	</div>
   	</div>
     </div>
 </form>
 </div>
 </div>
+
+<button type="submit" id="cheat" >ปุ่มโกง</button>
+
+<script type='text/javascript'>
+$("#cheat").on("click",function(){
+  $("#storename").val("บริษัท เมอร์ค จำกัด");
+  $("#storehouse").val("2170");
+  $("#storevillage").val("3");
+  $("#storedrive").val("-");
+  $("#storeroad").val("เพชรบุรีตัดใหม่");
+  $("#storesubdistrict").val("บางกะปิ");
+  $("#storedistrict").val("ห้วยขวาง");
+  $("#storeprovince").val("กรุงเทพ");
+  $("#storepostalcode").val("10320");
+  $("#storephone").val("(662) 308 - 0218");
+  $("#storefax").val("-");
+  $("#storeemail").val("hazard_studio@thai.com");
+  //$("#certidref").val("");
+  $("#quantity").val("200 แกลลอน");
+});
+</script>
 <?php
  	include(resolveHeader('includes/footer.php'));
 ?>

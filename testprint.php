@@ -329,25 +329,25 @@
 </div>
 
 <div>
-	<a class="btnPrint" href='<?php echo resolvePrinterURI("vk2", $info2 );?>'>ทดสอบ วอ.2</a>
+	<a class="btnPrint" href='<?php echo resolvePrinterURI("vo2", $info2 );?>'>ทดสอบ วอ.2</a>
 </div>
 <div>
-	<a class="btnPrint" href='<?php echo resolvePrinterURI("vk4", $info4 );?>'>ทดสอบ วอ.4</a>
+	<a class="btnPrint" href='<?php echo resolvePrinterURI("vo4", $info4 );?>'>ทดสอบ วอ.4</a>
 </div>
 <div>
-	<a class="btnPrint" href='<?php echo resolvePrinterURI("vk6", $info6 );?>'>ทดสอบ วอ.6</a>
+	<a class="btnPrint" href='<?php echo resolvePrinterURI("vo6", $info6 );?>'>ทดสอบ วอ.6</a>
 </div>
 <div>
-	<a class="btnPrint" href='<?php echo resolvePrinterURI("vk8", $info8 );?>'>ทดสอบ วอ.8</a>
+	<a class="btnPrint" href='<?php echo resolvePrinterURI("vo8", $info8 );?>'>ทดสอบ วอ.8</a>
 </div>
 <div>
-	<a class="btnPrint" href='<?php echo resolvePrinterURI("vk_ks_kvk2", $infoz2 );?>'>ทดสอบ วอ./กษ./กวก.2</a>
+	<a class="btnPrint" href='<?php echo resolvePrinterURI("vo_gs_gvg_2", $infoz2 );?>'>ทดสอบ วอ./กษ./กวก.2</a>
 </div>
 <div>
-	<a class="btnPrint" href='<?php echo resolvePrinterURI("vk_ks_kvk13", $infoz13 );?>'>ทดสอบ วอ./กษ./กวก.13</a>
+	<a class="btnPrint" href='<?php echo resolvePrinterURI("vo_gs_gvg_13", $infoz13 );?>'>ทดสอบ วอ./กษ./กวก.13</a>
 </div>
 <div>
-	<a class="btnPrint" href='<?php echo resolvePrinterURI("vk_ks_kvk14", $infoz14 );?>'>ทดสอบ วอ./กษ./กวก.14</a>
+	<a class="btnPrint" href='<?php echo resolvePrinterURI("vo_gs_gvg_14", $infoz14 );?>'>ทดสอบ วอ./กษ./กวก.14</a>
 </div>
 <?php
  	include(resolveHeader('includes/footer.php'));

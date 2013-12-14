@@ -1,11 +1,11 @@
 <?php
 $userinfo=User::get_client_by_id($request->get('userid'));
 $docData = array( 
-					"day" => $request->get_data('field'),
-					"month" => $request->get_data('field'),
-					"year" => $request->get_data('field'),
+					"day" => $request->get_day(),
+					"month" => $request->get_month(),
+					"year" => $request->get_year(),
 					"name"=>$userinfo['userrealname'], 
-					"age" => 20,//$userinfo['userage'],
+					"age" => $userinfo['userage'],
 					'nationality'=>$userinfo["usernationality"],
 					'taxno'=>$userinfo["usertaxid"],
 					'addrhouse'=>$userinfo["useraddrhouse"],

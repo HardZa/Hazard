@@ -37,6 +37,7 @@ if( isset($_GET['user']) && $_GET['user'] != ''){
 $data = $db->select('request',array('userid','requesttype','progress','requestid'),$condition);
 ?>
 <div class='container' >
+<div class="data-box">
 	<div class='page-header'>
 		<h1>รายการคำร้อง</h1>
 	</div>
@@ -89,8 +90,7 @@ $data = $db->select('request',array('userid','requesttype','progress','requestid
 	</div>
 	<button type="submit" class="btn btn-primary">ค้นหา</button>
 </form>
-</div>
-<div class='container'>
+<br><br>
 <?php
 
 echo "<table class='table'>
@@ -116,12 +116,12 @@ foreach( $data as $item ){
 			<td>$data_progress</td>
 			<td>
 				<form action='request_info.php' action='get'>
-					<button type='submit' name='id' value='".$item['requestid']."'>เปิดดู</button>
+					<button type='submit' class='btn btn-info btn-xs' name='id' value='".$item['requestid']."'>เปิดดู</button>
 				</form>
 			</td>
 		  </tr>";
 }
-echo "</table></div>";
+echo "</table></div></div>";
 
 
 ?> 

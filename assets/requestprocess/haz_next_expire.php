@@ -1,7 +1,7 @@
 <?php
 if(Input::get('approve') == '1')
 {
-	Certificate::load( doc('request')->get_data('hazardno') )->next_expire();
+	doc('request')->get_certificate_ref()->next_expire();
 	doc('request')->progress( PRG_COMPLETE );
 	doc('request')->save();
 	doc('request')->redirect();

@@ -6,7 +6,8 @@ if(!Permission::userListAllowed())
    Redirect::to(403);
 ?>
 <div class="container">
-<div class="page-header">
+<div class="data-box">
+<div class="head-box page-header">
     <h1>รายการผู้ใช้</h1>
 </div>
 
@@ -29,17 +30,17 @@ for($i=1;(DB::get_db()->select('users',null,'userid='.$i,1))!=null;$i++)
 	$type = User::group_to_string(User::get_group_by_id($user['userid']));
 	$url = "parent.location='edituser.php?user=";
 
-
 	echo "<tr>
 <td>$name</td>
 <td>$type</td>
-<td><button type='button' onclick=$url".$i."' >แก้ไข</button></td>
+<td><button type='button' class='btn btn-warning btn-sm' onclick=$url".$i."' >แก้ไข</button></td>
 </tr>";
 }
 
 ?>
 
 </table>
+</div>
 </div>
 <?php
 

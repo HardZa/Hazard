@@ -92,10 +92,15 @@ class Certificate
 		return $cert;
 	}
 
-	public static function get_user_certs($userid)
+	public static function get_user_certs($userid,$type = null)
 	{
+		$where = '';
+		if($type != null)
+		{
+			$where = " and certtype='$type' ";
+		}
 		$allcert=array();
-		$allid = DB::get_db()->select('certificate',array('certid'),'userid='.$userid);
+		$allid = DB::get_db()->select('certificate',array('certid'),'userid='.$userid.$where);
 		for($i =0 ; $i<count($allid);$i++)
 		{
 			$allcert[] = Certificate::load($allid[$i][0]);

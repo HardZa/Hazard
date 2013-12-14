@@ -2,10 +2,10 @@
 -- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 13, 2013 at 07:26 PM
--- Server version: 5.5.32
--- PHP Version: 5.4.19
+-- โฮสต์: 127.0.0.1
+-- เวลาในการสร้าง: 
+-- เวอร์ชั่นของเซิร์ฟเวอร์: 5.5.32
+-- รุ่นของ PHP: 5.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `hazarddb`
+-- ฐานข้อมูล: `hazarddb`
 --
 CREATE DATABASE IF NOT EXISTS `hazarddb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `hazarddb`;
@@ -25,7 +25,7 @@ USE `hazarddb`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `certificate`
+-- โครงสร้างตาราง `certificate`
 --
 
 CREATE TABLE IF NOT EXISTS `certificate` (
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `certificate` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
--- Dumping data for table `certificate`
+-- dump ตาราง `certificate`
 --
 
 INSERT INTO `certificate` (`certid`, `certno`, `userid`, `expdate`, `certtype`, `jsondata`) VALUES
@@ -59,7 +59,7 @@ INSERT INTO `certificate` (`certid`, `certno`, `userid`, `expdate`, `certtype`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `certificate_running_no`
+-- โครงสร้างตาราง `certificate_running_no`
 --
 
 CREATE TABLE IF NOT EXISTS `certificate_running_no` (
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `certificate_running_no` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `certificate_running_no`
+-- dump ตาราง `certificate_running_no`
 --
 
 INSERT INTO `certificate_running_no` (`certtype`, `no`) VALUES
@@ -84,7 +84,7 @@ INSERT INTO `certificate_running_no` (`certtype`, `no`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `picture`
+-- โครงสร้างตาราง `picture`
 --
 
 CREATE TABLE IF NOT EXISTS `picture` (
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `picture` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `picture`
+-- dump ตาราง `picture`
 --
 
 INSERT INTO `picture` (`picid`, `requestid`, `pictype`, `picname`) VALUES
@@ -105,7 +105,7 @@ INSERT INTO `picture` (`picid`, `requestid`, `pictype`, `picname`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `request`
+-- โครงสร้างตาราง `request`
 --
 
 CREATE TABLE IF NOT EXISTS `request` (
@@ -116,22 +116,23 @@ CREATE TABLE IF NOT EXISTS `request` (
   `progress` int(11) NOT NULL,
   `certid` int(11) NOT NULL,
   `certidref` int(11) NOT NULL,
+  `date` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`requestid`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `request`
+-- dump ตาราง `request`
 --
 
-INSERT INTO `request` (`requestid`, `userid`, `requesttype`, `jsondata`, `progress`, `certid`, `certidref`) VALUES
-(1, 4, 1, '{"hazardtype":"3","hazardfor":"u0e19u0e33u0e40u0e02u0e49u0e32","hazardname":"u0e19u0e49u0e33u0e04u0e27u0e22","solchem":"/u0e45-","businessname":"/u0e33u0e44u0e14","producername":"u0e33u0e14u0e33","importername":"u0e40u0e33u0e40u0e33","agentname":"u0e33u0e40u0e33","detailpackage":"u0e40u0e33u0e40","typeforuse":"u0e33u0e40u0e33"}', 0, 0, 0),
-(2, 4, 1, '{"hazardtype":"2","hazardfor":"u0e19u0e33u0e40u0e02u0e49u0e32","hazardname":"fee","solchem":"","businessname":"","producername":"","importername":"","agentname":"","detailpackage":"","typeforuse":"","file1":"THIRD-I - WIN_20131113_232529.JPG","picarr":""}', 0, 0, 0),
-(3, 4, 0, '{"group":"3","purposefirst":"u0e19u0e33u0e40u0e02u0e49u0e32","hazardname":"u0e19u0e49u0e33u0e40u0e1bu0e25u0e48u0e32","hazardformulation":"H2O","businessname":"u0e40u0e19u0e2au0e40u0e25","producer":"u0e44u0e17u0e22u0e04u0e39u0e48u0e1fu0e49u0e32","importer":"u0e2du0e32u0e01u0e07","saleman":"u0e2du0e32u0e21u0e32","container":"u0e02u0e27u0e14u0e40u0e1bu0e4au0e1bu0e0bu0e35u0e48","purpose":"u0e01u0e34u0e19u0e01u0e34u0e19","picarr":"["sohee4.jpg"]"}', 1, 0, 0);
+INSERT INTO `request` (`requestid`, `userid`, `requesttype`, `jsondata`, `progress`, `certid`, `certidref`, `date`) VALUES
+(1, 4, 1, '{"hazardtype":"3","hazardfor":"u0e19u0e33u0e40u0e02u0e49u0e32","hazardname":"u0e19u0e49u0e33u0e04u0e27u0e22","solchem":"/u0e45-","businessname":"/u0e33u0e44u0e14","producername":"u0e33u0e14u0e33","importername":"u0e40u0e33u0e40u0e33","agentname":"u0e33u0e40u0e33","detailpackage":"u0e40u0e33u0e40","typeforuse":"u0e33u0e40u0e33"}', 0, 0, 0, '0000-00-00'),
+(2, 4, 1, '{"hazardtype":"2","hazardfor":"u0e19u0e33u0e40u0e02u0e49u0e32","hazardname":"fee","solchem":"","businessname":"","producername":"","importername":"","agentname":"","detailpackage":"","typeforuse":"","file1":"THIRD-I - WIN_20131113_232529.JPG","picarr":""}', 0, 0, 0, '0000-00-00'),
+(3, 4, 0, '{"group":"3","purposefirst":"u0e19u0e33u0e40u0e02u0e49u0e32","hazardname":"u0e19u0e49u0e33u0e40u0e1bu0e25u0e48u0e32","hazardformulation":"H2O","businessname":"u0e40u0e19u0e2au0e40u0e25","producer":"u0e44u0e17u0e22u0e04u0e39u0e48u0e1fu0e49u0e32","importer":"u0e2du0e32u0e01u0e07","saleman":"u0e2du0e32u0e21u0e32","container":"u0e02u0e27u0e14u0e40u0e1bu0e4au0e1bu0e0bu0e35u0e48","purpose":"u0e01u0e34u0e19u0e01u0e34u0e19","picarr":"["sohee4.jpg"]"}', 1, 0, 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usergroup_agriproduction`
+-- โครงสร้างตาราง `usergroup_agriproduction`
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_agriproduction` (
@@ -140,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `usergroup_agriproduction` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `usergroup_agriproduction`
+-- dump ตาราง `usergroup_agriproduction`
 --
 
 INSERT INTO `usergroup_agriproduction` (`userid`) VALUES
@@ -149,7 +150,7 @@ INSERT INTO `usergroup_agriproduction` (`userid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usergroup_cashier`
+-- โครงสร้างตาราง `usergroup_cashier`
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_cashier` (
@@ -158,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `usergroup_cashier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `usergroup_cashier`
+-- dump ตาราง `usergroup_cashier`
 --
 
 INSERT INTO `usergroup_cashier` (`userid`) VALUES
@@ -168,7 +169,7 @@ INSERT INTO `usergroup_cashier` (`userid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usergroup_client`
+-- โครงสร้างตาราง `usergroup_client`
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_client` (
@@ -191,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `usergroup_client` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `usergroup_client`
+-- dump ตาราง `usergroup_client`
 --
 
 INSERT INTO `usergroup_client` (`userid`, `userbirthdate`, `usernationality`, `usertaxid`, `useraddrhouse`, `useraddrvillage`, `useraddrdrive`, `useraddrroad`, `useraddrsubdistrict`, `useraddrdistrict`, `useraddrprovince`, `userpostalcode`, `userphone`, `userfax`, `useremail`) VALUES
@@ -202,7 +203,7 @@ INSERT INTO `usergroup_client` (`userid`, `userbirthdate`, `usernationality`, `u
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usergroup_hazcontrol`
+-- โครงสร้างตาราง `usergroup_hazcontrol`
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_hazcontrol` (
@@ -211,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `usergroup_hazcontrol` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `usergroup_hazcontrol`
+-- dump ตาราง `usergroup_hazcontrol`
 --
 
 INSERT INTO `usergroup_hazcontrol` (`userid`) VALUES
@@ -223,7 +224,7 @@ INSERT INTO `usergroup_hazcontrol` (`userid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usergroup_plantprotection`
+-- โครงสร้างตาราง `usergroup_plantprotection`
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_plantprotection` (
@@ -232,7 +233,7 @@ CREATE TABLE IF NOT EXISTS `usergroup_plantprotection` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `usergroup_plantprotection`
+-- dump ตาราง `usergroup_plantprotection`
 --
 
 INSERT INTO `usergroup_plantprotection` (`userid`) VALUES
@@ -243,7 +244,7 @@ INSERT INTO `usergroup_plantprotection` (`userid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usergroup_registrar`
+-- โครงสร้างตาราง `usergroup_registrar`
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_registrar` (
@@ -252,7 +253,7 @@ CREATE TABLE IF NOT EXISTS `usergroup_registrar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `usergroup_registrar`
+-- dump ตาราง `usergroup_registrar`
 --
 
 INSERT INTO `usergroup_registrar` (`userid`) VALUES
@@ -261,7 +262,7 @@ INSERT INTO `usergroup_registrar` (`userid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- โครงสร้างตาราง `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -274,7 +275,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
--- Dumping data for table `users`
+-- dump ตาราง `users`
 --
 
 INSERT INTO `users` (`userid`, `username`, `userpasssha1`, `userallowed`, `userrealname`) VALUES
