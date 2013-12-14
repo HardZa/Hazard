@@ -9,7 +9,7 @@
 		'no' => $cert->certno,
 		"day" => date_format($datecert,'d'),
 		"month" => get_month( date_format($datecert,'m') ),
-		"year" => date_format($datecert,'Y'),//$request->get_year(),
+		"year" => date_format($datecert,'Y') + 543,//$request->get_year(),
 		'name' => $user_info['userrealname'],
 		'nationality' => $user_info['usernationality'],
 		'taxno' => $user_info['usertaxid'],
@@ -36,7 +36,7 @@
 		'other'=>'',
 		'expday'=>$cert->get_exp_day(),
 		'expmonth'=>get_month($cert->get_exp_month()),
-		'expyear'=>$cert->get_exp_year(),
+		'expyear'=>$cert->get_exp_year() + 543,
 		'officername' => $me_info->get('userrealname')
 	);
 	

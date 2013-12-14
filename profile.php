@@ -98,72 +98,87 @@ if($user->is_group('client'))
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">วัน-เดือน-ปี เกิด</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'))[0]['userbirthdate']; ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php 
+	    		$tmp = DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'));
+	    		echo $tmp[0]['userbirthdate']; ?><label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">สัญชาติ</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'))[0]['usernationality']; ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php 
+	    		echo $tmp[0]['usernationality']; ?><label>
 	  	</div>
 	  	
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">เลขประจำตัวผู้เสียภาษี</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'))[0]['usertaxid']; ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php
+	    		echo $tmp[0]['usertaxid']; ?><label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">บ้านเลขที่</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'))[0]['useraddrhouse']; ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php 
+	    		echo $tmp[0]['useraddrhouse']; ?><label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">หมู่ที่</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'))[0]['useraddrvillage']; ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php 
+	    		echo $tmp[0]['useraddrvillage']; ?><label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">ตรอก/ซอย</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'))[0]['useraddrdrive']; ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php 
+	    		echo $tmp[0]['useraddrdrive']; ?><label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">ถนน</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'))[0]['useraddrroad']; ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php 
+	    		echo $tmp[0]['useraddrroad']; ?><label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">ตำบล/แขวง</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'))[0]['useraddrsubdistrict']; ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php 
+	    		echo $tmp[0]['useraddrsubdistrict']; ?><label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">อำเภอ/แขวง</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'))[0]['useraddrdistrict']; ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php 
+	    		echo $tmp[0]['useraddrdistrict']; ?><label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">จังหวัด</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'))[0]['useraddrprovince']; ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php
+	    		echo $tmp[0]['useraddrprovince']; ?><label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">รหัสไปรษณีย์</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'))[0]['userpostalcode']; ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php 
+	    		echo $tmp[0]['userpostalcode']; ?><label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">หมายเลขโทรศัพท์</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'))[0]['userphone']; ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php 
+	    		echo $tmp[0]['userphone']; ?><label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">หมายเลขโทรสาร</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'))[0]['userfax']; ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php 
+	    		echo $tmp[0]['userfax']; ?><label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">อีเมลล์</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'))[0]['useremail']; ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php 
+	    		echo $tmp[0]['useremail']; ?><label>
 	  	</div>
 
 

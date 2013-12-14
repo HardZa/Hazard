@@ -234,7 +234,7 @@ class Request
 
 	public function redirect()
 	{
-		Redirect::to( 'request_info.php?id='.( $this->get('requestid') ) );
+		Redirect::to( 'request/'.( $this->get('requestid') ) );
 	}
 
 	public function get_certificate()
