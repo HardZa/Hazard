@@ -34,7 +34,7 @@
 		'note'=>$request->get_data('note'),
 		'condition'=>'',
 		'expday'=>$cert->get_exp_day(),
-		'expmonth'=>$cert->get_exp_month(),
+		'expmonth'=>get_month( $cert->get_exp_month() ),
 		'expyear'=>$cert->get_exp_year() + 543,
 		'officername'=>$request->get_data('officername'),
 		'certid1'=>'',
