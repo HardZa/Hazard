@@ -5,6 +5,24 @@ switch (doc('type')) {
 	case VO_GS_GVG_1:
 		$ctype = VO_GS_GVG_2;
 		break;
+	case VO_GS_GVG_12:
+		if( doc('request')->get_data('purposefirst') == 'import' )
+			$ctype = VO_GS_GVG_14;
+		else
+			$ctype = VO_GS_GVG_13;
+		break;
+	case VO_1:
+		$ctype = VO_2;
+		break;
+	case VO_3:
+		$ctype = VO_4;
+		break;
+	case VO_5:
+		$ctype = VO_6;
+		break;
+	case VO_7:
+		$ctype = VO_8;
+		break;
 }
 if( doc('request')->get('progress') != PRG_COMPLETE )
 {
@@ -27,6 +45,24 @@ if( doc('request')->get('progress') != PRG_COMPLETE )
 		switch ( $ctype ) {
 			case VO_GS_GVG_2:
 				$file = 'vo_gs_gvg_2';
+				break;
+			case VO_GS_GVG_13:
+				$file = 'vo_gs_gvg_13';
+				break;
+			case VO_GS_GVG_14:
+				$file = 'vo_gs_gvg_14';
+				break;
+			case VO_2:
+				$file = 'vo2';
+				break;
+			case VO_4:
+				$file = 'vo4';
+				break;
+			case VO_6:
+				$file = 'vo6';
+				break;
+			case VO_8:
+				$file = 'vo8';
 				break;
 		}
 		$print_info = array();

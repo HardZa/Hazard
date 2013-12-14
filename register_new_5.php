@@ -113,7 +113,7 @@
 
     </div>
   </div>
-    <?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'ทะเบียนเลขที่' )); ?>
+    <?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'ทะเบียนเลขที่' , 'no_cert' => 'ไม่มีการลงทะเบียนไว้' )); ?>
   <!--<div class="form-group" >
     <label for="producerCountry" class="col-sm-4 control-label">ประเทศที่ผลิต</label>
     <div class="col-sm-8">
