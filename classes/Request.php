@@ -147,7 +147,7 @@ class Request
 
 	public function get_year()
 	{
-		return date_format( date_create( $this->get('date') ) , 'Y' ) + 543;
+		return date_format( date_create( $this->get('date') ) , 'Y' );
 	}
 
 	public function get_img_uri()

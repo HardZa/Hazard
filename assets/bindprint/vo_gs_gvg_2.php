@@ -3,14 +3,12 @@
 
 	$user_info = User::get_client_by_id($request->get('userid'));
 	$me_info = User::get_user();
-//var_dump($me_info);
-//	echo "realname";
-//	echo $me_info->get('username');
+	$cert = $request->get_certificate();
 	$print_info=array(
 		'no' => $request->get('requestid'),
-		'day' => '[unknown]',
-		'month' => '[unknown]',
-		'year' => '[unknown]',
+		"day" => $request->get_day(),
+		"month" => get_month( $request->get_month() ),
+		"year" => $request->get_year(),
 		'name' => $user_info['userrealname'],
 		'nationality' => $user_info['usernationality'],
 		'taxno' => $user_info['usertaxid'],
@@ -33,13 +31,12 @@
 		'importer' => $request->get_data('importer'),
 		'saleman' => $request->get_data('saleman'),
 		'purpose' => $request->get_data('purpose'),
-		'container' => $request->get_data('picarr'),
-		'other'=>'[unknown]',
-		'expday'=>'[unknown]',
-		'expmonth'=>'[unknown]',
-		'expyear'=>'[unknown]',
+		'container' => $request->get_data('container'),
+		'other'=>'',
+		'expday'=>$cert->get_exp_day(),
+		'expmonth'=>get_month($cert->get_exp_month()),
+		'expyear'=>$cert->get_exp_year(),
 		'officername' => $me_info->get('userrealname')
-		//'officername'=>'[unknown]'
 	);
 	
 ?>
