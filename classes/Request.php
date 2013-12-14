@@ -89,6 +89,8 @@ class Request
 	public static function load($id)
 	{
 		$row = ( DB::get_db()->select('request',null,"requestid='$id'") );
+		if( count($row) == 0 )
+			return null;
 		$row = $row[0];
 		return new Request( $row );
 	}

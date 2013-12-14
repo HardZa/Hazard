@@ -9,7 +9,7 @@
 		'no'=> $cert->certno,	
 		"day" => date_format($datecert,'d'),
 		"month" => get_month( date_format($datecert,'m') ),
-		"year" => date_format($datecert,'Y'),
+		"year" => date_format($datecert,'Y') + 543,
 		'certid'=> $cert->certno,		
 		'name'=>$user_info['userrealname'],
 		'nationality'=> $user_info['usernationality'],
@@ -44,7 +44,7 @@
 		'other'=>'-',
 		'expday'=>$cert->get_exp_day(),
 		'expmonth'=>get_month($cert->get_exp_month()),
-		'expyear'=>$cert->get_exp_year(),	
+		'expyear'=>$cert->get_exp_year() + 543,	
 		'officername'=> $cert->get_data('officername')
 	);
 
