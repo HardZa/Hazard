@@ -18,7 +18,7 @@ body{
 }
 .data-box{
 	background-color: #FAFAFA;
-	padding: 1px 30px 30px;
+	padding: 10px 30px 30px;
 	border-radius: 5px;
 	margin: 30px auto;
 }
@@ -134,12 +134,20 @@ body{
 }
 .dot1{
 	position: absolute;
-	background-color: white;
 	border-radius: 3px;
 	height: 50px;
 	width: 50px;
-	top: 50px;
-	left: 68px;
+	top: 56px;
+	left: 67px;
+}
+.dot1:hover{
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.21);
+	border-radius: 3px;
+	height: 50px;
+	width: 50px;
+	top: 56px;
+	left: 67px;
 }
 .arrow_box {
 	position: absolute;

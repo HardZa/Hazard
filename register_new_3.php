@@ -119,7 +119,7 @@
       		<input type="text" class="form-control" id="storeemail" name="storeemail" placeholder="E-mail" value="<?php echo Input::post('storeemail'); ?>">
     	</div>
   	</div>
-      <?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'ทะเบียนเลขที่' )); ?>
+      <?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'ทะเบียนเลขที่' , 'no_cert' => 'ไม่มีการลงทะเบียนไว้' )); ?>
 <!--    
   	<div class="form-group">
     	<label class="col-sm-4">โดยมีรายละเอียดดังนี้</label>
@@ -185,7 +185,7 @@
     <div class="row">
   	<div class="form-group">
     	<div class="col-sm-offset-4 col-sm-10">
-      		<button type="submit" class="btn btn-default">ส่งคำร้อง</button>
+      		<button type="submit" <?php printDisableWhenEmpty($certs); ?>  class="btn btn-success">ส่งคำร้อง</button>
     	</div>
   	</div>
     </div>

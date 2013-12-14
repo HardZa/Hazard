@@ -60,10 +60,18 @@ if(Input::Exists())
 
 ?>
 
+<style type="text/css">
+div.mid {
+position: relative;
+left: 500;
+}
+</style>
+
+<div class='container'>
+<div class="data-box">
 <div class="page-header">
     <h1>ข้อมูลผู้ใช้</h1>
 </div>
-
 <?php
 
 if($user->is_group('client'))
@@ -179,9 +187,9 @@ if($user->is_group('client'))
 		      	<input type="password" class="form-control" id="newpassword2" name="newpassword2" placeholder="พาสเวอร์ใหม่อีกครั้ง" >
 		    </div>
 	 	</div>
-
-	 <button type="edit" class="btn btn-primary col-sm-offset-3">แก้ไข</button>
-
+	 <div style="margin:25px 5px 15px 260px">
+	 	<button type="edit" class="btn btn-primary col-sm-offset-3">แก้ไข</button>
+	 </div>
  	<?php
 }
 else
@@ -223,12 +231,15 @@ else
 		      	<input type="password" class="form-control" id="newpassword2" name="newpassword2" placeholder="พาสเวอร์ใหม่อีกครั้ง" >
 		    </div>
 	 	</div>
+	 <div style="margin:25px 5px 15px 260px">
+		<button type="edit" class="btn btn-primary col-sm-offset-3">แก้ไข</button>
+	</div>
+	<?php
+ }
+ ?>
+</div>
+</div>
 
-	 <button type="edit" class="btn btn-primary col-sm-offset-3">แก้ไข</button>
-
- 	<?php
-}
-
-
+<?php
 include(resolveHeader('includes/footer.php'));
 ?>

@@ -15,7 +15,7 @@
       <?php }
       else
         { ?>
-          <div class="col-sm-8">คุณยังไม่มีใบที่สามารถต่ออายุได้</div>
+          <div class="col-sm-8"><?php echo doc('no_cert'); ?></div>
       <?php } ?>
       </div>
 </div>
