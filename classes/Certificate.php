@@ -37,7 +37,7 @@ class Certificate
 
 	public function is_expired()
 	{
-		return false;
+		return date_create($this->expdate)->diff( date_create( date('Y-m-d') ) )->invert == 0;
 	}
 
 	public function get_exp_day()
@@ -52,6 +52,13 @@ class Certificate
 	public function get_exp_year()
 	{
 		return (string)(int)date_format(date_create($this->expdate), 'Y');
+	}
+
+	public function get_data($s)
+	{
+		if( isset($this->jsondata[$s]) )
+			return $this->jsondata[$s];
+		return 'not have';
 	}
 
 	public static function create($userid,$certtype,$jsondata)

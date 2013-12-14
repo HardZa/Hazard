@@ -3,6 +3,8 @@
 	include(resolveHeader('includes/header.php'));
     include(resolveHeader('includes/upload_head.php')); 
 
+	if(!Permission::requestSubmissionAllowed())
+   Redirect::to(403);
     if(Input::exists('post'))
     {    
 		$validate = new Validate();
@@ -136,10 +138,9 @@
 </div> 
 
 </div>
-<button type="submit" id="cheat" >ปุ่มโกง</button>
-
 <script type='text/javascript'>
-$("#cheat").on("click",function(){
+
+$(document).bind('keydown', 'alt+f1', function assets() {
   $("#hazardname").val("Acetonitrile ; Methylcyanide");
   $("#hazardformulation").val("C2H3N");
   $("#businessname").val("75-05-8");

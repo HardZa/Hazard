@@ -4,6 +4,35 @@ class Request
 {
 	private $_data;
 
+	public static function get_print_type($type)
+	{
+		$ctype = -1;
+		switch (doc('type')) {
+			case VO_GS_GVG_1:
+				$ctype = VO_GS_GVG_2;
+				break;
+			case VO_GS_GVG_12:
+				if( doc('request')->get_data('purposefirst') == 'import' )
+					$ctype = VO_GS_GVG_14;
+				else
+					$ctype = VO_GS_GVG_13;
+				break;
+			case VO_1:
+				$ctype = VO_2;
+				break;
+			case VO_3:
+				$ctype = VO_4;
+				break;
+			case VO_5:
+				$ctype = VO_6;
+				break;
+			case VO_7:
+				$ctype = VO_8;
+				break;
+		}
+		return $ctype;
+	}
+
 	public static function type_to_string($type)
 	{
 		switch ($type) {

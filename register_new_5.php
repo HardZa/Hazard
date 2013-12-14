@@ -3,6 +3,8 @@
 	include(resolveHeader('includes/header.php'));
 	include(resolveHeader('includes/upload_head.php')); 
   
+  if(!Permission::requestSubmissionAllowed())
+   Redirect::to(403);
     if(Input::exists('post'))
     {    
 		$validate = new Validate();
@@ -195,10 +197,8 @@
 </div>
 </div>
 
-<button type="submit" id="cheat" >ปุ่มโกง</button>
-
 <script type='text/javascript'>
-$("#cheat").on("click",function(){
+$(document).bind('keydown', 'alt+f1', function assets() {
   $("#storename").val("บริษัท ป.เคมีเทค จำกัด");
   $("#storehouse").val("249");
   $("#storevillage").val("5");

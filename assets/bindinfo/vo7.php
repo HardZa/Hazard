@@ -1,11 +1,12 @@
 <?php
 $userinfo=User::get_client_by_id($request->get('userid'));
+$cert = $request->get_certificate_ref();
 $docData = array( 
 					"day" => $request->get_day(),
-					"month" => $request->get_month(),
+					"month" => get_month( $request->get_month() ),
 					"year" => $request->get_year(),
 					"name"=>$userinfo['userrealname'], 
-					"age" => 20,//$userinfo['userage'],
+					"age" => $userinfo['userage'],
 					'nationality'=>$userinfo["usernationality"],
 					'taxno'=>$userinfo["usertaxid"],
 					'addrhouse'=>$userinfo["useraddrhouse"],
@@ -33,8 +34,8 @@ $docData = array(
 					'purpose'=>$request->get_data('purpose'),
 					'purpose_other'=>$request->get_data('purpose_other'),
 					'hazardno'=>$request->get_data('certidref'),
-					'hazardname'=>55,//$get_hname_by_certi_id('certidref'),
-					'businessname'=>66,//$get_bname_by_certi_id('certidref'),
+					'hazardname'=>$cert->get_data('hazardname'),//$get_hname_by_certi_id('certidref'),
+					'businessname'=>$cert->get_data('businessname'),//$get_bname_by_certi_id('certidref'),
 					
 					
 					'quantity'=>$request->get_data('quantity'),

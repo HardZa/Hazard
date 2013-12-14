@@ -12,6 +12,7 @@
 	<script src="<?php echo resolveURIHeader("lib/jquery/jquery-1.10.2.js");?>"></script>
 	<script src="<?php echo resolveURIHeader("lib/bootstrap/dist/js/bootstrap.js");?>"></script>
 	<script src="<?php echo resolveURIHeader("lib/jquery/jquery.printPage.js");?>"></script>
+	<script src="<?php echo resolveURIHeader("lib/jquery/jquery.hotkeys.js");?>"></script>
 
 	<script>  
   	$(document).ready(function(){
@@ -22,23 +23,22 @@
 
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	<div style="margin:0px 0px 0px 90px">
+	<div style="margin:0px 0px 0px 40px">
         <a class="navbar-brand" href="<?php echo resolveURIHeader("/");?>">
-          	<img src="<?php echo resolveURIHeader("image/cl-logo-32p.png");?>"></img>
+          	<img src="<?php echo resolveURIHeader("image/logo.png");?>"></img>
           	<?php if(User::is_session_exist()) {
           		echo "&nbsp;สวัสดี &nbsp;"; 
           		echo User::get_user()->get("userrealname");} ?>
         </a>
     </div>
-    <div class="container">
-        <div class="collapse navbar-collapse pull-right">
-          <ul class="nav navbar-nav">
+    <div class="collapse navbar-collapse pull-right"">
+ 	    <ul class="nav navbar-nav">
        <!--     <li class="active"><a href="login">login</a></li> -->
 			<?php
 				$user = User::get_user();
 				if( !isset($user) || $user == null ) {
+			//		<li><a href="?php echo resolveURIHeader("login");?">ลงชื่อเข้าระบบ</a></li>
 			?>
-					<li><a href="<?php echo resolveURIHeader("login");?>">ลงชื่อเข้าระบบ</a></li>
 			<?php
 				}
 				else{
@@ -51,8 +51,8 @@
 					}
 					else if(User::get_user()->is_group('client')){
 			?>
-						<li><a href="<?php echo resolveURIHeader("profile");?>">แก้ไขข้อมูลส่วนตัว</a></li>
 						<li><a href="<?php echo resolveURIHeader("request");?>">รายการคำร้อง</a></li>
+						<li><a href="<?php echo resolveURIHeader("profile");?>">แก้ไขข้อมูลส่วนตัว</a></li>
 						<li><a href="<?php echo resolveURIHeader("logout");?>">ออกจากระบบ</a></li>
 			<?php		
 					}
@@ -65,6 +65,5 @@
 				}
 			?>
           </ul>
-        </div><!--/.nav-collapse --> 
     </div>
 </div>	

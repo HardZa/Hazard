@@ -6,6 +6,10 @@
 
  <?php
  $request = Request::load( Input::get('id') );
+ 
+ if(!Permission::requestInfoAllowed($request))
+   Redirect::to(403);
+ 
  if( $request == null || $user == null )
  	Redirect::to(403);
  //$docData = array();
@@ -18,7 +22,9 @@
  	{
  		return '';
  	}
- 	return $cert->get_exp_day() . '-' . $cert->get_exp_month() . '-' . $cert->get_exp_year();
+ 	if( $cert->is_expired() )
+ 		return 'หมดอายุแล้ว';
+ 	return 'หมดอายุวันที่ '.$cert->get_exp_day() . '-' . $cert->get_exp_month() . '-' . ( $cert->get_exp_year() + 543 );
  }
  
  function printPic($type)
@@ -27,7 +33,7 @@
  	$pics = $request->get_pics_by_type($type);
  	if( count($pics) != 0 )
  	{
- 		echo '<div class="row" style="margin:20px 10px 0px;">';
+ 		echo '<div class="row" style="margin:20px 10px 30px;">';
  		echo '<div class="row"><label class="col-sm-3 control-label">'.Picture::type_to_string($type).'</label></div>';
  		echo '<div class="row">';
  		foreach ($pics as $pic) {
@@ -64,9 +70,9 @@
 		</div>
 	</div>	
 </section>
-<section>
+<section class="doc-sec">
 	<div class="container">
-		<div class="data-box">
+		<div class="shadow-box data-box">
 			<div class="row">
 			<?php
 			$docData = array('progress' => $request->get('progress'),
@@ -77,13 +83,21 @@
 			include( resolveHeader('route_info.php') );
 			?>
 			</div>
-
-			<?php
-				printPic(PIC_DOC_ATTACH);
-				printPic(PIC_TEST_ATTACH);
-				printPic(PIC_BILL);
-			?>
-
+		</div>
+	</div>
+</section>	
+<section>
+	<div class="container">
+		<?php
+			printPic(PIC_DOC_ATTACH);
+			printPic(PIC_TEST_ATTACH);
+			printPic(PIC_BILL);
+		?>
+	</div>
+</section>
+<section>
+	<div class="container">
+		<div class="well">
 			<div class="row">
 			<?php
 			$docData = array('progress' => $request->get('progress'),
@@ -94,10 +108,9 @@
 			include( resolveHeader('route_show_request.php') );
 			?>
 			</div>
-		<div>
+		</div>
 	</div>
-</section>	
-
+</section>
  <?php
  include(resolveHeader('includes/footer.php'));
  ?>

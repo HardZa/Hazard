@@ -18,15 +18,18 @@ body{
 }
 .data-box{
 	background-color: #FAFAFA;
-	padding: 10px 30px 30px;
+	padding: 40px 30px;
 	border-radius: 5px;
-	margin: 30px auto;
+	margin: 30px auto 50px;
+}
+.shadow-box{
+	box-shadow: 3px 10px 5px #888888;
 }
 .navbar{ 
     height: 50px;  
 }
 .navbar-brand {
-	padding: 10px;
+	padding: 5px;
 }
 .navbar-header{
 	padding-left: 160px;
@@ -125,6 +128,10 @@ body{
 	height: 450px;
 	background-color: #f5c570;
 	margin-bottom: 40px;
+	border-bottom: 40px solid #DBA85C;
+}
+.doc-sec{
+	border-bottom: 40px solid #E4CFB0;
 }
 .request-flow{
 	top: 100px;
@@ -246,4 +253,23 @@ body{
 	left: 900px;
 	width: 117px;
 	height: 104px;
+}
+.banking-icon{
+	background-image: url("../image/Money-Transfer-128.png");
+	width: 128px;
+	height:128px;
+	top: -50px;
+	left: 240px;
+	position: absolute;
+}
+.lab-icon{
+	background-image: url("../image/Hospital-Lab-128.png");
+	width: 128px;
+	height:128px;
+	top: -50px;
+	left: 240px;
+	position: absolute;
+}
+.approve-gruop{
+	margin-right: 100px;
 }

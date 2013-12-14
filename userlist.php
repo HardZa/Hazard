@@ -2,6 +2,8 @@
 require_once('core/init.php');
 include(resolveHeader('includes/header.php'));
 
+if(!Permission::userListAllowed())
+   Redirect::to(403);
 ?>
 <div class="container">
 <div class="data-box">
@@ -11,7 +13,7 @@ include(resolveHeader('includes/header.php'));
 
 <table class="table">
 <tr>
-<th>ชื่อ-สกุล</th>
+<th>ชื่อผู้ใช้</th>
 <th>ประเภทผู้ใช้</th>
 <th>แก้ไข</th>
 </tr>

@@ -26,6 +26,7 @@ function delRow(picname)
 }
 function uploadFile()
 {
+	//alert("Eiei "+<?php //echo "'".resolvePictureURI('../includes/upload.php')."'" ?>);
 	var file = _('file1').files[0];
 	if(file.size>8388608)
 	{
@@ -39,7 +40,7 @@ function uploadFile()
 	ajax.addEventListener("load",completeHandler,false);
 	ajax.addEventListener("error",errorHandler,false);
 	ajax.addEventListener("abort",abortHandler,false);
-	ajax.open("POST","includes/upload.php");
+	ajax.open("POST",<?php echo "'".resolvePictureURI('../includes/upload.php')."'" ?>);
 	ajax.send(formdata);
 	_("progressBar").hidden=0;
 }
@@ -69,9 +70,10 @@ function gentable(picnameja)
 	//new cell picname bootstrap
 	var cellb1=document.createElement("div");
 	cellb1.className="col-md-8";
-	cellb1.innerHTML='<a target="_blank" href="'+"<?php echo resolvePictureURI('"+picnameja+"'); ?>"+'">'+picnameja+'</a>';
+	cellb1.innerHTML='<a target="_blank" href="http://localhost/Hazard/upload/'+picnameja+'">'+picnameja+'</a>';
+	//alert('<a target="_blank" href="http://localhost/Hazard/upload/'+picnameja+'">'+picnameja+'</a>');
 	rowb.appendChild(cellb1);
-	//new cell btn bootstrap
+	//new cell btn bootstrap http://localhost/Hazard/upload/sohee.jpg
 	var cellb2=document.createElement("div");
 	cellb2.className="col-md-1 col-md-offset-1";
 	var element2 = document.createElement("button");
@@ -85,7 +87,9 @@ function gentable(picnameja)
 
 }
 function completeHandler(event)
-{	_("progressBar").value=100;
+{	//alert(event.target.responseText);
+	//alert(<?php //echo "'".resolvePictureURI('upload/')."'" ?>);
+	_("progressBar").value=100;
 	_("progressBar").hidden=1;
 	if(event.target.responseText=="-1")
 	{
