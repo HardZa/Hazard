@@ -1,7 +1,7 @@
 <?php
  	require_once('core/init.php');
 	include(resolveHeader('includes/header.php'));
-    include(resolveHeader('includes/upload_head.php')); 
+  include(resolveHeader('includes/upload_head.php')); 
 
 	if(!Permission::requestSubmissionAllowed())
    Redirect::to(403);
