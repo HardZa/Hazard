@@ -74,40 +74,39 @@ function showTabtab()
 	<div class="col-md-1"></div>
 	<div class="col-md-10">
 	<div class="col-md-4">
-	       <div class="block-option" >
-                <a href="<?php echo resolveURIHeader('request/new/4'); ?>" class="block-link" style="text-decoration:none;">
-                    <div class="block-option-image">
-                       <img src="<?php echo resolveURIHeader("image/edit_user.png");  ?>" class="img-circle">  
-                    </div>
-                    <div align="center">
-                       <br>
-                       <h4>ขออนุญาตผลิตวัตถุอันตราย</h4>
-                    </div>
-                </a>
-            </div>
+       <div class="block-option" >
+            <a href="<?php echo resolveURIHeader('request/new/1'); ?>" class="block-link" style="text-decoration:none;">
+				<div class ="block-option-image">
+					<img src="<?php echo resolveURIHeader("image/Message-Add-128.png");  ?>" class="img-circle">
+				</div>
+				<div class="block-option-text">
+				<br>
+					<h4>ขอขึ้นทะเบียนวัตถุอันตราย</h4>
+				</div>
+			</a>
+        </div>
 	</div>
     <div class="col-md-4">            
             <div class="block-option">
-                <a href="<?php echo resolveURIHeader('request/new/5'); ?>" class="block-link" style="text-decoration:none;">
+                <a href="<?php echo resolveURIHeader('request/new/3'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
                     </div>
-                    <div align="center">
-                       <br>                    
-                       <h4>ขออนุญาตนำเข้าวัตถุอันตราย</h4>
+                    <div class="block-option-text">
+                       <h4>ขออนุญาตผลิตหรือนำเข้าตัวอย่างวัตถุอันตราย</h4>
                     </div>
                 </a>
             </div>
 	</div>
     <div class="col-md-4">
             <div class="block-option">
-                <a href="<?php echo resolveURIHeader('request/new/6'); ?>" class="block-link" style="text-decoration:none;">
+                <a href="<?php echo resolveURIHeader('request/new/2'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
                     </div>
-                    <div align="center">
+                    <div class="block-option-text">
                        <br>
-                       <h4>ขออนุญาตส่งออกวัตถุอันตราย</h4>
+                       <h4>ขอต่ออายุทะเบียนวัตถุอันตราย</h4>
                     </div>
                 </a>
             </div>
@@ -121,7 +120,7 @@ function showTabtab()
                     <div class ="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
                     </div>
-                    <div align="center">
+                    <div class="block-option-text">
                        <br>
                        <h4>ขออนุญาตครอบครองวัตถุอันตราย</h4>
                     </div>
@@ -130,39 +129,39 @@ function showTabtab()
 	</div>
     <div class="col-md-3">
             <div class="block-option">
-                <a href="<?php echo resolveURIHeader('request/new/1'); ?>" class="block-link" style="text-decoration:none;">
-                    <div class ="block-option-image">
-                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+				<a href="<?php echo resolveURIHeader('request/new/4'); ?>" class="block-link" style="text-decoration:none;">
+                    <div class="block-option-image">
+                       <img src="<?php echo resolveURIHeader("image/edit_user.png");  ?>" class="img-circle">  
                     </div>
-                    
-                    <div align="center">
+                    <div class="block-option-text">
                        <br>
-                       <h4>ขอขึ้นทะเบียนวัตถุอันตราย</h4>
+                       <h4>ขออนุญาตผลิตวัตถุอันตราย</h4>
                     </div>
                 </a>
             </div>
 	</div>
     <div class="col-md-3">
             <div class="block-option">
-                <a href="<?php echo resolveURIHeader('request/new/2'); ?>" class="block-link" style="text-decoration:none;">
+                <a href="<?php echo resolveURIHeader('request/new/6'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
                     </div>
-                    <div align="center">
+                    <div class="block-option-text">
                        <br>
-                       <h4>ขอต่ออายุทะเบียนวัตถุอันตราย</h4>
+                       <h4>ขออนุญาตส่งออกวัตถุอันตราย</h4>
                     </div>
                 </a>
             </div>
 	</div>
     <div class="col-md-3">
             <div class="block-option">
-                <a href="<?php echo resolveURIHeader('request/new/3'); ?>" class="block-link" style="text-decoration:none;">
+                <a href="<?php echo resolveURIHeader('request/new/5'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
                     </div>
-                    <div align="center">
-                       <h4>ขออนุญาตผลิตหรือนำเข้าตัวอย่างวัตถุอันตราย</h4>
+                    <div class="block-option-text">
+                       <br>                    
+                       <h4>ขออนุญาตนำเข้าวัตถุอันตราย</h4>
                     </div>
                 </a>
             </div>

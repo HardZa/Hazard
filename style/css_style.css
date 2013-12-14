@@ -94,6 +94,17 @@ body{
 .user-container{
 	margin: 60px auto;
 }
+.block-option-text{
+	background-color: rgba(0, 0, 0, 0.04);
+	width: 192px;
+	border-radius: 3px;
+	height: 120px;
+	padding: 20px;
+	top: 140px;
+	left: 15px;
+	position: absolute;
+	text-align: center;
+}
 .block-link{
 	text-decoration:none;
 	color: #2E2E2E;
@@ -109,9 +120,9 @@ body{
 	color: #eff0f2;
 	margin: 9px 27px 9px 0px;
 	padding: 26px;
-	background-color: #BDBDBD;
+	background-color: #E6E6E6;
 	border: 1px solid #d8d8d8;
-	border-radius: 5px;
+	border-radius: 3px;
 }
 .block-option:hover{
 	width: 192px;
@@ -119,9 +130,9 @@ body{
 	color: #FAFAFA;
 	margin: 9px 27px 9px 0px;
 	padding: 26px;
-	background-color: #FAAC58;
+	background-color: #CACACA;
 	border: 1px solid #;
-	border-radius: 5px;
+	border-radius: 3px;
 }
 .button-regis{
 	margin-right: 16px;
