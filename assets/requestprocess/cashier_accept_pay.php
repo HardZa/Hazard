@@ -12,6 +12,7 @@ if(Input::get('approve') == '1')
 	if( $ctype != -1 )
 	{
 		$cert = Certificate::create(doc('request')->get('userid'), $ctype ,doc('request')->get('jsondata'));
+		$cert->set_data('create_date',date('Y-m-d'));
 		doc('request')->set('certid',$cert->certid );
 	}
 	doc('request')->save();

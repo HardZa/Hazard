@@ -51,7 +51,7 @@
 		'certid1'=>'',
 		'hazardname1'=>'',
 		'businessname1'=>'',
-		'hazardno1'=>'',
+		'hazardno1'=>''
 	);
 	
 ?>

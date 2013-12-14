@@ -4,11 +4,12 @@
 	$user_info = User::get_client_by_id($request->get('userid'));
 	$me_info = User::get_user();
 	$cert = $request->get_certificate();
+	$datecert = date_create( $cert->get_data('create_date') );
 	$print_info=array(
 		'no' => $request->get('requestid'),
-		"day" => $request->get_day(),
-		"month" => get_month( $request->get_month() ),
-		"year" => $request->get_year(),
+		"day" => date_format($datecert,'d'),
+		"month" => get_month( date_format($datecert,'m') ),
+		"year" => date_format($datecert,'Y'),//$request->get_year(),
 		'name' => $user_info['userrealname'],
 		'nationality' => $user_info['usernationality'],
 		'taxno' => $user_info['usertaxid'],
