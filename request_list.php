@@ -83,7 +83,7 @@ function showTabtab()
         <tr>
         <td>
             <div class="block-option">
-                <a href="register.php" class="block-link" style="text-decoration:none;">
+                <a href="<?php echo resolveURIHeader('request/new/4'); ?>" class="block-link" style="text-decoration:none;">
                     <div class="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/edit_user.png");  ?>" class="img-circle">  
                     </div>
@@ -96,7 +96,7 @@ function showTabtab()
         </td>           
        <td>
             <div class="block-option">
-                <a href="register.php" class="block-link" style="text-decoration:none;">
+                <a href="<?php echo resolveURIHeader('request/new/5'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
                     </div>
@@ -109,7 +109,7 @@ function showTabtab()
         </td>
         <td>
             <div class="block-option">
-                <a href="register.php" class="block-link" style="text-decoration:none;">
+                <a href="<?php echo resolveURIHeader('request/new/6'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
                     </div>
@@ -124,7 +124,7 @@ function showTabtab()
         <tr>
         <td>
             <div class="block-option">
-                <a href="register.php" class="block-link" style="text-decoration:none;">
+                <a href="<?php echo resolveURIHeader('request/new/7'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
                     </div>
@@ -137,7 +137,7 @@ function showTabtab()
         </td>
         <td>
             <div class="block-option">
-                <a href="register.php" class="block-link" style="text-decoration:none;">
+                <a href="<?php echo resolveURIHeader('request/new/1'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
                     </div>
@@ -150,7 +150,7 @@ function showTabtab()
         </td>
         <td>
             <div class="block-option">
-                <a href="register.php" class="block-link" style="text-decoration:none;">
+                <a href="<?php echo resolveURIHeader('request/new/2'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
                     </div>
@@ -161,6 +161,22 @@ function showTabtab()
                 </a>
             </div>
         </td>
+    </tr>
+    <tr>
+    	<td>
+            <div class="block-option">
+                <a href="<?php echo resolveURIHeader('request/new/3'); ?>" class="block-link" style="text-decoration:none;">
+                    <div class ="block-option-image">
+                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+                    </div>
+                    <div align="center">
+                       <br>
+                       <h4>ขออนุญาตผลิตหรือนำเข้าตัวอย่างวัตถุอันตราย</h4>
+                    </div>
+                </a>
+            </div>
+        </td>
+    </tr>
     </table>
 	</div>    
 
