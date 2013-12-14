@@ -38,9 +38,11 @@
  		echo '<div class="row">';
  		foreach ($pics as $pic) {
  			echo '<div class="col-sm-3">';
+ 				echo '<a href="' . resolveURIHeader('pic/'.$pic->file) .'">';
 	 			echo '<img src="';
 	 			echo resolveURIHeader( $pic->get_uri() );
 	 			echo '" width="200" height="200"></img>';
+	 			echo '</a>';
  			echo '</div>';
  		}
  		echo '</div>';
@@ -56,13 +58,13 @@
 		<div class="request-flow">
 			<div class="dot1">		
 			</div>
-			<div class="arrow_box">
+			<!--<div class="arrow_box">
 				<h4>
 					<span class="glyphicon glyphicon-search"></span>
 					(<?php echo $request->get_status();?>)
 					<?php echo $cexp;?>
 				</h4>
-			</div>
+			</div>-->
 			<div class="flow-msg-head">
 				<h4>สถานะคำร้อง <?php echo $request->get_type(); ?> </h4>
 			</div>

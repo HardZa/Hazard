@@ -212,8 +212,8 @@ $(document).bind('keydown', 'alt+f1', function assets() {
   $("#storedistrict").val("บางพลัด");
   $("#storeprovince").val("กรุงเทพ");
   $("#storepostalcode").val("10700");
-  $("#storephone").val("0-2424-9438 , 0-2433-2348 , 0-2433-2026 , 0-2435-5778-9");
-  $("#storefax").val("0-2434-6103 , 0-2886-5239");
+  $("#storephone").val("0-2424-9438");//, 0-2433-2348 , 0-2433-2026 , 0-2435-5778-9");
+  $("#storefax").val("0-2434-6103");// , 0-2886-5239");
   $("#storespecialist").val("นาย สมบัติ  เหสกุล");
   $("#orderCountry").val("ไทย");
   $("#quantity").val("200 แกลลอน");
