@@ -33,7 +33,7 @@
 		'importer' => $request->get_data('importer'),
 		'saleman' => $request->get_data('saleman'),
 		'purpose' => $request->get_data('purpose'),
-		'container' => $request->get_data('picarr'),
+		'container' => $request->get_data('container'),
 		'other'=>'[unknown]',
 		'expday'=>'[unknown]',
 		'expmonth'=>'[unknown]',
