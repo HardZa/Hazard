@@ -4,6 +4,7 @@ body{
 	height: 100%;
 	background-color: #F3E2A9;
 }
+
 .mod{
 	height: 970px;
 }
@@ -98,25 +99,26 @@ body{
 	color: #2E2E2E;
 }
 .block-option-image{
-	margin-left:26px;
-	margin-top: 20px;
+
+	margin-left: 0px;
+	margin-top: 0px;
 }
 .block-option{
-	width: 213px;
-	height: 280px;
+	width: 192px;
+	height: 252px;
 	color: #eff0f2;
-	margin: 10px 30px 10px 0px;
-	padding: 10px;
+	margin: 9px 27px 9px 0px;
+	padding: 26px;
 	background-color: #BDBDBD;
 	border: 1px solid #d8d8d8;
 	border-radius: 5px;
 }
 .block-option:hover{
-	width: 213px;
-	height: 280px;
+	width: 192px;
+	height: 252px;
 	color: #FAFAFA;
-	margin: 10px 30px 10px 0px;
-	padding: 10px;
+	margin: 9px 27px 9px 0px;
+	padding: 26px;
 	background-color: #FAAC58;
 	border: 1px solid #;
 	border-radius: 5px;

@@ -55,15 +55,6 @@ function showTabtab()
 		table.hidden = 1;
 		textbtn.innerHTML="&nbsp;+&nbsp;";
 	}
-
-	
-	/*var rowcount=table.rows.length;
-	var row1=table.insertRow(rowcount);
-	var cell1=row1.insertCell(0);
-
-	var element = document.createElement("label");
-	element.innerHTML="อิอิ";
-	cell1.appendChild(element);*/
 }
 </script>
 
@@ -79,10 +70,11 @@ function showTabtab()
 
 	<div hidden="1" name="tabtab" id="tabtab">
 	
-	<table border = 0 align="center">
-        <tr>
-        <td>
-            <div class="block-option">
+<div class="row">
+	<div class="col-md-1"></div>
+	<div class="col-md-10">
+	<div class="col-md-4">
+	       <div class="block-option" >
                 <a href="<?php echo resolveURIHeader('request/new/4'); ?>" class="block-link" style="text-decoration:none;">
                     <div class="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/edit_user.png");  ?>" class="img-circle">  
@@ -93,21 +85,21 @@ function showTabtab()
                     </div>
                 </a>
             </div>
-        </td>           
-       <td>
+	</div>
+    <div class="col-md-4">            
             <div class="block-option">
                 <a href="<?php echo resolveURIHeader('request/new/5'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
                     </div>
                     <div align="center">
-                       <br>
+                       <br>                    
                        <h4>ขออนุญาตนำเข้าวัตถุอันตราย</h4>
                     </div>
                 </a>
             </div>
-        </td>
-        <td>
+	</div>
+    <div class="col-md-4">
             <div class="block-option">
                 <a href="<?php echo resolveURIHeader('request/new/6'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
@@ -119,10 +111,11 @@ function showTabtab()
                     </div>
                 </a>
             </div>
-        </td>
-        </tr>
-        <tr>
-        <td>
+	</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
             <div class="block-option">
                 <a href="<?php echo resolveURIHeader('request/new/7'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
@@ -134,21 +127,22 @@ function showTabtab()
                     </div>
                 </a>
             </div>
-        </td>
-        <td>
+	</div>
+    <div class="col-md-3">
             <div class="block-option">
                 <a href="<?php echo resolveURIHeader('request/new/1'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
                     </div>
+                    
                     <div align="center">
                        <br>
                        <h4>ขอขึ้นทะเบียนวัตถุอันตราย</h4>
                     </div>
                 </a>
             </div>
-        </td>
-        <td>
+	</div>
+    <div class="col-md-3">
             <div class="block-option">
                 <a href="<?php echo resolveURIHeader('request/new/2'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
@@ -160,25 +154,21 @@ function showTabtab()
                     </div>
                 </a>
             </div>
-        </td>
-    </tr>
-    <tr>
-    	<td>
+	</div>
+    <div class="col-md-3">
             <div class="block-option">
                 <a href="<?php echo resolveURIHeader('request/new/3'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
                     </div>
                     <div align="center">
-                       <br>
                        <h4>ขออนุญาตผลิตหรือนำเข้าตัวอย่างวัตถุอันตราย</h4>
                     </div>
                 </a>
             </div>
-        </td>
-    </tr>
-    </table>
-	</div>    
+	</div>
+</div>    
+</div>
 
 </div>
 </div>
