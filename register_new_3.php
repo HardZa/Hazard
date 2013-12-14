@@ -118,40 +118,46 @@
       		<input type="text" class="form-control" id="storeemail" name="storeemail" placeholder="E-mail" value="<?php echo Input::post('storeemail'); ?>">
     	</div>
   	</div>
-
+ <div class="form-group" >
+    	<label for="certidref" class="col-sm-4 control-label">ทะเบียนเลขที่</label>
+    	<div class="col-sm-8">
+      		<input type="text" class="form-control" id="certidref" name="certidref" placeholder="ทะเบียนเลขที่" value="<?php echo Input::post('certidref'); ?>">
+    	</div>
+  	</div>
+<!--    
   	<div class="form-group">
     	<label class="col-sm-4">โดยมีรายละเอียดดังนี้</label>
  	</div>
  	<div class="form-group" >
     	<label for="hazardname" class="col-sm-4">๑. ชื่อวัตถุอันตราย</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="hazardname" name="hazardname" placeholder="ชื่อวัตถุอันตราย" value="<?php echo Input::post('hazardname'); ?>">
+      		<input type="text" class="form-control" id="hazardname" name="hazardname" placeholder="ชื่อวัตถุอันตราย" value="<?php //echo Input::post('hazardname'); ?>">
     	</div>
   	</div>
   	<div class="form-group" >
     	<label for="hazardformulation" class="col-sm-4" >๒. สูตรอัตราส่วนผสมของสารสำคัญและลักษณะ</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="hazardformulation" name="hazardformulation" placeholder="สูตรอัตราส่วนผสมของสารสำคัญและลักษณะ" value="<?php echo Input::post('hazardformulation'); ?>">
+      		<input type="text" class="form-control" id="hazardformulation" name="hazardformulation" placeholder="สูตรอัตราส่วนผสมของสารสำคัญและลักษณะ" value="<?php //echo Input::post('hazardformulation'); ?>">
     	</div>
   	</div>
   	<div class="form-group" >
     	<label for="businessname" class="col-sm-4" >๓. ชื่อทางการค้าหรือหมายเลขรหัส</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="businessname" name="businessname" placeholder="ชื่อทางการค้าหรือหมายเลขรหัส" value="<?php echo Input::post('businessname'); ?>">
+      		<input type="text" class="form-control" id="businessname" name="businessname" placeholder="ชื่อทางการค้าหรือหมายเลขรหัส" value="<?php //echo Input::post('businessname'); ?>">
     	</div>
   	</div>
   	<div class="form-group" >
     	<label for="producer" class="col-sm-4" >๔. ชื่อผู้ผลิตและแหล่งผลิต</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="producer" name="producer" placeholder="ชื่อผู้ผลิตและแหล่งผลิต" value="<?php echo Input::post('producer'); ?>">
+      		<input type="text" class="form-control" id="producer" name="producer" placeholder="ชื่อผู้ผลิตและแหล่งผลิต" value="<?php //echo Input::post('producer'); ?>">
     	</div>
   	</div>
   	<div class="form-group" >
     	<label for="importer" class="col-sm-4" >๕. ชื่อผู้นำเข้า</label>
     	<div class="col-sm-8">
-      		<input type="text" class="form-control" id="importer" name="importer" placeholder="ชื่อผู้นำเข้า" value="<?php echo Input::post('importer'); ?>">
+      		<input type="text" class="form-control" id="importer" name="importer" placeholder="ชื่อผู้นำเข้า" value="<?php //echo Input::post('importer'); ?>">
     	</div>
-  	</div>
+  	</div> -->
   	<div class="form-group" >
     	<label for="quantity" class="col-sm-4" >๖. ปริมาณ</label>
     	<div class="col-sm-8">

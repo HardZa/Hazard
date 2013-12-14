@@ -84,7 +84,16 @@
     	<div class="col-sm-8">
       		<input type="text" class="form-control" id="producer" name="producer" placeholder="ชื่อผู้ผลิตและแหล่งผลิต" value="<?php echo Input::post('producer'); ?>">
     	</div>
+        
   	</div>
+
+    <div class="form-group" >
+    	<label for="productname" class="col-sm-4" >จาก</label>
+    <div class="col-sm-8">
+      		<input type="text" class="form-control" id="productname" name="productname" placeholder="จาก" value="<?php echo Input::post('productname'); ?>">
+    	</div>
+    </div>
+    
   	<div class="form-group" >
     	<label for="importer" class="col-sm-4" >๕. ชื่อผู้นำเข้า</label>
     	<div class="col-sm-8">

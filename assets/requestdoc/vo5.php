@@ -137,7 +137,7 @@
 </div>
 
 <div class="row">
-	<div class="col-md-5 col-md-offset-6"><b>( ลายมือชื่อ ) ……………………………… ผู้ขออนุญาต</b></div>
+	<div class="col-md-5 col-md-offset-6"><b>( ลายมือชื่อ ) <u><?php echo doc('name')?></u> ผู้ขออนุญาต</b></div>
 </div>
 
 <div class="row">
@@ -149,74 +149,4 @@
 ที่เอกสารประกอบคําขออนุญาตมีการเปลี่ยนแปลงข้อความไปจากฉบับเดิมที่ได้เคยมอบไว้</div>
 	<div class="col-md-8 col-md-offset-1">(๔)  ให้ใส่เครื่องหมาย <b>/</b> ในช่อง <b>X</b> หน้าข้อความที่ต้องการ</div>
 </div>
-<div class="row">
-	<br>
-	<div class="col-md-13">-------------------------------------------------------------------------------------------------------------------------------------------------------------</div>
-	<br>
-</div>
-<div class="row">
-	<div class="col-md-11"><b>สถานที่เก็บรักษาวัตถุอันตรายแห่งที่๒ ชื่อ </b> <?php echo doc('storename')?></div>
-</div>
-<div class="row">
-	<div class="col-md-3"><b>ตั้งอยู่เลขที่</b> <?php echo doc('storehouse')?></div>
-	<div class="col-md-2"><b>หมู่ที่</b> <?php echo doc('storevillage')?></div>
-	<div class="col-md-2"><b>ตรอก/ซอย</b> <?php echo doc('storedrive')?></div>
-	<div class="col-md-3"><b>ถนน</b> <?php echo doc('storeroad')?></div>
-</div>
-<div class="row">
-	<div class="col-md-3"><b>ตําบล/แขวง</b> <?php echo doc('storesubdistrict')?></div>
-	<div class="col-md-3"><b>อําเภอ/เขต</b> <?php echo doc('storedistrict')?></div>
-	<div class="col-md-3"><b>จังหวัด</b> <?php echo doc('storeprovince')?></div>
-</div>
-<div class="row">
-	<div class="col-md-3"><b>รหัสไปรษณีย์</b> <?php echo doc('storepostalcode')?></div>
-	<div class="col-md-3"><b>โทรศัพท์</b> <?php echo doc('storephone')?></div>
-	<div class="col-md-3"><b>โทรสาร</b> <?php echo doc('storefax')?></div>
-</div>
-
-<br>
-<div class="row">
-	<div class="col-md-11"><b>ชื่อผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบสําหรับการผลิต (ในกรณีที่มีประกาศฯ ออกตามความในมาตรา ๒๐ (๒)
-แห่งพระราชบัญญัติวัตถุอันตราย พ.ศ. ๒๕๓๕ กําหนดให้ต้องมีผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบฯ)</b>
-	<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('producerspecialist')?>
-	</div>
-</div>
-
-<br><br>
-
-<div class="row">
-	<div class="col-md-11"><b>สถานที่เก็บรักษาวัตถุอันตรายแห่งที่๓ ชื่อ </b> <?php echo doc('storename')?></div>
-</div>
-<div class="row">
-	<div class="col-md-3"><b>ตั้งอยู่เลขที่</b> <?php echo doc('storehouse')?></div>
-	<div class="col-md-2"><b>หมู่ที่</b> <?php echo doc('storevillage')?></div>
-	<div class="col-md-2"><b>ตรอก/ซอย</b> <?php echo doc('storedrive')?></div>
-	<div class="col-md-3"><b>ถนน</b> <?php echo doc('storeroad')?></div>
-</div>
-<div class="row">
-	<div class="col-md-3"><b>ตําบล/แขวง</b> <?php echo doc('storesubdistrict')?></div>
-	<div class="col-md-3"><b>อําเภอ/เขต</b> <?php echo doc('storedistrict')?></div>
-	<div class="col-md-3"><b>จังหวัด</b> <?php echo doc('storeprovince')?></div>
-</div>
-<div class="row">
-	<div class="col-md-3"><b>รหัสไปรษณีย์</b> <?php echo doc('storepostalcode')?></div>
-	<div class="col-md-3"><b>โทรศัพท์</b> <?php echo doc('storephone')?></div>
-	<div class="col-md-3"><b>โทรสาร</b> <?php echo doc('storefax')?></div>
-</div>
-
-<br>
-
-<div class="row">
-	<div class="col-md-11"><b>ชื่อผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบสําหรับการผลิต (ในกรณีที่มีประกาศฯ ออกตามความในมาตรา ๒๐ (๒)
-แห่งพระราชบัญญัติวัตถุอันตราย พ.ศ. ๒๕๓๕ กําหนดให้ต้องมีผู้เชี่ยวชาญหรือบุคลากรเฉพาะรับผิดชอบฯ)</b>
-	<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;<?php echo doc('producerspecialist')?>
-	</div>
-</div>
-
-
-<br>
-
-
 </div>

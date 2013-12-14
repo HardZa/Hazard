@@ -1,11 +1,11 @@
 <?php
-$userinfo=User::get_client_by_id($user->get('userid'));
+$userinfo=User::get_client_by_id($request->get('userid'));
 $docData = array( 
-					"day" => 12/*$request->get_data('field')*/,
-					"month" => 4/*$request->get('month')*/,
-					"year" => 1993/*$request->get('year')*/,
+					"day" => $request->get_data('day'),
+					"month" => $request->get_data('month'),
+					"year" => $request->get_data('year'),
 					"name"=>$userinfo['userrealname'], 
-					"age" => 20/*$userinfo['userage']*/,
+					"age" => 20,//$userinfo['userage'],
 					'nationality'=>$userinfo["usernationality"],
 					'taxno'=>$userinfo["usertaxid"],
 					'addrhouse'=>$userinfo["useraddrhouse"],
@@ -19,17 +19,8 @@ $docData = array(
 					'addrphone'=>$userinfo["userphone"],
 					'addrfax'=>$userinfo["userfax"],
 					'addremail'=>$userinfo["useremail"],
-					'group'=>$request->get_data('group'),
-					'purposefirst'=>$request->get_data('purposefirst'),
-					'hazardname'=>$request->get_data("hazardname"),
-					'hazardformulation'=>$request->get_data('hazardformulation'),
-					'businessname'=>$request->get_data('businessname'),
-					'producer'=>$request->get_data('producer'),
-					'productname'=>$request->get_data('productname'),
-					'importer'=>$request->get_data('importer'),
-					'saleman'=>$request->get_data('saleman'),
-					'container'=>$request->get_data('container'),
-					'purpose'=>$request->get_data('purpose')
+					'hazardid'=>$request->get_data('hazardno')
+					
 				);
 				
 ?>

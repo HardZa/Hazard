@@ -123,7 +123,7 @@
 		  	</label>
 		  	</div>
     		<div class="col-sm-4">
-      			<input type="text" class="form-control" id="purpose" name="purpose" placeholder="(ระบุ)" >
+      			<input type="text" class="form-control" id="purpose_other" name="purpose_other" placeholder="(ระบุ)" >
     		</div>
     	</div>
   	</div>

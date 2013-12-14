@@ -184,7 +184,18 @@
 
     </div>
   </div>
-
+ <div class="form-group" >
+    	<label for="certidref" class="col-sm-4 control-label">ทะเบียนเลขที่</label>
+    	<div class="col-sm-8">
+      		<input type="text" class="form-control" id="certidref" name="certidref" placeholder="ทะเบียนเลขที่" value="<?php echo Input::post('certidref'); ?>">
+    	</div>
+  	</div>
+    <div class="form-group" >
+    <label for="quantity" class="col-sm-4 control-label">ปริมาณ</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="quantity" name="quantity" placeholder="ปริมาณ" value="<?php echo Input::post('quantity'); ?>">
+    </div>
+  </div>
 <div class="form-group" >
     <label for="note" class="col-sm-4 control-label">หมายเหตุ</label>
     <div class="col-sm-8">
