@@ -41,6 +41,51 @@ class Config
 					  PRG_ACCEPT_PAY => 'flow4step/flow_3_4.png',
 					  PRG_PRINTING => 'flow4step/flow_4_4.png',
 					  PRG_COMPLETE => 'flow4step/flow_c_4.png',
+					  PRG_REJECT => 'flow4step/flow_r_4.png'),
+			VO_3 =>
+				array(
+					  PRG_CHK_DOC => 'flow4step/flow_1_4.png',
+					  PRG_CONSIDER => 'flow4step/flow_2_4.png',
+					  PRG_WAIT_PAY => 'flow4step/flow_3_4.png',
+					  PRG_ACCEPT_PAY => 'flow4step/flow_3_4.png',
+					  PRG_PRINTING => 'flow4step/flow_4_4.png',
+					  PRG_COMPLETE => 'flow4step/flow_c_4.png',
+					  PRG_REJECT => 'flow4step/flow_r_4.png'),
+			VO_5 =>
+				array(
+					  PRG_CHK_DOC => 'flow4step/flow_1_4.png',
+					  PRG_CONSIDER => 'flow4step/flow_2_4.png',
+					  PRG_WAIT_PAY => 'flow4step/flow_3_4.png',
+					  PRG_ACCEPT_PAY => 'flow4step/flow_3_4.png',
+					  PRG_PRINTING => 'flow4step/flow_4_4.png',
+					  PRG_COMPLETE => 'flow4step/flow_c_4.png',
+					  PRG_REJECT => 'flow4step/flow_r_4.png'),
+			VO_7 =>
+				array(
+					  PRG_CHK_DOC => 'flow4step/flow_1_4.png',
+					  PRG_CONSIDER => 'flow4step/flow_2_4.png',
+					  PRG_WAIT_PAY => 'flow4step/flow_3_4.png',
+					  PRG_ACCEPT_PAY => 'flow4step/flow_3_4.png',
+					  PRG_PRINTING => 'flow4step/flow_4_4.png',
+					  PRG_COMPLETE => 'flow4step/flow_c_4.png',
+					  PRG_REJECT => 'flow4step/flow_r_4.png'),
+			VO_GS_GVG_3 =>
+				array(
+					  PRG_CHK_DOC => 'flow4step/flow_1_4.png',
+					  PRG_CONSIDER => 'flow4step/flow_2_4.png',
+					  PRG_WAIT_PAY => 'flow4step/flow_3_4.png',
+					  PRG_ACCEPT_PAY => 'flow4step/flow_3_4.png',
+					  PRG_NEXT_EXPIRE => 'flow4step/flow_4_4.png',
+					  PRG_COMPLETE => 'flow4step/flow_c_4.png',
+					  PRG_REJECT => 'flow4step/flow_r_4.png'),
+			VO_GS_GVG_12 =>
+				array(
+					  PRG_CHK_DOC => 'flow4step/flow_1_4.png',
+					  PRG_CONSIDER => 'flow4step/flow_2_4.png',
+					  PRG_WAIT_PAY => 'flow4step/flow_3_4.png',
+					  PRG_ACCEPT_PAY => 'flow4step/flow_3_4.png',
+					  PRG_PRINTING => 'flow4step/flow_4_4.png',
+					  PRG_COMPLETE => 'flow4step/flow_c_4.png',
 					  PRG_REJECT => 'flow4step/flow_r_4.png')
 		),
 		'permission'=>true
