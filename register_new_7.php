@@ -13,7 +13,7 @@
 		$user = User::get_user();
         if($validate->passed())
         {
-            $r = Request::create_request($user->get('userid'),VO_7,$_POST);
+            $r = Request::create_request($user->get('userid'),VO_7,$_POST,$_POST['hazardno']);
 			$j;
 			for($j=0;$j<count($picarr);$j++)
 			{
@@ -23,6 +23,7 @@
         }
 		
     }
+    $certs = Certificate::get_user_certs( $user->get('userid') , VO_GS_GVG_2 );
 ?>
 <div class="container">
 <div class="data-box">
@@ -145,6 +146,7 @@
           <input type="text" class="form-control" id="area" name="area" placeholder="ตารางเมตร" value="<?php echo Input::post('area'); ?>">
       </div>
     </div>
+    <?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'ใบอนุญาต' )); ?>
   	<div class="form-group">
     	<label class="col-sm-10">พร้อมกันนี้ข้าพเจ้าได้ส่งมอบเอกสารประกอบคำขออนุญาต ดังต่อไปนี้</label>
  	</div>
@@ -203,7 +205,7 @@
     <div class="row">
  	<div class="form-group">
     	<div class="col-sm-offset-4 col-sm-10">
-      		<button type="submit" class="btn btn-default">ส่งคำร้อง</button>
+      		<button type="submit" <?php printDisableWhenEmpty($certs); ?> class="btn btn-default">ส่งคำร้อง</button>
     	</div>
   	</div>
     </div>
