@@ -3,6 +3,8 @@
 	include(resolveHeader('includes/header.php'));
     include(resolveHeader('includes/upload_head.php')); 
 
+	if(!Permission::requestSubmissionAllowed())
+   Redirect::to(403);
     if(Input::exists('post'))
     {    
 		$validate = new Validate();

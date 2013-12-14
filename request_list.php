@@ -1,8 +1,9 @@
 <?php
-
 require_once('core/init.php');
 include(resolveHeader('includes/header.php'));
 
+if(!Permission::canShowList())
+   Redirect::to(403);
 function translateProgress($progress){
 	return Request::progress_to_string($progress);
 }

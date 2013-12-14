@@ -4,7 +4,7 @@
  include(resolveHeader('includes/header.php'));
 
 $picName = array('pic1.jpg','pic2.jpg');
-
+	Redirect::to(403);
 ?>
 <div class="page-header">
     <h1>ทดสอบระบบ</h1>

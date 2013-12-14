@@ -2,6 +2,8 @@
 require_once('core/init.php');
 include(resolveHeader('includes/header.php'));
 
+if(!Permission::userEditAllowed())
+   Redirect::to(403);
 echo "<br><br>";
 
 if(Input::exists('post'))
@@ -16,13 +18,14 @@ if(Input::exists('post'))
 	{
 		$client_db['userbirthdate'] = Input::post('userbirthdate');
 		$client_db['usernationality'] = Input::post('usernationality');
-		$client_db['usertaxid'] = Input::post('useraddrhouse');	
+		$client_db['usertaxid'] = Input::post('usertaxid');	
+		$client_db['useraddrhouse'] = Input::post('useraddrhouse');
 		$client_db['useraddrvillage'] = Input::post('useraddrvillage');
-		$client_db['useraddrdrive'] = Input::post('useraddrdrive');
+		$client_db['useraddrdrive'] = Input::post('userdrive');
 		$client_db['useraddrroad'] = Input::post('useraddrroad');
-		$client_db['useraddrsubdistrict'] = Input::post('useraddrsubdistrict');
-		$client_db['useraddrdistrict'] = Input::post('useraddrdistrict');
-		$client_db['useraddrprovince'] = Input::post('useraddrprovince');
+		$client_db['useraddrsubdistrict'] = Input::post('usersubdistrict');
+		$client_db['useraddrdistrict'] = Input::post('userdistrict');
+		$client_db['useraddrprovince'] = Input::post('userprovince');
 		$client_db['userpostalcode'] = Input::post('userpostalcode');
 		$client_db['userphone'] = Input::post('userphone');
 		$client_db['userfax'] = Input::post('userfax');
@@ -62,14 +65,14 @@ if(Input::exists('get'))
 		<div class="form-group">
 	    	<label class="col-sm-3 control-label">ชื่อ-สกุล</label>
 	    	<div class="col-sm-6">
-	      		<input type="text" class="form-control" id="userrealname" name="userrealname" placeholder="DD-MM-YYYY" value="<?php echo $user['userrealname']?>" >
+	      		<input type="text" class="form-control" id="userrealname" name="userrealname" placeholder="ชื่อ-สกุล" value="<?php echo $user['userrealname']?>" >
 	    	</div>
 	  	</div>
 
 	  	<div class="form-group">
-	    	<label class="col-sm-3 control-label">วัน-เดือน-ปี เกิด</label>
+	    	<label class="col-sm-3 control-label">ปี-เดือน-วัน เกิด</label>
 	    	<div class="col-sm-6">
-	      		<input type="text" class="form-control" id="userbirthdate" name="userbirthdate" placeholder="DD-MM-YYYY" value="<?php echo $user['userbirthdate']?>" >
+	      		<input type="text" class="form-control" id="userbirthdate" name="userbirthdate" placeholder="YYYY-MM-DD" value="<?php echo $user['userbirthdate']?>" >
 	    	</div>
 	  	</div>
 
@@ -121,6 +124,13 @@ if(Input::exists('get'))
 	      	<input type="text" class="form-control" id="usersubdistrict" name="usersubdistrict" placeholder="ตำบล/แขวง" value="<?php echo $user['useraddrsubdistrict']?>" >
 	    </div>
  	</div>
+    
+    <div class="form-group" >
+    	<label for="userdistrict" class="col-sm-3 control-label">อำเภอ/เขต</label>
+	    <div class="col-sm-6">
+	      	<input type="text" class="form-control" id="userdistrict" name="userdistrict" placeholder="อำเภอ/เขต" value="<?php echo $user['useraddrdistrict']?>" >
+	    </div>
+ 	</div>
 
  	<div class="form-group" >
     	<label for="userprovince" class="col-sm-3 control-label">จังหวัด</label>
@@ -150,8 +160,13 @@ if(Input::exists('get'))
 	    </div>
  	</div>
 
-
-	 	<button type="edit" class="btn btn-primary col-sm-offset-2">แก้ไข</button>
+	<div class="form-group" >
+    	<label for="useremail" class="col-sm-3 control-label">E-Mail</label>
+	    <div class="col-sm-6">
+	      	<input type="text" class="form-control" id="useremail" name="useremail" placeholder="E-Mail" value="<?php echo $user['useremail']?>" >
+	    </div>
+ 	</div>
+	 	<button type="submit" class="btn btn-primary col-sm-offset-2">แก้ไข</button>
 
 	 	<?php
 	 }
@@ -174,7 +189,7 @@ if(Input::exists('get'))
 	    	</div>
 	  	</div>
 
-	  	<button type="edit" class="btn btn-primary col-sm-offset-2">แก้ไข</button>
+	  	<button type="submit" class="btn btn-primary col-sm-offset-2">แก้ไข</button>
 	  	<?php
 
 	 }

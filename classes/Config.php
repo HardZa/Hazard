@@ -33,7 +33,9 @@ class Config
 					  PRG_PRINTING => 'req1/6.jpg',
 					  PRG_COMPLETE => 'req1/7.jpg',
 					  PRG_REJECT => 'req1/8.jpg')
-		)
+					  
+		),
+		'permission'=>true
 	);
 
 	public static function get($path=null)
