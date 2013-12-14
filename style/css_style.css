@@ -131,7 +131,10 @@ body{
 	border-bottom: 40px solid #DBA85C;
 }
 .doc-sec{
-	border-bottom: 40px solid #E4CFB0;
+	border-bottom: 100px solid #E4CFB0;
+}
+.bottom-sec{
+	background-color: #FADDA6;
 }
 .request-flow{
 	top: 100px;
@@ -196,46 +199,6 @@ body{
 	border-radius: 4px;
 	position: absolute;
 	width: 180px;
-	height: 40px;
-}
-.flow-msg3{
-	padding: 10px;
-	left: 140px;
-	top: 240px;
-	background-color: white;
-	border-radius: 4px;
-	position: absolute;
-	width: 140px;
-	height: 40px;
-}
-.flow-msg4{
-	padding: 10px;
-	left: 380px;
-	top: 240px;
-	background-color: white;
-	border-radius: 4px;
-	position: absolute;
-	width: 140px;
-	height: 40px;
-}
-.flow-msg5{
-	padding: 10px;
-	left: 500px;
-	top: 125px;
-	background-color: white;
-	border-radius: 4px;
-	position: absolute;
-	width: 140px;
-	height: 40px;
-}
-.flow-msg6{
-	padding: 10px;
-	left: 630px;
-	top: 240px;
-	background-color: white;
-	border-radius: 4px;
-	position: absolute;
-	width: 140px;
 	height: 40px;
 }
 .register-page{

@@ -1,7 +1,7 @@
 <?php
  	require_once('core/init.php');
 	include(resolveHeader('includes/header.php'));
-    include(resolveHeader('includes/upload_head.php')); 
+  include(resolveHeader('includes/upload_head.php')); 
 
 	if(!Permission::requestSubmissionAllowed())
    Redirect::to(403);
@@ -120,6 +120,40 @@
       		<textarea class="form-control" rows="5" id="purpose" name="purpose" placeholder="ประเภทของการใช้" ><?php echo Input::post('purpose'); ?></textarea>
     	</div>
   	</div>
+
+
+    <div class="form-group">
+      <label class="col-sm-6">พร้อมนี้ข้าพเจ้าได้แนบเอกสารเพื่อประกอบการพิจราณา ดังนี้</label>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-8 col-sm-offset-1">
+      - รายการข้อมูลเพื่อการขึ้นทะเบียนวัตถุอันตราย ตามที่กรมวิชาการเกษตรประกาศกำหนด
+    </label>
+    </div>
+  <div class="form-group">
+    <label class="col-sm-6 col-sm-offset-1">
+        - แผนการทดลองประสิทธิภาพและพิษตกค้าง(ถ้ามี)
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-6 col-sm-offset-1">
+      - ตัวอย่างเอกสารหรือภาพถ่ายแสดงลักษณะหีบห่อหรือภาชนะบรรจุ
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-6 col-sm-offset-1">
+      - ตัวอย่างฉลากและใบแทรก
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-6 col-sm-offset-1">
+      - รายงานผลการวิเคราะห์ตัวอย่างวัตถุอันตราย
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 col-sm-offset-1">- อื่นๆ (ถ้ามี)</label>
+  </div>
+
     <div class="row">
     	<label class="col-sm-3 col-sm-offset-1 control-label">แนบไฟล์เอกสารที่เกี่ยวข้อง</label>
     	<?php include(resolveHeader('includes/upload_block.php')); ?>

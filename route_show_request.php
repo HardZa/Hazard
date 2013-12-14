@@ -30,8 +30,8 @@ else if($user->is_group('hazcontrol'))
 			$route_file = 'normal_approve.php';
 			break;
 		case PRG_CONSIDER:
-			set_doc('next_progress',PRG_WAIT_PAY);
-			$route_file = 'normal_approve.php';
+			//set_doc('next_progress',PRG_WAIT_PAY);
+			$route_file = 'haz_consider.php';
 			break;
 		case PRG_PRINTING:
 		case PRG_COMPLETE:
