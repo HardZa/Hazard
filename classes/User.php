@@ -245,8 +245,10 @@ class User{
 		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
 		$user_db_client = $rows[0];
 
-
-		return array_merge($user_db, $user_db_client);
+		$ret = array_merge($user_db, $user_db_client);
+		$diff = date_create( date('Y-m-d') )->diff( date_create( $ret['userbirthdate'] ) );
+		$ret['userage'] = $diff->format('%y');
+		return $ret;
 	}
 
 	public static function get_user_by_id($id)

@@ -7,13 +7,13 @@
     {    
 		$validate = new Validate();
         $validate->check($_POST,array(
-										  'hazardno'=> array('required'=>true)
+										  'certidref'=> array('required'=>true)
   									 )
 						);
 		$user = User::get_user();
         if($validate->passed())
         {
-            $r = Request::create_request($user->get('userid'),VO_GS_GVG_3,$_POST,$_POST['hazardno']);
+            $r = Request::create_request($user->get('userid'),VO_GS_GVG_3,$_POST,$_POST['certidref']);
 			$j;
 			for($j=0;$j<count($picarr);$j++)
 			{
@@ -30,6 +30,7 @@
 <div class="page-header">
     <h1>คำขอต่ออายุใบสำคัญการขึ้นทะเบียนวัตถุอันตราย</h1>
 </div>
+<form class="form-horizontal" role="form" method="post" action="">
 <?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'มีความประสงค์จะขอต่ออายุใบสำคัญการขึ้นทะเบียนวัตถุอันตรายเลขที่' )); ?>
 	<div class="form-group">
     	<label class="col-sm-6">พร้อมนี้ข้าพเจ้าได้แนบเอกสารเพื่อประกอบการพิจราณา ดังนี้</label>
