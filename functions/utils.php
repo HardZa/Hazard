@@ -24,6 +24,7 @@
  	if( count($e) == 0 ) echo 'disabled';
  }
 
+
  function fastRender( $file , $arr )
  {
  	global $docData;
@@ -92,6 +93,13 @@ function DMY_to_YMD($date)
 function YMD_to_DMY($date)
 {
 	return substr($date,8,2).'-'.substr($date,5,2).'-'.substr($date,0,4);
+}
+
+
+function fastClientNewLink($e,$printA,$printB)
+{
+	if( count($e) == 0 ) echo resolveURIHeader($printB);
+	else echo resolveURIHeader($printA);
 }
 
  
