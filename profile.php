@@ -1,4 +1,4 @@
- <?php
+<?php
  
 require_once('core/init.php');
 include(resolveHeader('includes/header.php'));
@@ -70,14 +70,15 @@ left: 500;
 <div class='container'>
 <div class="data-box">
 <div class="page-header">
-    <h1>ข้อมูลผู้ใช้</h1>
+    <h1><?php if($user!=NULL) { echo "ข้อมูลผู้ใช้"; } else { echo "ยังไม่ได้ล็อกอิน"; } ?></h1>
 </div>
 <?php
 
-if($user->is_group('client'))
+if($user!=NULL)
 {
-	//var_dump(DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'))[0]['userbirthdate']);
-	
+	if($user->is_group('client'))
+	{
+		//var_dump(DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'))[0]['userbirthdate']);
 
 	?>
 	<form class="form-horizontal" method="post" action="" role="form" >
@@ -206,9 +207,9 @@ if($user->is_group('client'))
 	 	<button type="edit" class="btn btn-primary col-sm-offset-3">แก้ไข</button>
 	 </div>
  	<?php
-}
-else
-{
+	}
+	else
+	{
 	?>
 	<form class="form-horizontal" method="post" action="" role="form" >
 		<div class="form-group">
@@ -249,12 +250,12 @@ else
 	 <div style="margin:25px 5px 15px 260px">
 		<button type="edit" class="btn btn-primary col-sm-offset-3">แก้ไข</button>
 	</div>
-	<?php
- }
- ?>
+<?php
+	}
+}
+?>
 </div>
 </div>
-
 <?php
 include(resolveHeader('includes/footer.php'));
 ?>
