@@ -24,8 +24,8 @@
  		return '';
  	}
  	if( $cert->is_expired() )
- 		return 'ใบอณุญาตหมดอายุ';
- 	return 'ใบอณุญาตหมดอายุ วันที่ '.$cert->get_exp_day() . ' ' . get_month($cert->get_exp_month()) . ' พ.ศ.' . ( $cert->get_exp_year() + 543 );
+ 		return 'ใบอนุญาตหมดอายุ';
+ 	return 'ใบอนุญาตหมดอายุ วันที่ '.$cert->get_exp_day() . ' ' . get_month($cert->get_exp_month()) . ' พ.ศ.' . ( $cert->get_exp_year() + 543 );
  }
  
  function printPic($type)
@@ -109,7 +109,11 @@
 			include( resolveHeader('route_show_request.php') );
 			?>
 			</div>
-	<?php echo $cexp;?>
+			<div class="row">
+				<div class="col-md-offset-1 text-danger"><h3>
+	<?php echo $cexp;?></h3>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
