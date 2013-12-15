@@ -228,8 +228,8 @@ if($user!=NULL)
 		      	<input type="password" class="form-control" id="newpassword2" name="newpassword2" placeholder="พาสเวอร์ใหม่อีกครั้ง" >
 		    </div>
 	 	</div>
-	 <div style="margin:25px 5px 15px 260px">
-	 	<button type="edit" class="btn btn-primary col-sm-offset-3">แก้ไข</button>
+	 <div style="margin:25px 0px 0px 595px">
+	 	<button type="edit" class="btn btn-primary">แก้ไข</button>
 	 </div>
 	 </form>
 <?php

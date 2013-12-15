@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>ระบบใบรับรองการนำเข้า ครอบครอง ส่งออก และขึ้นทะเบียนวัตถุอันตราย</title>
-	<link rel="shortcut icon" href="<?php echo resolveURIHeader("image/favicon.png")?>" type="image/png">
+	<link rel="shortcut icon" href="<?php echo resolveURIHeader("image/Hazard-favi-16.png")?>" type="image/png">
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/dist/css/bootstrap.css");?>">
 <!--	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/dist/css/bootstrap-theme.css");?>"> -->
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/non-responsive.css");?>">
