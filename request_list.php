@@ -88,25 +88,27 @@ function showTabtab()
 	</div>
     <div class="col-md-4">            
             <div class="block-option">
-                <a href="<?php echo resolveURIHeader('request/new/3'); ?>" class="block-link" style="text-decoration:none;">
+                <a href="<?php echo resolveURIHeader('request/new/2'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
                     </div>
                     <div class="block-option-text">
-                       <h4>ขออนุญาตผลิตหรือนำเข้าตัวอย่างวัตถุอันตราย</h4>
+                    	<br>
+                      <h4>ขอต่ออายุทะเบียนวัตถุอันตราย</h4>
                     </div>
                 </a>
             </div>
 	</div>
     <div class="col-md-4">
             <div class="block-option">
-                <a href="<?php echo resolveURIHeader('request/new/2'); ?>" class="block-link" style="text-decoration:none;">
+                <a href="<?php echo resolveURIHeader('request/new/3'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
                        <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
                     </div>
                     <div class="block-option-text">
                        <br>
-                       <h4>ขอต่ออายุทะเบียนวัตถุอันตราย</h4>
+                       <h4>ขออนุญาตผลิตหรือนำเข้าตัวอย่างวัตถุอันตราย</h4>
+                       
                     </div>
                 </a>
             </div>

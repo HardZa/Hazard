@@ -25,8 +25,8 @@
         }
 		
     }
-    $certs = Certificate::get_user_certs( $user->get('userid') , VO_GS_GVG_2 );
-    if(count($certs) == 0) Redirect::to(704);
+   // $certs = Certificate::get_user_certs( $user->get('userid') , VO_GS_GVG_2 );
+   // if(count($certs) == 0) Redirect::to(704);
 ?>
 <div class="container">
 <div class="data-box">
