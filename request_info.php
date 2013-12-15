@@ -55,7 +55,7 @@
 
  ?>
 <section class="top-sec">
-	<div class="container" style="width:1049px;">
+	<div class="container" style="width:1000px;">
 		<div class="request-flow">
 			<div class="dot1">		
 			</div>

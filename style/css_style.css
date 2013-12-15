@@ -1,6 +1,5 @@
 body{
 	padding: 0;
-	margin: 50px 0 0 0;
 	height: 100%;
 	background-color: #F3E2A9;
 }
@@ -12,7 +11,7 @@ body{
 }
 .home-container{
 	background: -webkit-radial-gradient(circle,#EBC697,#DB8E19);
-	height: 92%;
+	height: 100%;
 	position: absolute;
 	width: 100%;
 }
@@ -23,7 +22,7 @@ body{
 	background-color: #FAFAFA;
 	padding: 40px 30px;
 	border-radius: 5px;
-	margin: 30px auto 50px;
+	margin: 80px auto 50px;
 }
 .shadow-box{
 	box-shadow: 3px 10px 5px #888888;
@@ -36,14 +35,6 @@ body{
 }
 .navbar-header{
 	padding-left: 160px;
-}
-.vg-container {
-	padding: 30px 40px;
-	width: 1000px;
-	height: 1700px;
-	margin: 20px auto;
-	background-color: #C0C0C0;
-	border-radius: 5px;
 }
 .box{
 	border: 1px solid #cccccc;
@@ -154,7 +145,7 @@ body{
 .request-flow{
 	top: 130px;
 	height: 400px;
-	width: 1049px;
+	width: 1000px;
 	position: absolute;
 }
 .dot1{
