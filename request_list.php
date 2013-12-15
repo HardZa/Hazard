@@ -11,6 +11,14 @@ function translateProgress($progress){
 function translateRequestType($requesttype){
 	return Request::type_to_string($requesttype);
 }
+function for_print_icon($id)
+{
+	global $certs;
+	if( count($certs) != 0 )
+		echo resolveURIHeader("image/icon/icon_".$id."_1.png");
+	else
+		echo resolveURIHeader("image/icon/icon_".$id."_2.png");
+}
 
 $user = User::get_user();
 $db = DB::get_db();
@@ -34,7 +42,7 @@ if( isset($_GET['user']) && $_GET['user'] != ''){
 	$condition = $condition." and userid='".$_GET['user']."'";
 }
 
-
+$certs = Certificate::get_user_certs( $user->get('userid') , VO_GS_GVG_2 );
 $data = $db->select('request',array('userid','requesttype','progress','requestid'),$condition);
 ?>
 
@@ -77,7 +85,7 @@ function showTabtab()
        <div class="block-option" >
             <a href="<?php echo resolveURIHeader('request/new/1'); ?>" class="block-link" style="text-decoration:none;">
 				<div class ="block-option-image">
-					<img src="<?php echo resolveURIHeader("image/Message-Add-128.png");  ?>" class="img-circle">
+					<img src="<?php echo resolveURIHeader("image/icon/icon_1_1.png");  ?>" class="img-circle">
 				</div>
 				<div class="block-option-text">
 				<br>
@@ -90,7 +98,7 @@ function showTabtab()
             <div class="block-option">
                 <a href="<?php echo resolveURIHeader('request/new/2'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
-                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+                       <img src="<?php for_print_icon(2);  ?>" class="img-circle">
                     </div>
                     <div class="block-option-text">
                     	<br>
@@ -103,7 +111,7 @@ function showTabtab()
             <div class="block-option">
                 <a href="<?php echo resolveURIHeader('request/new/3'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
-                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+                       <img src="<?php for_print_icon(3);  ?>" class="img-circle">
                     </div>
                     <div class="block-option-text">
                        <br>
@@ -120,7 +128,7 @@ function showTabtab()
             <div class="block-option">
                 <a href="<?php echo resolveURIHeader('request/new/7'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
-                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+                       <img src="<?php for_print_icon(4);  ?>" class="img-circle">
                     </div>
                     <div class="block-option-text">
                        <br>
@@ -133,7 +141,7 @@ function showTabtab()
             <div class="block-option">
 				<a href="<?php echo resolveURIHeader('request/new/4'); ?>" class="block-link" style="text-decoration:none;">
                     <div class="block-option-image">
-                       <img src="<?php echo resolveURIHeader("image/edit_user.png");  ?>" class="img-circle">  
+                       <img src="<?php for_print_icon(5);  ?>" class="img-circle">  
                     </div>
                     <div class="block-option-text">
                        <br>
@@ -146,7 +154,7 @@ function showTabtab()
             <div class="block-option">
                 <a href="<?php echo resolveURIHeader('request/new/6'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
-                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+                       <img src="<?php for_print_icon(6);  ?>" class="img-circle">
                     </div>
                     <div class="block-option-text">
                        <br>
@@ -159,7 +167,7 @@ function showTabtab()
             <div class="block-option">
                 <a href="<?php echo resolveURIHeader('request/new/5'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
-                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+                       <img src="<?php for_print_icon(7);  ?>" class="img-circle">
                     </div>
                     <div class="block-option-text">
                        <br>                    
