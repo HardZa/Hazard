@@ -63,8 +63,8 @@ class DB
 		$err = mysql_error();
 		if( $err )
 		{
-			echo "SELECT $fill_field FROM `$table` " . DB::getWhenNotStringEmpty($conditions,'where ')
-				. $conditions.' '.DB::getWhenNotStringEmpty($limit,'limit ').$limit."<br>";
+			#echo "SELECT $fill_field FROM `$table` " . DB::getWhenNotStringEmpty($conditions,'where ')
+			#	. $conditions.' '.DB::getWhenNotStringEmpty($limit,'limit ').$limit."<br>";
 			throw new Exception("มีข้อผิดพลาดจากระบบฐานข้อมูล: ".$err);
 		}
 		while( $row = mysql_fetch_array($result) )
