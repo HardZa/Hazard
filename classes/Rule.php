@@ -45,15 +45,15 @@ class Rule
 		switch( $method )
 		{
 			case 'min':
-				return "$item so short !!";
+				return "$item สั้นเกินไป";
 			case 'max':
-				return "$item so long !!";
+				return "$item ยาวเกินไป";
 			case 'required':
-				return "we need $item !!";
+				return "กรุณากรอก $item";
 			case 'numeric':
-				return "$item should be number!!";
+				return "$item จะต้องเป็นตัวเลข";
 			case 'date':
-				return "$item should format DD-MM-YYYY";
+				return "$item จะต้องอยู่ในรูปแบบ DD-MM-YYYY";
 		}
 		return "";
 	}
