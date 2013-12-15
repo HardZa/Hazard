@@ -21,11 +21,12 @@ if(!Permission::userListAllowed())
 
 
 <?php
-for($i=1;(DB::get_db()->select('users',null,'userid='.$i,1))!=null;$i++)
+$alluser = DB::get_db()->select('users',null);
+
+for($i=1;$i<count($alluser);$i++)
 {
 
-	$row = DB::get_db()->select('users',null,'userid='.$i,1);
-	$user = $row[0];
+	$user = $alluser[$i];
 	$name = $user['username'];
 	$type = User::group_to_string(User::get_group_by_id($user['userid']));
 	$url = "parent.location='edituser.php?user=";
