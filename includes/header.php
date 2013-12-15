@@ -27,13 +27,13 @@
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div style="margin:0px 0px 0px 40px">
         <a class="navbar-brand" href="<?php echo resolveURIHeader("/");?>">
-          	<img src="<?php echo resolveURIHeader("image/logo.png");?>"></img>
+          	<img src="<?php echo resolveURIHeader("image/logo.png");?>">
           	<?php if(User::is_session_exist()) {
           		echo "&nbsp;สวัสดี &nbsp;"; 
           		echo User::get_user()->get("userrealname");} ?>
         </a>
     </div>
-    <div class="collapse navbar-collapse pull-right"">
+    <div class="collapse navbar-collapse pull-right">
  	    <ul class="nav navbar-nav">
        <!--     <li class="active"><a href="login">login</a></li> -->
 			<?php
