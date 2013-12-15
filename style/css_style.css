@@ -4,6 +4,12 @@ body{
 	height: 100%;
 	background-color: #F3E2A9;
 }
+.error-box{
+	position: absolute;
+	top: 120px;
+	left: 535px;
+	width: 300px;
+}
 .home-container{
 	background: -webkit-radial-gradient(circle,#EBC697,#DB8E19);
 	height: 92%;

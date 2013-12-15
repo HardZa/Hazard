@@ -39,31 +39,6 @@ if( $user == null && Input::exists() )
 	}
 }
 ?>
-
-<?php
-if( $user == null )
-{
-?>
-
-<?php
-	if( count($error_msgs) != 0 )
-	{
-?>
-<div style="background-color:crimson;color:white;border-bottom:solid black 1px;">
-	<strong>ลงชื่อเข้าระบบล้มเหลว</strong>
-	<ul>
-<?php
-		foreach($error_msgs as $error_message)
-		{
-			echo "		<li>".$error_message."\n";
-		}
-?>
-	</ul>
-</div>
-<?php
-	}
-?>
-
 <div class="home-container">
 		<div class="front-card">
 			<div class="front-welcome">
@@ -100,6 +75,31 @@ if( $user == null )
 					</table>
 				</form>
 			</div>
+			<?php
+				if( $user == null )
+				{
+			?>
+			<?php
+				if( count($error_msgs) != 0 )
+				{
+			?>
+				<div class="error-box">
+					<div class="alert alert-danger alert-dismissable">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+						<strong>ลงชื่อเข้าระบบล้มเหลว</strong>
+						<ul>
+					<?php
+							foreach($error_msgs as $error_message)
+							{
+								echo "		<li>".$error_message."\n";
+							}
+					?>
+						</ul>
+					</div>
+				</div>
+			<?php
+				}
+			?>
 		</div>
 </div>
 
