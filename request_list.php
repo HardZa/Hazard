@@ -60,118 +60,116 @@ function showTabtab()
 
 
 <div class='container'>
-<div class="data-box">
-	<div class='page-header'>
-		<h1>ส่งคำร้อง</h1>
-		<div style="margin:20px 0px 10px 50px">
-			แสดงรายละเอียดเพิ่มเติม <button type="button" class='btn btn-success btn-xs' onclick="showTabtab()" id="showbtn" name="showbtn">&nbsp;+&nbsp;</button>
+	<div class="data-box">
+		<div class='page-header'>
+			<h1>ส่งคำร้อง</h1>
+			<div style="margin:20px 0px 10px 50px">
+				แสดงรายละเอียดเพิ่มเติม <button type="button" class='btn btn-success btn-xs' onclick="showTabtab()" id="showbtn" name="showbtn">&nbsp;+&nbsp;</button>
+			</div>
 		</div>
+	<div hidden="1" name="tabtab" id="tabtab">	
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+			<div class="col-md-4">
+		       <div class="block-option" >
+		            <a href="<?php echo resolveURIHeader('request/new/1'); ?>" class="block-link" style="text-decoration:none;">
+						<div class ="block-option-image">
+							<img src="<?php echo resolveURIHeader("image/Message-Add-128.png");  ?>" class="img-circle">
+						</div>
+						<div class="block-option-text">
+						<br>
+							<h4>ขอขึ้นทะเบียนวัตถุอันตราย</h4>
+						</div>
+					</a>
+		        </div>
+			</div>
+		    <div class="col-md-4">            
+		            <div class="block-option">
+		                <a href="<?php echo resolveURIHeader('request/new/2'); ?>" class="block-link" style="text-decoration:none;">
+		                    <div class ="block-option-image">
+		                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+		                    </div>
+		                    <div class="block-option-text">
+		                    	<br>
+		                      <h4>ขอต่ออายุทะเบียนวัตถุอันตราย</h4>
+		                    </div>
+		                </a>
+		            </div>
+			</div>
+		    <div class="col-md-4">
+		            <div class="block-option">
+		                <a href="<?php echo resolveURIHeader('request/new/3'); ?>" class="block-link" style="text-decoration:none;">
+		                    <div class ="block-option-image">
+		                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+		                    </div>
+		                    <div class="block-option-text">
+		                       <br>
+		                       <h4>ขออนุญาตผลิตหรือนำเข้าตัวอย่างวัตถุอันตราย</h4>
+		                       
+		                    </div>
+		                </a>
+		            </div>
+			</div>
+		    </div>
+		</div>
+		<div class="row">
+		    <div class="col-md-3">
+		            <div class="block-option">
+		                <a href="<?php echo resolveURIHeader('request/new/7'); ?>" class="block-link" style="text-decoration:none;">
+		                    <div class ="block-option-image">
+		                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+		                    </div>
+		                    <div class="block-option-text">
+		                       <br>
+		                       <h4>ขออนุญาตครอบครองวัตถุอันตราย</h4>
+		                    </div>
+		                </a>
+		            </div>
+			</div>
+		    <div class="col-md-3">
+		            <div class="block-option">
+						<a href="<?php echo resolveURIHeader('request/new/4'); ?>" class="block-link" style="text-decoration:none;">
+		                    <div class="block-option-image">
+		                       <img src="<?php echo resolveURIHeader("image/edit_user.png");  ?>" class="img-circle">  
+		                    </div>
+		                    <div class="block-option-text">
+		                       <br>
+		                       <h4>ขออนุญาตผลิตวัตถุอันตราย</h4>
+		                    </div>
+		                </a>
+		            </div>
+			</div>
+		    <div class="col-md-3">
+		            <div class="block-option">
+		                <a href="<?php echo resolveURIHeader('request/new/6'); ?>" class="block-link" style="text-decoration:none;">
+		                    <div class ="block-option-image">
+		                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+		                    </div>
+		                    <div class="block-option-text">
+		                       <br>
+		                       <h4>ขออนุญาตส่งออกวัตถุอันตราย</h4>
+		                    </div>
+		                </a>
+		            </div>
+			</div>
+		    <div class="col-md-3">
+		            <div class="block-option">
+		                <a href="<?php echo resolveURIHeader('request/new/5'); ?>" class="block-link" style="text-decoration:none;">
+		                    <div class ="block-option-image">
+		                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
+		                    </div>
+		                    <div class="block-option-text">
+		                       <br>                    
+		                       <h4>ขออนุญาตนำเข้าวัตถุอันตราย</h4>
+		                    </div>
+		                </a>
+		            </div>
+			</div>
+		</div>    
 	</div>
 
-	<div hidden="1" name="tabtab" id="tabtab">
-	
-<div class="row">
-	<div class="col-md-1"></div>
-	<div class="col-md-10">
-	<div class="col-md-4">
-       <div class="block-option" >
-            <a href="<?php echo resolveURIHeader('request/new/1'); ?>" class="block-link" style="text-decoration:none;">
-				<div class ="block-option-image">
-					<img src="<?php echo resolveURIHeader("image/Message-Add-128.png");  ?>" class="img-circle">
-				</div>
-				<div class="block-option-text">
-				<br>
-					<h4>ขอขึ้นทะเบียนวัตถุอันตราย</h4>
-				</div>
-			</a>
-        </div>
 	</div>
-    <div class="col-md-4">            
-            <div class="block-option">
-                <a href="<?php echo resolveURIHeader('request/new/2'); ?>" class="block-link" style="text-decoration:none;">
-                    <div class ="block-option-image">
-                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
-                    </div>
-                    <div class="block-option-text">
-                    	<br>
-                      <h4>ขอต่ออายุทะเบียนวัตถุอันตราย</h4>
-                    </div>
-                </a>
-            </div>
-	</div>
-    <div class="col-md-4">
-            <div class="block-option">
-                <a href="<?php echo resolveURIHeader('request/new/3'); ?>" class="block-link" style="text-decoration:none;">
-                    <div class ="block-option-image">
-                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
-                    </div>
-                    <div class="block-option-text">
-                       <br>
-                       <h4>ขออนุญาตผลิตหรือนำเข้าตัวอย่างวัตถุอันตราย</h4>
-                       
-                    </div>
-                </a>
-            </div>
-	</div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-3">
-            <div class="block-option">
-                <a href="<?php echo resolveURIHeader('request/new/7'); ?>" class="block-link" style="text-decoration:none;">
-                    <div class ="block-option-image">
-                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
-                    </div>
-                    <div class="block-option-text">
-                       <br>
-                       <h4>ขออนุญาตครอบครองวัตถุอันตราย</h4>
-                    </div>
-                </a>
-            </div>
-	</div>
-    <div class="col-md-3">
-            <div class="block-option">
-				<a href="<?php echo resolveURIHeader('request/new/4'); ?>" class="block-link" style="text-decoration:none;">
-                    <div class="block-option-image">
-                       <img src="<?php echo resolveURIHeader("image/edit_user.png");  ?>" class="img-circle">  
-                    </div>
-                    <div class="block-option-text">
-                       <br>
-                       <h4>ขออนุญาตผลิตวัตถุอันตราย</h4>
-                    </div>
-                </a>
-            </div>
-	</div>
-    <div class="col-md-3">
-            <div class="block-option">
-                <a href="<?php echo resolveURIHeader('request/new/6'); ?>" class="block-link" style="text-decoration:none;">
-                    <div class ="block-option-image">
-                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
-                    </div>
-                    <div class="block-option-text">
-                       <br>
-                       <h4>ขออนุญาตส่งออกวัตถุอันตราย</h4>
-                    </div>
-                </a>
-            </div>
-	</div>
-    <div class="col-md-3">
-            <div class="block-option">
-                <a href="<?php echo resolveURIHeader('request/new/5'); ?>" class="block-link" style="text-decoration:none;">
-                    <div class ="block-option-image">
-                       <img src="<?php echo resolveURIHeader("image/add_user.png");  ?>" class="img-circle">
-                    </div>
-                    <div class="block-option-text">
-                       <br>                    
-                       <h4>ขออนุญาตนำเข้าวัตถุอันตราย</h4>
-                    </div>
-                </a>
-            </div>
-	</div>
-</div>    
-</div>
-
-</div>
 </div>
 
 <?php
@@ -235,8 +233,8 @@ function showTabtab()
 <br><br>
 <?php
 
-echo "<table class='table'>
-			<tr>
+echo "<table class='table table-hover'>
+			<tr class='warning'>
 				<th>ชนิดคำร้อง</th>
 				<th>ผู้ยื่นคำร้อง</th>
 				<th>ความก้าวหน้า</th>

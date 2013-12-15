@@ -4,15 +4,12 @@ body{
 	height: 100%;
 	background-color: #F3E2A9;
 }
-
-.mod{
-	height: 970px;
-}
 .home-container{
 	background: -webkit-radial-gradient(circle,#EBC697,#DB8E19);
 	height: 92%;
 	position: absolute;
 	width: 100%;
+	margin: -200px 0 0 0;
 }
 .head-box{
 	margin-top: 1px;
