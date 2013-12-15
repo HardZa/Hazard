@@ -34,7 +34,7 @@ for($i=1;$i<count($alluser);$i++)
 	echo "<tr>
 <td>$name</td>
 <td>$type</td>
-<td><button type='button' class='btn btn-warning btn-sm' onclick=$url".$i."' >แก้ไข</button></td>
+<td><button type='button' class='btn btn-warning btn-sm' onclick=$url".$user[0]."' >แก้ไข</button></td>
 </tr>";
 }
 
