@@ -30,7 +30,16 @@
 <div class="container">
 <div class="data-box">
   <div class="head-box page-header">
-    <h1>คำขอขึ้นทะเบียนวัตถุอันตราย</h1>  
+    <div class="row">
+      <div class="col-md-6" style="width: 600px;"> 
+        <h2>คำขอขึ้นทะเบียนวัตถุอันตราย</h2> 
+      </div>
+      <div class="col-md-3"> 
+        <div class="doc-type-lable">
+          <h3>วก./กษ./กวก.๑</h3>  
+        </div>
+      </div>
+    </div>
   </div>
   <form class="form-horizontal" role="form" method="post" action="">
   	<div class="form-group">

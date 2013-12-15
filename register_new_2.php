@@ -30,9 +30,18 @@
 ?>
 <div class="container">
 <div class="data-box">
-<div class="page-header">
-    <h1>คำขอต่ออายุใบสำคัญการขึ้นทะเบียนวัตถุอันตราย</h1>
-</div>
+<div class="head-box page-header">
+    <div class="row">
+      <div class="col-md-6" style="width: 600px;"> 
+        <h2>คำขอต่ออายุใบสำคัญขึ้นทะเบียนวัตถุอันตราย</h2> 
+      </div>
+      <div class="col-md-3"> 
+        <div class="doc-type-lable">
+          <h3>วอ./กษ./กวก.๓</h3>  
+        </div>
+      </div>
+    </div>
+  </div>
 <form class="form-horizontal" role="form" method="post" action="">
 <?php  fastRender('utils/printCerts.php',array( 'cert' => $certs , 'print_label' => 'มีความประสงค์จะขอต่ออายุใบสำคัญการขึ้นทะเบียนวัตถุอันตรายเลขที่' , 'no_cert' => 'คุณยังไม่มีใบที่สามารถต่ออายุได้' )); ?>
 	<div class="form-group">

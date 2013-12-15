@@ -31,10 +31,18 @@
 ?>
 <div class="container">
 <div class="data-box">
-<div class="page-header">
-    <h1>คำขออนุญาตนำเข้าวัตถุอันตราย</h1>
-</div>
-
+  <div class="head-box page-header">
+    <div class="row">
+      <div class="col-md-6" style="width: 600px;"> 
+        <h2>คำขออนุญาตนำเข้าวัตถุอันตราย</h2> 
+      </div>
+      <div class="col-md-3"> 
+        <div class="doc-type-lable">
+          <h3>วอ.๓</h3>  
+        </div>
+      </div>
+    </div>
+  </div>
 <form class="form-horizontal" role="form" method="post" action="">
   <div class="form-group">
   			<label class="col-sm-offset-1">

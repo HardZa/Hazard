@@ -11,11 +11,11 @@ if(!Permission::userListAllowed())
     <h1>รายการผู้ใช้</h1>
 </div>
 
-<table class="table">
-<tr>
-<th>ชื่อผู้ใช้</th>
-<th>ประเภทผู้ใช้</th>
-<th>แก้ไข</th>
+<table class="table table-hover">
+<tr class="warning">
+<th>ชื่อผู้ใช<span class="glyphicon glyphicon-user" style="margin-left:5px;"></span></th>
+<th>ประเภทผู้ใช้<span class="glyphicon glyphicon-list" style="margin-left:5px;"></span></th>
+<th>แก้ไข<span class="glyphicon glyphicon-edit" style="margin-left:5px; color:#7f8c8d;"></span></th>
 </tr>
 
 
