@@ -24,8 +24,8 @@
  		return '';
  	}
  	if( $cert->is_expired() )
- 		return 'หมดอายุแล้ว';
- 	return 'หมดอายุวันที่ '.$cert->get_exp_day() . '-' . $cert->get_exp_month() . '-' . ( $cert->get_exp_year() + 543 );
+ 		return 'ใบอณุญาตหมดอายุ';
+ 	return 'ใบอณุญาตหมดอายุ วันที่ '.$cert->get_exp_day() . ' ' . get_month($cert->get_exp_month()) . ' พ.ศ.' . ( $cert->get_exp_year() + 543 );
  }
  
  function printPic($type)
@@ -63,7 +63,6 @@
 				<h4>
 					<span class="glyphicon glyphicon-search"></span>
 					(<?php echo $request->get_status();?>)
-					<?php echo $cexp;?>
 				</h4>
 			</div>-->
 			<div class="flow-msg-head">
@@ -110,6 +109,7 @@
 			include( resolveHeader('route_show_request.php') );
 			?>
 			</div>
+	<?php echo $cexp;?>
 		</div>
 	</div>
 </section>
