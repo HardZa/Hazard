@@ -23,7 +23,7 @@ if(!Permission::userListAllowed())
 <?php
 $alluser = DB::get_db()->select('users',null);
 
-for($i=1;$i<count($alluser);$i++)
+for($i=0;$i<count($alluser);$i++)
 {
 
 	$user = $alluser[$i];
