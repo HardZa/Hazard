@@ -4,7 +4,7 @@ class User{
 	private static $user_fields = array('userid','username','userrealname','userallowed','userpasssha1');
 	private $user_db;
 	public static $user_field_allow_edit = array('userrealname');
-	private static $registype = array('registrar'=>'เจ้าหน้าที่ทะเบียน','client'=>'เอกชน','hazcontrol'=>'เจ้าหน้าที่ควบคุมวัตถุอันตราย','plantprotection'=>'เจ้าหน้าที่สำนักอารักขาพืช','agriproduction'=>'เจ้าหน้าที่สำนักปัจจัยการผลิต','cashier'=>'เจ้าหน้าที่การเงิน'); 
+	private static $registype = array('registrar'=>'เจ้าหน้าที่ทะเบียน','client'=>'เอกชน','hazcontrol'=>'เจ้าหน้าที่ควบคุมวัตถุอันตราย','plantprotection'=>'เจ้าหน้าที่สำนักอารักขาพืช','agriproduction'=>'เจ้าหน้าที่สำนักปัจจัยการผลิต','cashier'=>'เจ้าหน้าที่การเงิน','root'=>'เจ้าหน้าที่ดูแลระบบ'); 
 
 	public static function group_to_string($group)
 	{
@@ -36,6 +36,8 @@ class User{
 			return 'plantprotection';
 		else if($this->is_group('registrar'))
 			return 'registrar';
+		else if($this->is_root())
+			return 'root';
 
 		return 'others';
 	}
@@ -192,6 +194,11 @@ class User{
 	public static function get_group_by_id($id)
 	{
 		$userid = $id;
+		
+		if( $userid == 0 ) {
+			return "root";
+		}
+		
 		$table = 'usergroup_'.'agriproduction';
 		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
 		if( count($rows) == 1 )

@@ -2,19 +2,16 @@
  
  class Redirect
  {
-	public static function to($location =null)
+	public static function to($location)
 	{
-		if($location)
+		if(is_numeric($location))
 		{
-			if(is_numeric($location))
-			{
-				include resolveHeader('includes/errors/'.$location.'.php');
-				include resolveHeader('includes/footer.php');
-				exit();
-			}
-			header('Location: '.resolveURIHeader($location));
+			include resolveHeader('includes/errors/'.$location.'.php');
+			include resolveHeader('includes/footer.php');
 			exit();
 		}
+		header('Location: '.resolveURIHeader($location));
+		exit();
 	}
 
 	public static function postto($location=null,$data=null)
