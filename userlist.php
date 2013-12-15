@@ -12,13 +12,12 @@ if(!Permission::userListAllowed())
 </div>
 
 <table class="table table-hover">
-<tr class="warning">
-<th>ชื่อผู้ใช<span class="glyphicon glyphicon-user" style="margin-left:5px;"></span></th>
-<th>ประเภทผู้ใช้<span class="glyphicon glyphicon-list" style="margin-left:5px;"></span></th>
-<th>แก้ไข<span class="glyphicon glyphicon-edit" style="margin-left:5px; color:#7f8c8d;"></span></th>
-</tr>
-
-
+	<tr class="warning">
+		<th>เลขที่ผู้ใช้<span class="glyphicon" style="margin-left:5px;"></span></th>
+		<th>ชื่อผู้ใช้<span class="glyphicon glyphicon-user" style="margin-left:5px;"></span></th>
+		<th>ประเภทผู้ใช้<span class="glyphicon glyphicon-list" style="margin-left:5px;"></span></th>
+		<th>แก้ไข<span class="glyphicon glyphicon-edit" style="margin-left:5px; color:#7f8c8d;"></span></th>
+	</tr>
 
 <?php
 $alluser = DB::get_db()->select('users',null);
@@ -27,15 +26,19 @@ for($i=0;$i<count($alluser);$i++)
 {
 
 	$user = $alluser[$i];
+	$id = $user['userid'];
 	$name = $user['username'];
 	$type = User::group_to_string(User::get_group_by_id($user['userid']));
-	$url = "parent.location='edituser.php?user=";
+	
+	?>
+	<tr>
+		<td><?php echo $id; ?></td>
+		<td><?php echo $name; ?></td>
+		<td><?php echo $type; ?></td>
+		<td><a class='btn btn-warning btn-sm' href='<?php echo resolveHeader("user/".$id) ?>'>แก้ไข</a></td>
+	</tr>
+<?php
 
-	echo "<tr>
-<td>$name</td>
-<td>$type</td>
-<td><button type='button' class='btn btn-warning btn-sm' onclick=$url".$user[0]."' >แก้ไข</button></td>
-</tr>";
 }
 
 ?>
