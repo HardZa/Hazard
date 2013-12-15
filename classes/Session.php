@@ -1,4 +1,4 @@
- <?php
+<?php
  class Session
  {
 	public static function exists($name)
@@ -24,4 +24,4 @@
 		}
 	}
  }
- ?>
+?>
