@@ -94,7 +94,7 @@ if($user!=NULL)
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">ประเภทผู้ใช้</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo $user->get_groupname(); ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php echo User::group_to_string($user->get_groupname()); ?><label>
 	  	</div>
 
 	  	<div class="form-group">
@@ -224,7 +224,7 @@ if($user!=NULL)
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">ประเภทผู้ใช้</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo $user->get_groupname(); ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php echo User::group_to_string($user->get_groupname()); ?><label>
 	  	</div>
 	  	
 		<div class="form-group" >
