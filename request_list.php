@@ -243,8 +243,8 @@ function showTabtab()
 <br><br>
 <?php
 
-echo "<table class='table'>
-			<tr>
+echo "<table class='table table-hover'>
+			<tr class='warning'>
 				<th>ชนิดคำร้อง</th>
 				<th>ผู้ยื่นคำร้อง</th>
 				<th>ความก้าวหน้า</th>
