@@ -5,7 +5,7 @@
 	<title>ระบบใบรับรองการนำเข้า ครอบครอง ส่งออก และขึ้นทะเบียนวัตถุอันตราย</title>
 	<link rel="shortcut icon" href="<?php echo resolveURIHeader("image/favicon.png")?>" type="image/png">
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/dist/css/bootstrap.css");?>">
-	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/dist/css/bootstrap-theme.css");?>">
+<!--	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/dist/css/bootstrap-theme.css");?>"> -->
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/non-responsive.css");?>">
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/signin.css");?>" >
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("style/css_style.css");?>" >

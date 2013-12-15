@@ -31,9 +31,18 @@
 ?>
 <div class="container">
 <div class="data-box">
-<div class="page-header">
-    <h1>คำขออนุญาตผลิตหรือนำเข้าตัวอย่างวัตถุอันตราย</h1>
-</div>
+<div class="head-box page-header">
+    <div class="row">
+      <div class="col-md-6" style="width: 600px;"> 
+        <h2>คำขออนุญาตผลิต/นำเข้าวัตถุอันตราย</h2> 
+      </div>
+      <div class="col-md-3"> 
+        <div class="doc-type-lable" style="width:200px;">
+          <h3>วอ./กษ./กวก.๑๒</h3>  
+        </div>
+      </div>
+    </div>
+  </div>
 <form class="form-horizontal" role="form" method="post" action="">
 	<div class="form-group">
     	<label class="col-sm-4 control-label">มีความประสงค์จะขออนุญาต</label>
@@ -49,7 +58,7 @@
     	</label>
 	</div> 
 	<div class="form-group">
-    	<label class="col-sm-4">ชื่อและที่อยู่ของสถานที่ผลิต/เก็บรักษาวัตถุอันตราย</label>
+    	<label class="col-sm-4" style="width:400px;" >ชื่อและที่อยู่ของสถานที่ผลิต/เก็บรักษาวัตถุอันตราย</label>
  	</div>
  		<div class="form-group <?php if(isset($error['storename']))echo 'has-error'; ?>" >
     	<label for="storename" class="col-sm-4 control-label">ชื่อ</label>
@@ -159,7 +168,7 @@
     	</div>
   	</div> -->
   	<div class="form-group" >
-    	<label for="quantity" class="col-sm-4" > ปริมาณ</label>
+    	<label for="quantity" class="col-sm-4 control-label" > ปริมาณ</label>
     	<div class="col-sm-8">
       		<input type="text" class="form-control" id="quantity" name="quantity" placeholder="ปริมาณ" value="<?php echo Input::post('quantity'); ?>">
     	</div>
