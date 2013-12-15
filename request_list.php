@@ -46,29 +46,30 @@ $certs = Certificate::get_user_certs( $user->get('userid') , VO_GS_GVG_2 );
 $data = $db->select('request',array('userid','requesttype','progress','requestid'),$condition);
 ?>
 
-<?php
-if(User::get_user()->is_group('client')){
-?>
-<script>
-function showTabtab()
-{
-	var table=document.getElementById('tabtab');
-	var textbtn=document.getElementById('showbtn');
-	
-	if(table.hidden == 1){
-		table.hidden =0;
-		textbtn.innerHTML="&nbsp;-&nbsp;";
-	}
-	else{
-		table.hidden = 1;
-		textbtn.innerHTML="&nbsp;+&nbsp;";
-	}
-}
-</script>
-
 
 <div class='container'>
-<div class="data-box">
+	<div class="data-box">
+	
+	<?php
+	if(User::get_user()->is_group('client')){
+	?>
+	<script>
+	function showTabtab()
+	{
+		var table=document.getElementById('tabtab');
+		var textbtn=document.getElementById('showbtn');
+		
+		if(table.hidden == 1){
+			table.hidden =0;
+			textbtn.innerHTML="&nbsp;-&nbsp;";
+		}
+		else{
+			table.hidden = 1;
+			textbtn.innerHTML="&nbsp;+&nbsp;";
+		}
+	}
+	</script>
+
 	<div class='page-header'>
 		<h1>ส่งคำร้อง</h1>
 		<div style="margin:20px 0px 10px 50px">
@@ -78,23 +79,23 @@ function showTabtab()
 
 	<div hidden="1" name="tabtab" id="tabtab">
 	
-<div class="row">
-	<div class="col-md-1"></div>
-	<div class="col-md-10">
-	<div class="col-md-4">
-       <div class="block-option" >
-            <a href="<?php echo resolveURIHeader('request/new/1'); ?>" class="block-link" style="text-decoration:none;">
-				<div class ="block-option-image">
-					<img src="<?php echo resolveURIHeader("image/icon/icon_1_1.png");  ?>" class="img-circle">
-				</div>
-				<div class="block-option-text">
-				<br>
-					<h4>ขอขึ้นทะเบียนวัตถุอันตราย</h4>
-				</div>
-			</a>
-        </div>
-	</div>
-    <div class="col-md-4">            
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+		<div class="col-md-4">
+	       <div class="block-option" >
+	            <a href="<?php echo resolveURIHeader('request/new/1'); ?>" class="block-link" style="text-decoration:none;">
+					<div class ="block-option-image">
+						<img src="<?php echo resolveURIHeader("image/icon/icon_1_1.png");  ?>" class="img-circle">
+					</div>
+					<div class="block-option-text">
+					<br>
+						<h4>ขอขึ้นทะเบียนวัตถุอันตราย</h4>
+					</div>
+				</a>
+	        </div>
+		</div>
+	    <div class="col-md-4">            
             <div class="block-option">
                 <a href="<?php echo resolveURIHeader('request/new/2'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
@@ -106,8 +107,8 @@ function showTabtab()
                     </div>
                 </a>
             </div>
-	</div>
-    <div class="col-md-4">
+		</div>
+	    <div class="col-md-4">
             <div class="block-option">
                 <a href="<?php echo resolveURIHeader('request/new/3'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
@@ -120,11 +121,11 @@ function showTabtab()
                     </div>
                 </a>
             </div>
+		</div>
+	    </div>
 	</div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-3">
+	<div class="row">
+	    <div class="col-md-3">
             <div class="block-option">
                 <a href="<?php echo resolveURIHeader('request/new/7'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
@@ -136,8 +137,8 @@ function showTabtab()
                     </div>
                 </a>
             </div>
-	</div>
-    <div class="col-md-3">
+		</div>
+	    <div class="col-md-3">
             <div class="block-option">
 				<a href="<?php echo resolveURIHeader('request/new/4'); ?>" class="block-link" style="text-decoration:none;">
                     <div class="block-option-image">
@@ -149,8 +150,8 @@ function showTabtab()
                     </div>
                 </a>
             </div>
-	</div>
-    <div class="col-md-3">
+		</div>
+	    <div class="col-md-3">
             <div class="block-option">
                 <a href="<?php echo resolveURIHeader('request/new/6'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
@@ -162,8 +163,8 @@ function showTabtab()
                     </div>
                 </a>
             </div>
-	</div>
-    <div class="col-md-3">
+		</div>
+	    <div class="col-md-3">
             <div class="block-option">
                 <a href="<?php echo resolveURIHeader('request/new/5'); ?>" class="block-link" style="text-decoration:none;">
                     <div class ="block-option-image">
@@ -175,19 +176,12 @@ function showTabtab()
                     </div>
                 </a>
             </div>
-	</div>
-</div>    
+		</div>
+	</div>    
 </div>
-
-</div>
-</div>
-
 <?php
 }
 ?>
-
-<div class='container'>
-<div class="data-box">
 	<div class='page-header'>
 		<h1>รายการคำร้อง</h1>
 	</div>
@@ -198,26 +192,26 @@ function showTabtab()
 				<select class="form-control" name="requesttype">
 					<option value="" >--เลือกชนิดคำร้อง--</option>
 					<option value="" >ชนิดใดก็ได้</option>
-<?php 
-	$all_requesttype = array(0,1,2,3,4,5,6);
-	foreach( $all_requesttype as $item ){
-		echo "<option value='".$item."'>".Request::type_to_string($item)."</option>\n";
-	}
-?>
-			</select> 
-	    </div>
-  	</div>
- 	<div class="form-group" >
-	    <div class="col-sm-3">
-			<select class="form-control" name="progress">
-				<option value="">--เลือกความก้าวหน้า--</option>
-				<option value="">ความก้าวหน้าใดก็ได้</option>
-<?php
-	$all_progress = array(1,2,3,4,5,6,100,101);
-	foreach( $all_progress as $item ){
-		echo "<option value='".$item."'>".Request::progress_to_string($item)."</option>\n";
-	}
-?>
+					<?php 
+						$all_requesttype = array(0,1,2,3,4,5,6);
+						foreach( $all_requesttype as $item ){
+							echo "<option value='".$item."'>".Request::type_to_string($item)."</option>\n";
+						}
+					?>
+				</select> 
+	    	</div>
+  		</div>
+	 	<div class="form-group" >
+		    <div class="col-sm-3">
+				<select class="form-control" name="progress">
+					<option value="">--เลือกความก้าวหน้า--</option>
+					<option value="">ความก้าวหน้าใดก็ได้</option>
+					<?php
+						$all_progress = array(1,2,3,4,5,6,100,101);
+						foreach( $all_progress as $item ){
+							echo "<option value='".$item."'>".Request::progress_to_string($item)."</option>\n";
+						}
+					?>
 			</select>
 		</div>
 	</div>
@@ -226,20 +220,20 @@ function showTabtab()
 			<select class="form-control" name="user">
 				<option value="">--เลือกผู้ยื่นคำร้อง--</option>
 				<option value="">ผู้ยื่นคำร้องใดก็ได้</option>
-<?php
-	$db = DB::get_db();
-	$data_user = $db->select('usergroup_client',array('userid'));
-	foreach( $data_user as $user ){
-		$data_name = $db->select('users',array('userrealname'),'userid='.$user['userid']);
-		$name = $data_name[0]['userrealname'];
-		echo "<option value='".$user['userid']."'>".$name."</option>\n";
-	}
-?>
+				<?php
+					$db = DB::get_db();
+					$data_user = $db->select('usergroup_client',array('userid'));
+					foreach( $data_user as $user ){
+						$data_name = $db->select('users',array('userrealname'),'userid='.$user['userid']);
+						$name = $data_name[0]['userrealname'];
+						echo "<option value='".$user['userid']."'>".$name."</option>\n";
+					}
+				?>
 			</select>
 		</div>
 	</div>
 	<button type="submit" class="btn btn-primary">ค้นหา</button>
-</form>
+	</form>
 <br><br>
 <?php
 

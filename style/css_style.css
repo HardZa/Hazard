@@ -3,11 +3,18 @@ body{
 	height: 100%;
 	background-color: #F3E2A9;
 }
+a:hover{
+	color: white;
+}
 .error-box{
 	position: absolute;
 	top: 120px;
 	left: 535px;
 	width: 300px;
+}
+.profile-error-msg{
+	width: 300px;
+	margin-left: 228px;
 }
 .home-container{
 	background: -webkit-radial-gradient(circle,#EBC697,#DB8E19);
@@ -23,6 +30,16 @@ body{
 	padding: 40px 30px;
 	border-radius: 5px;
 	margin: 80px auto 50px;
+}
+.request-select{
+	margin: 80px auto 0;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+.request-show{
+	margin: 0px auto 50px;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
 }
 .shadow-box{
 	box-shadow: 3px 10px 5px #888888;
@@ -252,4 +269,8 @@ body{
 	left: 155px;
 	top: -56px;
 	padding: inherit;
+}
+.label-default{
+	background-color: rgba(153, 153, 153, 0.3);
+	font-size: 20px;
 }

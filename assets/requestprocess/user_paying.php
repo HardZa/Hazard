@@ -20,7 +20,7 @@ else
 	<div class="form-group">
 		<div class="row">
 			<input type="hidden" name="isclick" value="1">
-			<label class="col-sm-4 control-label" style="margin-top:11px;">กรุณาอัพโหลดใบเสร็จสำหรับการชำระเงิน</label>
+			<label class="col-sm-4 control-label" style="margin:11px 0 0 20px;">กรุณาอัพโหลดใบเสร็จสำหรับการชำระเงิน</label>
 			<?php include( resolveHeader('includes/upload_block.php') ); ?>
 			<div class="col-sm-4">
 				<div class="banking-icon">

@@ -35,7 +35,7 @@
  	if( count($pics) != 0 )
  	{
  		echo '<div class="row" style="margin:20px 10px 30px;">';
- 		echo '<div class="row"><label class="col-sm-3 control-label">'.Picture::type_to_string($type).'</label></div>';
+ 		echo '<div class="row"><label class="col-sm-3 control-label label label-default">'.Picture::type_to_string($type).'</label></div>';
  		echo '<div class="row">';
  		foreach ($pics as $pic) {
  			echo '<div class="col-sm-3">';
@@ -110,7 +110,7 @@
 			?>
 			</div>
 			<div class="row">
-				<div class="col-md-offset-1 text-danger"><h3>
+				<div class="col-md-offset-1 text-danger"><h3 style="margin-left:20px;">
 	<?php echo $cexp;?></h3>
 				</div>
 			</div>

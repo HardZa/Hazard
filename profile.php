@@ -10,80 +10,8 @@ echo "<br>";
 
 $user = User::get_user();
 $error_msgs = array();
-
-if($user!=NULL && Input::Exists())
-{
-	$passwordSha1 = sha1(Input::post('oldpassword'));
-	$newpasswordSha1 = sha1(Input::post('newpassword'));
-	$username = $user->get("username");
-	$rows = DB::get_db()->select('users',null,"username='$username'",1);
-	$user_db = $rows[0];
-
-	$validate = new Validate();
-	$validate->check($_POST,array(
-		"oldpassword" => array(
-			"required"=>true,
-		),
-		"newpassword" => array(
-			"required"=>true,
-		),
-		"newpassword2" => array(
-			"required"=>true,
-		)
-	));
-	
-	if($validate->passed())
-	{
-		if($user_db['userpasssha1'] != $passwordSha1)
-		{
-			array_push($error_msgs,"ใส่รหัสผ่านเก่าไม่ถูกต้อง");
-		}
-		else if(Input::post('newpassword') != Input::post('newpassword2'))
-		{
-			array_push($error_msgs,"ใส่รหัสผ่านใหม่ไม่ตรงกัน");
-		}
-		else
-		{
-			$user->set('userpasssha1',$newpasswordSha1);
-			$user->save();
-			?>
-
-<div style="background-color:steelblue;color:white;border-bottom:solid black 1px;">
-	แก้ไขรหัสผ่านเรียบร้อย
-</div>
-
-			<?php
-		}
-	}
-	else
-	{
-		foreach($validate->errors() as $validate_errors)
-		{
-			foreach($validate_errors as $validate_error)
-				array_push($error_msgs,$validate_error);
-		}
-		#var_dump($validate->errors());
-	}
-	
-	if(count($error_msgs) !=0) {
 ?>
-<div style="background-color:crimson;color:white;border-bottom:solid black 1px;">
-	<strong>การแก้ไขข้อมูลผิดพลาด</strong>
-	<ul>
-<?php
-		foreach($error_msgs as $error_message)
-		{
-			echo "		<li>".$error_message."\n";
-		}
-?>
-	</ul>
-</div>
-<?php
-	}
 
-}
-
-?>
 
 <style type="text/css">
 div.mid {
@@ -231,6 +159,83 @@ if($user!=NULL)
 	 <div style="margin:25px 0px 0px 595px">
 	 	<button type="edit" class="btn btn-primary">แก้ไข</button>
 	 </div>
+<?php
+if($user!=NULL && Input::Exists())
+{
+	$passwordSha1 = sha1(Input::post('oldpassword'));
+	$newpasswordSha1 = sha1(Input::post('newpassword'));
+	$username = $user->get("username");
+	$rows = DB::get_db()->select('users',null,"username='$username'",1);
+	$user_db = $rows[0];
+
+	$validate = new Validate();
+	$validate->check($_POST,array(
+		"oldpassword" => array(
+			"required"=>true,
+		),
+		"newpassword" => array(
+			"required"=>true,
+		),
+		"newpassword2" => array(
+			"required"=>true,
+		)
+	));
+	
+	if($validate->passed())
+	{
+		if($user_db['userpasssha1'] != $passwordSha1)
+		{
+			array_push($error_msgs,"ใส่รหัสผ่านเก่าไม่ถูกต้อง");
+		}
+		else if(Input::post('newpassword') != Input::post('newpassword2'))
+		{
+			array_push($error_msgs,"ใส่รหัสผ่านใหม่ไม่ตรงกัน");
+		}
+		else
+		{
+			$user->set('userpasssha1',$newpasswordSha1);
+			$user->save();
+			?>
+			<div class="profile-error-msg">
+				<div class="alert alert-success alert-dismissable">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					แก้ไขรหัสผ่านเรียบร้อย
+				</div>
+			</div>
+			<?php
+		}
+	}
+	else
+	{
+		foreach($validate->errors() as $validate_errors)
+		{
+			foreach($validate_errors as $validate_error)
+				array_push($error_msgs,$validate_error);
+		}
+		#var_dump($validate->errors());
+	}
+	
+if(count($error_msgs) !=0) {
+?>
+<div class="profile-error-msg">
+	<div class="alert alert-danger alert-dismissable">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		<strong>การแก้ไขข้อมูลผิดพลาด</strong>
+		<ul>
+	<?php
+			foreach($error_msgs as $error_message)
+			{
+				echo "		<li>".$error_message."\n";
+			}
+	?>
+		</ul>
+	</div>
+</div>	
+<?php
+	}
+
+}
+?>
 	 </form>
 <?php
 	}
@@ -276,6 +281,83 @@ if($user!=NULL)
 	 <div style="margin:25px 0px 0px 595px">
 		<button type="edit" class="btn btn-primary">แก้ไข</button>
 	</div>
+<?php
+if($user!=NULL && Input::Exists())
+{
+	$passwordSha1 = sha1(Input::post('oldpassword'));
+	$newpasswordSha1 = sha1(Input::post('newpassword'));
+	$username = $user->get("username");
+	$rows = DB::get_db()->select('users',null,"username='$username'",1);
+	$user_db = $rows[0];
+
+	$validate = new Validate();
+	$validate->check($_POST,array(
+		"oldpassword" => array(
+			"required"=>true,
+		),
+		"newpassword" => array(
+			"required"=>true,
+		),
+		"newpassword2" => array(
+			"required"=>true,
+		)
+	));
+	
+	if($validate->passed())
+	{
+		if($user_db['userpasssha1'] != $passwordSha1)
+		{
+			array_push($error_msgs,"ใส่รหัสผ่านเก่าไม่ถูกต้อง");
+		}
+		else if(Input::post('newpassword') != Input::post('newpassword2'))
+		{
+			array_push($error_msgs,"ใส่รหัสผ่านใหม่ไม่ตรงกัน");
+		}
+		else
+		{
+			$user->set('userpasssha1',$newpasswordSha1);
+			$user->save();
+			?>
+			<div class="profile-error-msg">
+				<div class="alert alert-success alert-dismissable">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					แก้ไขรหัสผ่านเรียบร้อย
+				</div>
+			</div>
+			<?php
+		}
+	}
+	else
+	{
+		foreach($validate->errors() as $validate_errors)
+		{
+			foreach($validate_errors as $validate_error)
+				array_push($error_msgs,$validate_error);
+		}
+		#var_dump($validate->errors());
+	}
+	
+if(count($error_msgs) !=0) {
+?>
+<div class="profile-error-msg">
+	<div class="alert alert-danger alert-dismissable">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		<strong>การแก้ไขข้อมูลผิดพลาด</strong>
+		<ul>
+	<?php
+			foreach($error_msgs as $error_message)
+			{
+				echo "		<li>".$error_message."\n";
+			}
+	?>
+		</ul>
+	</div>
+</div>	
+<?php
+	}
+
+}
+?>
 	</form>
 <?php
 	}
