@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="th">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>ระบบใบรับรองการนำเข้า ครอบครอง ส่งออก และขึ้นทะเบียนวัตถุอันตราย</title>
@@ -7,33 +7,35 @@
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/dist/css/bootstrap.css");?>">
 <!--	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/dist/css/bootstrap-theme.css");?>"> -->
 	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/non-responsive.css");?>">
-	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/signin.css");?>" >
-	<link rel="stylesheet" href="<?php echo resolveURIHeader("style/css_style.css");?>" >
+	<link rel="stylesheet" href="<?php echo resolveURIHeader("lib/bootstrap/signin.css");?>">
+	<link rel="stylesheet" href="<?php echo resolveURIHeader("style/css_style.css");?>">
 
-	<script src="<?php echo resolveURIHeader("lib/jquery/jquery-1.10.2.js");?>"></script>
-	<script src="<?php echo resolveURIHeader("lib/bootstrap/dist/js/bootstrap.js");?>"></script>
-	<script src="<?php echo resolveURIHeader("lib/jquery/jquery.printPage.js");?>"></script>
-	<script src="<?php echo resolveURIHeader("lib/jquery/jquery.hotkeys.js");?>"></script>
+	<script type="text/javascript" src="<?php echo resolveURIHeader("lib/jquery/jquery-1.10.2.js");?>"></script>
+	<script type="text/javascript" src="<?php echo resolveURIHeader("lib/bootstrap/dist/js/bootstrap.js");?>"></script>
+	<script type="text/javascript" src="<?php echo resolveURIHeader("lib/jquery/jquery.printPage.js");?>"></script>
+	<script type="text/javascript" src="<?php echo resolveURIHeader("lib/jquery/jquery.hotkeys.js");?>"></script>
 
-	<script>  
-  	$(document).ready(function(){
-    	$(".btnPrint").printPage();
-  	});
+	<script type="text/javascript">
+	<!--
+		$(document).ready(function(){
+			$(".btnPrint").printPage();
+		});
+	-->
   	</script>
-  	<?php include(resolveHeader('includes/hotkey_init.php')); ?>
+<?php include(resolveHeader('includes/hotkey_init.php')); ?>
 </head>
 
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div style="margin:0px 0px 0px 40px">
         <a class="navbar-brand" href="<?php echo resolveURIHeader("/");?>">
-          	<img src="<?php echo resolveURIHeader("image/logo.png");?>"></img>
+          	<img src="<?php echo resolveURIHeader("image/logo.png");?>">
           	<?php if(User::is_session_exist()) {
           		echo "&nbsp;สวัสดี &nbsp;"; 
           		echo User::get_user()->get("userrealname");} ?>
         </a>
     </div>
-    <div class="collapse navbar-collapse pull-right"">
+    <div class="collapse navbar-collapse pull-right">
  	    <ul class="nav navbar-nav">
        <!--     <li class="active"><a href="login">login</a></li> -->
 			<?php

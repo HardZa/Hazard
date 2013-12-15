@@ -63,12 +63,12 @@ class Permission
 		}
 	}
 	
-	/*public static function userDataEditAllowed()
+	public static function userDataEditAllowed()
 	{
-		if(!User::is_session_exist())return false;
-		return false;
-	} 
-	public static function printingAllowed()
+		return User::is_session_exist();
+	}
+	
+	/*public static function printingAllowed()
 	{	
 		if(!User::is_session_exist())return false;
 		return false;

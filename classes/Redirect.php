@@ -1,4 +1,4 @@
- <?php
+<?php
  
  class Redirect
  {
@@ -45,4 +45,4 @@
 	}
  }
  
- ?>
+?>

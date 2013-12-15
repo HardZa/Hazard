@@ -3,9 +3,13 @@
 require_once('core/init.php');
 include(resolveHeader('includes/header.php'));
 
+if(!Permission::userDataEditAllowed())
+   Redirect::to(403);
+
 echo "<br>";
 
 $user = User::get_user();
+$error_msgs = array();
 
 if($user!=NULL && Input::Exists())
 {
@@ -19,41 +23,62 @@ if($user!=NULL && Input::Exists())
 	$validate->check($_POST,array(
 		"oldpassword" => array(
 			"required"=>true,
-			"max"=>20
 		),
 		"newpassword" => array(
 			"required"=>true,
-			"max"=>20
 		),
 		"newpassword2" => array(
 			"required"=>true,
-			"max"=>20
 		)
 	));
-
+	
 	if($validate->passed())
 	{
 		if($user_db['userpasssha1'] != $passwordSha1)
 		{
-			echo "ใส่พาสเวิร์ดเก่าไม่ถูกต้อง";
-			echo ("<br>");
+			array_push($error_msgs,"ใส่รหัสผ่านเก่าไม่ถูกต้อง");
 		}
 		else if(Input::post('newpassword') != Input::post('newpassword2'))
 		{
-			echo "ใส่พาสเวิร์ดใหม่ไม่เหมือนกัน";
-			echo ("<br>");
+			array_push($error_msgs,"ใส่รหัสผ่านใหม่ไม่ตรงกัน");
 		}
 		else
 		{
-			echo "Update your new password completed";
 			$user->set('userpasssha1',$newpasswordSha1);
 			$user->save();
+			?>
+
+<div style="background-color:steelblue;color:white;border-bottom:solid black 1px;">
+	แก้ไขรหัสผ่านเรียบร้อย
+</div>
+
+			<?php
 		}
 	}
 	else
 	{
-		echo "การแก้ไขข้อมูลส่วนตัวผิดพลาด";
-		var_dump($validate->errors());
+		foreach($validate->errors() as $validate_errors)
+		{
+			foreach($validate_errors as $validate_error)
+				array_push($error_msgs,$validate_error);
+		}
+		#var_dump($validate->errors());
+	}
+	
+	if(count($error_msgs) !=0) {
+?>
+<div style="background-color:crimson;color:white;border-bottom:solid black 1px;">
+	<strong>การแก้ไขข้อมูลผิดพลาด</strong>
+	<ul>
+<?php
+		foreach($error_msgs as $error_message)
+		{
+			echo "		<li>".$error_message."\n";
+		}
+?>
+	</ul>
+</div>
+<?php
 	}
 
 }
@@ -70,7 +95,7 @@ left: 500;
 <div class='container'>
 <div class="data-box">
 <div class="page-header">
-    <h1><?php if($user!=NULL) { echo "ข้อมูลผู้ใช้"; } else { echo "ยังไม่ได้ล็อกอิน"; } ?></h1>
+    <h1>ข้อมูลผู้ใช้</h1>
 </div>
 <?php
 
@@ -84,102 +109,102 @@ if($user!=NULL)
 	<form class="form-horizontal" method="post" action="" role="form" >
 		<div class="form-group">
 	    	<label class="col-sm-3 control-label">ชื่อ-สกุล</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo $user->get('userrealname'); ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php echo $user->get('userrealname'); ?></label>
 	  	</div>
 	  	
 		<div class="form-group">
 	    	<label class="col-sm-3 control-label">ชื่อล็อกอิน</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo $user->get('username'); ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php echo $user->get('username'); ?></label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">ประเภทผู้ใช้</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo User::group_to_string($user->get_groupname()); ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php echo User::group_to_string($user->get_groupname()); ?></label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">วัน-เดือน-ปี เกิด</label>
 	    	<label class="col-sm-3 radio-inline"><?php 
 	    		$tmp = DB::get_db()->select('usergroup_client',null,'userid='.$user->get('userid'));
-	    		echo date_format(date_create($tmp[0]['userbirthdate']),'d ').get_month(date_format(date_create($tmp[0]['userbirthdate']),'m')).' พ.ศ. '.(date_format(date_create($tmp[0]['userbirthdate']),'Y') + 543); ?><label>
+	    		echo date_format(date_create($tmp[0]['userbirthdate']),'d ').get_month(date_format(date_create($tmp[0]['userbirthdate']),'m')).' พ.ศ. '.(date_format(date_create($tmp[0]['userbirthdate']),'Y') + 543); ?></label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">สัญชาติ</label>
 	    	<label class="col-sm-3 radio-inline"><?php 
-	    		echo $tmp[0]['usernationality']; ?><label>
+	    		echo $tmp[0]['usernationality']; ?></label>
 	  	</div>
 	  	
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">เลขประจำตัวผู้เสียภาษี</label>
 	    	<label class="col-sm-3 radio-inline"><?php
-	    		echo $tmp[0]['usertaxid']; ?><label>
+	    		echo $tmp[0]['usertaxid']; ?></label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">บ้านเลขที่</label>
 	    	<label class="col-sm-3 radio-inline"><?php 
-	    		echo $tmp[0]['useraddrhouse']; ?><label>
+	    		echo $tmp[0]['useraddrhouse']; ?></label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">หมู่ที่</label>
 	    	<label class="col-sm-3 radio-inline"><?php 
-	    		echo $tmp[0]['useraddrvillage']; ?><label>
+	    		echo $tmp[0]['useraddrvillage']; ?></label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">ตรอก/ซอย</label>
 	    	<label class="col-sm-3 radio-inline"><?php 
-	    		echo $tmp[0]['useraddrdrive']; ?><label>
+	    		echo $tmp[0]['useraddrdrive']; ?></label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">ถนน</label>
 	    	<label class="col-sm-3 radio-inline"><?php 
-	    		echo $tmp[0]['useraddrroad']; ?><label>
+	    		echo $tmp[0]['useraddrroad']; ?></label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">ตำบล/แขวง</label>
 	    	<label class="col-sm-3 radio-inline"><?php 
-	    		echo $tmp[0]['useraddrsubdistrict']; ?><label>
+	    		echo $tmp[0]['useraddrsubdistrict']; ?></label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">อำเภอ/แขวง</label>
 	    	<label class="col-sm-3 radio-inline"><?php 
-	    		echo $tmp[0]['useraddrdistrict']; ?><label>
+	    		echo $tmp[0]['useraddrdistrict']; ?></label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">จังหวัด</label>
 	    	<label class="col-sm-3 radio-inline"><?php
-	    		echo $tmp[0]['useraddrprovince']; ?><label>
+	    		echo $tmp[0]['useraddrprovince']; ?></label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">รหัสไปรษณีย์</label>
 	    	<label class="col-sm-3 radio-inline"><?php 
-	    		echo $tmp[0]['userpostalcode']; ?><label>
+	    		echo $tmp[0]['userpostalcode']; ?></label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">หมายเลขโทรศัพท์</label>
 	    	<label class="col-sm-3 radio-inline"><?php 
-	    		echo $tmp[0]['userphone']; ?><label>
+	    		echo $tmp[0]['userphone']; ?></label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">หมายเลขโทรสาร</label>
 	    	<label class="col-sm-3 radio-inline"><?php 
-	    		echo $tmp[0]['userfax']; ?><label>
+	    		echo $tmp[0]['userfax']; ?></label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">อีเมลล์</label>
 	    	<label class="col-sm-3 radio-inline"><?php 
-	    		echo $tmp[0]['useremail']; ?><label>
+	    		echo $tmp[0]['useremail']; ?></label>
 	  	</div>
 
 
@@ -206,25 +231,26 @@ if($user!=NULL)
 	 <div style="margin:25px 0px 0px 595px">
 	 	<button type="edit" class="btn btn-primary">แก้ไข</button>
 	 </div>
- 	<?php
+	 </form>
+<?php
 	}
 	else
 	{
-	?>
+?>
 	<form class="form-horizontal" method="post" action="" role="form" >
 		<div class="form-group">
 	    	<label class="col-sm-3 control-label">ชื่อ-สกุล</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo $user->get('userrealname'); ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php echo $user->get('userrealname'); ?></label>
 	  	</div>
 	  	
 		<div class="form-group">
 	    	<label class="col-sm-3 control-label">ชื่อล็อกอิน</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo $user->get('username'); ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php echo $user->get('username'); ?></label>
 	  	</div>
 
 	  	<div class="form-group">
 	    	<label class="col-sm-3 control-label">ประเภทผู้ใช้</label>
-	    	<label class="col-sm-3 radio-inline"><?php echo User::group_to_string($user->get_groupname()); ?><label>
+	    	<label class="col-sm-3 radio-inline"><?php echo User::group_to_string($user->get_groupname()); ?></label>
 	  	</div>
 	  	
 		<div class="form-group" >
@@ -250,6 +276,7 @@ if($user!=NULL)
 	 <div style="margin:25px 0px 0px 595px">
 		<button type="edit" class="btn btn-primary">แก้ไข</button>
 	</div>
+	</form>
 <?php
 	}
 }
