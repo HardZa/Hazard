@@ -102,7 +102,7 @@ left: 40;
 
 --><!-- ---------------------------------------------------------------------- -->
 
-เป็นผู้รับใบสำคัญการขึ้นทะเบียนวัตถุอันตราย ชนิดที่<span class="box_1"><?php echo Input::get("group"); ?></span>เพื่อ <span class="box_3"><?php echo Input::get("purposefirst"); ?></span>ดังนี้<br>
+เป็นผู้รับใบสำคัญการขึ้นทะเบียนวัตถุอันตราย <span class="box_2"><?php echo Input::get("group"); ?></span>เพื่อ <span class="box_3"><?php echo Input::get("purposefirst"); ?></span>ดังนี้<br>
 <div class="tab">
 	๑. ชื่อวัตถุอันตราย <?php echo Input::get("hazardname"); ?><br>
 	๒. สูตรอัตราส่วนผสมของสารสำคัญและลักษณะ <?php echo Input::get("hazardformulation"); ?><br>
