@@ -1,22 +1,18 @@
 <?php
- 	require_once('core/init.php');
-	include(resolveHeader('includes/header.php'));
+require_once('core/init.php');
+include(resolveHeader('includes/header.php'));
 
 $user = User::get_user(); 
- $error_msg = '';
- if( $user == null && Input::exists() )
- {
+$error_msgs = array();
+if( $user == null && Input::exists() )
+{
 	$validate = new Validate();
 	$validate->check($_POST,array(
 		"username" => array(
 			"required"=>true,
-			"min"=>6,
-			"max"=>30
 		),
 		"password" => array(
 			"required"=>true,
-			"min"=>6,
-			"max"=>20
 		)
 	));
 	
@@ -25,31 +21,46 @@ $user = User::get_user();
 		try
 		{
 			$user = User::auth( Input::post('username') , Input::post('password') );
-		}catch(Exception $e )
-		{
-			$error_msg .= $e->getMessage()."<br>";
 		}
-		
-	}else{
-		foreach($validate->errors() as $e)
+		catch(Exception $e)
 		{
-			$error_msg .= $e."<br>";
+			array_push($error_msgs,$e->getMessage());
 		}
 	}
- 
- }
- 
- ?>
-  
- <?php
+	else
+	{
+		foreach($validate->errors() as $e)
+		{
+			foreach($e as $eitem)
+			{
+				array_push($error_msgs,$eitem);
+			}
+		}
+	}
+}
+?>
+
+<?php
 if( $user == null )
 {
 ?>
 
 <?php
-	if( $error_msg != '' )
+	if( count($error_msgs) != 0 )
 	{
-		echo $error_msg;
+?>
+<div style="background-color:crimson;color:white;border-bottom:solid black 1px;">
+	<strong>ลงชื่อเข้าระบบล้มเหลว</strong>
+	<ul>
+<?php
+		foreach($error_msgs as $error_message)
+		{
+			echo "		<li>".$error_message."\n";
+		}
+?>
+	</ul>
+</div>
+<?php
 	}
 ?>
 
