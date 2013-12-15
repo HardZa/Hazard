@@ -56,12 +56,12 @@ class User{
 		$rows = DB::get_db()->select('users',null,"username='$username'",1);
 		if( count($rows) != 1 )
 		{
-			throw new Exception("Username not found");
+			throw new Exception("ไม่มีผู้ใช้นี้ในระบบ");
 		}
 		$user_db = $rows[0];
 		if( $user_db['userpasssha1'] != $passwordSha1 )
 		{
-			throw new Exception("Password are incorrect");
+			throw new Exception("รหัสผ่านไม่ถูกต้อง");
 		}
 		
 		for( $i = 0 ; $i < count( User::$user_fields ) ; $i++ )
