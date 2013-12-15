@@ -35,7 +35,7 @@ for($i=0;$i<count($alluser);$i++)
 		<td><?php echo $id; ?></td>
 		<td><?php echo $name; ?></td>
 		<td><?php echo $type; ?></td>
-		<td><a class='btn btn-warning btn-sm' href='<?php echo resolveHeader("user/".$id) ?>'>แก้ไข</a></td>
+		<td><a class='btn btn-warning btn-sm' href='<?php echo resolveURIHeader("user/".$id) ?>'>แก้ไข</a></td>
 	</tr>
 <?php
 
