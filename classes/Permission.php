@@ -6,28 +6,28 @@ class Permission
 	public static function canShowList()
 	{
 		if(!User::is_session_exist())return false;
-		return !User::get_user()->is_group('registrar');
+		return !User::get_user()->is_group('registrar') || User::get_user()->is_root();
 	}
 	//registrar
 	public static function userAddAllowed()
 	{
 		if(!User::is_session_exist())return false;
-		return  User::get_user()->is_group('registrar');
+		return  User::get_user()->is_group('registrar') || User::get_user()->is_root();
 	} 
 	public static function userListAllowed()
 	{
 		if(!User::is_session_exist())return false;
-		return  User::get_user()->is_group('registrar');
+		return  User::get_user()->is_group('registrar') || User::get_user()->is_root();
 	} 
 	public static function userEditAllowed()
 	{
 		if(!User::is_session_exist())return false;
-		return  User::get_user()->is_group('registrar');
+		return  User::get_user()->is_group('registrar') || User::get_user()->is_root();
 	} 
 	public static function registerSummary()
 	{
 		if(!User::is_session_exist())return false;
-		return  User::get_user()->is_group('registrar');
+		return  User::get_user()->is_group('registrar') || User::get_user()->is_root();
 	} 
 	//client
 	public static function requestSubmissionAllowed()
@@ -38,6 +38,7 @@ class Permission
 	public static function requestInfoAllowed($request)
 	{
 		if(!User::is_session_exist())return false;
+		if(User::get_user()->is_root())return true;
 		switch(User::get_user()->get_groupname())
 		{
 			case 'registrar': return false;

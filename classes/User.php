@@ -116,6 +116,11 @@ class User{
 		}
 		return true;
 	}
+	
+	public function is_root()
+	{
+		return $this->user_db['userid']==0;
+	}
 
 	public static function create_user($type,$username,$password,$name)
 	{
