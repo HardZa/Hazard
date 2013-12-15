@@ -7,7 +7,7 @@ echo "<br>";
 
 $user = User::get_user();
 
-if(Input::Exists())
+if($user!=NULL && Input::Exists())
 {
 	$passwordSha1 = sha1(Input::post('oldpassword'));
 	$newpasswordSha1 = sha1(Input::post('newpassword'));
@@ -52,7 +52,7 @@ if(Input::Exists())
 	}
 	else
 	{
-		echo "INPUT Fail <br>";
+		echo "การแก้ไขข้อมูลส่วนตัวผิดพลาด";
 		var_dump($validate->errors());
 	}
 
