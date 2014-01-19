@@ -139,21 +139,21 @@ if($user!=NULL)
 		<div class="form-group" >
 	    	<label for="oldpassword" class="col-sm-3 control-label">รหัสผ่านเก่า</label>
 		    <div class="col-sm-6">
-		      	<input type="password" class="form-control" id="oldpassword" name="oldpassword" placeholder="พาสเวอร์เก่า" >
+		      	<input type="password" class="form-control" id="oldpassword" name="oldpassword" placeholder="กรอกรหัสผ่านเก่า" >
 		    </div>
 	 	</div>
 
 	 	<div class="form-group" >
 	    	<label for="newpassword" class="col-sm-3 control-label">รหัสผ่านใหม่</label>
 		    <div class="col-sm-6">
-		      	<input type="password" class="form-control" id="newpassword" name="newpassword" placeholder="พาสเวอร์ใหม่" >
+		      	<input type="password" class="form-control" id="newpassword" name="newpassword" placeholder="กรอกรหัสผ่านใหม่" >
 		    </div>
 	 	</div>
 
 	 	<div class="form-group" >
 	    	<label for="newpassword" class="col-sm-3 control-label">รหัสผ่านใหม่อีกครั้ง</label>
 		    <div class="col-sm-6">
-		      	<input type="password" class="form-control" id="newpassword2" name="newpassword2" placeholder="พาสเวอร์ใหม่อีกครั้ง" >
+		      	<input type="password" class="form-control" id="newpassword2" name="newpassword2" placeholder="กรอกรหัสผ่านใหม่อีกครั้ง" >
 		    </div>
 	 	</div>
 	 <div style="margin:25px 0px 0px 595px">
@@ -261,21 +261,21 @@ if(count($error_msgs) !=0) {
 		<div class="form-group" >
 	    	<label for="oldpassword" class="col-sm-3 control-label">รหัสผ่านเก่า</label>
 		    <div class="col-sm-6">
-		      	<input type="password" class="form-control" id="oldpassword" name="oldpassword" placeholder="พาสเวอร์เก่า" >
+		      	<input type="password" class="form-control" id="oldpassword" name="oldpassword" placeholder="กรอกรหัสผ่านเก่า" >
 		    </div>
 	 	</div>
 
 	 	<div class="form-group" >
 	    	<label for="newpassword" class="col-sm-3 control-label">รหัสผ่านใหม่</label>
 		    <div class="col-sm-6">
-		      	<input type="password" class="form-control" id="newpassword" name="newpassword" placeholder="พาสเวอร์ใหม่" >
+		      	<input type="password" class="form-control" id="newpassword" name="newpassword" placeholder="กรอกรหัสผ่านใหม่" >
 		    </div>
 	 	</div>
 
 	 	<div class="form-group" >
 	    	<label for="newpassword" class="col-sm-3 control-label">รหัสผ่านใหม่อีกครั้ง</label>
 		    <div class="col-sm-6">
-		      	<input type="password" class="form-control" id="newpassword2" name="newpassword2" placeholder="พาสเวอร์ใหม่อีกครั้ง" >
+		      	<input type="password" class="form-control" id="newpassword2" name="newpassword2" placeholder="กรอกรหัสผ่านใหม่อีกครั้ง" >
 		    </div>
 	 	</div>
 	 <div style="margin:25px 0px 0px 595px">
