@@ -20,7 +20,6 @@
 		if( $key == "userprovince" ) $new_key = "จังหวัด";
 		if( $key == "userpostalcode" ) $new_key = "รหัสไปรษณีย์";
 		if( $key == "userphone" ) $new_key = "เลขโทรศัพท์";
-		
 		if( strstr($error,"so short") !== false ){
 			$new_error = $new_key." ไม่ควรสั้นเกินไป";
 		}
@@ -50,9 +49,7 @@
 			foreach( $validate->errors() as $key => $value){
 			
 				echo "
-						$(document).ready(function(){
 						$('#$key').parent().parent().addClass('has-error');
-						});
 				";
 
 				$error = $value[0];
@@ -190,8 +187,8 @@
 						$(document).ready(function(){
 							$('#username').parent().parent().addClass('has-error'); ";
 			echo translate('username','duplicate');
-			echo "});</script>";
 			client_error($client_validate);
+			echo "});</script>";
 		}else{
 			if(Input::post('regis_type')=='client')
 			{
@@ -207,8 +204,11 @@
 						,Input::post('usersubdistrict'),Input::post('userdistrict'),Input::post('userprovince')
 						,Input::post('userpostalcode'),Input::post('userphone'),Input::post('userfax'),Input::post('useremail'));
 					Redirect::postto('register/summary',array_merge($_POST,array('password'=>$password)));
-				}else{
+				}else{			
+					echo "<script type='text/javascript'>
+						$(document).ready(function(){";
 					client_error($client_validate);
+					echo "});</script>";
 				}
 			}else{
 				echo "PASS";
@@ -220,7 +220,6 @@
 	}else{
 		 echo "<script type='text/javascript'>
 					$(document).ready(function(){";
-
 		users_error($validate);
 		client_error($client_validate);
 			
