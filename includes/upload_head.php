@@ -96,7 +96,12 @@ function completeHandler(event)
 		_("status").innerHTML="อัพโหลดผิดพลาด";
 		return;
 	}
-	else _("status").innerHTML="";//"อัพโหลดไฟล์ "+event.target.responseText+" สมบูรณ์";
+	else if(event.target.responseText=="-2")
+		 {
+			_("status").innerHTML="อัพโหลดได้เฉพาะภาพชนิด jpg, gif และ png";
+			return;
+		 }
+		 else _("status").innerHTML="";//"อัพโหลดไฟล์ "+event.target.responseText+" สมบูรณ์";
 	gentable(event.target.responseText);
 	
 	_("file1").value="";

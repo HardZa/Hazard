@@ -9,6 +9,11 @@ else
 {
 	$name = pathinfo($_FILES['file1']['name'], PATHINFO_FILENAME);
 	$extension = pathinfo($_FILES['file1']['name'], PATHINFO_EXTENSION);
+	
+	if (!(($extension == "jpg" || $extension == "gif" || $extension == "png") && ($_FILES["file1"]["type"] == "image/jpeg" || $_FILES["file1"]["type"] == "image/gif" || $_FILES["file1"]["type"] == "image/png"))){
+    echo "-2";
+    die();
+	}
 
 	$increment = ''; //start with no suffix
 	
