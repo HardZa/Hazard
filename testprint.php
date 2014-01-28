@@ -322,11 +322,33 @@
 		'officername'=>'สมรัก คำสิงค์'
 	);
 
+	$inforeceipt=array(
+		'bookno'=>'984',
+		'no'=>'0049',
+		'office'=>'กระทรวงเกษตรและสหกรณ์',
+		'referenceno'=>'50-B3104-04-59018',	
+		'day'=>'12',
+		'month'=>'มกราคม',
+		'year'=>'2556',
+		'certid'=>'วอ.4-0001/2556',		
+		'name'=>'นายสุเทพ เทือกสุบรรณ',
+		'description'=>'ค่าธรรมเนียมวัตถุอันตราย',
+		'amount'=>'200,000',
+		'amounttext'=>'สองแสนบาทถ้วน',
+		'payment'=>'เงินสด',
+		'officername'=>'สมรัก คำสิงค์',
+		'officeposition'=>'การเงิน'
+	);
 ?>
 
 <div class="page-header">
     <h1>ทดสอบการปริ้นเอกสารอนุญาต</h1>
 </div>
+
+<div>
+	<a class="btnPrint" href='<?php echo resolvePrinterURI("receipt", $inforeceipt );?>'>ทดสอบ ใบเสร็จ !!!</a>
+</div>
+<br/><br/>
 
 <div>
 	<a class="btnPrint" href='<?php echo resolvePrinterURI("vo2", $info2 );?>'>ทดสอบ วอ.2</a>
