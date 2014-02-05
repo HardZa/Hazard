@@ -32,7 +32,12 @@
           	<img src="<?php echo resolveURIHeader("image/logo.png");?>">
           	<?php if(User::is_session_exist()) {
           		echo "&nbsp;สวัสดี &nbsp;"; 
-          		echo User::get_user()->get("userrealname");} ?>
+          		echo User::get_user()->get("userrealname");
+          		if(User::get_user()->is_root())
+          		{
+          			echo "*";
+          		}
+          	} ?>
         </a>
     </div>
     <div class="collapse navbar-collapse pull-right">

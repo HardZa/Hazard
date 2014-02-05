@@ -11,6 +11,7 @@
 	 <input class="btn btn-lg btn-default btn-block" type="button" value="ลงชื่อเป็น สำนักปัจจัยการผลิต" onclick="parent.location='fakelogin.php?user=test_agriproduction'"> 
 	 <input class="btn btn-lg btn-danger btn-block" type="button" value="ลงชื่อเป็น การเงิน" onclick="parent.location='fakelogin.php?user=test_cashier'"> 
 	 <input class="btn btn-lg btn-info btn-block" type="button" value="ลงชื่อเป็น เจ้าหน้าที่ทะเบียน" onclick="parent.location='fakelogin.php?user=test_registrar'">
+	 <input class="btn btn-lg btn-success btn-block" type="button" value="ลงชื่อเป็น ROOT" onclick="parent.location='fakelogin.php?user=rootz'"> 
 	</div>
 <?php
 	}
