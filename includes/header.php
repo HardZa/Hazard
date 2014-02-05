@@ -66,7 +66,9 @@
 						<li><a href="<?php echo resolveURIHeader("logout");?>">ออกจากระบบ</a></li>
 			<?php		
 					}
-					else{
+					else if(User::get_user()->is_root()){
+						
+					}else{
 			?>
 						<li><a href="<?php echo resolveURIHeader("request");?>">รายการคำร้อง</a></li>
                         <li><a href="<?php echo resolveURIHeader("profile");?>">แก้ไขข้อมูลส่วนตัว</a></li>

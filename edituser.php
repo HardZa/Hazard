@@ -8,39 +8,46 @@ if(!Permission::userEditAllowed())
 
 if(Input::exists('post'))
 {
-	$userid = Input::get('user');
-	//$user_db['username'] = Input::post('username');
-	$user_db['userrealname'] = Input::post('userrealname');
 
-	DB::get_db()->update('users',$user_db,"userid=".$userid);
-
-	if(User::get_group_by_id($userid) == 'client')
+	if(Input::post('resetpassword')=='1')
 	{
-		$client_db['userbirthdate'] = Input::post('userbirthdate');
-		$client_db['usernationality'] = Input::post('usernationality');
-		$client_db['usertaxid'] = Input::post('usertaxid');	
-		$client_db['useraddrhouse'] = Input::post('useraddrhouse');
-		$client_db['useraddrvillage'] = Input::post('useraddrvillage');
-		$client_db['useraddrdrive'] = Input::post('userdrive');
-		$client_db['useraddrroad'] = Input::post('useraddrroad');
-		$client_db['useraddrsubdistrict'] = Input::post('usersubdistrict');
-		$client_db['useraddrdistrict'] = Input::post('userdistrict');
-		$client_db['useraddrprovince'] = Input::post('userprovince');
-		$client_db['userpostalcode'] = Input::post('userpostalcode');
-		$client_db['userphone'] = Input::post('userphone');
-		$client_db['userfax'] = Input::post('userfax');
-		$client_db['useremail'] = Input::post('useremail');
+		$password = User::get_rand_password();
+		$passwordSha1 = sha1($password);
 
-		DB::get_db()->update('usergroup_client', $client_db, "userid=".$userid);
+		$userid = Input::get('user');
+		User::set_new_password($userid,$passwordSha1);
 
+		alert("รหัสผ่านใหม่คือ ".$password);
+	}else{
+		$userid = Input::get('user');
+		//$user_db['username'] = Input::post('username');
+		$user_db['userrealname'] = Input::post('userrealname');
+
+		DB::get_db()->update('users',$user_db,"userid=".$userid);
+
+		if(User::get_group_by_id($userid) == 'client')
+		{
+			$client_db['userbirthdate'] = Input::post('userbirthdate');
+			$client_db['usernationality'] = Input::post('usernationality');
+			$client_db['usertaxid'] = Input::post('usertaxid');	
+			$client_db['useraddrhouse'] = Input::post('useraddrhouse');
+			$client_db['useraddrvillage'] = Input::post('useraddrvillage');
+			$client_db['useraddrdrive'] = Input::post('userdrive');
+			$client_db['useraddrroad'] = Input::post('useraddrroad');
+			$client_db['useraddrsubdistrict'] = Input::post('usersubdistrict');
+			$client_db['useraddrdistrict'] = Input::post('userdistrict');
+			$client_db['useraddrprovince'] = Input::post('userprovince');
+			$client_db['userpostalcode'] = Input::post('userpostalcode');
+			$client_db['userphone'] = Input::post('userphone');
+			$client_db['userfax'] = Input::post('userfax');
+			$client_db['useremail'] = Input::post('useremail');
+
+			DB::get_db()->update('usergroup_client', $client_db, "userid=".$userid);
+
+		}
+		alert("เปลี่ยนแปลงเรียบร้อย");
+	//	echo "Update completed";
 	}
-	else
-	{
-
-	}
-
-	echo "Update completed";
-
 }
 ?>
 
@@ -173,6 +180,7 @@ if(Input::exists('get'))
  	<div style="margin:0px 0px 0px 100px">
 	 	<button type="submit" class="btn btn-primary col-sm-offset-2">แก้ไข</button>
 	</div>
+	</form>
 	 	<?php
 	 }
 	 else
@@ -196,9 +204,20 @@ if(Input::exists('get'))
 	  	<div style="margin:0px 0px 0px 100px">
 	  		<button type="submit" class="btn btn-primary col-sm-offset-2">แก้ไข</button>
 	  	</div>
+	  	</form>
+	  	
 	  	<?php
 
-	 }
+	}
+	?>
+	<br>
+	<form class="form-horizontal" method="post" action="" role="form" >
+	<input type="hidden" id="resetpassword" name="resetpassword" value="1">
+	<div style="margin:0px 0px 0px 100px">
+	  	<button type="submit" class="btn btn-danger col-sm-offset-2">กำหนดรหัสผ่านใหม่</button>
+	</div>
+	</form>
+	<?php
 }
 ?>
 </div>

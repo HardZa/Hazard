@@ -273,6 +273,11 @@ class User{
 		return $user_db;
 	}
 
+	public static function set_new_password($id,$passwordSha1)
+	{
+		DB::get_db()->update('users',['userpasssha1'=>$passwordSha1],"userid=".$id);
+	}
+
 
 }
 

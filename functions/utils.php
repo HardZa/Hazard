@@ -102,4 +102,9 @@ function fastClientNewLink($e,$printA,$printB)
 	else echo resolveURIHeader($printA);
 }
 
+function alert($msg)
+{
+	echo "<script>alert('".$msg."');</script>";
+}
+
 ?>
