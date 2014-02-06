@@ -35,7 +35,7 @@
           		echo User::get_user()->get("userrealname");
           		if(User::get_user()->is_root())
           		{
-          			echo "*";
+          			echo "[ผู้ดูแล]";
           		}
           	} ?>
         </a>
@@ -67,7 +67,13 @@
 			<?php		
 					}
 					else if(User::get_user()->is_root()){
-						
+			?>
+						<li><a href="<?php echo resolveURIHeader("user");?>">รายชื่อผู้ใช้</a></li>
+						<li><a href="<?php echo resolveURIHeader("register");?>">เพิ่มผู้ใช้</a></li>
+						<li><a href="<?php echo resolveURIHeader("request");?>">รายการคำร้อง</a></li>
+						<li><a href="<?php echo resolveURIHeader("profile");?>">แก้ไขข้อมูลส่วนตัว</a></li>
+						<li><a href="<?php echo resolveURIHeader("logout");?>">ออกจากระบบ</a></li>
+			<?php
 					}else{
 			?>
 						<li><a href="<?php echo resolveURIHeader("request");?>">รายการคำร้อง</a></li>

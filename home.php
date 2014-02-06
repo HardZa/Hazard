@@ -108,7 +108,9 @@ else {
 	if(User::get_user()->is_group('registrar')){
 		Redirect::to('user');
 	}
-	else{
+	else if(User::get_user()->is_root()){
+		Redirect::to('user');
+	}else{
 		Redirect::to('request');
 	}
  ?>
