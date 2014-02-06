@@ -258,6 +258,12 @@ function echoValue($field)
 					    <option value="plantprotection">เจ้าหน้าที่สำนักอารักขาพืช</option>
 					    <option value="agriproduction" >เจ้าหน้าที่สำนักปัจจัยการผลิต</option>
 					    <option value="cashier" >เจ้าหน้าที่การเงิน</option>
+						<?php
+							if(User::get_user()->is_root())
+							{
+								echo "<option value='registrar'>เจ้าหน้าที่ทะเบียน</option>";
+							} 
+						?>
 					</select> 
 			    </div>
 		  	</div>
