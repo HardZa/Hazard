@@ -29,6 +29,12 @@ else
 ?>
 
 <div class="row">
+	<a class="btn btn-default btnPrint" href='<?php 
+		$print_info = array();
+		include( resolveHeader( Config::get('template/bindprint')."receipt.php" ) );
+		echo resolvePrinterURI("receipt",$print_info);
+		?>'>
+		<span class="glyphicon glyphicon-print" style="margin-right:10px;"></span>พิมพ์ใบเสร็จ</a>
 	<div class="col-md-6">
 		<h3 style="margin-left:15px;">ข้าพเจ้าได้พิจารณาและเห็นสมควรว่า</h3>
  	</div>

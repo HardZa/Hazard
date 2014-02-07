@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 05, 2014 at 05:27 PM
--- Server version: 5.5.32
--- PHP Version: 5.4.19
+-- Host: localhost
+-- Generation Time: Feb 07, 2014 at 11:13 AM
+-- Server version: 5.5.16
+-- PHP Version: 5.3.8
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `hazarddb`
 --
-CREATE DATABASE IF NOT EXISTS `hazarddb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `hazarddb`;
 
 -- --------------------------------------------------------
 
@@ -77,6 +75,36 @@ INSERT INTO `certificate_running_no` (`certtype`, `no`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `commend`
+--
+
+CREATE TABLE IF NOT EXISTS `commend` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `requestid` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `message` text CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `commend`
+--
+
+INSERT INTO `commend` (`id`, `requestid`, `userid`, `message`) VALUES
+(2, 10, 3, 'It baka haha<br>haha'),
+(3, 10, 5, 'ฮาโหลๆ ช่วยหมูที'),
+(4, 10, 3, 'ฮาโหล เทสๆ'),
+(5, 10, 3, 'ฮาโหล เทสๆ'),
+(6, 10, 5, 'cccc'),
+(7, 10, 5, 'ฮ่าโหยย อิอิ\r\nบ้า'),
+(8, 10, 5, 'ee\r\nbb'),
+(9, 10, 5, 'ee\r<br>bb'),
+(10, 10, 5, 'ไรอะ ไอบ้า\r<br>ฮ่าๆ โหลลลลลลลลลลลลลลลลลลลลลลลลลลลลลลลล\r<br>\r<br>ฮ่าๆ'),
+(11, 10, 5, 'ฮาโหยยย \r<br>อิอิ ไอ้บ้า');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `fee`
 --
 
@@ -125,6 +153,38 @@ INSERT INTO `picture` (`picid`, `requestid`, `pictype`, `picname`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `receipt_running_no`
+--
+
+CREATE TABLE IF NOT EXISTS `receipt_running_no` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+
+--
+-- Dumping data for table `receipt_running_no`
+--
+
+INSERT INTO `receipt_running_no` (`id`) VALUES
+(1),
+(2),
+(3),
+(4),
+(5),
+(6),
+(7),
+(8),
+(9),
+(10),
+(11),
+(12),
+(13),
+(14),
+(15);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `request`
 --
 
@@ -138,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `request` (
   `certidref` int(11) NOT NULL,
   `date` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`requestid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `request`
@@ -149,8 +209,13 @@ INSERT INTO `request` (`requestid`, `userid`, `requesttype`, `jsondata`, `progre
 (6, 4, 0, '{"group":"\\u0e0a\\u0e19\\u0e34\\u0e14\\u0e17\\u0e35\\u0e48 2","purposefirst":"\\u0e19\\u0e33\\u0e40\\u0e02\\u0e49\\u0e32","hazardname":"Acetonitrile ; Methylcyanide","hazardformulation":"C2H3N","businessname":"75-05-8","producer":"J.T. Baker INC MADE IN USA","importer":"J.T. Baker INC","saleman":"\\u0e1a\\u0e23\\u0e34\\u0e29\\u0e31\\u0e17 \\u0e40\\u0e21\\u0e2d\\u0e23\\u0e4c\\u0e04 \\u0e08\\u0e33\\u0e01\\u0e31\\u0e14","container":"\\u0e1a\\u0e23\\u0e23\\u0e08\\u0e38\\u0e43\\u0e2a\\u0e48\\u0e41\\u0e01\\u0e25\\u0e25\\u0e2d\\u0e19\\u0e17\\u0e35\\u0e48\\u0e21\\u0e34\\u0e14\\u0e0a\\u0e34\\u0e14\\u0e43\\u0e19\\u0e2b\\u0e49\\u0e2d\\u0e07\\u0e17\\u0e35\\u0e48\\u0e21\\u0e35\\u0e23\\u0e30\\u0e1a\\u0e1a\\u0e23\\u0e30\\u0e1a\\u0e32\\u0e22\\u0e2d\\u0e32\\u0e01\\u0e32\\u0e28 \\u0e42\\u0e14\\u0e22\\u0e21\\u0e35\\u0e02\\u0e19\\u0e32\\u0e14\\u0e1a\\u0e23\\u0e23\\u0e08\\u0e38\\u0e44\\u0e21\\u0e48\\u0e40\\u0e01\\u0e34\\u0e19 1 \\u0e41\\u0e01\\u0e25\\u0e25\\u0e2d\\u0e19","purpose":"\\u0e43\\u0e0a\\u0e49\\u0e40\\u0e1b\\u0e47\\u0e19\\u0e2a\\u0e32\\u0e23\\u0e27\\u0e34\\u0e40\\u0e04\\u0e23\\u0e32\\u0e30\\u0e2b\\u0e4c\\u0e41\\u0e25\\u0e30\\u0e17\\u0e14\\u0e2a\\u0e2d\\u0e1a (reagent) \\u0e17\\u0e32\\u0e07\\u0e40\\u0e04\\u0e21\\u0e35\\u0e43\\u0e19\\u0e2b\\u0e49\\u0e2d\\u0e07\\u0e1b\\u0e0f\\u0e34\\u0e1a\\u0e31\\u0e15\\u0e34\\u0e01\\u0e32\\u0e23","picarr":"[\\"image2.jpg\\",\\"image3.jpg\\"]","officername":"\\u0e04\\u0e34\\u0e21 \\u0e08\\u0e2d\\u0e07 \\u0e2d\\u0e34\\u0e27"}', 101, 13, 0, '2013-12-15'),
 (7, 4, 0, '{"group":"\\u0e0a\\u0e19\\u0e34\\u0e14\\u0e17\\u0e35\\u0e48 3","purposefirst":"\\u0e19\\u0e33\\u0e40\\u0e02\\u0e49\\u0e32","hazardname":"Acetonitrile ; Methylcyanide","hazardformulation":"C2H3N","businessname":"75-05-8","producer":"J.T. Baker INC MADE IN USA","importer":"J.T. Baker INC","saleman":"\\u0e1a\\u0e23\\u0e34\\u0e29\\u0e31\\u0e17 \\u0e40\\u0e21\\u0e2d\\u0e23\\u0e4c\\u0e04 \\u0e08\\u0e33\\u0e01\\u0e31\\u0e14","container":"\\u0e1a\\u0e23\\u0e23\\u0e08\\u0e38\\u0e43\\u0e2a\\u0e48\\u0e41\\u0e01\\u0e25\\u0e25\\u0e2d\\u0e19\\u0e17\\u0e35\\u0e48\\u0e21\\u0e34\\u0e14\\u0e0a\\u0e34\\u0e14\\u0e43\\u0e19\\u0e2b\\u0e49\\u0e2d\\u0e07\\u0e17\\u0e35\\u0e48\\u0e21\\u0e35\\u0e23\\u0e30\\u0e1a\\u0e1a\\u0e23\\u0e30\\u0e1a\\u0e32\\u0e22\\u0e2d\\u0e32\\u0e01\\u0e32\\u0e28 \\u0e42\\u0e14\\u0e22\\u0e21\\u0e35\\u0e02\\u0e19\\u0e32\\u0e14\\u0e1a\\u0e23\\u0e23\\u0e08\\u0e38\\u0e44\\u0e21\\u0e48\\u0e40\\u0e01\\u0e34\\u0e19 1 \\u0e41\\u0e01\\u0e25\\u0e25\\u0e2d\\u0e19","purpose":"\\u0e43\\u0e0a\\u0e49\\u0e40\\u0e1b\\u0e47\\u0e19\\u0e2a\\u0e32\\u0e23\\u0e27\\u0e34\\u0e40\\u0e04\\u0e23\\u0e32\\u0e30\\u0e2b\\u0e4c\\u0e41\\u0e25\\u0e30\\u0e17\\u0e14\\u0e2a\\u0e2d\\u0e1a (reagent) \\u0e17\\u0e32\\u0e07\\u0e40\\u0e04\\u0e21\\u0e35\\u0e43\\u0e19\\u0e2b\\u0e49\\u0e2d\\u0e07\\u0e1b\\u0e0f\\u0e34\\u0e1a\\u0e31\\u0e15\\u0e34\\u0e01\\u0e32\\u0e23","picarr":"[\\"image6.jpg\\",\\"image7.jpg\\"]","officername":"\\u0e04\\u0e34\\u0e21 \\u0e08\\u0e2d\\u0e07 \\u0e2d\\u0e34\\u0e27"}', 101, 14, 0, '2013-12-15'),
 (8, 4, 4, '{"storename":"\\u0e1a\\u0e23\\u0e34\\u0e29\\u0e31\\u0e17 \\u0e1b.\\u0e40\\u0e04\\u0e21\\u0e35\\u0e40\\u0e17\\u0e04 \\u0e08\\u0e33\\u0e01\\u0e31\\u0e14","storehouse":"249","storevillage":"5","storedrive":"1","storeroad":"\\u0e2a\\u0e34\\u0e23\\u0e34\\u0e19\\u0e18\\u0e23","storesubdistrict":"\\u0e1a\\u0e32\\u0e07\\u0e1a\\u0e33\\u0e2b\\u0e23\\u0e38","storedistrict":"\\u0e1a\\u0e32\\u0e07\\u0e1e\\u0e25\\u0e31\\u0e14","storeprovince":"\\u0e01\\u0e23\\u0e38\\u0e07\\u0e40\\u0e17\\u0e1e","storepostalcode":"10700","storephone":"0-2424-9438","storefax":"0-2434-6103","storespecialist":"\\u0e19\\u0e32\\u0e22 \\u0e2a\\u0e21\\u0e1a\\u0e31\\u0e15\\u0e34  \\u0e40\\u0e2b\\u0e2a\\u0e01\\u0e38\\u0e25","certidref":"14","orderCountry":"\\u0e44\\u0e17\\u0e22","quantity":"200 \\u0e41\\u0e01\\u0e25\\u0e25\\u0e2d\\u0e19","note":"-","picarr":"[\\"image.jpg\\",\\"image1.jpg\\"]","officername":"\\u0e04\\u0e34\\u0e21 \\u0e08\\u0e2d\\u0e07 \\u0e2d\\u0e34\\u0e27"}', 101, 16, 14, '2013-12-15'),
-(9, 4, 1, '{"certidref":"13","picarr":""}', 1, 0, 13, '2013-12-15'),
-(10, 4, 5, '{"storename":"\\u0e1a\\u0e23\\u0e34\\u0e29\\u0e31\\u0e17 \\u0e1b.\\u0e40\\u0e04\\u0e21\\u0e35\\u0e40\\u0e17\\u0e04 \\u0e08\\u0e33\\u0e01\\u0e31\\u0e14","storehouse":"249","storevillage":"5","storedrive":"1","storeroad":"\\u0e2a\\u0e34\\u0e23\\u0e34\\u0e19\\u0e18\\u0e23","storesubdistrict":"\\u0e1a\\u0e32\\u0e07\\u0e1a\\u0e33\\u0e2b\\u0e23\\u0e38","storedistrict":"\\u0e1a\\u0e32\\u0e07\\u0e1e\\u0e25\\u0e31\\u0e14","storeprovince":"\\u0e01\\u0e23\\u0e38\\u0e07\\u0e40\\u0e17\\u0e1e","storepostalcode":"10700","storephone":"0-2424-9438","storefax":"0-2434-6103","storespecialist":"\\u0e19\\u0e32\\u0e22 \\u0e2a\\u0e21\\u0e1a\\u0e31\\u0e15\\u0e34  \\u0e40\\u0e2b\\u0e2a\\u0e01\\u0e38\\u0e25","purpose":"\\u0e02\\u0e32\\u0e22","purpose_other":"","certidref":"13","quantity":"200 \\u0e41\\u0e01\\u0e25\\u0e25\\u0e2d\\u0e19","area":"1000 \\u0e15\\u0e32\\u0e23\\u0e32\\u0e07\\u0e40\\u0e21\\u0e15\\u0e23","picarr":"[\\"image2.jpg\\"]","officername":"\\u0e04\\u0e34\\u0e21 \\u0e08\\u0e2d\\u0e07 \\u0e2d\\u0e34\\u0e27"}', 101, 17, 13, '2013-12-15');
+(9, 4, 1, '{"certidref":"13","picarr":"","officername":"\\u0e04\\u0e34\\u0e21 \\u0e08\\u0e2d\\u0e07 \\u0e2d\\u0e34\\u0e27"}', 5, 0, 13, '2013-12-15'),
+(10, 4, 5, '{"storename":"\\u0e1a\\u0e23\\u0e34\\u0e29\\u0e31\\u0e17 \\u0e1b.\\u0e40\\u0e04\\u0e21\\u0e35\\u0e40\\u0e17\\u0e04 \\u0e08\\u0e33\\u0e01\\u0e31\\u0e14","storehouse":"249","storevillage":"5","storedrive":"1","storeroad":"\\u0e2a\\u0e34\\u0e23\\u0e34\\u0e19\\u0e18\\u0e23","storesubdistrict":"\\u0e1a\\u0e32\\u0e07\\u0e1a\\u0e33\\u0e2b\\u0e23\\u0e38","storedistrict":"\\u0e1a\\u0e32\\u0e07\\u0e1e\\u0e25\\u0e31\\u0e14","storeprovince":"\\u0e01\\u0e23\\u0e38\\u0e07\\u0e40\\u0e17\\u0e1e","storepostalcode":"10700","storephone":"0-2424-9438","storefax":"0-2434-6103","storespecialist":"\\u0e19\\u0e32\\u0e22 \\u0e2a\\u0e21\\u0e1a\\u0e31\\u0e15\\u0e34  \\u0e40\\u0e2b\\u0e2a\\u0e01\\u0e38\\u0e25","purpose":"\\u0e02\\u0e32\\u0e22","purpose_other":"","certidref":"13","quantity":"200 \\u0e41\\u0e01\\u0e25\\u0e25\\u0e2d\\u0e19","area":"1000 \\u0e15\\u0e32\\u0e23\\u0e32\\u0e07\\u0e40\\u0e21\\u0e15\\u0e23","picarr":"[\\"image2.jpg\\"]","officername":"\\u0e04\\u0e34\\u0e21 \\u0e08\\u0e2d\\u0e07 \\u0e2d\\u0e34\\u0e27"}', 101, 17, 13, '2013-12-15'),
+(11, 4, 4, '{"storename":"\\u0e1a\\u0e23\\u0e34\\u0e29\\u0e31\\u0e17 \\u0e1b.\\u0e40\\u0e04\\u0e21\\u0e35\\u0e40\\u0e17\\u0e04 \\u0e08\\u0e33\\u0e01\\u0e31\\u0e14","storehouse":"249","storevillage":"5","storedrive":"1","storeroad":"\\u0e2a\\u0e34\\u0e23\\u0e34\\u0e19\\u0e18\\u0e23","storesubdistrict":"\\u0e1a\\u0e32\\u0e07\\u0e1a\\u0e33\\u0e2b\\u0e23\\u0e38","storedistrict":"\\u0e1a\\u0e32\\u0e07\\u0e1e\\u0e25\\u0e31\\u0e14","storeprovince":"\\u0e01\\u0e23\\u0e38\\u0e07\\u0e40\\u0e17\\u0e1e","storepostalcode":"10700","storephone":"0-2424-9438","storefax":"0-2434-6103","storespecialist":"\\u0e19\\u0e32\\u0e22 \\u0e2a\\u0e21\\u0e1a\\u0e31\\u0e15\\u0e34  \\u0e40\\u0e2b\\u0e2a\\u0e01\\u0e38\\u0e25","certidref":"13","orderCountry":"\\u0e44\\u0e17\\u0e22","quantity":"200 \\u0e41\\u0e01\\u0e25\\u0e25\\u0e2d\\u0e19","note":"-","picarr":""}', 3, 0, 13, '2014-02-07'),
+(12, 4, 0, '{"group":"\\u0e0a\\u0e19\\u0e34\\u0e14\\u0e17\\u0e35\\u0e48 2","purposefirst":"\\u0e19\\u0e33\\u0e40\\u0e02\\u0e49\\u0e32","hazardname":"Acetonitrile ; Methylcyanide","hazardformulation":"C2H3N","businessname":"75-05-8","producer":"J.T. Baker INC MADE IN USA","importer":"J.T. Baker INC","saleman":"\\u0e1a\\u0e23\\u0e34\\u0e29\\u0e31\\u0e17 \\u0e40\\u0e21\\u0e2d\\u0e23\\u0e4c\\u0e04 \\u0e08\\u0e33\\u0e01\\u0e31\\u0e14","container":"\\u0e1a\\u0e23\\u0e23\\u0e08\\u0e38\\u0e43\\u0e2a\\u0e48\\u0e41\\u0e01\\u0e25\\u0e25\\u0e2d\\u0e19\\u0e17\\u0e35\\u0e48\\u0e21\\u0e34\\u0e14\\u0e0a\\u0e34\\u0e14\\u0e43\\u0e19\\u0e2b\\u0e49\\u0e2d\\u0e07\\u0e17\\u0e35\\u0e48\\u0e21\\u0e35\\u0e23\\u0e30\\u0e1a\\u0e1a\\u0e23\\u0e30\\u0e1a\\u0e32\\u0e22\\u0e2d\\u0e32\\u0e01\\u0e32\\u0e28 \\u0e42\\u0e14\\u0e22\\u0e21\\u0e35\\u0e02\\u0e19\\u0e32\\u0e14\\u0e1a\\u0e23\\u0e23\\u0e08\\u0e38\\u0e44\\u0e21\\u0e48\\u0e40\\u0e01\\u0e34\\u0e19 1 \\u0e41\\u0e01\\u0e25\\u0e25\\u0e2d\\u0e19","purpose":"\\u0e43\\u0e0a\\u0e49\\u0e40\\u0e1b\\u0e47\\u0e19\\u0e2a\\u0e32\\u0e23\\u0e27\\u0e34\\u0e40\\u0e04\\u0e23\\u0e32\\u0e30\\u0e2b\\u0e4c\\u0e41\\u0e25\\u0e30\\u0e17\\u0e14\\u0e2a\\u0e2d\\u0e1a (reagent) \\u0e17\\u0e32\\u0e07\\u0e40\\u0e04\\u0e21\\u0e35\\u0e43\\u0e19\\u0e2b\\u0e49\\u0e2d\\u0e07\\u0e1b\\u0e0f\\u0e34\\u0e1a\\u0e31\\u0e15\\u0e34\\u0e01\\u0e32\\u0e23","picarr":"","officername":"\\u0e04\\u0e34\\u0e21 \\u0e08\\u0e2d\\u0e07 \\u0e2d\\u0e34\\u0e27","receipt_bookno":"984","receipt_no":"0049","receipt_referenceno":"42-P59PY-25-13416"}', 5, 0, 0, '2014-02-07'),
+(13, 4, 0, '{"group":"\\u0e0a\\u0e19\\u0e34\\u0e14\\u0e17\\u0e35\\u0e48 2","purposefirst":"\\u0e19\\u0e33\\u0e40\\u0e02\\u0e49\\u0e32","hazardname":"Acetonitrile ; Methylcyanide","hazardformulation":"C2H3N","businessname":"75-05-8","producer":"J.T. Baker INC MADE IN USA","importer":"J.T. Baker INC","saleman":"\\u0e1a\\u0e23\\u0e34\\u0e29\\u0e31\\u0e17 \\u0e40\\u0e21\\u0e2d\\u0e23\\u0e4c\\u0e04 \\u0e08\\u0e33\\u0e01\\u0e31\\u0e14","container":"\\u0e1a\\u0e23\\u0e23\\u0e08\\u0e38\\u0e43\\u0e2a\\u0e48\\u0e41\\u0e01\\u0e25\\u0e25\\u0e2d\\u0e19\\u0e17\\u0e35\\u0e48\\u0e21\\u0e34\\u0e14\\u0e0a\\u0e34\\u0e14\\u0e43\\u0e19\\u0e2b\\u0e49\\u0e2d\\u0e07\\u0e17\\u0e35\\u0e48\\u0e21\\u0e35\\u0e23\\u0e30\\u0e1a\\u0e1a\\u0e23\\u0e30\\u0e1a\\u0e32\\u0e22\\u0e2d\\u0e32\\u0e01\\u0e32\\u0e28 \\u0e42\\u0e14\\u0e22\\u0e21\\u0e35\\u0e02\\u0e19\\u0e32\\u0e14\\u0e1a\\u0e23\\u0e23\\u0e08\\u0e38\\u0e44\\u0e21\\u0e48\\u0e40\\u0e01\\u0e34\\u0e19 1 \\u0e41\\u0e01\\u0e25\\u0e25\\u0e2d\\u0e19","purpose":"\\u0e43\\u0e0a\\u0e49\\u0e40\\u0e1b\\u0e47\\u0e19\\u0e2a\\u0e32\\u0e23\\u0e27\\u0e34\\u0e40\\u0e04\\u0e23\\u0e32\\u0e30\\u0e2b\\u0e4c\\u0e41\\u0e25\\u0e30\\u0e17\\u0e14\\u0e2a\\u0e2d\\u0e1a (reagent) \\u0e17\\u0e32\\u0e07\\u0e40\\u0e04\\u0e21\\u0e35\\u0e43\\u0e19\\u0e2b\\u0e49\\u0e2d\\u0e07\\u0e1b\\u0e0f\\u0e34\\u0e1a\\u0e31\\u0e15\\u0e34\\u0e01\\u0e32\\u0e23","picarr":"","officername":"\\u0e04\\u0e34\\u0e21 \\u0e08\\u0e2d\\u0e07 \\u0e2d\\u0e34\\u0e27"}', 4, 0, 0, '2014-02-07'),
+(14, 4, 0, '{"group":"\\u0e0a\\u0e19\\u0e34\\u0e14\\u0e17\\u0e35\\u0e48 2","purposefirst":"\\u0e19\\u0e33\\u0e40\\u0e02\\u0e49\\u0e32","hazardname":"Acetonitrile ; Methylcyanide","hazardformulation":"C2H3N","businessname":"75-05-8","producer":"J.T. Baker INC MADE IN USA","importer":"J.T. Baker INC","saleman":"\\u0e1a\\u0e23\\u0e34\\u0e29\\u0e31\\u0e17 \\u0e40\\u0e21\\u0e2d\\u0e23\\u0e4c\\u0e04 \\u0e08\\u0e33\\u0e01\\u0e31\\u0e14","container":"\\u0e1a\\u0e23\\u0e23\\u0e08\\u0e38\\u0e43\\u0e2a\\u0e48\\u0e41\\u0e01\\u0e25\\u0e25\\u0e2d\\u0e19\\u0e17\\u0e35\\u0e48\\u0e21\\u0e34\\u0e14\\u0e0a\\u0e34\\u0e14\\u0e43\\u0e19\\u0e2b\\u0e49\\u0e2d\\u0e07\\u0e17\\u0e35\\u0e48\\u0e21\\u0e35\\u0e23\\u0e30\\u0e1a\\u0e1a\\u0e23\\u0e30\\u0e1a\\u0e32\\u0e22\\u0e2d\\u0e32\\u0e01\\u0e32\\u0e28 \\u0e42\\u0e14\\u0e22\\u0e21\\u0e35\\u0e02\\u0e19\\u0e32\\u0e14\\u0e1a\\u0e23\\u0e23\\u0e08\\u0e38\\u0e44\\u0e21\\u0e48\\u0e40\\u0e01\\u0e34\\u0e19 1 \\u0e41\\u0e01\\u0e25\\u0e25\\u0e2d\\u0e19","purpose":"\\u0e43\\u0e0a\\u0e49\\u0e40\\u0e1b\\u0e47\\u0e19\\u0e2a\\u0e32\\u0e23\\u0e27\\u0e34\\u0e40\\u0e04\\u0e23\\u0e32\\u0e30\\u0e2b\\u0e4c\\u0e41\\u0e25\\u0e30\\u0e17\\u0e14\\u0e2a\\u0e2d\\u0e1a (reagent) \\u0e17\\u0e32\\u0e07\\u0e40\\u0e04\\u0e21\\u0e35\\u0e43\\u0e19\\u0e2b\\u0e49\\u0e2d\\u0e07\\u0e1b\\u0e0f\\u0e34\\u0e1a\\u0e31\\u0e15\\u0e34\\u0e01\\u0e32\\u0e23","picarr":"","officername":"\\u0e04\\u0e34\\u0e21 \\u0e08\\u0e2d\\u0e07 \\u0e2d\\u0e34\\u0e27","receipt_bookno":"00001","receipt_no":"16","receipt_referenceno":"82-42U8Q-77-59989"}', 5, 0, 0, '2014-02-07'),
+(15, 4, 0, '{"group":"\\u0e0a\\u0e19\\u0e34\\u0e14\\u0e17\\u0e35\\u0e48 2","purposefirst":"\\u0e19\\u0e33\\u0e40\\u0e02\\u0e49\\u0e32","hazardname":"Acetonitrile ; Methylcyanide","hazardformulation":"C2H3N","businessname":"75-05-8","producer":"J.T. Baker INC MADE IN USA","importer":"J.T. Baker INC","saleman":"\\u0e1a\\u0e23\\u0e34\\u0e29\\u0e31\\u0e17 \\u0e40\\u0e21\\u0e2d\\u0e23\\u0e4c\\u0e04 \\u0e08\\u0e33\\u0e01\\u0e31\\u0e14","container":"\\u0e1a\\u0e23\\u0e23\\u0e08\\u0e38\\u0e43\\u0e2a\\u0e48\\u0e41\\u0e01\\u0e25\\u0e25\\u0e2d\\u0e19\\u0e17\\u0e35\\u0e48\\u0e21\\u0e34\\u0e14\\u0e0a\\u0e34\\u0e14\\u0e43\\u0e19\\u0e2b\\u0e49\\u0e2d\\u0e07\\u0e17\\u0e35\\u0e48\\u0e21\\u0e35\\u0e23\\u0e30\\u0e1a\\u0e1a\\u0e23\\u0e30\\u0e1a\\u0e32\\u0e22\\u0e2d\\u0e32\\u0e01\\u0e32\\u0e28 \\u0e42\\u0e14\\u0e22\\u0e21\\u0e35\\u0e02\\u0e19\\u0e32\\u0e14\\u0e1a\\u0e23\\u0e23\\u0e08\\u0e38\\u0e44\\u0e21\\u0e48\\u0e40\\u0e01\\u0e34\\u0e19 1 \\u0e41\\u0e01\\u0e25\\u0e25\\u0e2d\\u0e19","purpose":"\\u0e43\\u0e0a\\u0e49\\u0e40\\u0e1b\\u0e47\\u0e19\\u0e2a\\u0e32\\u0e23\\u0e27\\u0e34\\u0e40\\u0e04\\u0e23\\u0e32\\u0e30\\u0e2b\\u0e4c\\u0e41\\u0e25\\u0e30\\u0e17\\u0e14\\u0e2a\\u0e2d\\u0e1a (reagent) \\u0e17\\u0e32\\u0e07\\u0e40\\u0e04\\u0e21\\u0e35\\u0e43\\u0e19\\u0e2b\\u0e49\\u0e2d\\u0e07\\u0e1b\\u0e0f\\u0e34\\u0e1a\\u0e31\\u0e15\\u0e34\\u0e01\\u0e32\\u0e23","picarr":""}', 2, 0, 0, '2014-02-07');
 
 -- --------------------------------------------------------
 
@@ -231,6 +296,25 @@ INSERT INTO `usergroup_client` (`client_id`, `userid`, `userbirthdate`, `usernat
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `usergroup_documentchecker`
+--
+
+CREATE TABLE IF NOT EXISTS `usergroup_documentchecker` (
+  `documentchecker_id` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` int(11) NOT NULL,
+  PRIMARY KEY (`documentchecker_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `usergroup_documentchecker`
+--
+
+INSERT INTO `usergroup_documentchecker` (`documentchecker_id`, `userid`) VALUES
+(1, 20);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `usergroup_hazcontrol`
 --
 
@@ -298,7 +382,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `userallowed` tinyint(1) NOT NULL,
   `userrealname` varchar(256) NOT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
 -- Dumping data for table `users`
@@ -314,7 +398,8 @@ INSERT INTO `users` (`userid`, `username`, `userpasssha1`, `userallowed`, `userr
 (7, 'test_registrar', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'ทะเบียน เทียนสองเล่ม'),
 (16, 'serpierio', '48efc4851e15940af5d477d3c0ce99211a70a3be', 1, 'ชานน  จิตพรหม'),
 (17, 'money', '2fa4398b1353f2358e3d7389a80c3c7861ad7691', 1, 'เงิน'),
-(18, 'moneyy', 'a0180bdb4ed01a9e504af112be97b248cb42032f', 1, 'moneyy');
+(18, 'moneyy', 'a0180bdb4ed01a9e504af112be97b248cb42032f', 1, 'moneyy'),
+(20, 'test_documentchecker', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'สนั่น มีผล');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

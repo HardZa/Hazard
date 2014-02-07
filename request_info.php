@@ -97,6 +97,55 @@
 		?>
 	</div>
 
+	<?php
+		if( Input::post('commend_msg') != '' )
+		{
+			$commend_msg = str_replace( "\n", "<br>" , Input::post('commend_msg') );
+			Commend::create($user->get('userid'),$request->get('requestid'),$commend_msg);
+		}
+	?>
+
+	<div class="container">
+		<div class="well">
+			<?php
+				$commends = Commend::get_commend_by_requestid($request->get('requestid'));
+				foreach ($commends as $commend) {
+					$ucommend = User::load($commend->userid);
+					?>
+
+					<div class="row">
+						<div class="col-sm-3"><?php echo $ucommend->get('userrealname'); ?> : </div>
+						<div class="col-sm-3"><?php echo $commend->message; ?></div>
+					</div>
+
+					<?
+				}
+			?>
+
+			<?php if( $user->is_group('client') == false ) { ?>
+
+			<form class="form-horizontal" role="form" method="post" action="">
+				<br>
+				<div class="row">
+					<div class="col-sm-3">ความคิดเห็น</div>
+					<div class="col-sm-3">
+						<textarea class="form-control" rows="5" id="commend_msg" name="commend_msg" placeholder="ความคิดเห็น" ></textarea>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-3"><button type="submit" class="btn btn-success">แสดงความคิดเห็น</button></div>
+				</div>
+			    	
+			    	
+
+			</form>
+
+			<?php } ?>
+
+		</div>
+	</div>
+
 	<div class="container">
 		<div class="well">
 			<div class="row">

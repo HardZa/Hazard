@@ -41,6 +41,13 @@ if( isset($_GET['progress']) && $_GET['progress'] != ''){
 if( isset($_GET['user']) && $_GET['user'] != ''){
 	$condition = $condition." and userid='".$_GET['user']."'";
 }
+if( $user->get_groupname() == "documentchecker" ){
+	$condition = $condition." and progress='".PRG_CHK_DOC."'";
+}
+if( $user->get_groupname() == "hazcontrol" ){
+	$condition = $condition." and progress!='".PRG_CHK_DOC."'";
+}
+
 
 $certs = Certificate::get_user_certs( $user->get('userid') , VO_GS_GVG_2 );
 $data = $db->select('request',array('userid','requesttype','progress','requestid'),$condition);

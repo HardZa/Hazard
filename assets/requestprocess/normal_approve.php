@@ -4,13 +4,27 @@ if(Input::get('approve') == '1')
 {
 	doc('request')->progress( doc('next_progress') );
 	doc('request')->save();
-	doc('request')->redirect();
+	if( doc('goto_reqlist') != '' )
+	{
+		Redirect::to('request');
+	}
+	else
+	{
+		doc('request')->redirect();
+	}
 }
 else if(Input::get('approve') == '0')
 {
 	doc('request')->reject();
 	doc('request')->save();
-	doc('request')->redirect();
+	if( doc('goto_reqlist') != '' )
+	{
+		Redirect::to('request');
+	}
+	else
+	{
+		doc('request')->redirect();
+	}
 }
 else
 {

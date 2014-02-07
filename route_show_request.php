@@ -16,13 +16,13 @@ if($user->is_group('client'))
 else if($user->is_group('hazcontrol'))
 {
 	switch ($route_progress) {
-		case PRG_CHK_DOC:
+		/*case PRG_CHK_DOC:
 			if( doc('type') == VO_GS_GVG_1 )
 				set_doc('next_progress',PRG_SURVEY);
 			else
 				set_doc('next_progress',PRG_CONSIDER);
 			$route_file = 'normal_approve.php';
-			break;
+			break;*/
 		case PRG_SURVEY:
 			set_doc('next_progress',PRG_CONSIDER);
 			set_doc('approve_button','ผลการทดสอบผ่าน');
@@ -67,6 +67,19 @@ else if($user->is_group('agriproduction'))
 	switch ($route_progress) {
 		case PRG_SURVEY:
 			$route_file = 'normal_lab.php';
+			break;
+	}
+}
+else if($user->is_group('documentchecker'))
+{
+	switch ($route_progress) {
+		case PRG_CHK_DOC:
+			set_doc('goto_reqlist','yes');
+			if( doc('type') == VO_GS_GVG_1 )
+				set_doc('next_progress',PRG_SURVEY);
+			else
+				set_doc('next_progress',PRG_CONSIDER);
+			$route_file = 'normal_approve.php';
 			break;
 	}
 }

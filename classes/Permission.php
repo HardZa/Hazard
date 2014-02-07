@@ -47,7 +47,10 @@ class Permission
 							return true;
 							else return false;
 			 	  break;
-			case 'hazcontrol': return true;
+			case 'hazcontrol': 
+					if($request->get('progress')==PRG_CHK_DOC)
+						return false;
+					return true;
 			 	  break;
 			case 'plantprotection': if($request->get('progress')==PRG_SURVEY)
 									return true;
@@ -61,6 +64,10 @@ class Permission
 							return true;
 							else return false;
 			 	  break;
+			case 'documentchecker': if($request->get('progress')==PRG_CHK_DOC)
+							return true;
+							else return false;
+				  break;
 		}
 	}
 	

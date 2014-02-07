@@ -19,9 +19,37 @@ function get_month($id)
 	return 'unknow month';
 }
 
+function padding($num,$pad)
+{
+	$gg = $num.'';
+	for($i=count($gg);$i<$pad;$i++)
+	{
+		$gg = '0'.$gg;
+	}
+	return $gg;
+}
+
 function printDisableWhenEmpty($e)
 {
 	if( count($e) == 0 ) echo 'disabled';
+}
+
+function generateRandomString($length = 10) {
+    $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $randomString;
+}
+
+function generateRandomNumber($length = 10) {
+    $characters = '0123456789';
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $randomString;
 }
 
 

@@ -7,7 +7,12 @@ if( Input::post('isclick') != '' )
 	foreach ($picarr as $value) {
 		doc('request')->add_pic( PIC_BILL , $value );
 	}
+	DB::get_db()->insert('receipt_running_no',array('id'),array(null));
+	$lastid = DB::get_db()->getLastInsertID();
 	doc('request')->progress( PRG_ACCEPT_PAY );
+	doc('request')->set_data( 'receipt_bookno' , padding( floor( $lastid/100 ) + 1 , 5 ) );
+	doc('request')->set_data( 'receipt_no' , padding( $lastid%100 + 1 , 3 ) );
+	doc('request')->set_data( 'receipt_referenceno' , generateRandomNumber(2).'-'.generateRandomString(5).'-'.generateRandomNumber(2).'-'.generateRandomNumber(5) );	
 	doc('request')->save();
 	doc('request')->redirect();
 }

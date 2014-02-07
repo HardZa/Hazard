@@ -4,7 +4,7 @@ class User{
 	private static $user_fields = array('userid','username','userrealname','userallowed','userpasssha1');
 	private $user_db;
 	public static $user_field_allow_edit = array('userrealname');
-	private static $registype = array('registrar'=>'เจ้าหน้าที่ทะเบียน','client'=>'เอกชน','hazcontrol'=>'เจ้าหน้าที่ควบคุมวัตถุอันตราย','plantprotection'=>'เจ้าหน้าที่สำนักอารักขาพืช','agriproduction'=>'เจ้าหน้าที่สำนักปัจจัยการผลิต','cashier'=>'เจ้าหน้าที่การเงิน','root'=>'เจ้าหน้าที่ดูแลระบบ'); 
+	private static $registype = array('registrar'=>'เจ้าหน้าที่ทะเบียน','client'=>'เอกชน','hazcontrol'=>'เจ้าหน้าที่ควบคุมวัตถุอันตราย','plantprotection'=>'เจ้าหน้าที่สำนักอารักขาพืช','agriproduction'=>'เจ้าหน้าที่สำนักปัจจัยการผลิต','cashier'=>'เจ้าหน้าที่การเงิน','root'=>'เจ้าหน้าที่ดูแลระบบ','documentchecker' => 'เจ้าหน้าที่ตรวจสอบเอกสาร'); 
 
 	public static function group_to_string($group)
 	{
@@ -36,6 +36,8 @@ class User{
 			return 'plantprotection';
 		else if($this->is_group('registrar'))
 			return 'registrar';
+		else if($this->is_group('documentchecker'))
+			return 'documentchecker';
 		else if($this->is_root())
 			return 'root';
 
@@ -73,6 +75,15 @@ class User{
 		}
 		
 		return new User( $user_db );
+	}
+
+	public static function load($id)
+	{
+		$row = ( DB::get_db()->select('users',null,"userid='$id'") );
+		if( count($row) == 0 )
+			return null;
+		$row = $row[0];
+		return new User( $row );
 	}
 	
 	public static function get_user()
@@ -241,6 +252,13 @@ class User{
 			return 'registrar';
 		}
 
+		$table = 'usergroup_'.'documentchecker';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		if( count($rows) == 1 )
+		{
+			return 'documentchecker';
+		}
+
 		return 'others';
 
 
@@ -275,7 +293,7 @@ class User{
 
 	public static function set_new_password($id,$passwordSha1)
 	{
-		DB::get_db()->update('users',['userpasssha1'=>$passwordSha1],"userid=".$id);
+		DB::get_db()->update('users',array('userpasssha1'=>$passwordSha1),"userid=".$id);
 	}
 
 

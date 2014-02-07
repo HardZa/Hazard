@@ -33,6 +33,28 @@ class Request
 		return $ctype;
 	}
 
+	public static function type_to_amount($type)
+	{
+		switch ($type) {
+			case VO_GS_GVG_1:
+				return array( '10,000' , 'หนึ่งหมื่นบาทถ้วน' );
+			case VO_GS_GVG_3:
+				return array( '20,000' , 'สองหมื่นบาทถ้วน' );
+			case VO_GS_GVG_12:
+				return array( '30,000' , 'สามหมื่นบาทถ้วน' );
+			case VO_1:
+				return array( '40,000' , 'สี่หมื่นบาทถ้วน' );
+			case VO_3:
+				return array( '50,000' , 'ห้าหมื่นบาทถ้วน' );
+			case VO_5:
+				return array( '60,000' , 'หกหมื่นบาทถ้วน' );
+			case VO_7:
+				return array( '70,000' , 'เจ็ดหมื่นบาทถ้วน' );
+			default:
+				return array( '1,000,000,000' , 'หนึ่งพันล้านบาทถ้วน' );
+		}
+	}
+
 	public static function type_to_string($type)
 	{
 		switch ($type) {
@@ -50,6 +72,28 @@ class Request
 				return 'วอ.5';
 			case VO_7:
 				return 'วอ.7';
+			default:
+				return 'unknow';
+		}
+	}
+
+	public static function type_to_string2($type)
+	{
+		switch ($type) {
+			case VO_GS_GVG_1:
+				return 'ขอขึ้นทะเบียนวัตถุอันตราย';
+			case VO_GS_GVG_3:
+				return 'ขอต่ออายุใบสำคัญขึ้นทะเบียนวัตถุอันตราย';
+			case VO_GS_GVG_12:
+				return 'ขออนุญาตผลิต/นำเข้าวัตถุอันตราย';
+			case VO_1:
+				return 'ขออนุญาตผลิตวัตถุอันตราย';
+			case VO_3:
+				return 'ขออนุญาตนำเข้าวัตถุอันตราย';
+			case VO_5:
+				return 'ขออนุญาตส่งออกวัตถุอันตราย';
+			case VO_7:
+				return 'ขออนุญาตมีไว้ครอบครองซึ่งวัตถุอันตราย';
 			default:
 				return 'unknow';
 		}
@@ -251,6 +295,16 @@ class Request
 		if( $this->get('certidref') == 0 ) 
 			return null;
 		return Certificate::load( $this->get('certidref') );
+	}
+
+	public function add_commend($userid,$msg)
+	{
+		return Commend::create($userid,$this->get('requestid'),$msg);
+	}
+
+	public function get_commend()
+	{
+		return Commend::get_commend_by_requestid( $this->get('requestid') );
 	}
 
 }

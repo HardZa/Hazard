@@ -4,7 +4,7 @@
  
  if(!Permission::registerSummary())
    Redirect::to(403);
- $registype = array('registrar'=>'เจ้าหน้าที่ทะเบียน','client'=>'เอกชน','hazcontrol'=>'เจ้าหน้าที่ควบคุมวัตถุอันตราย','plantprotection'=>'เจ้าหน้าที่สำนักอารักขาพืช','agriproduction'=>'เจ้าหน้าที่สำนักปัจจัยการผลิต','cashier'=>'เจ้าหน้าที่การเงิน'); 
+ $registype = array('registrar'=>'เจ้าหน้าที่ทะเบียน','client'=>'เอกชน','hazcontrol'=>'เจ้าหน้าที่ควบคุมวัตถุอันตราย','plantprotection'=>'เจ้าหน้าที่สำนักอารักขาพืช','agriproduction'=>'เจ้าหน้าที่สำนักปัจจัยการผลิต','cashier'=>'เจ้าหน้าที่การเงิน','documentchecker'=>'เจ้าหน้าที่ตรวจสอบเอกสาร'); 
 
  ?>
 <div class="container">
