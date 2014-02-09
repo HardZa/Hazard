@@ -276,8 +276,13 @@ class User{
 		$user_db_client = $rows[0];
 
 		$ret = array_merge($user_db, $user_db_client);
-		$diff = date_create( $ret['userbirthdate'] )->diff( date_create( date('Y-m-d') ) );
-		$ret['userage'] = $diff->format('%y');
+		sscanf($ret['userbirthdate'],"%d-%d-%d",$birthyy,$birthmm,$birthdd);
+		sscanf(date('Y-m-d'),"%d-%d-%d",$currentyy,$currentmm,$currentdd);
+		$age=$currentyy-$birthyy;
+		if($currentmm<$birthmm || ($currentmm==$birthmm && $currentdd<$birthdd)) {
+			$age--;
+		}
+		$ret['userage'] = $age;
 		return $ret;
 	}
 
