@@ -118,7 +118,7 @@
 						<div class="col-sm-3"><?php echo $commend->message; ?></div>
 					</div>
 
-					<?
+					<?php
 				}
 			?>
 
