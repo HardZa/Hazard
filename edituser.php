@@ -5,7 +5,7 @@ include(resolveHeader('includes/header.php'));
 if(!Permission::userEditAllowed())
    Redirect::to(403);
 //echo "<br><br>";
-
+$alert_text="";
 if(Input::exists('post'))
 {
 
@@ -17,7 +17,7 @@ if(Input::exists('post'))
 		$userid = Input::get('user');
 		User::set_new_password($userid,$passwordSha1);
 
-		alert("รหัสผ่านใหม่คือ ".$password);
+		$alert_text = "รหัสผ่านใหม่คือ ".$password;
 	}else{
 		$userid = Input::get('user');
 		//$user_db['username'] = Input::post('username');
@@ -45,8 +45,7 @@ if(Input::exists('post'))
 			DB::get_db()->update('usergroup_client', $client_db, "userid=".$userid);
 
 		}
-		alert("เปลี่ยนแปลงเรียบร้อย");
-	//	echo "Update completed";
+		$alert_text ="เปลี่ยนแปลงเรียบร้อย";
 	}
 }
 ?>
@@ -59,7 +58,19 @@ if(Input::exists('get'))
 {
 	//echo Input::get('user');
 	$userid = Input::get('user');
-	
+
+	if($alert_text!="")
+	{
+	?>
+
+	<div class="profile-error-msg">
+		<div class="alert alert-success alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<?php echo $alert_text; ?>
+		</div>
+	</div>
+	<?php
+	}
 	
 	if(User::get_group_by_id($userid) == 'client')
 	{
@@ -218,6 +229,7 @@ if(Input::exists('get'))
 	</div>
 	</form>
 	<?php
+
 }
 ?>
 </div>

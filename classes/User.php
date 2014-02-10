@@ -4,7 +4,7 @@ class User{
 	private static $user_fields = array('userid','username','userrealname','userallowed','userpasssha1');
 	private $user_db;
 	public static $user_field_allow_edit = array('userrealname');
-	private static $registype = array('registrar'=>'เจ้าหน้าที่ทะเบียน','client'=>'เอกชน','hazcontrol'=>'เจ้าหน้าที่ควบคุมวัตถุอันตราย','plantprotection'=>'เจ้าหน้าที่สำนักอารักขาพืช','agriproduction'=>'เจ้าหน้าที่สำนักปัจจัยการผลิต','cashier'=>'เจ้าหน้าที่การเงิน','root'=>'เจ้าหน้าที่ดูแลระบบ','documentchecker' => 'เจ้าหน้าที่ตรวจสอบเอกสาร'); 
+	private static $registype = array('registrar'=>'เจ้าหน้าที่ทะเบียน','client'=>'เอกชน','hazcontrol'=>'เจ้าหน้าที่ควบคุมวัตถุอันตราย','plantprotection'=>'เจ้าหน้าที่สำนักอารักขาพืช','agriproduction'=>'เจ้าหน้าที่สำนักปัจจัยการผลิต','cashier'=>'เจ้าหน้าที่การเงิน','root'=>'เจ้าหน้าที่ดูแลระบบ','documentchecker' => 'เจ้าหน้าที่ตรวจสอบเอกสาร','explorer'=>'เจ้าหน้าที่ตรวจสถานที่'); 
 
 	public static function group_to_string($group)
 	{
@@ -38,6 +38,8 @@ class User{
 			return 'registrar';
 		else if($this->is_group('documentchecker'))
 			return 'documentchecker';
+		else if($this->is_group('explorer'))
+			return 'explorer';
 		else if($this->is_root())
 			return 'root';
 
@@ -258,6 +260,14 @@ class User{
 		{
 			return 'documentchecker';
 		}
+
+		$table = 'usergroup_'.'explorer';
+		$rows =DB::get_db()->select($table,null,'userid='.$userid,1);
+		if( count($rows) == 1 )
+		{
+			return 'explorer';
+		}
+
 
 		return 'others';
 

@@ -257,8 +257,9 @@ function echoValue($field)
 					    <option value="hazcontrol"  >เจ้าหน้าที่ควบคุมวัตถุอันตราย</option>
 					    <option value="plantprotection">เจ้าหน้าที่สำนักอารักขาพืช</option>
 					    <option value="agriproduction" >เจ้าหน้าที่สำนักปัจจัยการผลิต</option>
-					    <option value="cashier" >เจ้าหน้าที่การเงิน</option>
 					    <option value="documentchecker" >เจ้าหน้าที่ตรวจสอบเอกสาร</option>
+					    <option value="explorer" >เจ้าหน้าที่ตรวจสถานที่</option>
+					    <option value="cashier" >เจ้าหน้าที่การเงิน</option>   
 						<?php
 							if(User::get_user()->is_root())
 							{
