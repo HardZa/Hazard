@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2014 at 11:28 AM
+-- Generation Time: Feb 11, 2014 at 10:14 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -293,7 +293,7 @@ CREATE TABLE IF NOT EXISTS `usergroup_client` (
 
 INSERT INTO `usergroup_client` (`client_id`, `userid`, `userbirthdate`, `usernationality`, `usertaxid`, `useraddrhouse`, `useraddrvillage`, `useraddrdrive`, `useraddrroad`, `useraddrsubdistrict`, `useraddrdistrict`, `useraddrprovince`, `userpostalcode`, `userphone`, `userfax`, `useremail`) VALUES
 (3, 4, '1992-09-18', 'ไทย', '5410500199', '50', '', '', 'พหลโยธิน ', 'ลาดยาว', 'จัตุจักร', 'กรุงเทพ', '10900', '0941238573', '', 'devil_karuma@gmail.com'),
-(4, 16, '1993-10-01', 'ไทย', '1709900774223', '90/96', '1', '9', '-', 'หนองอ้อ', 'บ้านโป่ง', 'ราชบุรี', '70110', '087-7552233', '-', 'serpierio@gmail.com');
+(4, 16, '1993-10-01', 'ไทย', '1709900774223', '90/96', '5', '9', '-', 'หนองอ้อ', 'บ้านโป่ง', 'ราชบุรี', '70110', '087-7552233', '-', 'serpierio@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -302,17 +302,36 @@ INSERT INTO `usergroup_client` (`client_id`, `userid`, `userbirthdate`, `usernat
 --
 
 CREATE TABLE IF NOT EXISTS `usergroup_documentchecker` (
-  `documentchecker_id` int(11) NOT NULL AUTO_INCREMENT,
+  `doccheck_id` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
-  PRIMARY KEY (`documentchecker_id`)
+  PRIMARY KEY (`doccheck_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `usergroup_documentchecker`
 --
 
-INSERT INTO `usergroup_documentchecker` (`documentchecker_id`, `userid`) VALUES
+INSERT INTO `usergroup_documentchecker` (`doccheck_id`, `userid`) VALUES
 (1, 20);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usergroup_explorer`
+--
+
+CREATE TABLE IF NOT EXISTS `usergroup_explorer` (
+  `explorer_id` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` int(11) NOT NULL,
+  PRIMARY KEY (`explorer_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `usergroup_explorer`
+--
+
+INSERT INTO `usergroup_explorer` (`explorer_id`, `userid`) VALUES
+(1, 21);
 
 -- --------------------------------------------------------
 
@@ -324,7 +343,7 @@ CREATE TABLE IF NOT EXISTS `usergroup_hazcontrol` (
   `haz_id` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
   PRIMARY KEY (`haz_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `usergroup_hazcontrol`
@@ -384,7 +403,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `userallowed` tinyint(1) NOT NULL,
   `userrealname` varchar(256) NOT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
 --
 -- Dumping data for table `users`
@@ -398,10 +417,11 @@ INSERT INTO `users` (`userid`, `username`, `userpasssha1`, `userallowed`, `userr
 (5, 'test_hazcontrol', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'คิม จอง อิว'),
 (6, 'test_plantprotection', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'อารักษ์ ไพรเถาวัล'),
 (7, 'test_registrar', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'ทะเบียน เทียนสองเล่ม'),
-(16, 'serpierio', '48efc4851e15940af5d477d3c0ce99211a70a3be', 1, 'ชานน  จิตพรหม'),
+(16, 'serpierio', '88b023b2ee0451e336e668af02ff1920e0e6af35', 1, 'ชานน  จิตพรหม'),
 (17, 'money', '2fa4398b1353f2358e3d7389a80c3c7861ad7691', 1, 'เงิน'),
 (18, 'moneyy', 'a0180bdb4ed01a9e504af112be97b248cb42032f', 1, 'moneyy'),
-(20, 'test_documentchecker', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'สนั่น มีผล');
+(20, 'test_documentchecker', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'สนั่น มีผล'),
+(21, 'test_explorer', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'สำรวจ ตรวจสถาน');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
