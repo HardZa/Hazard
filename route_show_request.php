@@ -83,6 +83,13 @@ else if($user->is_group('documentchecker'))
 			break;
 	}
 }
+else if($user->is_group('explorer'))
+{
+	switch ($route_progress) {
+		case PRG_SURVEY:
+			break;
+	}
+}
 
 include(resolveHeader(Config::get('template/process').$route_file));
 
