@@ -52,11 +52,11 @@ class Permission
 						return false;
 					return true;
 			 	  break;
-			case 'plantprotection': if($request->get('progress')==PRG_SURVEY)
+			case 'plantprotection': if($request->get('progress')==PRG_SURVEY && $request->get('requesttype') == VO_GS_GVG_1)
 									return true;
 									else return false;
 			 	  break;
-			case 'agriproduction': if($request->get('progress')==PRG_SURVEY)
+			case 'agriproduction': if($request->get('progress')==PRG_SURVEY && $request->get('requesttype') == VO_GS_GVG_1)
 									return true;
 									else return false;
 			 	  break;
@@ -68,6 +68,10 @@ class Permission
 							return true;
 							else return false;
 				  break;
+			case 'explorer':
+							if($request->get('progress')==PRG_SURVEY && $request->get('requesttype') != VO_GS_GVG_1 ) return true;
+							else return false;
+					break;
 		}
 	}
 	

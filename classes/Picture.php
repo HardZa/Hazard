@@ -12,7 +12,7 @@ class Picture
 			case PIC_DOC_ATTACH:
 				return 'เอกสารแนบ';
 			case PIC_TEST_ATTACH:
-				return 'ผลการทดสอบ';
+				return 'ผลการทดสอบ/สำรวจ';
 			case PIC_BILL:
 				return 'ใบจ่ายเงิน';
 		}

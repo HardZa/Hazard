@@ -75,7 +75,7 @@ else if($user->is_group('documentchecker'))
 	switch ($route_progress) {
 		case PRG_CHK_DOC:
 			set_doc('goto_reqlist','yes');
-			if( doc('type') == VO_GS_GVG_1 )
+			if( doc('type') == VO_GS_GVG_1 || doc('type') == VO_1 || doc('type') == VO_3 || doc('type') == VO_5 || doc('type') == VO_7 )
 				set_doc('next_progress',PRG_SURVEY);
 			else
 				set_doc('next_progress',PRG_CONSIDER);
@@ -87,6 +87,7 @@ else if($user->is_group('explorer'))
 {
 	switch ($route_progress) {
 		case PRG_SURVEY:
+			$route_file = 'normal_survey.php';
 			break;
 	}
 }
