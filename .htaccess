@@ -21,6 +21,9 @@ RewriteRule ^d$ d/
 RewriteRule ^r/$ requests.php
 RewriteRule ^r$ r/
 
+RewriteRule ^report/$ report.php
+RewriteRule ^report$ report/
+
 RewriteRule ^profile/$ profile.php
 RewriteRule ^profile$ profile/
 

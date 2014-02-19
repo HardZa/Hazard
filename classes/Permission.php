@@ -2,6 +2,13 @@
 
 class Permission
 {
+
+	public static function canReport()
+	{
+		if(!User::is_session_exist())return false;
+		return User::get_user()->is_root();
+	}
+
 	//login
 	public static function canShowList()
 	{

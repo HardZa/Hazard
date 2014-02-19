@@ -68,6 +68,7 @@
 					}
 					else if(User::get_user()->is_root()){
 			?>
+						<li><a href="<?php echo resolveURIHeader("report");?>">รายงาน</a></li>
 						<li><a href="<?php echo resolveURIHeader("user");?>">รายชื่อผู้ใช้</a></li>
 						<li><a href="<?php echo resolveURIHeader("register");?>">เพิ่มผู้ใช้</a></li>
 						<li><a href="<?php echo resolveURIHeader("request");?>">รายการคำร้อง</a></li>

@@ -109,7 +109,7 @@ else {
 		Redirect::to('user');
 	}
 	else if(User::get_user()->is_root()){
-		Redirect::to('user');
+		Redirect::to('report');
 	}else{
 		Redirect::to('request');
 	}

@@ -1,6 +1,9 @@
 <?php
  	require_once('core/init.php');
 	include(resolveHeader('includes/header.php'));
+
+	if(!Permission::canReport())
+   		Redirect::to(403);
 	
 ?>
 <br>
