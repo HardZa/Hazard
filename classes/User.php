@@ -45,6 +45,11 @@ class User{
 
 		return 'others';
 	}
+
+	public function age()
+	{
+		
+	}
 	
 	public function set($key,$value)
 	{	

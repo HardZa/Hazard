@@ -4,7 +4,7 @@
 ?>
 
 <?php
-DB::get_db()->insert('receipt_running_no',array('id'),array(null));
+	Log::hit();
 ?>
 
 <?php

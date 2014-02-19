@@ -19,6 +19,11 @@ function get_month($id)
 	return 'unknow month';
 }
 
+function get_date($shift=0)
+{
+	return date('d.m.Y',strtotime("-$shift days"));
+}
+
 function padding($num,$pad)
 {
 	$gg = $num.'';
