@@ -60,23 +60,6 @@ $data = $db->select('request',array('userid','requesttype','progress','requestid
 	<?php
 	if(User::get_user()->is_group('client')){
 	?>
-	<script>
-	function showTabtab()
-	{
-		var table=document.getElementById('tabtab');
-		var textbtn=document.getElementById('showbtn');
-		
-		if(table.hidden == 1){
-			table.hidden =0;
-			textbtn.innerHTML="&nbsp;-&nbsp;";
-		}
-		else{
-			table.hidden = 1;
-			textbtn.innerHTML="&nbsp;+&nbsp;";
-		}
-	}
-	</script>
-
 	<div class='page-header'>
 		<h1>ส่งคำร้อง</h1>
 		<div style="margin:20px 0px 10px 50px">
@@ -84,7 +67,28 @@ $data = $db->select('request',array('userid','requesttype','progress','requestid
 		</div>
 	</div>
 
-	<div hidden="1" name="tabtab" id="tabtab">
+	<div name="tabtab" id="tabtab">
+	<script type="text/javascript">
+	<!--
+		function showTabtab()
+		{
+			var table=document.getElementById('tabtab');
+			var textbtn=document.getElementById('showbtn');
+			
+			if(table.style.display == "block")
+			{
+				table.style.display = "none";
+				textbtn.innerHTML="&nbsp;+&nbsp;";
+			}
+			else
+			{
+				table.style.display = "block";
+				textbtn.innerHTML="&nbsp;-&nbsp;";
+			}
+		}
+		document.getElementById('tabtab').style.display="none";
+	-->
+	</script>
 	
 	<div class="row">
 		<div class="col-md-1"></div>
@@ -184,8 +188,8 @@ $data = $db->select('request',array('userid','requesttype','progress','requestid
                 </a>
             </div>
 		</div>
-	</div>    
-</div>
+	</div>
+	</div>
 <?php
 }
 ?>
