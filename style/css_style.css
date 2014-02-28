@@ -274,3 +274,21 @@ a:hover{
 	background-color: rgba(153, 153, 153, 0.3);
 	font-size: 20px;
 }
+.comment-title{
+	height: 50px;
+	border-bottom: 2px solid #eeeeee;
+	margin-bottom: 30px;
+}
+.comment-textbox{
+	display: table;
+	margin: 5px 60px;
+}
+.comment-text{
+	padding: 6px 12px;
+	font-size: 14px;
+	font-weight: normal;
+	color: #555555;
+	background-color: white;
+	border: 1px solid #cccccc;
+	border-radius: 0 4px 4px 0;
+}

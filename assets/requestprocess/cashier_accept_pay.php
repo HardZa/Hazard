@@ -29,7 +29,7 @@ else
 ?>
 
 <div class="row">
-	<a class="btn btn-default btnPrint" href='<?php 
+	<a class="btn btn-default btnPrint" style="margin-left:134px;" href='<?php 
 		$print_info = array();
 		include( resolveHeader( Config::get('template/bindprint')."receipt.php" ) );
 		echo resolvePrinterURI("receipt",$print_info);

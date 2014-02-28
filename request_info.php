@@ -107,17 +107,20 @@
 
 	<div class="container">
 		<div class="well">
+			<div class="comment-title">
+				<h3>ความคิดเห็นของเจ้าหน้าที่</h3>
+			</div>
 			<?php
 				$commends = Commend::get_commend_by_requestid($request->get('requestid'));
 				foreach ($commends as $commend) {
 					$ucommend = User::load($commend->userid);
 					?>
-
-					<div class="row">
-						<div class="col-sm-3"><?php echo $ucommend->get('userrealname'); ?> : </div>
-						<div class="col-sm-3"><?php echo $commend->message; ?></div>
+					<div class="comment-textbox">
+  						<span class="input-group-addon"><?php echo $ucommend->get('userrealname'); ?></span>
+						<div class="comment-text">
+							<?php echo $commend->message; ?>
+						</div>
 					</div>
-
 					<?php
 				}
 			?>
@@ -127,14 +130,13 @@
 			<form class="form-horizontal" role="form" method="post" action="">
 				<br>
 				<div class="row">
-					<div class="col-sm-3">ความคิดเห็น</div>
+					<div class="col-sm-3 col-sm-offset-3"><h4>แสดงความคิดเห็นของท่าน</h4></div>
 					<div class="col-sm-3">
-						<textarea class="form-control" rows="5" id="commend_msg" name="commend_msg" placeholder="ความคิดเห็น" ></textarea>
+						<textarea style="width: 370px;margin-bottom:20px" class="form-control" rows="5" id="commend_msg" name="commend_msg" placeholder="ความคิดเห็น" ></textarea>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-3"></div>
-					<div class="col-sm-3"><button type="submit" class="btn btn-success">แสดงความคิดเห็น</button></div>
+					<div class="col-sm-3 col-sm-offset-6"><button type="submit" class="btn btn-success">แสดงความคิดเห็น</button></div>
 				</div>
 			    	
 			    	
