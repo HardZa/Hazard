@@ -318,6 +318,11 @@ a:hover{
 }
 .report-page{
 	background-color: rgba(235, 214, 171, 1);
-	width: 80%;
+	width: 1024px;
 	padding: 45px;
+}
+.pos-pagination{
+	position: relative;
+	top: -20px;
+	right: 40px;
 }

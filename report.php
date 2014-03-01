@@ -5,6 +5,13 @@
 	if(!Permission::canReport())
    		Redirect::to(403);
 	
+	$page = $_GET['page'];
+	if( !isset($page) || $page <= 0 )
+		$page = 1;
+	$min_p = $page - 5;
+	if( $min_p <= 0 ) $min_p = 1;
+	$max_p = $min_p + 9;
+	$shf = $page*5 - 5;
 ?>
 <br>
 <div class="report-page container">
@@ -17,20 +24,31 @@
 				<img src="<?php echo resolveURIHeader("./image/chart.png") ?>">	
 				<h3 style="margin-top:15px;">จำนวนผู้ใช้ต่อวัน</h3>
 			</div>
-			<table class="table-mod table col-sm-offset">
-				<tr>
+			<table class="table-mod table table-hover">
+				<tr class="warning">
 					<td>วันที่</td>
 					<td>จำนวนครั้ง</td>
 				</tr>
 				<?php for($i=0;$i<5;$i++) { ?>
 				<tr>
-					<td><?php echo get_date($i); ?></td>
-					<td><?php echo Log::get($i); ?></td>
+					<td><?php echo get_date($i+$shf); ?></td>
+					<td><?php echo Log::get($i+$shf); ?></td>
 				</tr>
 				<?php } ?>
 			</table>
-			<p class="pull-right">MAX : <?php echo (Log::get_max()); ?></p>
-			<p class="pull-right">MIN : <?php echo (Log::get_min()); ?></p>
+			<ul class="pos-pagination pull-right pagination">
+				<li><a href="<?php echo resolveURIHeader("report/?page=".($page-1)); ?>">&laquo;</a></li>
+				<?php for($i=$min_p;$i<=$max_p;$i++){ ?>
+				<?php if($i == $page) { ?>
+				<li class="active"><a href="<?php echo resolveURIHeader("report/?page=$i"); ?>"><?php echo $i; ?></a></li>
+				<?php }else{ ?>
+				<li><a href="<?php echo resolveURIHeader("report/?page=$i"); ?>"><?php echo $i; ?></a></li>
+				<?php } ?>
+				<?php } ?>
+				<li><a href="<?php echo resolveURIHeader("report/?page=".($page+1)); ?>">&raquo;</a></li>
+			</ul>
+			<!-- <p class="pull-right">MAX : <?php echo (Log::get_max()); ?></p>
+			<p class="pull-right">MIN : <?php echo (Log::get_min()); ?></p> -->
 		</div>
 	</div>
 	<div class="shadow-box doc-report">
@@ -39,8 +57,8 @@
 				<img src="<?php echo resolveURIHeader("./image/chart2.png") ?>">	
 				<h3 style="margin-top:15px;">คำขอเอกสาร</h3>
 			</div>
-			<table class="table-mod table">
-				<tr>
+			<table class="table-mod table table-hover">
+				<tr class="warning">
 					<td>ชนิดคำร้อง</td>
 					<td>กำลังดำเนินการ</td>
 					<td>ผ่าน</td>
@@ -73,8 +91,8 @@
 				<img src="<?php echo resolveURIHeader("./image/chart3.png") ?>">	
 				<h3 style="margin-top:15px;">ช่วงอายุของผู้ใช้</h3>
 			</div>
-			<table class="table-mod table">
-				<tr>
+			<table class="table-mod table table-hover">
+				<tr class="warning">
 					<td>ช่วงอายุ</td>
 					<td>จำนวน</td>
 				</tr>

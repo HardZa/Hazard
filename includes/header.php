@@ -22,6 +22,7 @@
 		});
 	-->
   	</script>
+<?php Log::hit(); ?>
 <?php include(resolveHeader('includes/hotkey_init.php')); ?>
 </head>
 
