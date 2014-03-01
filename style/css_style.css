@@ -292,3 +292,32 @@ a:hover{
 	border: 1px solid #cccccc;
 	border-radius: 0 4px 4px 0;
 }
+.user-report{
+	border: 1px solid #eeeeee ;
+	background-color: white;
+	padding:50px 50px 20px;
+	border-radius: 5px;
+	margin-bottom: 50px;
+}
+.doc-report{
+	border: 1px solid #eeeeee ;
+	background-color: white;
+	padding:50px 50px 20px;
+	border-radius: 5px;
+	margin-bottom: 50px;
+}
+.age-report{
+	border: 1px solid #eeeeee ;
+	background-color: white;
+	padding:50px 50px 20px;
+	border-radius: 5px;
+	margin-bottom: 50px;
+}
+.table-mod{
+	width: 70%;
+}
+.report-page{
+	background-color: rgba(235, 214, 171, 1);
+	width: 80%;
+	padding: 45px;
+}
